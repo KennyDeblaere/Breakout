@@ -1,5 +1,8 @@
 package analyse_en_programmeerproject.groep5.breakout.view;
 
+import analyse_en_programmeerproject.groep5.breakout.controller.RegisterButtonController;
+import analyse_en_programmeerproject.groep5.breakout.controller.RegisterController;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -16,6 +19,7 @@ public class MenuTopPanel extends JPanel {
         setLayout(new FlowLayout(FlowLayout.RIGHT));
         createComponents();
         setComponents();
+        addActionListeners();
         addComponents();
     }
 
@@ -24,6 +28,12 @@ public class MenuTopPanel extends JPanel {
         loginButton = new JButton("Aanmelden");
         logoutButton = new JButton("Afmelden");
         registerButton = new JButton("Registreren");
+
+
+    }
+
+    private void addActionListeners() {
+        registerButton.addActionListener(new RegisterButtonController());
     }
 
     private void setComponents() {

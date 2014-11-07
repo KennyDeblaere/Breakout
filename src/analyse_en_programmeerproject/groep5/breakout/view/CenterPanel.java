@@ -9,22 +9,32 @@ import java.awt.*;
 public class CenterPanel extends JPanel {
     private MenuCenterPanel menuPanel;
     private DifficultyPanel difficultyPanel;
+    private RegistrationPanel registration;
 
     public CenterPanel() {
         createComponents();
-        addComponents();
+        addMainComponents();
     }
 
     private void createComponents() {
         menuPanel = new MenuCenterPanel();
         difficultyPanel = new DifficultyPanel();
+        registration = new RegistrationPanel();
     }
 
     private void setComponents() {
     }
 
-    private void addComponents() {
+    public void addMainComponents() {
         add(menuPanel);
         add(difficultyPanel);
+    }
+
+    public void addRegistrationPanel() {
+        add(registration);
+    }
+
+    public void removeComponents() {
+        removeAll();
     }
 }

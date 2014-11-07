@@ -11,7 +11,6 @@ public class MainPanel extends JPanel {
     private CenterPanel centerPanel;
     private MenuTopPanel topPanel;
 
-
     public MainPanel() {
         setLayout(new BorderLayout(200,200));
 
@@ -27,5 +26,9 @@ public class MainPanel extends JPanel {
     private void addComponents() {
         add(topPanel, BorderLayout.NORTH);
         add(centerPanel, BorderLayout.CENTER);
+    }
+
+    public CenterPanel getCenterPanel() {
+        return this.centerPanel;
     }
 }
