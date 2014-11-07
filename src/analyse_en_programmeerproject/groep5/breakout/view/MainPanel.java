@@ -15,7 +15,7 @@ public class MainPanel extends JPanel {
 
 
     public MainPanel() {
-        setLayout(new BorderLayout());
+        setLayout(new BorderLayout(0,200));
 
         createComponents();
         addComponents();
