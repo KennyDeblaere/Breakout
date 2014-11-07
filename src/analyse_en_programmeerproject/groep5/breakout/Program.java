@@ -8,6 +8,6 @@ import analyse_en_programmeerproject.groep5.breakout.view.Frame;
  */
 public class Program {
     public static void main(String[] args) {
-       new Frame();
+        System.out.println("Kenny");
     }
 }
