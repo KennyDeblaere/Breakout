@@ -12,7 +12,7 @@ public class MainPanel extends JPanel {
     private MenuTopPanel topPanel;
 
     public MainPanel() {
-        setLayout(new BorderLayout(200,200));
+        setLayout(new BorderLayout(0,200));
 
         createComponents();
         addComponents();
