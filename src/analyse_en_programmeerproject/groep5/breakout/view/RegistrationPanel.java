@@ -71,7 +71,7 @@ public class RegistrationPanel extends JPanel {
 
     public RegistrationPanel(){
         setLayout(new GridLayout(9,2,5,5));
-        setPreferredSize(new Dimension(500,300));
+        //setPreferredSize(new Dimension(500,300));
         createComponents();
         addComponents();
     }

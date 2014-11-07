@@ -10,7 +10,6 @@ import java.util.List;
  */
 public class MenuCenterPanel extends JPanel {
     private JButton buttonSP, buttonCO, buttonHS, buttonAbout;
-    private JLabel fillLabel;
     private List<JButton> buttons = new ArrayList<JButton>();
 
     public MenuCenterPanel() {
@@ -23,7 +22,6 @@ public class MenuCenterPanel extends JPanel {
     }
 
     private void createComponents() {
-        fillLabel = new JLabel();
         buttonSP = new JButton("Singleplayer");
         buttonCO = new JButton("Co-Op");
         buttonHS = new JButton("Topscores");
@@ -36,9 +34,6 @@ public class MenuCenterPanel extends JPanel {
     }
 
     private void setComponents() {
-        fillLabel.setMaximumSize(new Dimension(1, 200));
-        fillLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-
         for (JButton btn : buttons) {
             btn.setMaximumSize(new Dimension(300, 50));
             btn.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -46,8 +41,6 @@ public class MenuCenterPanel extends JPanel {
     }
 
     private void addComponents() {
-        add(fillLabel);
-
         for (JButton btn : buttons) {
             add(btn);
         }

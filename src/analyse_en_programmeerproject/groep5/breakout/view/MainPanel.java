@@ -8,8 +8,6 @@ import java.awt.*;
  * Created by Benjamin on 6/11/2014.
  */
 public class MainPanel extends JPanel {
-    //private MenuCenterPanel centerPanel;
-    //private DifficultyPanel difficulty;
     private CenterPanel centerPanel;
     private MenuTopPanel topPanel;
 
@@ -22,8 +20,6 @@ public class MainPanel extends JPanel {
     }
 
     private void createComponents(){
-        //centerPanel = new MenuCenterPanel();
-        //difficulty = new DifficultyPanel();
         topPanel = new MenuTopPanel();
         centerPanel = new CenterPanel();
     }
@@ -31,7 +27,5 @@ public class MainPanel extends JPanel {
     private void addComponents() {
         add(topPanel, BorderLayout.NORTH);
         add(centerPanel, BorderLayout.CENTER);
-        //add(centerPanel, BorderLayout.CENTER);
-        //add(difficulty, BorderLayout.CENTER);
     }
 }
