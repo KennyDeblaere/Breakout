@@ -9,5 +9,6 @@ import analyse_en_programmeerproject.groep5.breakout.view.BreakOutFrame;
 public class Program {
     public static void main(String[] args) {
         new BreakOutFrame();
+        System.out.println("test");
     }
 }
