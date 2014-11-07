@@ -12,9 +12,11 @@ public class BreakOutFrame extends JFrame {
         setTitle("Breakout (c) 2014 groep 5");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
 
         MainPanel menu = new MainPanel();
         setContentPane(menu);
+
+        pack();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 }
