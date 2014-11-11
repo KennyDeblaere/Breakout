@@ -1,10 +1,13 @@
-package analyse_en_programmeerproject.groep5.breakout.view;
+package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Kenny on 7/11/2014.
+ * Created by
+ *      Kenny Deblaere.
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 public class WelcomePanel extends JPanel {
 

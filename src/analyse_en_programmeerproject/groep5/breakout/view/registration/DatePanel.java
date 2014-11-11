@@ -1,10 +1,13 @@
-package analyse_en_programmeerproject.groep5.breakout.view;
+package analyse_en_programmeerproject.groep5.breakout.view.registration;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Kenny Deblaere.
+ * Created by
+ *      Kenny Deblaere.
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 public class DatePanel extends JPanel {
     private JTextField day,month,year;

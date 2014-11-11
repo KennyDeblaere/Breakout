@@ -3,7 +3,10 @@ package analyse_en_programmeerproject.groep5.breakout.model;
 import java.util.Date;
 
 /**
- * Created by Kenny Deblaere.
+ * Created by
+ *      Kenny Deblaere.
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 public class Score {
     private int score, gamemodeid;

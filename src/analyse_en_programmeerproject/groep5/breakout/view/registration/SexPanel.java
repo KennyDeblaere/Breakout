@@ -1,4 +1,4 @@
-package analyse_en_programmeerproject.groep5.breakout.view;
+package analyse_en_programmeerproject.groep5.breakout.view.registration;
 
 import javax.swing.*;
 

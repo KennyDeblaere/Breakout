@@ -2,10 +2,12 @@ package analyse_en_programmeerproject.groep5.breakout.model;
 
 import java.util.Date;
 
-import static analyse_en_programmeerproject.groep5.breakout.data.Database.*;
 
 /**
- * Created by Kenny Deblaere.
+ * Created by
+ *      Kenny Deblaere.
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 public class Register {
     private String username, firstname, lastname, password, email;

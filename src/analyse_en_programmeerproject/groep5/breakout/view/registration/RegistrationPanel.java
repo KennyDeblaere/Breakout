@@ -1,13 +1,16 @@
-package analyse_en_programmeerproject.groep5.breakout.view;
+package analyse_en_programmeerproject.groep5.breakout.view.registration;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.RegisterController;
 
+
 import javax.swing.*;
 import java.awt.*;
-import java.util.Date;
 
 /**
- * Created by Kenny Deblaere.
+ * Created by
+ *      Kenny Deblaere.
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 public class RegistrationPanel extends JPanel {
     private JTextField username, firstname, lastname, email;

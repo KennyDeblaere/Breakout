@@ -1,13 +1,14 @@
-package analyse_en_programmeerproject.groep5.breakout.view;
+package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
 import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
 
 import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
 
 /**
- * Created by Benjamin on 6/11/2014.
+ * Created by
+ *      Kenny Deblaere.
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 public class DifficultyPanel extends JPanel {
     private JRadioButton radioEasy, radioMedium, radioHard;
@@ -33,9 +34,6 @@ public class DifficultyPanel extends JPanel {
         buttonGroup.add(radioEasy);
     }
 
-    private void setComponents() {
-
-    }
 
     private void addComponents() {
         add(textLabel);
