@@ -1,15 +1,15 @@
-package analyse_en_programmeerproject.groep5.breakout.view;
+package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 /**
- * Created by Benjamin on 6/11/2014.
+ * Created by
+ *      Kenny Deblaere.
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 public class MainPanel extends JPanel {
-    //private MenuCenterPanel centerPanel;
-    //private DifficultyPanel difficulty;
     private CenterPanel centerPanel;
     private MenuTopPanel topPanel;
 
@@ -22,8 +22,6 @@ public class MainPanel extends JPanel {
     }
 
     private void createComponents(){
-        //centerPanel = new MenuCenterPanel();
-        //difficulty = new DifficultyPanel();
         topPanel = new MenuTopPanel();
         centerPanel = new CenterPanel();
     }
@@ -31,7 +29,5 @@ public class MainPanel extends JPanel {
     private void addComponents() {
         add(topPanel, BorderLayout.NORTH);
         add(centerPanel, BorderLayout.CENTER);
-        //add(centerPanel, BorderLayout.CENTER);
-        //add(difficulty, BorderLayout.CENTER);
     }
 }

@@ -1,19 +1,18 @@
 package analyse_en_programmeerproject.groep5.breakout.controller;
 
-import analyse_en_programmeerproject.groep5.breakout.model.Register;
-import analyse_en_programmeerproject.groep5.breakout.view.DatePanel;
-import analyse_en_programmeerproject.groep5.breakout.view.SexPanel;
+import analyse_en_programmeerproject.groep5.breakout.view.registration.DatePanel;
+import analyse_en_programmeerproject.groep5.breakout.view.registration.SexPanel;
 
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
-
-import static analyse_en_programmeerproject.groep5.breakout.data.Database.DatabaseInstance;
 
 /**
- * Created by Kenny Deblaere.
+ * Created by
+ *      Kenny Deblaere.
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 public class RegisterController implements ActionListener {
     private JTextField username, firstname, lastname, email;

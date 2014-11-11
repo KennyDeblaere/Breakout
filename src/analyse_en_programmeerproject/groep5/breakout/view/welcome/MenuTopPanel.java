@@ -1,4 +1,4 @@
-package analyse_en_programmeerproject.groep5.breakout.view;
+package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.RegisterButtonController;
 import analyse_en_programmeerproject.groep5.breakout.controller.RegisterController;
@@ -7,7 +7,10 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Benjamin on 6/11/2014.
+ * Created by
+ *      Kenny Deblaere.
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 
 public class MenuTopPanel extends JPanel {

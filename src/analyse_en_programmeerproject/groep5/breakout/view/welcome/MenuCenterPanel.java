@@ -1,4 +1,4 @@
-package analyse_en_programmeerproject.groep5.breakout.view;
+package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,7 +6,10 @@ import java.util.*;
 import java.util.List;
 
 /**
- * Created by Benjamin on 6/11/2014.
+ * Created by
+ *      Kenny Deblaere.
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 public class MenuCenterPanel extends JPanel {
     private JButton buttonSP, buttonCO, buttonHS, buttonAbout;
