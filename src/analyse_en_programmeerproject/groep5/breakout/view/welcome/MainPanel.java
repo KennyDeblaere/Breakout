@@ -17,7 +17,7 @@ public class MainPanel extends JPanel {
 
 
     public MainPanel() {
-        setLayout(new BorderLayout(0,200));
+        setLayout(new BorderLayout(200,200));
 
         createComponents();
         addComponents();
@@ -30,6 +30,6 @@ public class MainPanel extends JPanel {
 
     private void addComponents() {
         add(topPanel, BorderLayout.NORTH);
-        add(new GamePanel(), BorderLayout.CENTER);
+        add(centerPanel, BorderLayout.CENTER);
     }
 }
