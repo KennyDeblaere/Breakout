@@ -23,7 +23,7 @@ public class CenterPanel extends JPanel {
         addMainComponents();
     }
 
-    private void createComponents() {
+    public void createComponents() {
         menuPanel = new MenuCenterPanel();
         difficultyPanel = new DifficultyPanel();
         registration = new RegistrationPanel();

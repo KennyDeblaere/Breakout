@@ -19,7 +19,10 @@ public class RegisterButtonController implements ActionListener {
     }
 
     private void createRegisterPanel(){
-        c.setVisible(false);
+        //c.setVisible(false);
+        c.removeComponents();
+        c.createComponents();
+        c.addRegistrationPanel();
     }
 
     @Override
