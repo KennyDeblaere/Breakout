@@ -47,4 +47,8 @@ public class CenterPanel extends JPanel {
     public void removeComponents() {
         removeAll();
     }
+
+    public RegistrationPanel getRegistration() {
+        return registration;
+    }
 }
