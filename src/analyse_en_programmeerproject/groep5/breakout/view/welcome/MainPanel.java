@@ -1,5 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
+import analyse_en_programmeerproject.groep5.breakout.view.game.GamePanel;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -28,6 +30,6 @@ public class MainPanel extends JPanel {
 
     private void addComponents() {
         add(topPanel, BorderLayout.NORTH);
-        add(centerPanel, BorderLayout.CENTER);
+        add(new GamePanel(), BorderLayout.CENTER);
     }
 }
