@@ -1,12 +1,15 @@
-package analyse_en_programmeerproject.groep5.breakout.controller;
+package analyse_en_programmeerproject.groep5.breakout.controller.registration;
 
+import analyse_en_programmeerproject.groep5.breakout.model.Register;
 import analyse_en_programmeerproject.groep5.breakout.view.registration.DatePanel;
 import analyse_en_programmeerproject.groep5.breakout.view.registration.SexPanel;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 /**
  * Created by
@@ -15,20 +18,21 @@ import java.awt.event.ActionListener;
  *      Benjamin Vansteelandt
  */
 public class RegisterController implements ActionListener {
+    private CenterPanel c;
     private JTextField username, firstname, lastname, email;
     private DatePanel dateOfBirth;
     private SexPanel sex;
     private JPasswordField password, repeatedPassword;
 
-    public RegisterController(JTextField username, JPasswordField password, JPasswordField repeatedPassword, JTextField firstname,
-                              JTextField lastname, JTextField email, DatePanel dateOfBirth, SexPanel man){
-        setUsername(username);
-        setPassword(password);
-        setRepeatedPassword(repeatedPassword);
-        setFirstname(firstname);
-        setLastname(lastname);
-        setEmail(email);
-        setDateOfBirth(dateOfBirth);
+    public RegisterController(CenterPanel centerPanel){
+        c = centerPanel;
+        //setUsername(c.getRegistration().getUsername());
+        //setPassword(c.getRegistration().getPassword());
+        //setRepeatedPassword(c.getRegistration().getRepeatedpassword());
+        //setFirstname(c.getRegistration().getFirstname());
+        //setLastname(c.getRegistration().getLastname());
+        //setEmail(c.getRegistration().getEmail());
+        //setDateOfBirth(c.getRegistration().getDateOfBirth());
         }
 
     public void setUsername(JTextField username) {
@@ -83,15 +87,9 @@ public class RegisterController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //DatabaseInstance.insertUser(new User(getUsername(), getPassword(), getFirstname(), getLastname(), getEmail(), 0, getDateOfBirth(), isMan()));
-        //DatabaseInstance.fillUsers();
-        //System.out.println(getUsername().getText());
-
-        System.out.println(sex.getMale().isSelected());
-
-        //new Registration(getUsername().getText());
         /*new Register(getUsername().getText(),getPassword().getText(),getRepeatedPassword().getText(),
                 getFirstname().getText(),getLastname().getText(),getEmail().getText(), new Date(Integer.parseInt(dateOfBirth.getYear().getText()),
                 Integer.parseInt(dateOfBirth.getMonth().getText()), Integer.parseInt(dateOfBirth.getDay().getText())),sex.getMale().isSelected());*/
+        c.addMainComponents();
     }
 }

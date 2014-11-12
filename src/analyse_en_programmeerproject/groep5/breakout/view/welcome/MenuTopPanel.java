@@ -1,8 +1,8 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
-import analyse_en_programmeerproject.groep5.breakout.controller.LoginButtonController;
-import analyse_en_programmeerproject.groep5.breakout.controller.LogoutButtonController;
-import analyse_en_programmeerproject.groep5.breakout.controller.RegisterButtonController;
+import analyse_en_programmeerproject.groep5.breakout.controller.menuTop.LoginButtonController;
+import analyse_en_programmeerproject.groep5.breakout.controller.menuTop.LogoutButtonController;
+import analyse_en_programmeerproject.groep5.breakout.controller.menuTop.RegisterButtonController;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,6 +1,8 @@
 package analyse_en_programmeerproject.groep5.breakout.view.registration;
 
-import analyse_en_programmeerproject.groep5.breakout.controller.RegisterController;
+import analyse_en_programmeerproject.groep5.breakout.controller.registration.CancelController;
+import analyse_en_programmeerproject.groep5.breakout.controller.registration.RegisterController;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 
 
 import javax.swing.*;
@@ -17,6 +19,7 @@ public class RegistrationPanel extends JPanel {
     private JPasswordField password, repeatedpassword;
     private SexPanel sexPanel;
     private DatePanel dateOfBirth;
+    private CenterPanel centerPanel;
     private JLabel usernamelbl, firstnamelbl, lastnamelbl, emaillbl, passwordlbl, repeatedpasswordlbl, sexlbl, dateOfBirthlbl;
     private JButton cancel, register;
 
@@ -43,11 +46,6 @@ public class RegistrationPanel extends JPanel {
 
         cancel = new JButton("Annuleren");
         register = new JButton("Registreren");
-        register.addActionListener(new RegisterController(username, password,
-                repeatedpassword, firstname, lastname, email,
-                dateOfBirth, sexPanel));
-
-
     }
 
     private void addComponents(){
@@ -72,11 +70,43 @@ public class RegistrationPanel extends JPanel {
 
     }
 
-    public RegistrationPanel(){
+    private void addActionListeners(){
+        register.addActionListener(new RegisterController(centerPanel));
+        cancel.addActionListener(new CancelController(centerPanel));
+    }
+
+    public JTextField getUsername() {
+        return username;
+    }
+    public JPasswordField getPassword() {
+        return password;
+    }
+    public JPasswordField getRepeatedpassword() {
+        return repeatedpassword;
+    }
+    public JTextField getFirstname() {
+        return firstname;
+    }
+    public JTextField getLastname() {
+        return lastname;
+    }
+    public JTextField getEmail() {
+        return email;
+    }
+    public DatePanel getDateOfBirth() {
+        return dateOfBirth;
+    }
+    public SexPanel getSexPanel() {
+        return sexPanel;
+    }
+
+    public RegistrationPanel(CenterPanel centerPanel){
+        this.centerPanel = centerPanel;
         setLayout(new GridLayout(9,2,5,5));
         //setPreferredSize(new Dimension(500,300));
         createComponents();
         addComponents();
+        addActionListeners();
     }
 
 }
