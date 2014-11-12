@@ -22,8 +22,8 @@ public class MainPanel extends JPanel {
     }
 
     private void createComponents(){
-        topPanel = new MenuTopPanel();
         centerPanel = new CenterPanel();
+        topPanel = new MenuTopPanel(centerPanel);
     }
 
     private void addComponents() {

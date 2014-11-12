@@ -1,5 +1,6 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
+import analyse_en_programmeerproject.groep5.breakout.controller.LoginButtonController;
 import analyse_en_programmeerproject.groep5.breakout.controller.RegisterButtonController;
 import analyse_en_programmeerproject.groep5.breakout.controller.RegisterController;
 
@@ -17,8 +18,10 @@ public class MenuTopPanel extends JPanel {
     private Boolean isLoggedin = false; //REMOVE WHEN USER-CLASS IS ADDED
     private JLabel textLabel;
     private JButton loginButton, logoutButton, registerButton;
+    private CenterPanel centerPanel;
 
-    public MenuTopPanel() {
+    public MenuTopPanel(CenterPanel centerPanel) {
+        this.centerPanel = centerPanel;
         setLayout(new FlowLayout(FlowLayout.RIGHT));
         createComponents();
         setComponents();
@@ -36,6 +39,7 @@ public class MenuTopPanel extends JPanel {
     }
 
     private void addActionListeners() {
+        loginButton.addActionListener(new LoginButtonController(centerPanel));
         registerButton.addActionListener(new RegisterButtonController());
     }
 
