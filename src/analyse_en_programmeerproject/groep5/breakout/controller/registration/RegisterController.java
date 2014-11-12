@@ -26,14 +26,17 @@ public class RegisterController implements ActionListener {
 
     public RegisterController(CenterPanel centerPanel){
         c = centerPanel;
-        //setUsername(c.getRegistration().getUsername());
-        //setPassword(c.getRegistration().getPassword());
-        //setRepeatedPassword(c.getRegistration().getRepeatedpassword());
-        //setFirstname(c.getRegistration().getFirstname());
-        //setLastname(c.getRegistration().getLastname());
-        //setEmail(c.getRegistration().getEmail());
-        //setDateOfBirth(c.getRegistration().getDateOfBirth());
         }
+
+    private void createComponents(){
+        setUsername(c.getRegistration().getUsername());
+        setPassword(c.getRegistration().getPassword());
+        setRepeatedPassword(c.getRegistration().getRepeatedpassword());
+        setFirstname(c.getRegistration().getFirstname());
+        setLastname(c.getRegistration().getLastname());
+        setEmail(c.getRegistration().getEmail());
+        setDateOfBirth(c.getRegistration().getDateOfBirth());
+    }
 
     public void setUsername(JTextField username) {
         this.username = username;
@@ -90,6 +93,7 @@ public class RegisterController implements ActionListener {
         /*new Register(getUsername().getText(),getPassword().getText(),getRepeatedPassword().getText(),
                 getFirstname().getText(),getLastname().getText(),getEmail().getText(), new Date(Integer.parseInt(dateOfBirth.getYear().getText()),
                 Integer.parseInt(dateOfBirth.getMonth().getText()), Integer.parseInt(dateOfBirth.getDay().getText())),sex.getMale().isSelected());*/
+        createComponents();
         c.addMainComponents();
     }
 }

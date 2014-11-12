@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="Error nog bij">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/registration/CancelController.java" />
-      <change type="MOVED" beforePath="C:\Users\Kenny\Documents\School\2014-2015\Semester III\Analyse- en Programmeerproject\Breakout\src\analyse_en_programmeerproject\groep5\breakout\controller\LoginButtonController.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/menuTop/LoginButtonController.java" />
-      <change type="MOVED" beforePath="C:\Users\Kenny\Documents\School\2014-2015\Semester III\Analyse- en Programmeerproject\Breakout\src\analyse_en_programmeerproject\groep5\breakout\controller\LogoutButtonController.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/menuTop/LogoutButtonController.java" />
-      <change type="MOVED" beforePath="C:\Users\Kenny\Documents\School\2014-2015\Semester III\Analyse- en Programmeerproject\Breakout\src\analyse_en_programmeerproject\groep5\breakout\controller\RegisterButtonController.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/menuTop/RegisterButtonController.java" />
-      <change type="MOVED" beforePath="C:\Users\Kenny\Documents\School\2014-2015\Semester III\Analyse- en Programmeerproject\Breakout\src\analyse_en_programmeerproject\groep5\breakout\controller\RegisterController.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/registration/RegisterController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/CenterPanel.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/CenterPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/MenuTopPanel.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/MenuTopPanel.java" />
+    <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/registration/RegisterController.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/registration/RegisterController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/registration/RegistrationPanel.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/registration/RegistrationPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -65,8 +59,8 @@
       <file leaf-file-name="RegistrationPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/registration/RegistrationPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1003">
-              <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1003">
+              <caret line="105" column="51" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#createComponents#0;class#RegistrationPanel#0" expanded="false" />
@@ -135,9 +129,12 @@
       <file leaf-file-name="RegisterController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/registration/RegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5059423" vertical-offset="127" max-vertical-offset="1020">
-              <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-              <folding />
+            <state vertical-scroll-proportion="0.4516129" vertical-offset="40" max-vertical-offset="1088">
+              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+              <folding>
+                <element signature="e#931#932#0" expanded="true" />
+                <element signature="e#966#967#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -716,7 +713,7 @@
       <workItem from="1415717465487" duration="1423000" />
       <workItem from="1415781111015" duration="381000" />
       <workItem from="1415783674806" duration="1560000" />
-      <workItem from="1415786585379" duration="3092000" />
+      <workItem from="1415786585379" duration="3610000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1415363062491</created>
@@ -794,11 +791,15 @@
       <created>1415787418172</created>
       <updated>1415787418172</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Bezig met Registratie">
+      <created>1415790268082</created>
+      <updated>1415790268082</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17260000" />
+    <option name="totallyTimeSpent" value="17778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -858,7 +859,8 @@
     <MESSAGE value="Als je klikt op aanmelden, verdwijnt het centerPanel.&#10;Dit was als test.&#10;Constructor toegevoegd in MenuTopPanel" />
     <MESSAGE value="Het klikken op aanmelden en afmelden werkt nog niet volledig. Maar de juiste knoppen worden getoond" />
     <MESSAGE value="Registratiepaneel bij het klikken op Register" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registratiepaneel bij het klikken op Register" />
+    <MESSAGE value="Bezig met Registratie" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bezig met Registratie" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1265,8 +1267,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/registration/RegistrationPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="1003">
-          <caret line="108" column="0" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1003">
+          <caret line="105" column="51" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createComponents#0;class#RegistrationPanel#0" expanded="false" />
@@ -1277,9 +1279,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/registration/RegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5059423" vertical-offset="127" max-vertical-offset="1020">
-          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-          <folding />
+        <state vertical-scroll-proportion="0.4516129" vertical-offset="40" max-vertical-offset="1088">
+          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <folding>
+            <element signature="e#931#932#0" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

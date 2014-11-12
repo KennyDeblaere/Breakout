@@ -100,8 +100,8 @@ public class RegistrationPanel extends JPanel {
         return sexPanel;
     }
 
-    public RegistrationPanel(CenterPanel centerPanel){
-        this.centerPanel = centerPanel;
+    public RegistrationPanel(CenterPanel c){
+        this.centerPanel = c;
         setLayout(new GridLayout(9,2,5,5));
         //setPreferredSize(new Dimension(500,300));
         createComponents();
