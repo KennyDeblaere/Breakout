@@ -14,8 +14,7 @@ import javax.swing.*;
  *      Benjamin Vansteelandt
  */
 public class CenterPanel extends JPanel {
-    private MenuCenterPanel menuPanel;
-    private DifficultyPanel difficultyPanel;
+    private WelcomePanel welcomePanel;
     private RegistrationPanel registration;
 
     public CenterPanel() {
@@ -24,8 +23,7 @@ public class CenterPanel extends JPanel {
     }
 
     public void createComponents() {
-        menuPanel = new MenuCenterPanel();
-        difficultyPanel = new DifficultyPanel();
+        welcomePanel = new WelcomePanel();
         registration = new RegistrationPanel();
     }
 
@@ -33,11 +31,17 @@ public class CenterPanel extends JPanel {
     }
 
     public void addMainComponents() {
-        add(new WelcomePanel());
+        remove(registration);
+        add(welcomePanel);
+        revalidate();
+        repaint();
     }
 
     public void addRegistrationPanel() {
+        remove(welcomePanel);
         add(registration);
+        revalidate();
+        repaint();
     }
 
     public void removeComponents() {

@@ -18,15 +18,9 @@ public class RegisterButtonController implements ActionListener {
         c = centerPanel;
     }
 
-    private void createRegisterPanel(){
-        //c.setVisible(false);
-        c.removeComponents();
-        c.createComponents();
-        c.addRegistrationPanel();
-    }
 
     @Override
         public void actionPerformed(ActionEvent e) {
-            createRegisterPanel();
+            c.addRegistrationPanel();
         }
     }
