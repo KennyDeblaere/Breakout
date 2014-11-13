@@ -3,6 +3,7 @@ package analyse_en_programmeerproject.groep5.breakout.controller.login;
 
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.MenuTopPanel;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -45,6 +46,9 @@ public class LoginController implements ActionListener {
             menuTopPanel.setLoggedIn(true);
             menuTopPanel.addComponents();
             menuTopPanel.setComponents(DatabaseInstance.fillUsers().get(checkUsername()).getFirstname());
+        } else {
+            menuTopPanel.getLoginPanel().getUsernameErrorLabel().setVisible(true);
+            menuTopPanel.getLoginPanel().getPasswordErrorLabel().setVisible(true);
         }
     }
 }
