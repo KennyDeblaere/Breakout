@@ -30,8 +30,6 @@ public class GamePanel extends JPanel {
         setFocusable(true);
         setRequestFocusEnabled(true);
         requestFocus();
-        if(requestFocus(true))
-            System.out.println("true");
 
     }
     public void paint(Graphics g){
@@ -56,7 +54,8 @@ public class GamePanel extends JPanel {
     public class AC extends KeyAdapter {
         @Override
         public void keyPressed(KeyEvent e) {
-            System.out.println("you pressed a key");
+            b.getP1().keyPressed(e);
+            b.getP2().keyPressed(e);
         }
 
         @Override

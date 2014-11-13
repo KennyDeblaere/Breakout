@@ -36,6 +36,7 @@ public class RegisterController implements ActionListener {
         setLastname(c.getRegistration().getLastname());
         setEmail(c.getRegistration().getEmail());
         setDateOfBirth(c.getRegistration().getDateOfBirth());
+        setSex(c.getRegistration().getSexPanel());
     }
 
     public void setUsername(JTextField username) {
@@ -91,9 +92,9 @@ public class RegisterController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         createComponents();
-        /*new Register(getUsername().getText(),getPassword().getText(),getRepeatedPassword().getText(),
+        new Register(getUsername().getText(),getPassword().getText(),getRepeatedPassword().getText(),
                 getFirstname().getText(),getLastname().getText(),getEmail().getText(), new Date(Integer.parseInt(dateOfBirth.getYear().getText()),
-                Integer.parseInt(dateOfBirth.getMonth().getText()), Integer.parseInt(dateOfBirth.getDay().getText())),sex.getMale().isSelected());*/
+                Integer.parseInt(dateOfBirth.getMonth().getText()), Integer.parseInt(dateOfBirth.getDay().getText())),sex.getMale().isSelected());
         c.addMainComponents();
     }
 }

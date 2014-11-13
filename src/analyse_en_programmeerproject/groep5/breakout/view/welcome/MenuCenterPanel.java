@@ -2,6 +2,8 @@ package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.*;
 import java.util.List;
 
@@ -22,6 +24,7 @@ public class MenuCenterPanel extends JPanel {
         createComponents();
         setComponents();
         addComponents();
+        addListeners();
     }
 
     private void createComponents() {
@@ -47,5 +50,16 @@ public class MenuCenterPanel extends JPanel {
         for (JButton btn : buttons) {
             add(btn);
         }
+    }
+
+    private void addListeners(){
+        buttonSP.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                buttonSP.setBackground(Color.WHITE);
+                revalidate();
+                repaint();
+            }
+        });
     }
 }

@@ -1,5 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.model;
 
+import analyse_en_programmeerproject.groep5.breakout.data.Database;
+
 import java.util.Date;
 
 
@@ -78,7 +80,7 @@ public class Register {
     }
 
     public void register(){
-        //DatabaseInstance.insertUser(new User(getUsername(), getPassword(), getFirstname(), getLastname(), getEmail(), 0, getDateOfBirth(), isMan()));
+        Database.DatabaseInstance.insertUser(new User(getUsername(), getPassword(), getFirstname(), getLastname(), getEmail(), 0, getDateOfBirth(), isMan()));
         System.out.println(isMan());
     }
 }

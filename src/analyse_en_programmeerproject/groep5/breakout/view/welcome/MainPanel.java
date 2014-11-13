@@ -18,7 +18,6 @@ public class MainPanel extends JPanel {
 
     public MainPanel() {
         setLayout(new BorderLayout(200,200));
-
         createComponents();
         addComponents();
     }
@@ -29,7 +28,8 @@ public class MainPanel extends JPanel {
     }
 
     private void addComponents() {
-        add(topPanel, BorderLayout.NORTH);
         add(centerPanel, BorderLayout.CENTER);
+        add(topPanel, BorderLayout.NORTH);
+
     }
 }
