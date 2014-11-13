@@ -1,5 +1,6 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
+import analyse_en_programmeerproject.groep5.breakout.controller.game.StartGameController;
 import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
 
 import javax.swing.*;
@@ -14,12 +15,15 @@ public class DifficultyPanel extends JPanel {
     private JRadioButton radioEasy, radioMedium, radioHard;
     private JButton playButton;
     private JLabel textLabel;
+    private CenterPanel c;
 
-    public DifficultyPanel() {
+    public DifficultyPanel(CenterPanel centerPanel) {
+        c = centerPanel;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         createComponents();
         addComponents();
+        addActionListeners();
     }
 
     private void createComponents() {
@@ -34,6 +38,9 @@ public class DifficultyPanel extends JPanel {
         buttonGroup.add(radioEasy);
     }
 
+    private void addActionListeners(){
+        playButton.addActionListener(new StartGameController(c));
+    }
 
     private void addComponents() {
         add(textLabel);

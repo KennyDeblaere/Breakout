@@ -11,9 +11,9 @@ import java.awt.*;
  */
 public class WelcomePanel extends JPanel {
 
-    public WelcomePanel(){
+    public WelcomePanel(CenterPanel centerPanel){
         setLayout(new GridLayout(1,2));
         add(new MenuCenterPanel());
-        add(new DifficultyPanel());
+        add(new DifficultyPanel(centerPanel));
     }
 }
