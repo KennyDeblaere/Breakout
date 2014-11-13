@@ -3,6 +3,7 @@ package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 import analyse_en_programmeerproject.groep5.breakout.controller.menuTop.LoginButtonController;
 import analyse_en_programmeerproject.groep5.breakout.controller.menuTop.LogoutButtonController;
 import analyse_en_programmeerproject.groep5.breakout.controller.menuTop.RegisterButtonController;
+import analyse_en_programmeerproject.groep5.breakout.view.login.LoginPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +20,7 @@ public class MenuTopPanel extends JPanel {
     private JLabel textLabel;
     private JButton loginButton, logoutButton, registerButton;
     private CenterPanel centerPanel;
+    private LoginPanel loginPanel;
 
     public MenuTopPanel(CenterPanel centerPanel) {
         setLoggedIn(false);
@@ -35,6 +37,7 @@ public class MenuTopPanel extends JPanel {
         loginButton = new JButton("Aanmelden");
         logoutButton = new JButton("Afmelden");
         registerButton = new JButton("Registreren");
+        loginPanel = new LoginPanel(this);
 
 
     }
@@ -48,7 +51,7 @@ public class MenuTopPanel extends JPanel {
 
     public void setComponents(String username) {
         if (loggedIn) {
-            textLabel.setText("Welkom " + username);
+            textLabel.setText("Welkom, " + username);
         } else {
             textLabel.setText("Je speelt nu als gast");
         }
@@ -61,10 +64,27 @@ public class MenuTopPanel extends JPanel {
         this.loggedIn = loggedIn;
     }
 
-    private void addComponents() {
+    public void addComponents() {
+        remove(loginPanel);
         add(textLabel);
-            add(logoutButton);
-            add(loginButton);
-            add(registerButton);
+        add(logoutButton);
+        add(loginButton);
+        add(registerButton);
+        revalidate();
+        repaint();
+    }
+
+    public LoginPanel getLoginPanel() {
+        return loginPanel;
+    }
+
+    public void addLoginComponents(){
+        remove(textLabel);
+        remove(loginButton);
+        remove(logoutButton);
+        remove(registerButton);
+        add(loginPanel);
+        revalidate();
+        repaint();
     }
 }
