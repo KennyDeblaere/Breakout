@@ -111,7 +111,7 @@ public class Paddle implements Runnable {
         try{
             while (true){
                 move();
-                Thread.sleep(5);
+                Thread.sleep(8);
             }
         }catch (Exception e){
             System.err.println(e.getMessage());

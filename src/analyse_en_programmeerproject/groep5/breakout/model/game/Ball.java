@@ -20,7 +20,7 @@ public class Ball implements Runnable {
         startRandomY();
 
         //Creeer ball
-        ball = new Rectangle(getX(),getY(),15,15);
+        ball = new Rectangle(getX(),getY(),7,7);
 
         p1 = new Paddle(140,275,1);
         p2 = new Paddle(140,15, 2);
@@ -131,7 +131,7 @@ public class Ball implements Runnable {
         try{
             while(true){
                 move();
-                Thread.sleep(4);
+                Thread.sleep(7);
             }
         } catch (Exception e){
             System.err.println(e.getMessage());
