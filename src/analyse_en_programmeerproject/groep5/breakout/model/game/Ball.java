@@ -22,8 +22,8 @@ public class Ball implements Runnable {
         //Creeer ball
         ball = new Rectangle(getX(),getY(),15,15);
 
-        p1 = new Paddle(140,275,2);
-        p2 = new Paddle(140,15, 1);
+        p1 = new Paddle(140,275,1);
+        p2 = new Paddle(140,15, 2);
 
 
         setP1Score(0);
@@ -96,7 +96,17 @@ public class Ball implements Runnable {
 
     }
 
+
+    public void collission(){
+        if(ball.intersects(p1.getPaddle())){
+            setyDirection(-1);
+        }
+        if(ball.intersects(p2.getPaddle()))
+            setyDirection(+1);
+    }
+
     public void move(){
+        collission();
         ball.x += xDirection;
         ball.y += yDirection;
 

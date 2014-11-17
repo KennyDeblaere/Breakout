@@ -30,6 +30,9 @@ public class Paddle implements Runnable {
     public void setxDirection(int xDirection) {
         this.xDirection = xDirection;
     }
+    public Rectangle getPaddle() {
+        return paddle;
+    }
 
     public void keyPressed(KeyEvent e) {
         switch (id) {
