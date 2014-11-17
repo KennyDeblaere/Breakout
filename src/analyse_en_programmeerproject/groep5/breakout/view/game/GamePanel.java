@@ -45,6 +45,7 @@ public class GamePanel extends JPanel {
         b.draw(g);
         b.getP1().draw(g);
         b.getP2().draw(g);
+        b.getBlockCreator().draw(g);
         g.setColor(Color.black);
         g.drawString("" + b.getP1Score(), 15, 20);
         g.drawString("" + b.getP2Score(),15,200);

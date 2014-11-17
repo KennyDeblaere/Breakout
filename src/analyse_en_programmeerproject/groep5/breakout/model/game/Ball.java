@@ -10,6 +10,7 @@ public class Ball implements Runnable {
     private int x, y, xDirection, yDirection, p1Score, p2Score;
     private Rectangle ball;
     private Paddle p1, p2;
+    private BlockCreator blockCreator;
 
     public Ball(int x, int y){
         setX(x);
@@ -24,6 +25,8 @@ public class Ball implements Runnable {
 
         p1 = new Paddle(140,275,1);
         p2 = new Paddle(140,15, 2);
+
+        blockCreator = new BlockCreator();
 
 
         setP1Score(0);
@@ -83,6 +86,11 @@ public class Ball implements Runnable {
     public int getP1Score() {
         return p1Score;
     }
+
+    public BlockCreator getBlockCreator() {
+        return blockCreator;
+    }
+
     public Paddle getP1() {
         return p1;
     }
@@ -103,6 +111,11 @@ public class Ball implements Runnable {
         }
         if(ball.intersects(p2.getPaddle()))
             setyDirection(+1);
+        if(ball.intersects(blockCreator.getBlock())) {
+            p1Score = p1Score + 10;
+            setyDirection(1);
+            blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft()-1);
+        }
     }
 
     public void move(){
