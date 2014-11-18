@@ -9,14 +9,22 @@ import java.awt.*;
  */
 public class BlockCreator {
     private Rectangle block;
-    private int numberOfHitsLeft;
+    private int x, y, numberOfHitsLeft;
 
-    public BlockCreator(int numberOfHits){
-        //block = new Rectangle(Database.DatabaseInstance.fillBlocks().get(0).getHorizontalLength(), Database.DatabaseInstance.fillBlocks().get(0).getVerticalLength(), 100,100);
-        block = new Rectangle(100,100,30,15);
+
+    public BlockCreator(int x, int y, int numberOfHits){
+        block = new Rectangle(x, y, Database.DatabaseInstance.fillBlocks().get(0).getHorizontalLength(),Database.DatabaseInstance.fillBlocks().get(0).getVerticalLength());
+        this.x = x;
+        this.y = y;
         numberOfHitsLeft = numberOfHits;
     }
 
+    public int getX() {
+        return x;
+    }
+    public int getY() {
+        return y;
+    }
     public Rectangle getBlock() {
         return block;
     }
