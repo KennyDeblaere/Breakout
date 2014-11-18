@@ -3,7 +3,6 @@ package analyse_en_programmeerproject.groep5.breakout.controller.login;
 
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.MenuTopPanel;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -23,7 +22,7 @@ public class LoginController implements ActionListener {
     private int checkUsername(){
         int usernameIndex = -1;
         for(int i=0; i< DatabaseInstance.fillUsers().size();i++)
-            if(DatabaseInstance.fillUsers().get(i).getUsername().equals(username))
+            if(DatabaseInstance.fillUsers().get(i).getUsername().toLowerCase().equals(username))
                 usernameIndex = i;
         return usernameIndex;
     }
@@ -41,14 +40,13 @@ public class LoginController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        username = menuTopPanel.getLoginPanel().getUsername().getText();
+        username = menuTopPanel.getLoginPanel().getUsername().getText().toLowerCase();
         if(login()){
             menuTopPanel.setLoggedIn(true);
             menuTopPanel.addComponents();
             menuTopPanel.setComponents(DatabaseInstance.fillUsers().get(checkUsername()).getFirstname());
         } else {
-            menuTopPanel.getLoginPanel().getUsernameErrorLabel().setVisible(true);
-            menuTopPanel.getLoginPanel().getPasswordErrorLabel().setVisible(true);
+            menuTopPanel.getLoginPanel().getErrorLabel().setVisible(true);
         }
     }
 }

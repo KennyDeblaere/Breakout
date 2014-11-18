@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 /**
- * Created by Kenny on 12/11/2014.
+ * Created by Kenny Deblaere.
  */
 public class Paddle implements Runnable {
     private int x, y, xDirection, id;
@@ -82,20 +82,8 @@ public class Paddle implements Runnable {
         }
     }
 
-    public void draw(Graphics g){
-        switch (id) {
-            default:
-                System.out.println("Please enter a valid id in paddleConstructor");
-                break;
-            case 1:
-                g.setColor(Color.YELLOW);
-                g.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
-                break;
-            case 2:
-                g.setColor(Color.RED);
-                g.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
-                break;
-        }
+    public int getId() {
+        return id;
     }
 
     public void move(){

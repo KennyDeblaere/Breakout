@@ -17,15 +17,6 @@ public class BlockCreator {
         numberOfHitsLeft = 1;
     }
 
-    public void draw(Graphics g){
-        g.setColor(Color.black);
-        g.fillRect(block.x, block.y, block.width, block.height);
-        if(numberOfHitsLeft == 0){
-            g.clearRect(0,0,block.width,block.height);
-        }
-
-    }
-
     public Rectangle getBlock() {
         return block;
     }

@@ -87,6 +87,10 @@ public class Ball implements Runnable {
         return p1Score;
     }
 
+    public Rectangle getBall() {
+        return ball;
+    }
+
     public BlockCreator getBlockCreator() {
         return blockCreator;
     }
@@ -98,12 +102,6 @@ public class Ball implements Runnable {
         return p2;
     }
 
-    public void draw(Graphics g){
-        g.setColor(Color.BLUE);
-        g.fillRect(ball.x,ball.y,ball.width,ball.height);
-
-    }
-
 
     public void collission(){
         if(ball.intersects(p1.getPaddle())){
@@ -113,7 +111,8 @@ public class Ball implements Runnable {
             setyDirection(+1);
         if(ball.intersects(blockCreator.getBlock())) {
             p1Score = p1Score + 10;
-            setyDirection(1);
+            setyDirection(getyDirection() * -1);
+            setxDirection(getxDirection() * -1 );
             blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft()-1);
         }
     }

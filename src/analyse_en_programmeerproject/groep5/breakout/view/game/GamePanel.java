@@ -2,6 +2,7 @@ package analyse_en_programmeerproject.groep5.breakout.view.game;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.game.MovePanelController;
 import analyse_en_programmeerproject.groep5.breakout.model.game.Ball;
+import analyse_en_programmeerproject.groep5.breakout.model.game.Paddle;
 
 import javax.swing.*;
 import java.awt.*;
@@ -41,11 +42,31 @@ public class GamePanel extends JPanel {
 
     }
 
+    public void drawPaddle(Graphics g, int id, Rectangle paddle){
+        switch (id) {
+            default:
+                System.out.println("Please enter a valid id in paddleConstructor");
+                break;
+            case 1:
+                g.setColor(Color.YELLOW);
+                g.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
+                break;
+            case 2:
+                g.setColor(Color.RED);
+                g.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
+                break;
+        }
+    }
+
     public void draw(Graphics g){
-        b.draw(g);
-        b.getP1().draw(g);
-        b.getP2().draw(g);
-        b.getBlockCreator().draw(g);
+        g.setColor(Color.BLUE);
+        g.fillRect(b.getBall().x,b.getBall().y,b.getBall().width,b.getBall().height);
+        drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
+        drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
+        g.setColor(Color.black);
+        if(b.getBlockCreator().getNumberOfHitsLeft() != 0){
+            g.fillRect(b.getBlockCreator().getBlock().x, b.getBlockCreator().getBlock().y, b.getBlockCreator().getBlock().width, b.getBlockCreator().getBlock().height);
+        }
         g.setColor(Color.black);
         g.drawString("" + b.getP1Score(), 15, 20);
         g.drawString("" + b.getP2Score(),15,200);
