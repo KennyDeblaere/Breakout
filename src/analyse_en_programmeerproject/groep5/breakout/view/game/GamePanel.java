@@ -64,7 +64,7 @@ public class GamePanel extends JPanel {
         drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
         drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
         g.setColor(Color.black);
-        if(b.getBlockCreator().getNumberOfHitsLeft() != 0){
+        if(b.getBlockCreator().getNumberOfHitsLeft() > 0){
             g.fillRect(b.getBlockCreator().getBlock().x, b.getBlockCreator().getBlock().y, b.getBlockCreator().getBlock().width, b.getBlockCreator().getBlock().height);
         }
         g.setColor(Color.black);

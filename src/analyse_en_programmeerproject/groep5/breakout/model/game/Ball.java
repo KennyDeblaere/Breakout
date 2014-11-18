@@ -26,7 +26,7 @@ public class Ball implements Runnable {
         p1 = new Paddle(140,275,1);
         p2 = new Paddle(140,15, 2);
 
-        blockCreator = new BlockCreator();
+        blockCreator = new BlockCreator(1);
 
 
         setP1Score(0);
@@ -103,7 +103,7 @@ public class Ball implements Runnable {
     }
 
 
-    public void collission(){
+    public void collision(){
         if(ball.intersects(p1.getPaddle())){
             setyDirection(-1);
         }
@@ -118,11 +118,10 @@ public class Ball implements Runnable {
     }
 
     public void move(){
-        collission();
+        collision();
         ball.x += xDirection;
         ball.y += yDirection;
 
-        //Bal laten botsen
         if(ball.x <= 0){
             setxDirection(+1);
         }

@@ -11,10 +11,10 @@ public class BlockCreator {
     private Rectangle block;
     private int numberOfHitsLeft;
 
-    public BlockCreator(){
+    public BlockCreator(int numberOfHits){
         //block = new Rectangle(Database.DatabaseInstance.fillBlocks().get(0).getHorizontalLength(), Database.DatabaseInstance.fillBlocks().get(0).getVerticalLength(), 100,100);
         block = new Rectangle(100,100,30,15);
-        numberOfHitsLeft = 1;
+        numberOfHitsLeft = numberOfHits;
     }
 
     public Rectangle getBlock() {
