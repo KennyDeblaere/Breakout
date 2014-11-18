@@ -23,8 +23,8 @@ public class Ball implements Runnable {
         //Creeer ball
         ball = new Rectangle(getX(),getY(),7,7);
 
-        p1 = new Paddle(140,275,1);
-        p2 = new Paddle(140,15, 2);
+        p1 = new Paddle(475,700,1);
+        p2 = new Paddle(475,15, 2);
 
         blockCreator = new BlockCreator(1);
 
@@ -122,17 +122,17 @@ public class Ball implements Runnable {
         ball.x += xDirection;
         ball.y += yDirection;
 
-        if(ball.x <= 0){
+        if(ball.x <= 7){
             setxDirection(+1);
         }
-        if(ball.x >= 385){
+        if(ball.x >= 993){
             setxDirection(-1);
         }
         if(ball.y <= 0){
             setyDirection(+1);
             p2Score++;
         }
-        if(ball.y >= 285){
+        if(ball.y >= 750){
             setyDirection(-1);
             p1Score++;
         }

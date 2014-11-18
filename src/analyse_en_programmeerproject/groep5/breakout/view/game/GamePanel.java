@@ -19,8 +19,9 @@ public class GamePanel extends JPanel {
     private Ball b;
 
     public GamePanel(){
-        b = new Ball(193,143);
-        setPreferredSize(new Dimension(500,400));
+        b = new Ball(475,700);
+        setPreferredSize(new Dimension(1000,1000));
+        setBackground(Color.WHITE);
         Thread ball = new Thread(b);
         ball.start();
         Thread p1 = new Thread(b.getP1());
@@ -48,11 +49,11 @@ public class GamePanel extends JPanel {
                 System.out.println("Please enter a valid id in paddleConstructor");
                 break;
             case 1:
-                g.setColor(Color.YELLOW);
+                g.setColor(Color.BLACK);
                 g.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
                 break;
             case 2:
-                g.setColor(Color.RED);
+                g.setColor(Color.BLACK);
                 g.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
                 break;
         }
@@ -63,7 +64,7 @@ public class GamePanel extends JPanel {
         g.fillRect(b.getBall().x,b.getBall().y,b.getBall().width,b.getBall().height);
         drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
         drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
-        g.setColor(Color.black);
+        g.setColor(Color.YELLOW);
         if(b.getBlockCreator().getNumberOfHitsLeft() > 0){
             g.fillRect(b.getBlockCreator().getBlock().x, b.getBlockCreator().getBlock().y, b.getBlockCreator().getBlock().width, b.getBlockCreator().getBlock().height);
         }

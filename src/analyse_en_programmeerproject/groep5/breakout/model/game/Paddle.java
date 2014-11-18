@@ -88,10 +88,10 @@ public class Paddle implements Runnable {
 
     public void move(){
         paddle.x += xDirection;
-        if(paddle.x <= 50)
-            paddle.x = 50;
-        if(paddle.x >= 450)
-            paddle.x = 450;
+        if(paddle.x <= 0)
+            paddle.x = 0;
+        if(paddle.x >= 950)
+            paddle.x = 950;
     }
 
     @Override
