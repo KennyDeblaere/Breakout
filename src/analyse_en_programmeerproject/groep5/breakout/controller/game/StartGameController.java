@@ -1,5 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.controller.game;
 
+import analyse_en_programmeerproject.groep5.breakout.data.Database;
+import analyse_en_programmeerproject.groep5.breakout.model.Gamemode;
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 
 import java.awt.event.ActionEvent;
@@ -16,6 +18,7 @@ public class StartGameController implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        //Database.DatabaseInstance.insertGameMode(new Gamemode());
         c.addGamePanel();
     }
 }

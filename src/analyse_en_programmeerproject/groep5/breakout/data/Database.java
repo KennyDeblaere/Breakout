@@ -6,6 +6,7 @@ import java.awt.*;
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -137,6 +138,55 @@ public class Database {
             preparedStatement.setDate(5, new Date(user.getDateOfBirth().getTime()));
             preparedStatement.setBoolean(6, user.isMan());
             preparedStatement.setString(7, user.getEmail());
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public void insertGameMode(Gamemode gamemode){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+
+            String query = "INSERT INTO `gamemode` (`single/multi`, `difficulty`) " +
+                    "VALUES (?, ?)";
+            PreparedStatement preparedStatement = getConnection().prepareStatement(query);
+            preparedStatement.setBoolean(1, gamemode.isSingleplayer());
+            preparedStatement.setInt(2,gamemode.getDifficulty());
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void insertScore(Score score){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+
+            String query = "INSERT INTO `score` (`score`, `date`, `gamemodeid`) VALUES ('?', '?', '?')";
+            PreparedStatement preparedStatement = getConnection().prepareStatement(query);
+            preparedStatement.setInt(1, score.getScore());
+            preparedStatement.setDate(2, (Date) score.getDate());
+            preparedStatement.setInt(3, score.getGamemodeid());
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void insertScoreUsers(int userid, int scoreid){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+
+            String query = "INSERT INTO `breakout`.`score_user` (`userid`, `scoreid`) VALUES ('?', '?')";
+            PreparedStatement preparedStatement = getConnection().prepareStatement(query);
+            preparedStatement.setInt(1, userid);
+            preparedStatement.setInt(2, scoreid);
+
             preparedStatement.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException e) {

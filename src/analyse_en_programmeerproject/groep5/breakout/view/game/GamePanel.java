@@ -1,6 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.view.game;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.game.MovePanelController;
+import analyse_en_programmeerproject.groep5.breakout.data.Database;
 import analyse_en_programmeerproject.groep5.breakout.model.game.Ball;
 import analyse_en_programmeerproject.groep5.breakout.model.game.Paddle;
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
@@ -20,7 +21,11 @@ public class GamePanel extends JPanel {
     private Ball b;
     private CenterPanel centerPanel;
 
+    private boolean singleplayer;
+    private int difficulty;
+
     public GamePanel(CenterPanel c){
+
         b = new Ball(false, 0);
         centerPanel = c;
         setPreferredSize(new Dimension(1000,1000));
@@ -40,6 +45,9 @@ public class GamePanel extends JPanel {
         requestFocus();
 
     }
+
+
+
     public void paint(Graphics g){
         dbImage = createImage(getWidth(),getHeight());
         dbGraphics = dbImage.getGraphics();
@@ -63,7 +71,6 @@ public class GamePanel extends JPanel {
                 break;
         }
     }
-
     public void draw(Graphics g){
         if(b.getNumberOfLifes() != 0) {
             g.setColor(Color.BLUE);
