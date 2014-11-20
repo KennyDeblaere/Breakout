@@ -27,7 +27,7 @@ public class CenterPanel extends JPanel {
     public void createComponents() {
         welcomePanel = new WelcomePanel(this);
         registration = new RegistrationPanel(this);
-        game = new GamePanel();
+        game = new GamePanel(this);
     }
 
     public void addMainComponents() {

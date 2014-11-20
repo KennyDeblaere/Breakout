@@ -3,6 +3,7 @@ package analyse_en_programmeerproject.groep5.breakout.view.game;
 import analyse_en_programmeerproject.groep5.breakout.controller.game.MovePanelController;
 import analyse_en_programmeerproject.groep5.breakout.model.game.Ball;
 import analyse_en_programmeerproject.groep5.breakout.model.game.Paddle;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,17 +18,21 @@ public class GamePanel extends JPanel {
     private Graphics dbGraphics;
 
     private Ball b;
+    private CenterPanel centerPanel;
 
-    public GamePanel(){
-        b = new Ball(475,700);
+    public GamePanel(CenterPanel c){
+        b = new Ball(false, 0);
+        centerPanel = c;
         setPreferredSize(new Dimension(1000,1000));
         setBackground(Color.WHITE);
         Thread ball = new Thread(b);
         ball.start();
         Thread p1 = new Thread(b.getP1());
-        Thread p2 = new Thread(b.getP2());
         p1.start();
-        p2.start();
+        if(!b.isSingleplayer()){
+            Thread p2 = new Thread(b.getP2());
+            p2.start();
+        }
         addKeyListener(new MovePanelController(b));
 
         setFocusable(true);
@@ -60,17 +65,23 @@ public class GamePanel extends JPanel {
     }
 
     public void draw(Graphics g){
-        g.setColor(Color.BLUE);
-        g.fillRect(b.getBall().x,b.getBall().y,b.getBall().width,b.getBall().height);
-        drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
-        drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
+        if(b.getNumberOfLifes() != 0) {
+            g.setColor(Color.BLUE);
+            g.fillRect(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
+            drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
+            if (!b.isSingleplayer()) {
+                drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
+            }
+        }
         g.setColor(Color.YELLOW);
         if(b.getBlockCreator().getNumberOfHitsLeft() > 0){
             g.fillRect(b.getBlockCreator().getBlock().x, b.getBlockCreator().getBlock().y, b.getBlockCreator().getBlock().width, b.getBlockCreator().getBlock().height);
+        } else{
+            //centerPanel.addMainComponents();
         }
-        g.setColor(Color.black);
-        g.drawString("" + b.getP1Score(), 15, 20);
-        g.drawString("" + b.getP2Score(),15,200);
+        //g.setColor(Color.black);
+        //g.drawString("" + b.getP1Score(), 15, 20);
+        //g.drawString("" + b.getP2Score(),15,200);
         repaint();
     }
 }

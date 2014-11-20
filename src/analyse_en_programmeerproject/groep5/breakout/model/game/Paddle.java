@@ -18,6 +18,14 @@ public class Paddle implements Runnable {
 
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     public void setId(int id) {
         this.id = id;
     }

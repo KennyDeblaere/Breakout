@@ -7,13 +7,23 @@ import java.util.Random;
  * Created by Kenny on 12/11/2014.
  */
 public class Ball implements Runnable {
-    private int x, y, xDirection, yDirection, p1Score, p2Score;
+    private int x, y, xDirection, yDirection, p1Score, p2Score, numberOfLifes, difficulty;
     private Rectangle ball;
     private Paddle p1, p2;
     private BlockCreator blockCreator;
-    public Ball(int x, int y){
-        setX(x);
-        setY(y);
+    private boolean singleplayer;
+    public Ball(boolean singleplayer, int difficulty){
+        p1 = new Paddle(475,700,1);
+        p2 = new Paddle(475,15, 2);
+
+        blockCreator = new BlockCreator(0,100,1);
+
+        setX(p1.getX() + (p1.getPaddle().width/2));
+        setY(p1.getY());
+
+        this.singleplayer = singleplayer;
+        this.difficulty = difficulty;
+        numberOfLifes  = 3;
 
         //Ball random laten starten
         startRandomX();
@@ -21,12 +31,6 @@ public class Ball implements Runnable {
 
         //Creeer ball
         ball = new Rectangle(getX(),getY(),7,7);
-
-        p1 = new Paddle(475,700,1);
-        p2 = new Paddle(475,15, 2);
-
-        blockCreator = new BlockCreator(0,100,1);
-
 
         setP1Score(0);
         setP2Score(0);
@@ -86,6 +90,10 @@ public class Ball implements Runnable {
         return p1Score;
     }
 
+    public boolean isSingleplayer() {
+        return singleplayer;
+    }
+
     public Rectangle getBall() {
         return ball;
     }
@@ -100,7 +108,9 @@ public class Ball implements Runnable {
     public Paddle getP2() {
         return p2;
     }
-
+    public int getNumberOfLifes() {
+        return numberOfLifes;
+    }
 
     public void collision(){
         if(ball.intersects(p1.getPaddle())){
@@ -128,20 +138,34 @@ public class Ball implements Runnable {
             setxDirection(-1);
         }
         if(ball.y <= 0){
-            setyDirection(+1);
-            p2Score++;
+            if(singleplayer)
+                setyDirection(+1);
+            else{
+                setX(p2.getX() + (p1.getPaddle().width/2));
+                setY(p2.getY());
+                ball = new Rectangle(getX(),getY(),7,7);
+                numberOfLifes--;
+                System.out.println(numberOfLifes);
+                //p2 = new Paddle(475,15, 2);
+            }
         }
         if(ball.y >= 750){
-            setyDirection(-1);
-            p1Score++;
+            setX(p1.getX() + (p1.getPaddle().width/2));
+            setY(p1.getY());
+            ball = new Rectangle(getX(),getY(),7,7);
+            numberOfLifes--;
+            System.out.println(numberOfLifes);
+            //p1 =  new Paddle(475,700,1);
         }
     }
     @Override
     public void run() {
         try{
             while(true){
-                move();
-                Thread.sleep(7);
+                if(numberOfLifes != 0) {
+                    move();
+                    Thread.sleep(7);
+                }
             }
         } catch (Exception e){
             System.err.println(e.getMessage());
