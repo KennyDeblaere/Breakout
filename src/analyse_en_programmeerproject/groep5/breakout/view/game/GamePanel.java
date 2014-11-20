@@ -72,12 +72,15 @@ public class GamePanel extends JPanel {
             if (!b.isSingleplayer()) {
                 drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
             }
+            g.setColor(Color.YELLOW);
+            if(b.getBlockCreator().getNumberOfHitsLeft() > 0){
+                g.fillRect(b.getBlockCreator().getBlock().x, b.getBlockCreator().getBlock().y, b.getBlockCreator().getBlock().width, b.getBlockCreator().getBlock().height);
+            }
         }
-        g.setColor(Color.YELLOW);
-        if(b.getBlockCreator().getNumberOfHitsLeft() > 0){
-            g.fillRect(b.getBlockCreator().getBlock().x, b.getBlockCreator().getBlock().y, b.getBlockCreator().getBlock().width, b.getBlockCreator().getBlock().height);
-        } else{
-            //centerPanel.addMainComponents();
+         else{
+            //g.setColor(Color.black);
+            //g.drawString("GAME OVER", 15,500);
+            centerPanel.addMainComponents();
         }
         //g.setColor(Color.black);
         //g.drawString("" + b.getP1Score(), 15, 20);
