@@ -7,7 +7,6 @@ import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
 
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
@@ -25,8 +24,8 @@ public class RegisterController implements ActionListener {
     private SexPanel sex;
     private JPasswordField password, repeatedPassword;
 
-    public RegisterController(PanelCenter centerPanel){
-        c = centerPanel;
+    public RegisterController(PanelCenter panelCenter){
+        c = panelCenter;
         }
 
     private void createComponents(){

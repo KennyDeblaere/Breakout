@@ -14,8 +14,8 @@ import java.awt.event.ActionListener;
 
 public class CancelController implements ActionListener {
     private PanelCenter c;
-    public  CancelController(PanelCenter centerPanel){
-        c = centerPanel;
+    public  CancelController(PanelCenter panelCenter){
+        c = panelCenter;
     }
 
     @Override

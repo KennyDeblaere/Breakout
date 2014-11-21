@@ -10,13 +10,12 @@ import java.awt.*;
 /**
  * Created by Kenny on 12/11/2014.
  */
-
 public class GamePanel extends JPanel {
     private Image dbImage;
     private Graphics dbGraphics;
 
     private Ball b;
-    private PanelCenter centerPanel;
+    private PanelCenter panelCenter;
 
     private boolean singleplayer;
     private int difficulty;
@@ -24,7 +23,7 @@ public class GamePanel extends JPanel {
     public GamePanel(PanelCenter c){
 
         b = new Ball(false, 0);
-        centerPanel = c;
+        panelCenter = c;
         setPreferredSize(new Dimension(1000,1000));
         setBackground(Color.WHITE);
         Thread ball = new Thread(b);
@@ -81,10 +80,10 @@ public class GamePanel extends JPanel {
                 g.fillRect(b.getBlockCreator().getBlock().x, b.getBlockCreator().getBlock().y, b.getBlockCreator().getBlock().width, b.getBlockCreator().getBlock().height);
             }
         }
-         else{
+        else{
             //g.setColor(Color.black);
             //g.drawString("GAME OVER", 15,500);
-            centerPanel.addMainComponents();
+            panelCenter.addMainComponents();
         }
         //g.setColor(Color.black);
         //g.drawString("" + b.getP1Score(), 15, 20);

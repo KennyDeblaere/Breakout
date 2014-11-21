@@ -19,7 +19,7 @@ public class RegistrationPanel extends JPanel {
     private JPasswordField password, repeatedpassword;
     private SexPanel sexPanel;
     private DatePanel dateOfBirth;
-    private PanelCenter centerPanel;
+    private PanelCenter panelCenter;
     private JLabel usernamelbl, firstnamelbl, lastnamelbl, emaillbl, passwordlbl, repeatedpasswordlbl, sexlbl, dateOfBirthlbl;
     private JButton cancel, register;
 
@@ -71,8 +71,8 @@ public class RegistrationPanel extends JPanel {
     }
 
     private void addActionListeners(){
-        register.addActionListener(new RegisterController(centerPanel));
-        cancel.addActionListener(new CancelController(centerPanel));
+        register.addActionListener(new RegisterController(panelCenter));
+        cancel.addActionListener(new CancelController(panelCenter));
     }
 
     public JTextField getUsername() {
@@ -101,7 +101,7 @@ public class RegistrationPanel extends JPanel {
     }
 
     public RegistrationPanel(PanelCenter c){
-        this.centerPanel = c;
+        this.panelCenter = c;
         setLayout(new GridLayout(9,2,5,5));
         //setPreferredSize(new Dimension(500,300));
         createComponents();

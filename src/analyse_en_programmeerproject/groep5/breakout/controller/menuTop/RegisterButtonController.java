@@ -14,8 +14,8 @@ import java.awt.event.ActionListener;
  */
 public class RegisterButtonController implements ActionListener {
     private PanelCenter c;
-    public RegisterButtonController(PanelCenter centerPanel) {
-        c = centerPanel;
+    public RegisterButtonController(PanelCenter panelCenter) {
+        c = panelCenter;
     }
 
 
