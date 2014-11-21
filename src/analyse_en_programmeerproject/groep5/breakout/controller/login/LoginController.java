@@ -1,7 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.controller.login;
 
 
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.MenuTopPanel;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelLogin;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,9 +13,9 @@ import static analyse_en_programmeerproject.groep5.breakout.data.Database.Databa
  */
 public class LoginController implements ActionListener {
     private String username, password;
-    private MenuTopPanel menuTopPanel;
+    private PanelLogin menuTopPanel;
 
-    public LoginController(MenuTopPanel topPanel){
+    public LoginController(PanelLogin topPanel){
         this.menuTopPanel = topPanel;
     }
 

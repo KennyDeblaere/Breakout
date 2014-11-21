@@ -1,6 +1,6 @@
 package analyse_en_programmeerproject.groep5.breakout.controller.menuTop;
 
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.MenuTopPanel;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelLogin;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,9 +12,9 @@ import java.awt.event.ActionListener;
  *      Benjamin Vansteelandt
  */
 public class LoginButtonController implements ActionListener {
-    private MenuTopPanel menuTopPanel;
+    private PanelLogin menuTopPanel;
 
-    public LoginButtonController(MenuTopPanel topPanel) {
+    public LoginButtonController(PanelLogin topPanel) {
         this.menuTopPanel = topPanel;
     }
 
