@@ -2,7 +2,7 @@ package analyse_en_programmeerproject.groep5.breakout.view.registration;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.registration.CancelController;
 import analyse_en_programmeerproject.groep5.breakout.controller.registration.RegisterController;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
 
 
 import javax.swing.*;
@@ -19,7 +19,7 @@ public class RegistrationPanel extends JPanel {
     private JPasswordField password, repeatedpassword;
     private SexPanel sexPanel;
     private DatePanel dateOfBirth;
-    private CenterPanel centerPanel;
+    private PanelCenter centerPanel;
     private JLabel usernamelbl, firstnamelbl, lastnamelbl, emaillbl, passwordlbl, repeatedpasswordlbl, sexlbl, dateOfBirthlbl;
     private JButton cancel, register;
 

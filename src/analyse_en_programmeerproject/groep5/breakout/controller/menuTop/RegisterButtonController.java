@@ -1,6 +1,5 @@
 package analyse_en_programmeerproject.groep5.breakout.controller.menuTop;
 
-import analyse_en_programmeerproject.groep5.breakout.view.registration.RegistrationPanel;
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 
 import java.awt.event.ActionEvent;

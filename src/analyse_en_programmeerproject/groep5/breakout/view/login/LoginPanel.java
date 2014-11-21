@@ -2,8 +2,8 @@ package analyse_en_programmeerproject.groep5.breakout.view.login;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.login.CancelController;
 import analyse_en_programmeerproject.groep5.breakout.controller.login.LoginController;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.MenuTopPanel;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelLogin;
 
 import javax.swing.*;
 
@@ -16,8 +16,8 @@ public class LoginPanel extends JPanel {
     private JLabel usernameLabel, passwordLabel, errorLabel;
     private JButton login, cancel;
 
-    private CenterPanel centerPanel;
-    private MenuTopPanel menuTopPanel;
+    private PanelCenter centerPanel;
+    private PanelLogin menuTopPanel;
 
     public JTextField getUsername() {
         return username;
@@ -29,7 +29,7 @@ public class LoginPanel extends JPanel {
         return errorLabel;
     }
 
-    public LoginPanel(MenuTopPanel topPanel){
+    public LoginPanel(PanelLogin topPanel){
         menuTopPanel = topPanel;
         createComponents();
         addComponents();

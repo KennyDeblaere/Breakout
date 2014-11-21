@@ -1,30 +1,27 @@
 package analyse_en_programmeerproject.groep5.breakout.view.game;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.game.MovePanelController;
-import analyse_en_programmeerproject.groep5.breakout.data.Database;
 import analyse_en_programmeerproject.groep5.breakout.model.game.Ball;
-import analyse_en_programmeerproject.groep5.breakout.model.game.Paddle;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 
 /**
  * Created by Kenny on 12/11/2014.
  */
+
 public class GamePanel extends JPanel {
     private Image dbImage;
     private Graphics dbGraphics;
 
     private Ball b;
-    private CenterPanel centerPanel;
+    private PanelCenter centerPanel;
 
     private boolean singleplayer;
     private int difficulty;
 
-    public GamePanel(CenterPanel c){
+    public GamePanel(PanelCenter c){
 
         b = new Ball(false, 0);
         centerPanel = c;
