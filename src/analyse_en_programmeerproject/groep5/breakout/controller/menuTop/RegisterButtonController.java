@@ -1,7 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.controller.menuTop;
 
 
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelContent;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,9 +13,9 @@ import java.awt.event.ActionListener;
  *      Benjamin Vansteelandt
  */
 public class RegisterButtonController implements ActionListener {
-    private CenterPanel c;
-    public RegisterButtonController(CenterPanel centerPanel) {
-        c = centerPanel;
+    private PanelContent c;
+    public RegisterButtonController(PanelContent panelContent) {
+        c = panelContent;
     }
 
 

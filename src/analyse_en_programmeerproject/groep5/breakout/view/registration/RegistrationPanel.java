@@ -2,7 +2,7 @@ package analyse_en_programmeerproject.groep5.breakout.view.registration;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.registration.CancelController;
 import analyse_en_programmeerproject.groep5.breakout.controller.registration.RegisterController;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelContent;
 
 
 import javax.swing.*;
@@ -19,7 +19,7 @@ public class RegistrationPanel extends JPanel {
     private JPasswordField password, repeatedpassword;
     private SexPanel sexPanel;
     private DatePanel dateOfBirth;
-    private CenterPanel centerPanel;
+    private PanelContent content;
     private JLabel usernamelbl, firstnamelbl, lastnamelbl, emaillbl, passwordlbl, repeatedpasswordlbl, sexlbl, dateOfBirthlbl;
     private JButton cancel, register;
 
@@ -71,8 +71,8 @@ public class RegistrationPanel extends JPanel {
     }
 
     private void addActionListeners(){
-        register.addActionListener(new RegisterController(centerPanel));
-        cancel.addActionListener(new CancelController(centerPanel));
+        register.addActionListener(new RegisterController(content));
+        cancel.addActionListener(new CancelController(content));
     }
 
     public JTextField getUsername() {
@@ -100,8 +100,8 @@ public class RegistrationPanel extends JPanel {
         return sexPanel;
     }
 
-    public RegistrationPanel(CenterPanel c){
-        this.centerPanel = c;
+    public RegistrationPanel(PanelContent c){
+        this.content = c;
         setLayout(new GridLayout(9,2,5,5));
         //setPreferredSize(new Dimension(500,300));
         createComponents();

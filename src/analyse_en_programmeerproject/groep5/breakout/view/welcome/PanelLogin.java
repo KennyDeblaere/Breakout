@@ -11,18 +11,18 @@ import java.awt.*;
  */
 public class PanelLogin extends JPanel{
     private JPanel LoginPanel;
-    private CenterPanel centerPanel;
+    private PanelContent panelContent;
     private Boolean loggedIn; //REMOVE WHEN USER-CLASS IS ADDED
     private JLabel textLabel;
     private JButton loginButton, logoutButton, registerButton;
     private LoginPanel loginPanel;
 
-    public PanelLogin() {
+    public PanelLogin(PanelContent c) {
+        panelContent = c;
         setLoggedIn(false);
-        setPreferredSize(new Dimension((int)getMaximumSize().getWidth(), 100));
+        setPreferredSize(new Dimension((int) getMaximumSize().getWidth(), 100));
         setLoggedIn(false);
-        this.centerPanel = centerPanel;
-        setLayout(new FlowLayout(FlowLayout.RIGHT));
+        //setLayout(new FlowLayout(FlowLayout.RIGHT));
         createComponents();
         setComponents("");
         addActionListeners();
@@ -42,7 +42,7 @@ public class PanelLogin extends JPanel{
 
     private void addActionListeners() {
         loginButton.addActionListener(new LoginButtonController(this));
-        registerButton.addActionListener(new RegisterButtonController(centerPanel));
+        registerButton.addActionListener(new RegisterButtonController(panelContent));
         logoutButton.addActionListener(new LogoutButtonController(this));
     }
 
@@ -63,7 +63,6 @@ public class PanelLogin extends JPanel{
     }
 
     public void addComponents() {
-        add(LoginPanel);
         remove(loginPanel);
         add(textLabel);
         add(logoutButton);

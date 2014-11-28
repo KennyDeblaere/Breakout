@@ -15,7 +15,7 @@ public class PanelCenter extends JPanel {
         super();
         createComponents();
         setComponents();
-        addComponents();
+        addMainComponents();
     }
 
     private void createComponents(){
@@ -29,8 +29,14 @@ public class PanelCenter extends JPanel {
         panelButton.setBorder(BorderFactory.createLineBorder(Color.BLACK));
     }
 
-    private void addComponents(){
+    public void addMainComponents(){
         add(panelButton);
         add(panelContent);
+        revalidate();
+        repaint();
+    }
+
+    public PanelContent getPanelContent() {
+        return panelContent;
     }
 }
