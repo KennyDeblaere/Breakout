@@ -8,10 +8,10 @@ import java.awt.*;
  */
 public class PanelMain extends JPanel{
 
-    private PanelLogin login;
-    private PanelButton button;
-    private PanelContent content;
-    private PanelStatus status;
+    private PanelLogin panelLogin;
+    private PanelStatus panelStatus;
+    private PanelCenter panelCenter;
+
 
     public PanelMain() {
         super();
@@ -21,23 +21,21 @@ public class PanelMain extends JPanel{
     }
 
     private void createComponents() {
-        login = new PanelLogin();
-        button = new PanelButton();
-        content = new PanelContent();
-        status = new PanelStatus();
+        panelLogin = new PanelLogin();
+        panelStatus = new PanelStatus();
+        panelCenter = new PanelCenter();
+
     }
 
     private void setComponents() {
-        login.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
-        button.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        content.setBorder(BorderFactory.createLineBorder(Color.RED));
-        status.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        panelLogin.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
+        panelStatus.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+
     }
 
     private void addComponents(){
-        add(login, BorderLayout.NORTH);
-        add(button, BorderLayout.WEST);
-        add(content, BorderLayout.EAST);
-        add(status, BorderLayout.NORTH);
+        add(panelLogin, BorderLayout.NORTH);
+        add(panelCenter, BorderLayout.CENTER);
+        add(panelStatus, BorderLayout.SOUTH);
     }
 }

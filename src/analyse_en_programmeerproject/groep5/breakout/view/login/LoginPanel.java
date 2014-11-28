@@ -2,7 +2,7 @@ package analyse_en_programmeerproject.groep5.breakout.view.login;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.login.CancelController;
 import analyse_en_programmeerproject.groep5.breakout.controller.login.LoginController;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelLogin;
 
 import javax.swing.*;
@@ -16,7 +16,7 @@ public class LoginPanel extends JPanel {
     private JLabel usernameLabel, passwordLabel, errorLabel;
     private JButton login, cancel;
 
-    private PanelCenter panelCenter;
+    private CenterPanel centerPanel;
     private PanelLogin menuTopPanel;
 
     public JTextField getUsername() {

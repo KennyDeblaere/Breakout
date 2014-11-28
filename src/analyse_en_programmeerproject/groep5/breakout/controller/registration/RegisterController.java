@@ -3,7 +3,7 @@ package analyse_en_programmeerproject.groep5.breakout.controller.registration;
 import analyse_en_programmeerproject.groep5.breakout.model.Register;
 import analyse_en_programmeerproject.groep5.breakout.view.registration.DatePanel;
 import analyse_en_programmeerproject.groep5.breakout.view.registration.SexPanel;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 
 
 import javax.swing.*;
@@ -18,14 +18,14 @@ import java.util.Date;
  *      Benjamin Vansteelandt
  */
 public class RegisterController implements ActionListener {
-    private PanelCenter c;
+    private CenterPanel c;
     private JTextField username, firstname, lastname, email;
     private DatePanel dateOfBirth;
     private SexPanel sex;
     private JPasswordField password, repeatedPassword;
 
-    public RegisterController(PanelCenter panelCenter){
-        c = panelCenter;
+    public RegisterController(CenterPanel centerPanel){
+        c = centerPanel;
         }
 
     private void createComponents(){

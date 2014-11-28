@@ -1,6 +1,6 @@
 package analyse_en_programmeerproject.groep5.breakout.controller.registration;
 
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,9 +13,9 @@ import java.awt.event.ActionListener;
  */
 
 public class CancelController implements ActionListener {
-    private PanelCenter c;
-    public  CancelController(PanelCenter panelCenter){
-        c = panelCenter;
+    private CenterPanel c;
+    public  CancelController(CenterPanel centerPanel){
+        c = centerPanel;
     }
 
     @Override
