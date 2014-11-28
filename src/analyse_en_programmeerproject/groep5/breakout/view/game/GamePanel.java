@@ -2,7 +2,7 @@ package analyse_en_programmeerproject.groep5.breakout.view.game;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.game.MovePanelController;
 import analyse_en_programmeerproject.groep5.breakout.model.game.Ball;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,15 +15,15 @@ public class GamePanel extends JPanel {
     private Graphics dbGraphics;
 
     private Ball b;
-    private CenterPanel centerPanel;
+    private PanelCenter centerPanel;
 
     private boolean singleplayer;
     private int difficulty;
 
-    public GamePanel(CenterPanel c){
-
-        b = new Ball(false, 0);
+    public GamePanel(PanelCenter c){
         centerPanel = c;
+        b = new Ball(false, 0);
+
         setPreferredSize(new Dimension(1000,1000));
         setBackground(Color.WHITE);
         Thread ball = new Thread(b);

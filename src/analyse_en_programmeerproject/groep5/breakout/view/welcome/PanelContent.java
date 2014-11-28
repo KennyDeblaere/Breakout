@@ -9,10 +9,14 @@ import java.awt.*;
  * Created by Blackhat on 21/11/2014.
  */
 public class PanelContent extends JPanel {
+    private PanelCenter panelCenter;
     private RegistrationPanel registrationPanel;
+    private PanelDifficulty panelDifficulty;
 
-    public PanelContent() {
+
+    public PanelContent(PanelCenter c) {
         super();
+        panelCenter = c;
         setPreferredSize(new Dimension(700, 600));
         createComponents();
         setComponents();
@@ -21,6 +25,7 @@ public class PanelContent extends JPanel {
 
     private void createComponents() {
         registrationPanel = new RegistrationPanel(this);
+        panelDifficulty = new PanelDifficulty(panelCenter);
     }
 
     private void setComponents() {
@@ -29,6 +34,7 @@ public class PanelContent extends JPanel {
     }
 
     public void addRegistrationPanel(){
+        remove(panelDifficulty);
         add(registrationPanel);
         revalidate();
         repaint();
@@ -38,8 +44,16 @@ public class PanelContent extends JPanel {
         return registrationPanel;
     }
 
+    public void addDifficultyPanel(){
+        remove(registrationPanel);
+        add(panelDifficulty);
+        revalidate();
+        repaint();
+    }
+
     public void addMainComponents() {
         remove(registrationPanel);
+        remove(panelDifficulty);
         revalidate();
         repaint();
     }

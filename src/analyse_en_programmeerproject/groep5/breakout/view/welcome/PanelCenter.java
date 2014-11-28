@@ -1,5 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
+import analyse_en_programmeerproject.groep5.breakout.view.game.GamePanel;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -9,6 +11,7 @@ import java.awt.*;
 public class PanelCenter extends JPanel {
     private PanelContent panelContent;
     private PanelButton panelButton;
+    private GamePanel gamePanel;
 
 
     public PanelCenter(){
@@ -19,8 +22,9 @@ public class PanelCenter extends JPanel {
     }
 
     private void createComponents(){
-        panelButton = new PanelButton();
-        panelContent = new PanelContent();
+        panelContent = new PanelContent(this);
+        panelButton = new PanelButton(panelContent);
+        gamePanel = new GamePanel(this);
     }
 
     private void setComponents(){
@@ -32,6 +36,14 @@ public class PanelCenter extends JPanel {
     public void addMainComponents(){
         add(panelButton);
         add(panelContent);
+        revalidate();
+        repaint();
+    }
+
+    public void addGamePanel(){
+        remove(panelButton);
+        remove(panelContent);
+        add(gamePanel);
         revalidate();
         repaint();
     }
