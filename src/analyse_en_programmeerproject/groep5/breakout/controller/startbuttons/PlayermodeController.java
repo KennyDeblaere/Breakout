@@ -8,16 +8,17 @@ import java.awt.event.ActionListener;
 /**
  * Created by Kenny on 28/11/2014.
  */
-public class SingleplayerController implements ActionListener {
+public class PlayermodeController implements ActionListener {
     private PanelContent panelContent;
+    private boolean singleplayer;
 
-    public SingleplayerController(PanelContent pc){
+    public PlayermodeController(PanelContent pc, boolean singleplayer){
         panelContent = pc;
     }
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        panelContent.addDifficultyPanel();
+        panelContent.addDifficultyPanel(singleplayer);
     }
 }

@@ -23,8 +23,7 @@ public class GamePanel extends JPanel {
     public GamePanel(PanelCenter c){
         centerPanel = c;
         b = new Ball(false, 0);
-
-        setPreferredSize(new Dimension(1000,1000));
+        setPreferredSize(new Dimension(1000, 1000));
         setBackground(Color.WHITE);
         Thread ball = new Thread(b);
         ball.start();
@@ -89,5 +88,9 @@ public class GamePanel extends JPanel {
         //g.drawString("" + b.getP1Score(), 15, 20);
         //g.drawString("" + b.getP2Score(),15,200);
         repaint();
+    }
+
+    public void setSingleplayer(boolean singleplayer) {
+        this.singleplayer = singleplayer;
     }
 }

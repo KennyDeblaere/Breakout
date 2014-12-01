@@ -12,6 +12,7 @@ public class PanelCenter extends JPanel {
     private PanelContent panelContent;
     private PanelButton panelButton;
     private GamePanel gamePanel;
+    private boolean singleplayer;
 
 
     public PanelCenter(){

@@ -44,9 +44,11 @@ public class PanelContent extends JPanel {
         return registrationPanel;
     }
 
-    public void addDifficultyPanel(){
+    public void addDifficultyPanel(boolean singleplayer){
         remove(registrationPanel);
         add(panelDifficulty);
+        panelDifficulty.setSingleplayer(singleplayer);
+        System.out.println(panelDifficulty.isSingleplayer());
         revalidate();
         repaint();
     }

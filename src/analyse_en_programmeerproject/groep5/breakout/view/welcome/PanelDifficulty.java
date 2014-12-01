@@ -12,6 +12,7 @@ public class PanelDifficulty extends JPanel {
     private JRadioButton radioEasy, radioMedium, radioHard;
     private JButton playButton;
     private JLabel textLabel;
+    private boolean singleplayer;
 
     public PanelDifficulty(PanelCenter c){
         super();
@@ -48,4 +49,11 @@ public class PanelDifficulty extends JPanel {
         add(playButton);
     }
 
+    public boolean isSingleplayer() {
+        return singleplayer;
+    }
+
+    public void setSingleplayer(boolean singleplayer) {
+        this.singleplayer = singleplayer;
+    }
 }

@@ -71,6 +71,10 @@ public class Ball implements Runnable {
         this.p2Score = p2Score;
     }
 
+    public void setSingleplayer(boolean singleplayer) {
+        this.singleplayer = singleplayer;
+    }
+
     public int getX() {
         return x;
     }

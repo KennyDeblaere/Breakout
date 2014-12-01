@@ -1,6 +1,6 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
-import analyse_en_programmeerproject.groep5.breakout.controller.startbuttons.SingleplayerController;
+import analyse_en_programmeerproject.groep5.breakout.controller.startbuttons.PlayermodeController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,7 +43,8 @@ public class PanelButton extends JPanel{
     }
 
     private void addListeners(){
-        single.addActionListener(new SingleplayerController(panelContent));
+        single.addActionListener(new PlayermodeController(panelContent, true));
+        co.addActionListener(new PlayermodeController(panelContent,false));
     }
 
     private void addComponents() {
