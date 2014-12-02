@@ -3,7 +3,7 @@ package analyse_en_programmeerproject.groep5.breakout.controller.registration;
 import analyse_en_programmeerproject.groep5.breakout.model.Register;
 import analyse_en_programmeerproject.groep5.breakout.view.registration.DatePanel;
 import analyse_en_programmeerproject.groep5.breakout.view.registration.SexPanel;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
+//import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelContent;
 
 

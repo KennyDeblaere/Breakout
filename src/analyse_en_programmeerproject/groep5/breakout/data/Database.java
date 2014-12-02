@@ -6,7 +6,6 @@ import java.awt.*;
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,8 +29,9 @@ public class Database {
     private Database(){
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            //String url = "jdbc:mysql://student.howest.be/mysqlstudent/kennydeblaab7yah";
-            //connection = DriverManager.getConnection(url, "kennydeblaab7yah", "ce8iaw2IeLax");
+            //String url = "jdbc:mysql://student.howest.be/mysqlstudent/driesdekonsieg9v";
+            //connection = DriverManager.getConnection(url, "user=driesdekonsieg9v&password=Noovaim8OoJe");
+
             String url = "jdbc:mysql://localhost/breakout";
             connection = DriverManager.getConnection(url, "root", "");
         } catch (ClassNotFoundException | SQLException | InstantiationException | IllegalAccessException ex) {

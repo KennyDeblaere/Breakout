@@ -22,6 +22,7 @@ public class GamePanel extends JPanel {
 
     public GamePanel(PanelCenter c){
         centerPanel = c;
+
         b = new Ball(false, 0);
         setPreferredSize(new Dimension(1000, 1000));
         setBackground(Color.WHITE);

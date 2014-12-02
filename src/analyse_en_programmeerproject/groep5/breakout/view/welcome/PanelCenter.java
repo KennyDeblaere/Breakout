@@ -12,7 +12,6 @@ public class PanelCenter extends JPanel {
     private PanelContent panelContent;
     private PanelButton panelButton;
     private GamePanel gamePanel;
-    private boolean singleplayer;
 
 
     public PanelCenter(){
@@ -31,7 +30,7 @@ public class PanelCenter extends JPanel {
     private void setComponents(){
 
         panelContent.setBorder(BorderFactory.createLineBorder(Color.RED));
-        panelButton.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        panelButton.setBackground(Color.GRAY);
     }
 
     public void addMainComponents(){

@@ -1,6 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.game.StartGameController;
+import javafx.scene.text.Font;
 
 import javax.swing.*;
 
@@ -11,7 +12,7 @@ public class PanelDifficulty extends JPanel {
     private PanelCenter panelCenter;
     private JRadioButton radioEasy, radioMedium, radioHard;
     private JButton playButton;
-    private JLabel textLabel;
+    private JLabel textLabel, titelLabel;
     private boolean singleplayer;
 
     public PanelDifficulty(PanelCenter c){
@@ -26,6 +27,7 @@ public class PanelDifficulty extends JPanel {
     }
 
     private void createComponents() {
+        titelLabel = new JLabel();
         textLabel = new JLabel("Kies de moeilijkheid");
         radioEasy = new JRadioButton("Makkelijk");
         radioMedium = new JRadioButton("Gemiddeld");
@@ -42,6 +44,7 @@ public class PanelDifficulty extends JPanel {
     }
 
     private void addComponents() {
+        add(titelLabel);
         add(textLabel);
         add(radioEasy);
         add(radioMedium);
@@ -55,5 +58,10 @@ public class PanelDifficulty extends JPanel {
 
     public void setSingleplayer(boolean singleplayer) {
         this.singleplayer = singleplayer;
+        if (singleplayer){
+            titelLabel.setText("Single Player");
+        } else {
+            titelLabel.setText("CO-OP");
+        }
     }
 }

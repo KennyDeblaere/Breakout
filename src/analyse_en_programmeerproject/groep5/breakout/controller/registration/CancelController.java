@@ -1,6 +1,6 @@
 package analyse_en_programmeerproject.groep5.breakout.controller.registration;
 
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
+//import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelContent;
 
 import java.awt.event.ActionEvent;

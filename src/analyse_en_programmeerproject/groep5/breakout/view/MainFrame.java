@@ -3,6 +3,7 @@ package analyse_en_programmeerproject.groep5.breakout.view;
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelMain;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * Created by

@@ -11,8 +11,8 @@ import java.awt.event.ActionListener;
 public class StartGameController implements ActionListener {
     private PanelCenter c;
 
-    public StartGameController(PanelCenter panelCenter){
-        c = panelCenter;
+    public StartGameController(PanelCenter centerPanel){
+        c = centerPanel;
     }
     @Override
     public void actionPerformed(ActionEvent e) {

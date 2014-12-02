@@ -36,6 +36,7 @@ public class PanelButton extends JPanel{
         co.setPreferredSize(new Dimension(150, 50));
         high.setPreferredSize(new Dimension(150, 50));
         about.setPreferredSize(new Dimension(150, 50));
+        ButtonPanel.setBackground(Color.GRAY);
         ButtonPanel.add(single);
         ButtonPanel.add(co);
         ButtonPanel.add(high);
@@ -45,6 +46,7 @@ public class PanelButton extends JPanel{
     private void addListeners(){
         single.addActionListener(new PlayermodeController(panelContent, true));
         co.addActionListener(new PlayermodeController(panelContent,false));
+        //about.addActionListener();
     }
 
     private void addComponents() {

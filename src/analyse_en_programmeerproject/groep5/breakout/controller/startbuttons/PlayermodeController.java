@@ -12,8 +12,9 @@ public class PlayermodeController implements ActionListener {
     private PanelContent panelContent;
     private boolean singleplayer;
 
-    public PlayermodeController(PanelContent pc, boolean singleplayer){
+    public PlayermodeController(PanelContent pc, boolean single){
         panelContent = pc;
+        singleplayer = single;
     }
 
 

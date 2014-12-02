@@ -28,14 +28,14 @@ public class PanelMain extends JPanel{
     }
 
     private void setComponents() {
-        panelLogin.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
-        panelStatus.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        panelLogin.setBackground(Color.GRAY);
+        panelStatus.setBackground(Color.GRAY);
 
     }
 
     private void addComponents(){
         add(panelLogin, BorderLayout.NORTH);
-        add(panelCenter, BorderLayout.CENTER);
+        add(panelCenter);
         add(panelStatus, BorderLayout.SOUTH);
     }
 }
