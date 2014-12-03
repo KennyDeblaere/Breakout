@@ -18,5 +18,6 @@ public class StartGameController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //Database.DatabaseInstance.insertGameMode(new Gamemode());
         c.addGamePanel();
+        c.getGamePanel().startGame();
     }
 }

@@ -13,6 +13,7 @@ import java.awt.*;
 public class GamePanel extends JPanel {
     private Image dbImage;
     private Graphics dbGraphics;
+    private Thread ball, p1;
 
     private Ball b;
     private PanelCenter centerPanel;
@@ -27,14 +28,9 @@ public class GamePanel extends JPanel {
         b = new Ball(false, 0);
         setPreferredSize(new Dimension(1000, 750));
         setBackground(Color.WHITE);
-        Thread ball = new Thread(b);
-        ball.start();
-        Thread p1 = new Thread(b.getP1());
-        p1.start();
-        if(!b.isSingleplayer()){
-            Thread p2 = new Thread(b.getP2());
-            p2.start();
-        }
+        ball = new Thread(b);
+        p1 = new Thread(b.getP1());
+
         addKeyListener(new MovePanelController(b));
 
         setFocusable(true);
@@ -43,8 +39,14 @@ public class GamePanel extends JPanel {
 
     }
 
-
-
+    public void startGame(){
+        ball.start();
+        p1.start();
+        if(!b.isSingleplayer()){
+            Thread p2 = new Thread(b.getP2());
+            p2.start();
+        }
+    }
     public void paint(Graphics g){
         dbImage = createImage(getWidth(),getHeight());
         dbGraphics = dbImage.getGraphics();

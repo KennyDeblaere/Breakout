@@ -48,6 +48,10 @@ public class PanelCenter extends JPanel {
         repaint();
     }
 
+    public GamePanel getGamePanel() {
+        return gamePanel;
+    }
+
     public PanelContent getPanelContent() {
         return panelContent;
     }
