@@ -1,7 +1,8 @@
 package analyse_en_programmeerproject.groep5.breakout.model.game;
 
 import java.awt.*;
-import java.util.Random;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created by Kenny on 12/11/2014.
@@ -10,15 +11,20 @@ public class Ball implements Runnable {
     private int x, y, xDirection, yDirection, p1Score, p2Score, numberOfLifes, difficulty;
     private Rectangle ball;
     private Paddle p1, p2;
-    private BlockCreator blockCreator;
+    //private BlockCreator blockCreator;
+    private List<BlockCreator> blockCreatorList;
     private boolean singleplayer;
     public Ball(boolean singleplayer, int difficulty){
         p1 = new Paddle(475,700,1);
         p2 = new Paddle(475,15, 2);
 
-        blockCreator = new BlockCreator(0,100,1);
+        blockCreatorList = new ArrayList<>();
 
-        setX(p1.getX() + (p1.getPaddle().width/2));
+        //blockCreator = new BlockCreator(0,100,1);
+        blockCreatorList.add(new BlockCreator(0,100,1));
+        blockCreatorList.add(new BlockCreator(500,100,1));
+
+        setX(p1.getX() + (p1.getPaddle().width / 2));
         setY(p1.getY());
 
         this.singleplayer = singleplayer;
@@ -102,8 +108,13 @@ public class Ball implements Runnable {
         return ball;
     }
 
-    public BlockCreator getBlockCreator() {
-        return blockCreator;
+    //public BlockCreator getBlockCreator() {
+      //  return blockCreator;
+    //}
+
+
+    public List<BlockCreator> getBlockCreatorList() {
+        return blockCreatorList;
     }
 
     public Paddle getP1() {
@@ -122,11 +133,13 @@ public class Ball implements Runnable {
         }
         if(ball.intersects(p2.getPaddle()))
             setyDirection(+1);
-        if(ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() > 0) {
-            p1Score = p1Score + 10;
-            setyDirection(getyDirection() * -1);
-            setxDirection(getxDirection() * -1 );
-            blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft()-1);
+        for(BlockCreator blockCreator : blockCreatorList) {
+            if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() > 0) {
+                p1Score = p1Score + 10;
+                setyDirection(getyDirection() * -1);
+                setxDirection(getxDirection() * -1);
+                blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
+            }
         }
     }
 

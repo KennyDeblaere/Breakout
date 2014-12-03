@@ -13,7 +13,7 @@ public class BlockCreator {
 
 
     public BlockCreator(int x, int y, int numberOfHits){
-        block = new Rectangle(x, y, Database.DatabaseInstance.fillBlocks().get(0).getHorizontalLength(),Database.DatabaseInstance.fillBlocks().get(0).getVerticalLength());
+        block = new Rectangle(x, y, 500,20);
         this.x = x;
         this.y = y;
         numberOfHitsLeft = numberOfHits;
