@@ -10,12 +10,14 @@ import java.awt.*;
 public class BlockCreator {
     private Rectangle block;
     private int x, y, numberOfHitsLeft;
+    private Color color;
 
 
-    public BlockCreator(int x, int y, int numberOfHits){
+    public BlockCreator(int x, int y, int numberOfHits, Color color){
         block = new Rectangle(x, y, 500,20);
         this.x = x;
         this.y = y;
+        this.color = color;
         numberOfHitsLeft = numberOfHits;
     }
 
@@ -31,6 +33,10 @@ public class BlockCreator {
 
     public int getNumberOfHitsLeft() {
         return numberOfHitsLeft;
+    }
+
+    public Color getColor() {
+        return color;
     }
 
     public void setNumberOfHitsLeft(int numberOfHitsLeft) {

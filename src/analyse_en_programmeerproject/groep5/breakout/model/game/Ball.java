@@ -21,8 +21,8 @@ public class Ball implements Runnable {
         blockCreatorList = new ArrayList<>();
 
         //blockCreator = new BlockCreator(0,100,1);
-        blockCreatorList.add(new BlockCreator(0,100,1));
-        blockCreatorList.add(new BlockCreator(500,100,1));
+        blockCreatorList.add(new BlockCreator(0,100,1, Color.YELLOW));
+        blockCreatorList.add(new BlockCreator(500,100,3, Color.BLUE));
 
         setX(p1.getX() + (p1.getPaddle().width / 2));
         setY(p1.getY());
