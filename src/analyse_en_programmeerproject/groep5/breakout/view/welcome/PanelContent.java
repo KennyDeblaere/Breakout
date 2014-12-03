@@ -42,6 +42,7 @@ public class PanelContent extends JPanel {
 
     public void addDifficultyPanel(boolean singleplayer){
         remove(registrationPanel);
+        remove(panelAbout);
         add(panelDifficulty);
         panelDifficulty.setSingleplayer(singleplayer);
         System.out.println(panelDifficulty.isSingleplayer());
@@ -60,6 +61,7 @@ public class PanelContent extends JPanel {
     public void addMainComponents() {
         remove(registrationPanel);
         remove(panelDifficulty);
+        remove(panelAbout);
         revalidate();
         repaint();
     }
