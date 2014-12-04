@@ -27,7 +27,7 @@ public class GamePanel extends JPanel {
         centerPanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
         b = new Ball(true, 0, 3);
-        setPreferredSize(new Dimension(1000, 750));
+        setPreferredSize(new Dimension(1001, 750));
         setBackground(Color.WHITE);
         ball = new Thread(b);
         p1 = new Thread(b.getP1());

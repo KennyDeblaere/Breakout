@@ -1,7 +1,5 @@
 package analyse_en_programmeerproject.groep5.breakout.model.game;
 
-import analyse_en_programmeerproject.groep5.breakout.model.Block;
-
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -123,7 +121,7 @@ public class Ball implements Runnable {
         return ball;
     }
 
-    private BlockCreator[] fillBlockCreatorList(){
+    private BlockCreator[] blocksInArray(){
         BlockCreator[] blockCreators = new BlockCreator[7];
         blockCreators[0] = new BlockCreator(getxPosition(),getyPosition(),1,Color.YELLOW,false, 100,50,10);
         blockCreators[1] = new BlockCreator(getxPosition(),getyPosition(),1,Color.ORANGE, false, 50,50,10);
@@ -136,17 +134,35 @@ public class Ball implements Runnable {
     }
 
     private void createScreen(int numberOfBlocks){
+        blockCreatorList = new ArrayList<>();
         Random r = new Random();
         int counter = 0;
         while(counter < numberOfLines){
             int temp = r.nextInt(numberOfBlocks);
-            blockCreatorList.add(fillBlockCreatorList()[temp]);
-            if(getxPosition() >= 1000) {
+
+            if(getxPosition() + blocksInArray()[temp].getBlock().width < 1000) {
+                blockCreatorList.add(blocksInArray()[temp]);
+                setxPosition(getxPosition() + blocksInArray()[temp].getBlock().width);
+            } else {
+                //List<BlockCreator> tempList = new ArrayList<>();
+                //for(int i=0; i< blocksInArray().length;i++)
+                   // if(blocksInArray()[i].getBlock().width <= 1000 - getxPosition())
+                 //       tempList.add(blocksInArray()[i]);
+                //int newTemp = r.nextInt(tempList.size());
+                //blockCreatorList.add(tempList.get(newTemp));
+                //setxPosition(getxPosition() + tempList.get(newTemp).getBlock().width);
+                //if(getxPosition() + tempList.get(newTemp).getBlock().width >= 1000) {
+                    //counter++;
+                    //setyPosition(getyPosition() + 50);
+                    //setxPosition(0);
+                //}
+                for(int i=0; i<blocksInArray().length;i++){
+                    if(blocksInArray()[i].getBlock().width + getxPosition() == 1000)
+                        blockCreatorList.add(blocksInArray()[i]);
+                }
                 counter++;
                 setyPosition(getyPosition() + 50);
                 setxPosition(0);
-            } else {
-                setxPosition(getxPosition() + fillBlockCreatorList()[temp].getBlock().width);
             }
         }
     }
