@@ -34,6 +34,7 @@ public class PanelCenter extends JPanel {
     }
 
     public void addMainComponents(){
+        remove(gamePanel);
         add(panelButton);
         add(panelContent);
         revalidate();

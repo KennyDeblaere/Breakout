@@ -73,7 +73,14 @@ public class GamePanel extends JPanel {
     }
     public void draw(Graphics g){
         if(b.getNumberOfLifes() != 0) {
+            g.setColor(Color.black);
+            g.drawString("Levens: ",0,0);
             g.setColor(Color.BLUE);
+            int positionx = 100;
+            for(int i=0; i<b.getNumberOfLifes();i++){
+                g.fillOval(positionx,0,10,10);
+                positionx += 15;
+            }
             g.fillRect(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
             drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
             if (!b.isSingleplayer()) {
@@ -87,9 +94,10 @@ public class GamePanel extends JPanel {
             }
         }
         else{
-            //g.setColor(Color.black);
-            //g.drawString("GAME OVER", 15,500);
+            g.setColor(Color.black);
+            g.drawString("GAME OVER", 15,500);
             centerPanel.addMainComponents();
+
         }
         //g.setColor(Color.black);
         //g.drawString("" + b.getP1Score(), 15, 20);
