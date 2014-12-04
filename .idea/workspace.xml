@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Breakout.iws" />
@@ -96,8 +95,8 @@
       <file leaf-file-name="Ball.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54833335" vertical-offset="1422" max-vertical-offset="2907">
-              <caret line="188" column="30" selection-start-line="188" selection-start-column="30" selection-end-line="188" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.265" vertical-offset="1575" max-vertical-offset="2924">
+              <caret line="187" column="42" selection-start-line="187" selection-start-column="42" selection-end-line="187" selection-end-column="42" />
               <folding>
                 <element signature="e#2917#2918#0" expanded="true" />
                 <element signature="e#2960#2961#0" expanded="true" />
@@ -824,7 +823,7 @@
       <workItem from="1417614559753" duration="1854000" />
       <workItem from="1417616669024" duration="336000" />
       <workItem from="1417617489735" duration="1229000" />
-      <workItem from="1417698599858" duration="12389000" />
+      <workItem from="1417698599858" duration="13521000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1415363062491</created>
@@ -1138,11 +1137,17 @@
       <option name="project" value="LOCAL" />
       <updated>1417710225098</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Met creeëren nieuw scherm na het uitspelen van een level (nog niet kunnen testen, collision is nog niet in orde)">
+      <created>1417713842488</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1417713842489</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108299000" />
+    <option name="totallyTimeSpent" value="109431000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1241,7 +1246,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Bezig met Registratie" />
     <MESSAGE value="Registratie wekrt" />
     <MESSAGE value="Beginnen met tekenen.&#10;&#10;KeyListeners werken nog niet." />
     <MESSAGE value="Login" />
@@ -1266,7 +1270,8 @@
     <MESSAGE value="Begin dynamische opbouw" />
     <MESSAGE value="Spel werkt zo goed als volledig in een spel. Nog enkel de juiste afmetingen" />
     <MESSAGE value="Spel staat volledig en je kan spelen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spel staat volledig en je kan spelen" />
+    <MESSAGE value="Met creeëren nieuw scherm na het uitspelen van een level (nog niet kunnen testen, collision is nog niet in orde)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Met creeëren nieuw scherm na het uitspelen van een level (nog niet kunnen testen, collision is nog niet in orde)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1680,8 +1685,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54833335" vertical-offset="1422" max-vertical-offset="2907">
-          <caret line="188" column="30" selection-start-line="188" selection-start-column="30" selection-end-line="188" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.265" vertical-offset="1575" max-vertical-offset="2924">
+          <caret line="187" column="42" selection-start-line="187" selection-start-column="42" selection-end-line="187" selection-end-column="42" />
           <folding>
             <element signature="e#2917#2918#0" expanded="true" />
             <element signature="e#2960#2961#0" expanded="true" />
