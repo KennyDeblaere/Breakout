@@ -32,6 +32,7 @@ public class GamePanel extends JPanel {
         ball = new Thread(b);
         p1 = new Thread(b.getP1());
 
+
         addKeyListener(new MovePanelController(b));
 
         setFocusable(true);

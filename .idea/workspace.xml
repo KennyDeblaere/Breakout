@@ -81,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65166664" vertical-offset="0" max-vertical-offset="1649">
-              <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1666">
+              <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
               <folding>
                 <element signature="method#drawPaddle#0;class#GamePanel#0" expanded="false" />
               </folding>
@@ -93,18 +93,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ball.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Ball.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1687" max-vertical-offset="3553">
-              <caret line="160" column="45" selection-start-line="160" selection-start-column="45" selection-end-line="160" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.54833335" vertical-offset="1422" max-vertical-offset="2907">
+              <caret line="188" column="30" selection-start-line="188" selection-start-column="30" selection-end-line="188" selection-end-column="30" />
               <folding>
-                <element signature="e#2630#2631#0" expanded="true" />
-                <element signature="e#2662#2663#0" expanded="true" />
-                <element signature="e#2694#2695#0" expanded="true" />
-                <element signature="e#2726#2727#0" expanded="true" />
-                <element signature="e#5515#5516#0" expanded="true" />
-                <element signature="e#5554#5555#0" expanded="true" />
+                <element signature="e#2917#2918#0" expanded="true" />
+                <element signature="e#2960#2961#0" expanded="true" />
+                <element signature="method#blocksInArray#0;class#Ball#0" expanded="false" />
+                <element signature="method#createScreen#0;class#Ball#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -163,8 +161,8 @@
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelDifficulty.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelCenter.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/BlockCreator.java" />
-        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java" />
+        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
       </list>
     </option>
   </component>
@@ -826,7 +824,7 @@
       <workItem from="1417614559753" duration="1854000" />
       <workItem from="1417616669024" duration="336000" />
       <workItem from="1417617489735" duration="1229000" />
-      <workItem from="1417698599858" duration="9682000" />
+      <workItem from="1417698599858" duration="12389000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1415363062491</created>
@@ -1134,11 +1132,17 @@
       <option name="project" value="LOCAL" />
       <updated>1417706026360</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Spel staat volledig en je kan spelen">
+      <created>1417710225098</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1417710225098</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105592000" />
+    <option name="totallyTimeSpent" value="108299000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1237,7 +1241,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Registratiepaneel bij het klikken op Register" />
     <MESSAGE value="Bezig met Registratie" />
     <MESSAGE value="Registratie wekrt" />
     <MESSAGE value="Beginnen met tekenen.&#10;&#10;KeyListeners werken nog niet." />
@@ -1262,7 +1265,8 @@
     <MESSAGE value="Probleem opgelost met verspringend kader." />
     <MESSAGE value="Begin dynamische opbouw" />
     <MESSAGE value="Spel werkt zo goed als volledig in een spel. Nog enkel de juiste afmetingen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Spel werkt zo goed als volledig in een spel. Nog enkel de juiste afmetingen" />
+    <MESSAGE value="Spel staat volledig en je kan spelen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Spel staat volledig en je kan spelen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1643,6 +1647,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelCenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1037">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/BlockCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="697">
@@ -1654,37 +1668,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelCenter.java">
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1037">
-          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1666">
+          <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#drawPaddle#0;class#GamePanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1687" max-vertical-offset="3553">
-          <caret line="160" column="45" selection-start-line="160" selection-start-column="45" selection-end-line="160" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.54833335" vertical-offset="1422" max-vertical-offset="2907">
+          <caret line="188" column="30" selection-start-line="188" selection-start-column="30" selection-end-line="188" selection-end-column="30" />
           <folding>
-            <element signature="e#2630#2631#0" expanded="true" />
-            <element signature="e#2662#2663#0" expanded="true" />
-            <element signature="e#2694#2695#0" expanded="true" />
-            <element signature="e#2726#2727#0" expanded="true" />
-            <element signature="e#5515#5516#0" expanded="true" />
-            <element signature="e#5554#5555#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65166664" vertical-offset="0" max-vertical-offset="1649">
-          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-          <folding>
-            <element signature="method#drawPaddle#0;class#GamePanel#0" expanded="false" />
+            <element signature="e#2917#2918#0" expanded="true" />
+            <element signature="e#2960#2961#0" expanded="true" />
+            <element signature="method#blocksInArray#0;class#Ball#0" expanded="false" />
+            <element signature="method#createScreen#0;class#Ball#0" expanded="false" />
           </folding>
         </state>
       </provider>
