@@ -33,7 +33,7 @@ public class Ball implements Runnable {
         this.difficulty = difficulty;
         numberOfLifes  = 3;
 
-        createScreen();
+        createScreen(7);
         //Ball random laten starten
         startRandomX();
         startRandomY();
@@ -135,19 +135,18 @@ public class Ball implements Runnable {
         return blockCreators;
     }
 
-    private void createScreen(){
+    private void createScreen(int numberOfBlocks){
         Random r = new Random();
         int counter = 0;
         while(counter < numberOfLines){
-            int temp = r.nextInt(7);
+            int temp = r.nextInt(numberOfBlocks);
             blockCreatorList.add(fillBlockCreatorList()[temp]);
-            setxPosition(getxPosition() + fillBlockCreatorList()[temp].getBlock().width);
-            System.out.println(getxPosition());
-            if(getxPosition() > 1000) {
+            if(getxPosition() >= 1000) {
                 counter++;
                 setyPosition(getyPosition() + 50);
                 setxPosition(0);
-                //System.out.println(getyPosition());
+            } else {
+                setxPosition(getxPosition() + fillBlockCreatorList()[temp].getBlock().width);
             }
         }
     }
@@ -174,7 +173,7 @@ public class Ball implements Runnable {
         if(ball.intersects(p2.getPaddle()))
             setyDirection(+1);
         for(BlockCreator blockCreator : blockCreatorList) {
-            if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() > 0) {
+            if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
                 p1Score = p1Score + 10;
                 setyDirection(getyDirection() * -1);
                 setxDirection(getxDirection() * -1);
