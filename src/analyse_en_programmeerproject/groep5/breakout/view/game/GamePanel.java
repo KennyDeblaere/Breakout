@@ -26,7 +26,7 @@ public class GamePanel extends JPanel {
         centerPanel = c;
         centerPanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
-        b = new Ball(false, 0);
+        b = new Ball(true, 0, 3);
         setPreferredSize(new Dimension(1000, 750));
         setBackground(Color.WHITE);
         ball = new Thread(b);
@@ -87,9 +87,11 @@ public class GamePanel extends JPanel {
                 drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
             }
             for(BlockCreator blockCreator: b.getBlockCreatorList()) {
-                g.setColor(blockCreator.getColor());
                 if (blockCreator.getNumberOfHitsLeft() > 0) {
+                    g.setColor(blockCreator.getColor());
                     g.fillRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
+                    g.setColor(Color.black);
+                    g.drawRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
                 }
             }
         }

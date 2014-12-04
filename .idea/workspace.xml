@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/BlockCreator.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/BlockCreator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelCenter.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelCenter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Breakout.iws" />
@@ -56,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PanelCenter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PanelCenter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelCenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32" vertical-offset="420" max-vertical-offset="1037">
+            <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="1037">
               <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -71,22 +72,24 @@
       <file leaf-file-name="BlockCreator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/BlockCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="663">
-              <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="697">
+              <caret line="16" column="118" selection-start-line="16" selection-start-column="118" selection-end-line="16" selection-end-column="118" />
               <folding>
-                <element signature="e#820#821#0" expanded="true" />
-                <element signature="e#848#849#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
+                <element signature="e#956#957#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1228" max-vertical-offset="1853">
-              <caret line="97" column="46" selection-start-line="97" selection-start-column="46" selection-end-line="97" selection-end-column="46" />
-              <folding />
+            <state vertical-scroll-proportion="0.76" vertical-offset="785" max-vertical-offset="1649">
+              <caret line="93" column="148" selection-start-line="93" selection-start-column="148" selection-end-line="93" selection-end-column="148" />
+              <folding>
+                <element signature="method#drawPaddle#0;class#GamePanel#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,9 +97,16 @@
       <file leaf-file-name="Ball.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2669">
-              <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1411" max-vertical-offset="3264">
+              <caret line="148" column="30" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
+              <folding>
+                <element signature="e#2696#2697#0" expanded="true" />
+                <element signature="e#2728#2729#0" expanded="true" />
+                <element signature="e#2760#2761#0" expanded="true" />
+                <element signature="e#2792#2793#0" expanded="true" />
+                <element signature="e#4602#4603#0" expanded="true" />
+                <element signature="e#4641#4642#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -152,10 +162,10 @@
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelHighScore.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelContent.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelDifficulty.java" />
+        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelCenter.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/BlockCreator.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java" />
-        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelCenter.java" />
       </list>
     </option>
   </component>
@@ -817,7 +827,7 @@
       <workItem from="1417614559753" duration="1854000" />
       <workItem from="1417616669024" duration="336000" />
       <workItem from="1417617489735" duration="1229000" />
-      <workItem from="1417698599858" duration="737000" />
+      <workItem from="1417698599858" duration="4302000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1415363062491</created>
@@ -1107,11 +1117,17 @@
       <option name="project" value="LOCAL" />
       <updated>1417617757808</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Probleem opgelost met verspringend kader.">
+      <created>1417699355017</created>
+      <option name="number" value="00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1417699355017</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96647000" />
+    <option name="totallyTimeSpent" value="100212000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1210,7 +1226,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Panels onderverdeeld in mappen voor overzichtelijkheid.&#10;De comments bij het maken van een file standaard gemaakt" />
     <MESSAGE value="Als je klikt op aanmelden, verdwijnt het centerPanel.&#10;Dit was als test.&#10;Constructor toegevoegd in MenuTopPanel" />
     <MESSAGE value="Het klikken op aanmelden en afmelden werkt nog niet volledig. Maar de juiste knoppen worden getoond" />
     <MESSAGE value="Registratiepaneel bij het klikken op Register" />
@@ -1235,7 +1250,8 @@
     <MESSAGE value="Stuk layout bijgemaakt (Aboutpanel)&#10;Enkel nog probleempje bij het oproepen -&gt; help&#10;+ Tof logotje :D" />
     <MESSAGE value="Stuk layout bijgemaakt (Aboutpanel)&#10;                Enkel nog probleempje bij het oproepen -&gt; help&#10;                + Tof logotje :D" />
     <MESSAGE value="We kunnen blokjes bijmaken, die rechtstreeks op het scherm verschijnen" />
-    <option name="LAST_COMMIT_MESSAGE" value="We kunnen blokjes bijmaken, die rechtstreeks op het scherm verschijnen" />
+    <MESSAGE value="Probleem opgelost met verspringend kader." />
+    <option name="LAST_COMMIT_MESSAGE" value="Probleem opgelost met verspringend kader." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1608,33 +1624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/BlockCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="21" />
-          <folding>
-            <element signature="e#820#821#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2669">
-          <caret line="24" column="55" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1228" max-vertical-offset="1853">
-          <caret line="97" column="46" selection-start-line="97" selection-start-column="46" selection-end-line="97" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelAbout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
@@ -1645,10 +1634,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelCenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32" vertical-offset="420" max-vertical-offset="1037">
+        <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1037">
           <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/BlockCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="697">
+          <caret line="16" column="118" selection-start-line="16" selection-start-column="118" selection-end-line="16" selection-end-column="118" />
+          <folding>
+            <element signature="e#928#929#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1411" max-vertical-offset="3264">
+          <caret line="148" column="30" selection-start-line="148" selection-start-column="30" selection-end-line="148" selection-end-column="30" />
+          <folding>
+            <element signature="e#2696#2697#0" expanded="true" />
+            <element signature="e#2728#2729#0" expanded="true" />
+            <element signature="e#2760#2761#0" expanded="true" />
+            <element signature="e#2792#2793#0" expanded="true" />
+            <element signature="e#4602#4603#0" expanded="true" />
+            <element signature="e#4641#4642#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76" vertical-offset="785" max-vertical-offset="1649">
+          <caret line="93" column="148" selection-start-line="93" selection-start-column="148" selection-end-line="93" selection-end-column="148" />
+          <folding>
+            <element signature="method#drawPaddle#0;class#GamePanel#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.model.game;
 
+import analyse_en_programmeerproject.groep5.breakout.model.Block;
+
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -8,29 +10,30 @@ import java.util.List;
  * Created by Kenny on 12/11/2014.
  */
 public class Ball implements Runnable {
-    private int x, y, xDirection, yDirection, p1Score, p2Score, numberOfLifes, difficulty;
+    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, numberOfLines;
     private Rectangle ball;
     private Paddle p1, p2;
-    //private BlockCreator blockCreator;
     private List<BlockCreator> blockCreatorList;
     private boolean singleplayer;
-    public Ball(boolean singleplayer, int difficulty){
+    public Ball(boolean singleplayer, int difficulty, int numberOfLines){
         p1 = new Paddle(475,700,1);
         p2 = new Paddle(475,15, 2);
 
         blockCreatorList = new ArrayList<>();
 
-        //blockCreator = new BlockCreator(0,100,1);
-        blockCreatorList.add(new BlockCreator(0,100,1, Color.YELLOW));
-        blockCreatorList.add(new BlockCreator(500,100,3, Color.BLUE));
+        this.difficulty = difficulty;
+        this.numberOfLines = numberOfLines;
 
         setX(p1.getX() + (p1.getPaddle().width / 2));
         setY(p1.getY());
+        setxPosition(0);
+        setyPosition(100);
 
         this.singleplayer = singleplayer;
         this.difficulty = difficulty;
         numberOfLifes  = 3;
 
+        createScreen();
         //Ball random laten starten
         startRandomX();
         startRandomY();
@@ -70,6 +73,12 @@ public class Ball implements Runnable {
     public void setyDirection(int yDirection) {
         this.yDirection = yDirection;
     }
+    public void setxPosition(int xPosition) {
+        this.xPosition = xPosition;
+    }
+    public void setyPosition(int yPosition) {
+        this.yPosition = yPosition;
+    }
     public void setP1Score(int p1Score) {
         this.p1Score = p1Score;
     }
@@ -93,6 +102,12 @@ public class Ball implements Runnable {
     public int getyDirection() {
         return yDirection;
     }
+    public int getxPosition() {
+        return xPosition;
+    }
+    public int getyPosition() {
+        return yPosition;
+    }
     public int getP2Score() {
         return p2Score;
     }
@@ -108,9 +123,34 @@ public class Ball implements Runnable {
         return ball;
     }
 
-    //public BlockCreator getBlockCreator() {
-      //  return blockCreator;
-    //}
+    private BlockCreator[] fillBlockCreatorList(){
+        BlockCreator[] blockCreators = new BlockCreator[7];
+        blockCreators[0] = new BlockCreator(getxPosition(),getyPosition(),1,Color.YELLOW,false, 100,50,10);
+        blockCreators[1] = new BlockCreator(getxPosition(),getyPosition(),1,Color.ORANGE, false, 50,50,10);
+        blockCreators[2] = new BlockCreator(getxPosition(),getyPosition(),1,Color.PINK, false, 25,50,10);
+        blockCreators[3] = new BlockCreator(getxPosition(),getyPosition(),1,Color.GREEN, true, 50,50,10);
+        blockCreators[4] = new BlockCreator(getxPosition(),getyPosition(),1,Color.RED, true, 75,50,10);
+        blockCreators[5] = new BlockCreator(getxPosition(),getyPosition(),3,Color.BLUE, false, 100,50,10);
+        blockCreators[6] = new BlockCreator(getxPosition(),getyPosition(),-1,Color.GRAY, false,75,50,10);
+        return blockCreators;
+    }
+
+    private void createScreen(){
+        Random r = new Random();
+        int counter = 0;
+        while(counter < numberOfLines){
+            int temp = r.nextInt(7);
+            blockCreatorList.add(fillBlockCreatorList()[temp]);
+            setxPosition(getxPosition() + fillBlockCreatorList()[temp].getBlock().width);
+            System.out.println(getxPosition());
+            if(getxPosition() > 1000) {
+                counter++;
+                setyPosition(getyPosition() + 50);
+                setxPosition(0);
+                //System.out.println(getyPosition());
+            }
+        }
+    }
 
 
     public List<BlockCreator> getBlockCreatorList() {
@@ -163,7 +203,6 @@ public class Ball implements Runnable {
                 ball = new Rectangle(getX(),getY(),7,7);
                 numberOfLifes--;
                 System.out.println(numberOfLifes);
-                //p2 = new Paddle(475,15, 2);
             }
         }
         if(ball.y >= 750){

@@ -10,14 +10,16 @@ import java.awt.*;
 public class BlockCreator {
     private Rectangle block;
     private int x, y, numberOfHitsLeft;
+    private int score;
     private Color color;
 
 
-    public BlockCreator(int x, int y, int numberOfHits, Color color){
-        block = new Rectangle(x, y, 500,20);
+    public BlockCreator(int x, int y, int numberOfHits, Color color, boolean power, int length, int height, int score){
+        block = new Rectangle(x, y, length,height);
         this.x = x;
         this.y = y;
         this.color = color;
+        this.score = score;
         numberOfHitsLeft = numberOfHits;
     }
 
