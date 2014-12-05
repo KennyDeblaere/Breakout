@@ -1,6 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.data;
 
 import analyse_en_programmeerproject.groep5.breakout.model.*;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelStatus;
 
 import java.awt.*;
 import java.lang.reflect.Field;
@@ -34,6 +35,7 @@ public class Database {
 
             String url = "jdbc:mysql://localhost/breakout";
             connection = DriverManager.getConnection(url, "root", "");
+
         } catch (ClassNotFoundException | SQLException | InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -191,6 +193,20 @@ public class Database {
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void getHighScores(){
+        try{
+
+
+            String selectSQL = "SELECT firstname, lastname FROM";
+            PreparedStatement preparedStatement = getConnection().prepareStatement(selectSQL);
+
+
+        } catch (SQLException e){
+
+
         }
     }
 }
