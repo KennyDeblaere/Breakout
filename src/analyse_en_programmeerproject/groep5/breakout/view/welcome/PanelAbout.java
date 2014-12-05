@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class PanelAbout extends JPanel{
     private JPanel about;
-    private JLabel titelLabel, createLabel, licensedtoLabel, versionLabel, picture;
+    private JLabel titelLabel, createLabel, licensedtoLabel, versionLabel;
 
 
     public PanelAbout(){
