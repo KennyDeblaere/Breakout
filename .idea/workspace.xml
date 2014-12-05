@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/menu/GetHighScoreController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelLogin.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelLogin.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Programmeerproject\Breakout\src\analyse_en_programmeerproject\groep5\breakout\controller\menuTop\Login_outButtonController.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/menu/Login_outButtonController.java" />
-      <change type="MOVED" beforePath="D:\Programmeerproject\Breakout\src\analyse_en_programmeerproject\groep5\breakout\controller\menuTop\RegisterButtonController.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/menu/RegisterButtonController.java" />
     </list>
     <ignored path="Breakout.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -125,8 +120,8 @@
       <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.92608696" vertical-offset="2855" max-vertical-offset="3417">
-              <caret line="195" column="5" selection-start-line="195" selection-start-column="5" selection-end-line="195" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.74130434" vertical-offset="2855" max-vertical-offset="3417">
+              <caret line="190" column="46" selection-start-line="190" selection-start-column="46" selection-end-line="190" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1417776658062" expanded="true" signature="1530:1548" placeholder="select * fro..user..." />
@@ -787,7 +782,7 @@
       <workItem from="1417617489735" duration="1229000" />
       <workItem from="1417698599858" duration="13521000" />
       <workItem from="1417768283182" duration="2486000" />
-      <workItem from="1417770831531" duration="5278000" />
+      <workItem from="1417770831531" duration="5310000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1415363062491</created>
@@ -1131,11 +1126,17 @@
       <option name="project" value="LOCAL" />
       <updated>1417775615008</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Login class --&gt; Login_out class&#10;Logout class = weg">
+      <created>1417776673537</created>
+      <option name="number" value="00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1417776673538</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117195000" />
+    <option name="totallyTimeSpent" value="117227000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1715,8 +1716,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92608696" vertical-offset="2855" max-vertical-offset="3417">
-          <caret line="195" column="5" selection-start-line="195" selection-start-column="5" selection-end-line="195" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.74130434" vertical-offset="2855" max-vertical-offset="3417">
+          <caret line="190" column="46" selection-start-line="190" selection-start-column="46" selection-end-line="190" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1417776658062" expanded="true" signature="1530:1548" placeholder="select * fro..user..." />
