@@ -1,5 +1,6 @@
 package analyse_en_programmeerproject.groep5.breakout.controller.game;
 
+import analyse_en_programmeerproject.groep5.breakout.view.game.GamePanel;
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
 
 import java.awt.event.ActionEvent;
@@ -19,7 +20,7 @@ public class StartGameController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         //Database.DatabaseInstance.insertGameMode(new Gamemode());
-        c.addGamePanel();
+        c.addGamePanel(new GamePanel(c));
         c.getGamePanel().startGame();
     }
 }

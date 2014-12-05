@@ -97,7 +97,7 @@ public class GamePanel extends JPanel {
             }
         }
         else{
-            centerPanel.addHighScoreAddPanel();
+            centerPanel.addHighScoreAddPanel(b.getP1Score());
 
         }
         //g.setColor(Color.black);

@@ -20,6 +20,8 @@ public class AddHighscorePanel extends JPanel {
         center = panelCenter;
         this.score = score;
         createComponents();
+        addActionListeners();
+        addComponents();
     }
 
     private void createComponents(){
