@@ -32,6 +32,9 @@ public class BlockCreator {
     public Rectangle getBlock() {
         return block;
     }
+    public int getScore() {
+        return score;
+    }
 
     public int getNumberOfHitsLeft() {
         return numberOfHitsLeft;

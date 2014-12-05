@@ -82,7 +82,7 @@ public class GamePanel extends JPanel {
                 g.fillOval(positionx,0,10,10);
                 positionx += 15;
             }
-            g.fillRect(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
+            g.fillOval(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
             drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
             if (!b.isSingleplayer()) {
                 drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());

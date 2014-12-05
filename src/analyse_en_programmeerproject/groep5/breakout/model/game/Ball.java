@@ -187,13 +187,12 @@ public class Ball implements Runnable {
     public void collision(){
         if(ball.intersects(p1.getPaddle())){
             setyDirection(-1);
-            System.out.println(ball.intersection(p1.getPaddle()));
         }
         if(ball.intersects(p2.getPaddle()))
             setyDirection(+1);
         for(BlockCreator blockCreator : blockCreatorList) {
             if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() > 0) {
-                p1Score = p1Score + 10;
+                p1Score += blockCreator.getScore();
                 setyDirection(getyDirection() * -1);
                 setxDirection(getxDirection() * -1);
                 blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
