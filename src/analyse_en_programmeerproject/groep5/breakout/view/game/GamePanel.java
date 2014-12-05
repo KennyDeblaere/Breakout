@@ -2,7 +2,6 @@ package analyse_en_programmeerproject.groep5.breakout.view.game;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.game.MovePanelController;
 import analyse_en_programmeerproject.groep5.breakout.model.game.Ball;
-import analyse_en_programmeerproject.groep5.breakout.model.game.BlockCreator;
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
 
 import javax.swing.*;
@@ -26,12 +25,11 @@ public class GamePanel extends JPanel {
         centerPanel = c;
         centerPanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
-        b = new Ball(true, 0, 3);
-        setPreferredSize(new Dimension(1001, 750));
+        b = new Ball(false, 0);
+        setPreferredSize(new Dimension(1000, 750));
         setBackground(Color.WHITE);
         ball = new Thread(b);
         p1 = new Thread(b.getP1());
-
 
         addKeyListener(new MovePanelController(b));
 
@@ -74,33 +72,21 @@ public class GamePanel extends JPanel {
     }
     public void draw(Graphics g){
         if(b.getNumberOfLifes() != 0) {
-            g.setColor(Color.black);
-            g.drawString("Levens: ",0,0);
             g.setColor(Color.BLUE);
-            int positionx = 100;
-            for(int i=0; i<b.getNumberOfLifes();i++){
-                g.fillOval(positionx,0,10,10);
-                positionx += 15;
-            }
-            g.fillOval(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
+            g.fillRect(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
             drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
             if (!b.isSingleplayer()) {
                 drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
             }
-            for(BlockCreator blockCreator: b.getBlockCreatorList()) {
-                if (blockCreator.getNumberOfHitsLeft() != 0) {
-                    g.setColor(blockCreator.getColor());
-                    g.fillRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
-                    g.setColor(Color.black);
-                    g.drawRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
-                }
+            g.setColor(Color.YELLOW);
+            if(b.getBlockCreator().getNumberOfHitsLeft() > 0){
+                g.fillRect(b.getBlockCreator().getBlock().x, b.getBlockCreator().getBlock().y, b.getBlockCreator().getBlock().width, b.getBlockCreator().getBlock().height);
             }
         }
         else{
-            g.setColor(Color.black);
-            g.drawString("GAME OVER", 15,500);
+            //g.setColor(Color.black);
+            //g.drawString("GAME OVER", 15,500);
             centerPanel.addMainComponents();
-
         }
         //g.setColor(Color.black);
         //g.drawString("" + b.getP1Score(), 15, 20);
