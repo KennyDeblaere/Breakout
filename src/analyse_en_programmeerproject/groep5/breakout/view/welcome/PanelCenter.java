@@ -45,11 +45,12 @@ public class PanelCenter extends JPanel {
         repaint();
     }
 
-    public void addGamePanel(){
+    public void addGamePanel(GamePanel gamePanel){
+        this.gamePanel = gamePanel;
         remove(panelButton);
         remove(highscorePanel);
         remove(panelContent);
-        add(gamePanel);
+        add(this.gamePanel);
         revalidate();
         repaint();
     }
