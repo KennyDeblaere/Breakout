@@ -48,7 +48,6 @@ public class PanelContent extends JPanel {
         remove(panelHighScore);
         add(panelDifficulty);
         panelDifficulty.setSingleplayer(singleplayer);
-        System.out.println(panelDifficulty.isSingleplayer());
         revalidate();
         repaint();
     }

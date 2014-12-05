@@ -1,19 +1,20 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.game.StartGameController;
-import javafx.scene.text.Font;
-
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Kenny on 28/11/2014.
  */
-public class PanelDifficulty extends JPanel {
+public class PanelDifficulty extends JPanel implements ActionListener{
     private PanelCenter panelCenter;
-    private JRadioButton radioEasy, radioMedium, radioHard;
-    private ButtonGroup buttonGroup;
     private JButton playButton;
     private JLabel textLabel, titelLabel;
+    private JComboBox difList;
+    private String difficultyLevel;
+    private String[] difficultyStrings = { "Gemakkelijk", "Gemiddeld", "Moeilijk" };
     private boolean singleplayer;
 
     public PanelDifficulty(PanelCenter c){
@@ -23,49 +24,27 @@ public class PanelDifficulty extends JPanel {
 
         createComponents();
         addComponents();
-        addActionListeners();
-
     }
 
     private void createComponents() {
         titelLabel = new JLabel();
         textLabel = new JLabel("Kies de moeilijkheid");
-        radioEasy = new JRadioButton("Makkelijk");
-        radioEasy.isSelected();
-        radioMedium = new JRadioButton("Gemiddeld");
-        radioHard = new JRadioButton("Moeilijk");
         playButton = new JButton("Start!");
-        buttonGroup = new ButtonGroup();
-        buttonGroup.add(radioHard);
-        buttonGroup.add(radioMedium);
-        buttonGroup.add(radioEasy);
+        difList = new JComboBox(difficultyStrings);
+        difList.setSelectedIndex(0);
+        difList.addActionListener(this);
     }
 
     private void addActionListeners(){
-        int difficultyLevel;
-        if (radioEasy.isSelected()){
-            difficultyLevel = 1;
-        } else {
-            if (radioMedium.isSelected()){
-                difficultyLevel = 2;
-            }else{
-                difficultyLevel = 3;
-            }
-        }
+        System.out.println("addActionListener: " + difficultyLevel);
         playButton.addActionListener(new StartGameController(panelCenter, difficultyLevel));
     }
 
     private void addComponents() {
         add(titelLabel);
         add(textLabel);
-        add(radioEasy);
-        add(radioMedium);
-        add(radioHard);
+        add(difList);
         add(playButton);
-    }
-
-    public boolean isSingleplayer() {
-        return singleplayer;
     }
 
     public void setSingleplayer(boolean singleplayer) {
@@ -75,5 +54,13 @@ public class PanelDifficulty extends JPanel {
         } else {
             titelLabel.setText("CO-OP");
         }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JComboBox cb = (JComboBox)e.getSource();
+        difficultyLevel = (String)cb.getSelectedItem();
+        System.out.println("actionPerformed = " + difficultyLevel);
+        addActionListeners();
     }
 }
