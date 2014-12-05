@@ -194,18 +194,4 @@ public class Database {
             e.printStackTrace();
         }
     }
-
-    public void getHighScores(){
-        try{
-
-
-            String selectSQL = "SELECT firstname, lastname FROM";
-            PreparedStatement preparedStatement = getConnection().prepareStatement(selectSQL);
-
-
-        } catch (SQLException e){
-
-
-        }
-    }
 }

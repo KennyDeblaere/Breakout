@@ -1,4 +1,4 @@
-package analyse_en_programmeerproject.groep5.breakout.controller.menuTop;
+package analyse_en_programmeerproject.groep5.breakout.controller.menu;
 
 
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelContent;
