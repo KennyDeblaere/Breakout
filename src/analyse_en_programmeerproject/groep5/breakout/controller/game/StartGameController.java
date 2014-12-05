@@ -10,9 +10,11 @@ import java.awt.event.ActionListener;
  */
 public class StartGameController implements ActionListener {
     private PanelCenter c;
+    private int difficultyLevel;
 
-    public StartGameController(PanelCenter centerPanel){
-        c = centerPanel;
+    public StartGameController(PanelCenter centerPanel, int difficultyLevel){
+        this.c = centerPanel;
+        this.difficultyLevel = difficultyLevel;
     }
     @Override
     public void actionPerformed(ActionEvent e) {

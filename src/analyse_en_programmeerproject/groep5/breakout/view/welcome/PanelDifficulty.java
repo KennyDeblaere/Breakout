@@ -11,6 +11,7 @@ import javax.swing.*;
 public class PanelDifficulty extends JPanel {
     private PanelCenter panelCenter;
     private JRadioButton radioEasy, radioMedium, radioHard;
+    private ButtonGroup buttonGroup;
     private JButton playButton;
     private JLabel textLabel, titelLabel;
     private boolean singleplayer;
@@ -30,17 +31,28 @@ public class PanelDifficulty extends JPanel {
         titelLabel = new JLabel();
         textLabel = new JLabel("Kies de moeilijkheid");
         radioEasy = new JRadioButton("Makkelijk");
+        radioEasy.isSelected();
         radioMedium = new JRadioButton("Gemiddeld");
         radioHard = new JRadioButton("Moeilijk");
         playButton = new JButton("Start!");
-        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup = new ButtonGroup();
         buttonGroup.add(radioHard);
         buttonGroup.add(radioMedium);
         buttonGroup.add(radioEasy);
     }
 
     private void addActionListeners(){
-        playButton.addActionListener(new StartGameController(panelCenter));
+        int difficultyLevel;
+        if (radioEasy.isSelected()){
+            difficultyLevel = 1;
+        } else {
+            if (radioMedium.isSelected()){
+                difficultyLevel = 2;
+            }else{
+                difficultyLevel = 3;
+            }
+        }
+        playButton.addActionListener(new StartGameController(panelCenter, difficultyLevel));
     }
 
     private void addComponents() {
