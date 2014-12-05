@@ -8,16 +8,18 @@ import java.awt.*;
  */
 public class PanelStatus extends JPanel {
         private JLabel statusLabel;
+        private String info;
 
-        public PanelStatus() {
+        public PanelStatus(String info) {
             super();
+            this.info = info;
             setPreferredSize(new Dimension((int)getMaximumSize().getWidth(),40));
             createComponents();
             addComponents();
         }
 
         private void createComponents() {
-            statusLabel = new JLabel("Status: RUN");
+            statusLabel = new JLabel("Status: " + info);
         }
 
         private void addComponents() {
