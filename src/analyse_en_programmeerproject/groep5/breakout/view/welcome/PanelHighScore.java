@@ -1,8 +1,9 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
 import javax.swing.*;
+import javax.xml.crypto.Data;
 import java.awt.*;
-import java.awt.event.HierarchyBoundsAdapter;
+import analyse_en_programmeerproject.groep5.breakout.data.Database;
 
 /**
  * Created by Blackhat on 3/12/2014.
@@ -10,6 +11,7 @@ import java.awt.event.HierarchyBoundsAdapter;
 public class PanelHighScore extends JPanel{
     private JPanel HighScorePanel;
     private JLabel titleLabel, ranking, nameLabel, high_Score, XP;
+    private Database database;
 
 
     public PanelHighScore(){
@@ -21,7 +23,7 @@ public class PanelHighScore extends JPanel{
         addComponents();
     }
     private void createComponents() {
-        HighScorePanel = new JPanel(new GridLayout(4,10));
+        HighScorePanel = new JPanel(new GridLayout(11,4));
         titleLabel = new JLabel("High Score");
         ranking = new JLabel("Ranking");
         nameLabel = new JLabel("Name");
@@ -31,7 +33,7 @@ public class PanelHighScore extends JPanel{
     }
 
     private void setComponents(){
-        HighScorePanel.setPreferredSize(new Dimension(500,400));
+        HighScorePanel.setPreferredSize(new Dimension(500,600));
         HighScorePanel.add(ranking);
         HighScorePanel.add(nameLabel);
         HighScorePanel.add(high_Score);

@@ -1,6 +1,5 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
-import analyse_en_programmeerproject.groep5.breakout.controller.menuTop.LoginButtonController;
-import analyse_en_programmeerproject.groep5.breakout.controller.menuTop.LogoutButtonController;
+import analyse_en_programmeerproject.groep5.breakout.controller.menuTop.Login_outButtonController;
 import analyse_en_programmeerproject.groep5.breakout.controller.menuTop.RegisterButtonController;
 import analyse_en_programmeerproject.groep5.breakout.view.login.LoginPanel;
 import javax.swing.*;
@@ -41,9 +40,9 @@ public class PanelLogin extends JPanel{
     }
 
     private void addActionListeners() {
-        loginButton.addActionListener(new LoginButtonController(this));
+        loginButton.addActionListener(new Login_outButtonController(this, true));
         registerButton.addActionListener(new RegisterButtonController(panelContent));
-        logoutButton.addActionListener(new LogoutButtonController(this));
+        logoutButton.addActionListener(new Login_outButtonController(this, false));
     }
 
 

@@ -11,16 +11,22 @@ import java.awt.event.ActionListener;
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
-public class LogoutButtonController implements ActionListener {
+public class Login_outButtonController implements ActionListener {
     private PanelLogin menuTopPanel;
+    private boolean login;
 
-    public LogoutButtonController(PanelLogin m){
-        menuTopPanel = m;
+    public Login_outButtonController(PanelLogin topPanel, boolean login) {
+        this.menuTopPanel = topPanel;
+        this.login = login;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        menuTopPanel.setLoggedIn(false);
-        menuTopPanel.setComponents("");
+        if (login == true) {
+            menuTopPanel.addLoginComponents();
+        }else{
+            menuTopPanel.setLoggedIn(false);
+            menuTopPanel.setComponents("");
+        }
     }
 }

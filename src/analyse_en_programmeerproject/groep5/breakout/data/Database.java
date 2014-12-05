@@ -1,7 +1,6 @@
 package analyse_en_programmeerproject.groep5.breakout.data;
 
 import analyse_en_programmeerproject.groep5.breakout.model.*;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelStatus;
 
 import java.awt.*;
 import java.lang.reflect.Field;
