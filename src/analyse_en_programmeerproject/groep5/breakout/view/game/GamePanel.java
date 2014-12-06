@@ -21,11 +21,11 @@ public class GamePanel extends JPanel {
 
     private boolean singleplayer;
 
-    public GamePanel(PanelCenter c){
+    public GamePanel(PanelCenter c, int rijen){
         centerPanel = c;
         centerPanel.setBorder(BorderFactory.createLineBorder(Color.black,5,true));
 
-        b = new Ball(true, 0, 3);
+        b = new Ball(true, 0, rijen);
         setPreferredSize(new Dimension(1001, 710));
         setBackground(Color.WHITE);
         ball = new Thread(b);
@@ -37,7 +37,6 @@ public class GamePanel extends JPanel {
         setFocusable(true);
         setRequestFocusEnabled(true);
         requestFocus();
-
     }
 
     public void startGame(){
@@ -48,6 +47,7 @@ public class GamePanel extends JPanel {
             p2.start();
         }
     }
+
     public void paint(Graphics g){
         dbImage = createImage(getWidth(),getHeight());
         dbGraphics = dbImage.getGraphics();

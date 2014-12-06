@@ -26,7 +26,7 @@ public class PanelCenter extends JPanel {
     private void createComponents(){
         panelContent = new PanelContent(this);
         panelButton = new PanelButton(panelContent);
-        gamePanel = new GamePanel(this);
+        gamePanel = new GamePanel(this, 1);
         highscorePanel = new AddHighscorePanel(0,this);
     }
 

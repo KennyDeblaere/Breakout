@@ -10,20 +10,21 @@ import java.awt.event.ActionListener;
  * Created by Kenny, Blackhat on 13/11/2014.
  */
 public class StartGameController implements ActionListener {
-    private PanelCenter c;
+    private PanelCenter panelCenter;
+    private int rijen;
 
     public StartGameController(PanelCenter centerPanel, String difficultyLevel){
-        this.c = centerPanel;
+        this.panelCenter = centerPanel;
         Difficulty(difficultyLevel);
     }
 
     private void Difficulty(String difficulty){
         switch (difficulty) {
-            case "Gemakkelijk": //c.addGamePanel(new GamePanel(c,3));
+            case "Gemakkelijk": rijen = 3;
                 break;
-            case "Gemiddeld":  //c.addGamePanel(new GamePanel(c,5));
+            case "Gemiddeld":  rijen = 5;
                 break;
-            case "Moeilijk":  //c.addGamePanel(new GamePanel(c,8));
+            case "Moeilijk":  rijen = 8;
                 break;
         }
     }
@@ -31,7 +32,7 @@ public class StartGameController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         //Database.DatabaseInstance.insertGameMode(new Gamemode());
-        c.addGamePanel(new GamePanel(c));
-        c.getGamePanel().startGame();
+        panelCenter.addGamePanel(new GamePanel(panelCenter, rijen));
+        panelCenter.getGamePanel().startGame();
     }
 }

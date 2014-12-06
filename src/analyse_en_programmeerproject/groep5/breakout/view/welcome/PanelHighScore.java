@@ -31,7 +31,7 @@ public class PanelHighScore extends JPanel{
     }
 
     private void setComponents(){
-        HighScorePanel.setPreferredSize(new Dimension(500,600));
+        HighScorePanel.setPreferredSize(new Dimension(500,575));
         HighScorePanel.add(ranking);
         HighScorePanel.add(nameLabel);
         HighScorePanel.add(high_Score);
