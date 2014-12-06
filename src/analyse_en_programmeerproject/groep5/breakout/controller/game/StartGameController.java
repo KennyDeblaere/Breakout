@@ -11,18 +11,27 @@ import java.awt.event.ActionListener;
  */
 public class StartGameController implements ActionListener {
     private PanelCenter c;
-    private String difficultyLevel;
 
     public StartGameController(PanelCenter centerPanel, String difficultyLevel){
         this.c = centerPanel;
-        this.difficultyLevel = difficultyLevel;
-        System.out.println("StartGameController: " + difficultyLevel);
+        Difficulty(difficultyLevel);
     }
+
+    private void Difficulty(String difficulty){
+        switch (difficulty) {
+            case "Gemakkelijk": //c.addGamePanel(new GamePanel(c,3));
+                break;
+            case "Gemiddeld":  //c.addGamePanel(new GamePanel(c,5));
+                break;
+            case "Moeilijk":  //c.addGamePanel(new GamePanel(c,8));
+                break;
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         //Database.DatabaseInstance.insertGameMode(new Gamemode());
         c.addGamePanel(new GamePanel(c));
         c.getGamePanel().startGame();
-
     }
 }

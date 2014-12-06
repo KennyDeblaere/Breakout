@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by Kenny on 28/11/2014.
+ * Created by Blackhat on 04/12/2014.
  */
 public class PanelDifficulty extends JPanel implements ActionListener{
     private PanelCenter panelCenter;
@@ -14,7 +14,7 @@ public class PanelDifficulty extends JPanel implements ActionListener{
     private JLabel textLabel, titelLabel;
     private JComboBox difList;
     private String difficultyLevel;
-    private String[] difficultyStrings = { "Gemakkelijk", "Gemiddeld", "Moeilijk" };
+    private String[] difficultyStrings = {"Kies een optie:", "Gemakkelijk", "Gemiddeld", "Moeilijk" };
     private boolean singleplayer;
 
     public PanelDifficulty(PanelCenter c){
@@ -23,6 +23,7 @@ public class PanelDifficulty extends JPanel implements ActionListener{
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         createComponents();
+        setComponents();
         addComponents();
     }
 
@@ -31,13 +32,12 @@ public class PanelDifficulty extends JPanel implements ActionListener{
         textLabel = new JLabel("Kies de moeilijkheid");
         playButton = new JButton("Start!");
         difList = new JComboBox(difficultyStrings);
-        difList.setSelectedIndex(0);
-        difList.addActionListener(this);
     }
 
-    private void addActionListeners(){
-        System.out.println("addActionListener: " + difficultyLevel);
-        playButton.addActionListener(new StartGameController(panelCenter, difficultyLevel));
+    private void setComponents(){
+        playButton.hide();
+        difList.setSelectedIndex(0);
+        difList.addActionListener(this);
     }
 
     private void addComponents() {
@@ -58,9 +58,14 @@ public class PanelDifficulty extends JPanel implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        difList.removeItem("Kies een optie:");
+        playButton.show();
         JComboBox cb = (JComboBox)e.getSource();
         difficultyLevel = (String)cb.getSelectedItem();
-        System.out.println("actionPerformed = " + difficultyLevel);
         addActionListeners();
+    }
+
+    private void addActionListeners(){
+        playButton.addActionListener(new StartGameController(panelCenter, difficultyLevel));
     }
 }

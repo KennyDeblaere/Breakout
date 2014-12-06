@@ -1,11 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by Blackhat on 2/12/2014.
@@ -46,13 +42,13 @@ public class PanelAbout extends JPanel{
 
     }
 
-    private String convertToMultiline(String orig) {
-        return "<html>" + orig.replaceAll("\n", "<br>");
-    }
-
     private void addComponents() {
         add(titelLabel);
         add(about);
         add(imagePanel);
+    }
+
+    private String convertToMultiline(String orig) {
+        return "<html>" + orig.replaceAll("\n", "<br>");
     }
 }

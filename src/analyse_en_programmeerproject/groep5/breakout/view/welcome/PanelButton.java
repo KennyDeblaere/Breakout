@@ -19,8 +19,8 @@ public class PanelButton extends JPanel{
         setPreferredSize(new Dimension(300, 600));
         createComponents();
         setComponents();
-        addListeners();
         addComponents();
+        addListeners();
     }
 
     private void createComponents() {
@@ -43,14 +43,14 @@ public class PanelButton extends JPanel{
         ButtonPanel.add(about);
     }
 
+    private void addComponents() {
+        add(ButtonPanel);
+    }
+
     private void addListeners(){
         single.addActionListener(new ButtonController(panelContent, "Single"));
         co.addActionListener(new ButtonController(panelContent,"CO"));
         high.addActionListener(new ButtonController(panelContent, "High"));
         about.addActionListener(new ButtonController(panelContent, "About"));
-    }
-
-    private void addComponents() {
-        add(ButtonPanel);
     }
 }

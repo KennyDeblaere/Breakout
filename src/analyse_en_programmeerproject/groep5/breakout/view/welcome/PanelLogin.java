@@ -24,8 +24,8 @@ public class PanelLogin extends JPanel{
         //setLayout(new FlowLayout(FlowLayout.RIGHT));
         createComponents();
         setComponents("");
-        addActionListeners();
         addComponents();
+        addActionListeners();
     }
 
     private void createComponents() {
@@ -35,16 +35,7 @@ public class PanelLogin extends JPanel{
         logoutButton = new JButton("Afmelden");
         registerButton = new JButton("Registreren");
         loginPanel = new LoginPanel(this);
-
-
     }
-
-    private void addActionListeners() {
-        loginButton.addActionListener(new Login_outButtonController(this, true));
-        registerButton.addActionListener(new RegisterButtonController(panelContent));
-        logoutButton.addActionListener(new Login_outButtonController(this, false));
-    }
-
 
     public void setComponents(String username) {
         if (loggedIn) {
@@ -57,10 +48,6 @@ public class PanelLogin extends JPanel{
         logoutButton.setVisible(loggedIn);
     }
 
-    public void setLoggedIn(Boolean loggedIn) {
-        this.loggedIn = loggedIn;
-    }
-
     public void addComponents() {
         remove(loginPanel);
         add(textLabel);
@@ -69,6 +56,16 @@ public class PanelLogin extends JPanel{
         add(registerButton);
         revalidate();
         repaint();
+    }
+
+    private void addActionListeners() {
+        loginButton.addActionListener(new Login_outButtonController(this, true));
+        registerButton.addActionListener(new RegisterButtonController(panelContent));
+        logoutButton.addActionListener(new Login_outButtonController(this, false));
+    }
+
+    public void setLoggedIn(Boolean loggedIn) {
+        this.loggedIn = loggedIn;
     }
 
     public LoginPanel getLoginPanel() {

@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Kenny on 28/11/2014.
+ * Created by Blackhat on 04/12/2014.
  */
 public class PanelCenter extends JPanel {
     private PanelContent panelContent;

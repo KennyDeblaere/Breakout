@@ -1,7 +1,6 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
 import javax.swing.*;
-import javax.xml.crypto.Data;
 import java.awt.*;
 import analyse_en_programmeerproject.groep5.breakout.data.Database;
 
@@ -29,7 +28,6 @@ public class PanelHighScore extends JPanel{
         nameLabel = new JLabel("Name");
         high_Score = new JLabel("High Score");
         XP = new JLabel("XP");
-
     }
 
     private void setComponents(){
@@ -43,6 +41,5 @@ public class PanelHighScore extends JPanel{
     private void addComponents() {
         add(titleLabel);
         add(HighScorePanel);
-
     }
 }

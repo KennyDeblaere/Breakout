@@ -24,13 +24,11 @@ public class PanelMain extends JPanel{
         panelStatus = new PanelStatus("RUN");
         panelCenter = new PanelCenter();
         panelLogin = new PanelLogin(panelCenter.getPanelContent());
-
     }
 
     private void setComponents() {
         panelLogin.setBackground(Color.GRAY);
         panelStatus.setBackground(Color.GRAY);
-
     }
 
     private void addComponents(){

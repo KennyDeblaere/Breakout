@@ -20,14 +20,13 @@ public class GamePanel extends JPanel {
     private PanelCenter centerPanel;
 
     private boolean singleplayer;
-    private int difficulty;
 
     public GamePanel(PanelCenter c){
         centerPanel = c;
-        centerPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        centerPanel.setBorder(BorderFactory.createLineBorder(Color.black,5,true));
 
         b = new Ball(true, 0, 3);
-        setPreferredSize(new Dimension(1001, 750));
+        setPreferredSize(new Dimension(1001, 710));
         setBackground(Color.WHITE);
         ball = new Thread(b);
         p1 = new Thread(b.getP1());
