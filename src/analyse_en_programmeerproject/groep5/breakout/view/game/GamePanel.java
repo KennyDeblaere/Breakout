@@ -9,7 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Kenny, Dries on 12/11/2014.
+ * Created by Kenny, Blackhat on 12/11/2014.
  */
 public class GamePanel extends JPanel {
     private Image dbImage;
