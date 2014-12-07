@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Blackhat on 04/12/2014.
  */
-public class PanelDifficulty extends JPanel implements ActionListener{
+public class PanelDifficulty extends JPanel{
     private PanelCenter panelCenter;
     private JButton playButton;
     private JLabel textLabel, titelLabel;
@@ -56,16 +56,8 @@ public class PanelDifficulty extends JPanel implements ActionListener{
         }
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        difList.removeItem("Kies een optie:");
-        playButton.show();
-        JComboBox cb = (JComboBox)e.getSource();
-        difficultyLevel = (String)cb.getSelectedItem();
-        addActionListeners();
-    }
 
     private void addActionListeners(){
-        playButton.addActionListener(new StartGameController(panelCenter, difficultyLevel));
+        playButton.addActionListener(new StartGameController(panelCenter, difList));
     }
 }

@@ -10,7 +10,6 @@ import analyse_en_programmeerproject.groep5.breakout.data.Database;
 public class PanelHighScore extends JPanel{
     private JPanel HighScorePanel;
     private JLabel titleLabel, ranking, nameLabel, high_Score, XP;
-    private Database database;
 
 
     public PanelHighScore(){
