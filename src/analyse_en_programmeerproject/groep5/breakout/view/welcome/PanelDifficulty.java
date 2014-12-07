@@ -14,17 +14,20 @@ public class PanelDifficulty extends JPanel{
     private JLabel textLabel, titelLabel;
     private JComboBox difList;
     private String difficultyLevel;
-    private String[] difficultyStrings = {"Kies een optie:", "Gemakkelijk", "Gemiddeld", "Moeilijk" };
+    private String[] difficultyStrings = {"Gemakkelijk", "Gemiddeld", "Moeilijk" };
     private boolean singleplayer;
 
-    public PanelDifficulty(PanelCenter c){
+    public PanelDifficulty(PanelCenter c, boolean singleplayer){
         super();
         panelCenter = c;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.singleplayer = singleplayer;
 
         createComponents();
         setComponents();
+        setTitle(singleplayer);
         addComponents();
+        addActionListeners();
     }
 
     private void createComponents() {
@@ -35,9 +38,8 @@ public class PanelDifficulty extends JPanel{
     }
 
     private void setComponents(){
-        playButton.hide();
         difList.setSelectedIndex(0);
-        difList.addActionListener(this);
+
     }
 
     private void addComponents() {
@@ -47,8 +49,7 @@ public class PanelDifficulty extends JPanel{
         add(playButton);
     }
 
-    public void setSingleplayer(boolean singleplayer) {
-        this.singleplayer = singleplayer;
+    private void setTitle(boolean singleplayer) {
         if (singleplayer){
             titelLabel.setText("Single Player");
         } else {
@@ -56,8 +57,11 @@ public class PanelDifficulty extends JPanel{
         }
     }
 
+    public boolean isSingleplayer() {
+        return singleplayer;
+    }
 
     private void addActionListeners(){
-        playButton.addActionListener(new StartGameController(panelCenter, difList));
+        playButton.addActionListener(new StartGameController(panelCenter, difList, isSingleplayer()));
     }
 }

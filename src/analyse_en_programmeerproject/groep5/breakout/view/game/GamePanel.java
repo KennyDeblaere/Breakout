@@ -21,11 +21,12 @@ public class GamePanel extends JPanel {
 
     private boolean singleplayer;
 
-    public GamePanel(PanelCenter c, int rijen){
+    public GamePanel(PanelCenter c, int rows, boolean singleplayer){
         centerPanel = c;
         centerPanel.setBorder(BorderFactory.createLineBorder(Color.black,5,true));
+        this.singleplayer = singleplayer;
 
-        b = new Ball(true, 0, rijen);
+        b = new Ball(true, 0, rows);
         setPreferredSize(new Dimension(1001, 710));
         setBackground(Color.WHITE);
         ball = new Thread(b);

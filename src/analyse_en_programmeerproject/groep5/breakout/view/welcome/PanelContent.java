@@ -26,7 +26,7 @@ public class PanelContent extends JPanel {
 
     private void createComponents() {
         registrationPanel = new RegistrationPanel(this);
-        panelDifficulty = new PanelDifficulty(panelCenter);
+        panelDifficulty = new PanelDifficulty(panelCenter, true);
         panelAbout = new PanelAbout();
         panelHighScore = new PanelHighScore();
     }
@@ -43,11 +43,13 @@ public class PanelContent extends JPanel {
     }
 
     public void addDifficultyPanel(boolean singleplayer){
+        remove(panelDifficulty);
+        panelDifficulty = new PanelDifficulty(panelCenter,singleplayer);
         remove(registrationPanel);
         remove(panelAbout);
         remove(panelHighScore);
+
         add(panelDifficulty);
-        panelDifficulty.setSingleplayer(singleplayer);
         revalidate();
         repaint();
     }

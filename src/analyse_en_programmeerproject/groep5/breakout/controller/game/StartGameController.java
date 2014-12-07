@@ -15,27 +15,30 @@ import java.awt.event.ActionListener;
 public class StartGameController implements ActionListener {
     private PanelCenter panelCenter;
     private JComboBox difficulty;
+    private boolean singleplayer;
 
-    public StartGameController(PanelCenter centerPanel, JComboBox difficultyLevel){
+    public StartGameController(PanelCenter centerPanel, JComboBox difficultyLevel, boolean singleplayer){
         this.panelCenter = centerPanel;
         difficulty = difficultyLevel;
+        this.singleplayer = singleplayer;
     }
 
     private int countNumberOfStartingRows(int difficulty){
         switch (difficulty) {
-            case 0: return 3;
-                break;
-            case 1:  return  5;
-                break;
-            case 2:  return  8;
-                break;
+            case 0:
+                return 3;
+            case 1:
+                return  5;
+            default:
+                return  8;
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Database.DatabaseInstance.insertGameMode(new Gamemode(true, countNumberOfStartingRows(difficulty.getSelectedIndex())));
-        panelCenter.addGamePanel(new GamePanel(panelCenter, countNumberOfStartingRows(difficulty.getSelectedIndex())));
+        System.out.println(singleplayer);
+        Database.DatabaseInstance.insertGameMode(new Gamemode(singleplayer, difficulty.getSelectedIndex()));
+        panelCenter.addGamePanel(new GamePanel(panelCenter, countNumberOfStartingRows(difficulty.getSelectedIndex()), singleplayer));
         panelCenter.getGamePanel().startGame();
     }
 }
