@@ -33,11 +33,9 @@ public class Ball implements Runnable {
         numberOfLifes = 3;
 
         createScreen(getNumberOfBlocks(difficulty));
-        //Ball random laten starten
         startRandomX();
         startRandomY();
 
-        //Creeer ball
         ball = new Rectangle(getX(),getY(),7,7);
 
         setP1Score(0);

@@ -1,27 +1,28 @@
-package analyse_en_programmeerproject.groep5.breakout.view.welcome;
+package analyse_en_programmeerproject.groep5.breakout.view.highscores;
 
 import javax.swing.*;
 import java.awt.*;
 import analyse_en_programmeerproject.groep5.breakout.data.Database;
+import analyse_en_programmeerproject.groep5.breakout.model.ScoreUser;
 
 /**
  * Created by Blackhat on 3/12/2014.
  */
 public class PanelHighScore extends JPanel{
-    private JPanel HighScorePanel;
     private JLabel titleLabel, ranking, nameLabel, high_Score, XP;
 
 
     public PanelHighScore(){
         super();
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(new GridLayout(6,2,5,5));
 
         createComponents();
         setComponents();
         addComponents();
+        fillPanel();
     }
     private void createComponents() {
-        HighScorePanel = new JPanel(new GridLayout(11,4));
+
         titleLabel = new JLabel("High Score");
         ranking = new JLabel("Ranking");
         nameLabel = new JLabel("Name");
@@ -30,15 +31,21 @@ public class PanelHighScore extends JPanel{
     }
 
     private void setComponents(){
-        HighScorePanel.setPreferredSize(new Dimension(500,575));
-        HighScorePanel.add(ranking);
-        HighScorePanel.add(nameLabel);
-        HighScorePanel.add(high_Score);
-        HighScorePanel.add(XP);
+        setPreferredSize(new Dimension(500, 575));
+
     }
 
     private void addComponents() {
-        add(titleLabel);
-        add(HighScorePanel);
+        add(nameLabel);
+        add(high_Score);
+    }
+    private void fillPanel(){
+        JLabel username, score;
+        for(ScoreUser su :Database.DatabaseInstance.fillTopScores(true)){
+            username = new JLabel(su.getUserName());
+            add(username);
+            score = new JLabel("" + su.getScore());
+            add(score);
+        }
     }
 }

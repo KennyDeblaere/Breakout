@@ -7,24 +7,25 @@ package analyse_en_programmeerproject.groep5.breakout.model;
  *      Benjamin Vansteelandt
  */
 public class ScoreUser {
-    private int scoreid, userid;
+    private int score;
+    private String username;
 
-    public ScoreUser(int scoreid, int userid){
-        setScoreid(scoreid);
-        setUserid(getUserid());
-    }
-
-    public void setScoreid(int scoreid) {
-        this.scoreid = scoreid;
-    }
-    public void setUserid(int userid) {
-        this.userid = userid;
+    public ScoreUser(int score, String username){
+        setScore(score);
+        setUserName(username);
     }
 
-    public int getUserid() {
-        return userid;
+    public void setScore(int score) {
+        this.score = score;
     }
-    public int getScoreid() {
-        return scoreid;
+    public void setUserName(String username) {
+        this.username = username;
+    }
+
+    public String getUserName() {
+        return username;
+    }
+    public int getScore() {
+        return score;
     }
 }

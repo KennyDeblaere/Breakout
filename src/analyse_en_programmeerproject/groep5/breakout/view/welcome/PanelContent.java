@@ -1,7 +1,8 @@
 package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
+import analyse_en_programmeerproject.groep5.breakout.view.highscores.PanelHighScore;
 import analyse_en_programmeerproject.groep5.breakout.view.registration.RegistrationPanel;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelAbout;
+
 import javax.swing.*;
 import java.awt.*;
 

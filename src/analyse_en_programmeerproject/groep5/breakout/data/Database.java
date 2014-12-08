@@ -118,14 +118,13 @@ public class Database {
             ResultSet rs;
             rs = stmt.executeQuery("select * from score_user");
             while (rs.next()){
-                scoreUsers.add(new ScoreUser(rs.getInt("userid"), rs.getInt("scoreid")));
+                scoreUsers.add(new ScoreUser(rs.getInt("userid"), rs.getString("scoreid")));
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return scoreUsers;
     }
-
     public List<Gamemode> fillGames(){
         List<Gamemode> gamemode = new ArrayList<>();
         try{
@@ -141,6 +140,26 @@ public class Database {
             e.printStackTrace();
         }
         return gamemode;
+    }
+
+    public List<ScoreUser> fillTopScores(boolean singlePlayer){
+        List<ScoreUser> scoreUsers = new ArrayList<>();
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Statement stmt = getConnection().createStatement();
+            ResultSet rs;
+            rs = stmt.executeQuery("SELECT * FROM score " +
+                    "JOIN gamemode ON score.gamemodeid = gamemode.gamemodeid " +
+                    "JOIN score_user ON score.scoreid = score_user.scoreid  " +
+                    "WHERE gamemode.`single/multi` = "+ singlePlayer + " LIMIT 5");
+            while (rs.next()){
+                scoreUsers.add(new ScoreUser(rs.getInt("score.score"), fillUsers().get(rs.getInt("score_user.userid")).getUsername()));
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return scoreUsers;
     }
 
     public void insertUser(User user){
@@ -179,7 +198,6 @@ public class Database {
             e.printStackTrace();
         }
     }
-
     public void insertScore(Score score){
         try{
             Class.forName("com.mysql.jdbc.Driver");
@@ -196,7 +214,6 @@ public class Database {
             e.printStackTrace();
         }
     }
-
     public void insertScoreUsers(int userid, int scoreid){
         try{
             Class.forName("com.mysql.jdbc.Driver");

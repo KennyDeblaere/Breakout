@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="Colission werkt perfect.">
+    <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
+      <change type="MOVED" beforePath="C:\Users\Kenny\Documents\School\2014-2015\Semester III\Analyse- en Programmeerproject\Breakout\src\analyse_en_programmeerproject\groep5\breakout\view\welcome\PanelHighScore.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/highscores/PanelHighScore.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Paddle.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Paddle.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelContent.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelContent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/ScoreUser.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/ScoreUser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Breakout.iws" />
@@ -47,10 +49,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="PanelHighScore.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/highscores/PanelHighScore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistrationPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/registration/RegistrationPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="246" max-vertical-offset="850">
+              <caret line="104" column="34" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="34" />
+              <folding>
+                <element signature="method#createComponents#0;class#RegistrationPanel#0" expanded="false" />
+                <element signature="method#addComponents#0;class#RegistrationPanel#0" expanded="false" />
+                <element signature="method#addActionListeners#0;class#RegistrationPanel#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="1870">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1113" max-vertical-offset="1870">
               <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
               <folding />
             </state>
@@ -60,8 +86,8 @@
       <file leaf-file-name="Ball.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="3910">
-              <caret line="225" column="50" selection-start-line="225" selection-start-column="50" selection-end-line="225" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1929" max-vertical-offset="3876">
+              <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -70,20 +96,44 @@
       <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33278146" vertical-offset="955" max-vertical-offset="3587">
-              <caret line="78" column="33" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.56345177" vertical-offset="585" max-vertical-offset="1241">
+              <caret line="156" column="67" selection-start-line="156" selection-start-column="67" selection-end-line="156" selection-end-column="67" />
               <folding>
-                <marker date="1418042724837" expanded="true" signature="1530:1548" placeholder="select * fro..user..." />
-                <marker date="1418042724837" expanded="true" signature="2284:2303" placeholder="select * fro..block..." />
-                <marker date="1418042724837" expanded="true" signature="3111:3130" placeholder="select * fro..power..." />
-                <marker date="1418042724837" expanded="true" signature="3653:3672" placeholder="select * fro..score..." />
-                <marker date="1418042724837" expanded="true" signature="4281:4305" placeholder="select * fro..score_user..." />
-                <marker date="1418042724837" expanded="true" signature="4865:4887" placeholder="select * fro..gamemode..." />
-                <marker date="1418042724837" expanded="true" signature="5304:5465" placeholder="INSERT INTO ..." />
-                <marker date="1418042724837" expanded="true" signature="6323:6415" placeholder="INSERT INTO ..." />
-                <marker date="1418042724837" expanded="true" signature="6942:7010" placeholder="INSERT INTO ..." />
-                <marker date="1418042724837" expanded="true" signature="7623:7694" placeholder="INSERT INTO ..." />
+                <element signature="method#Database#0;class#Database#0" expanded="false" />
+                <element signature="method#fillUsers#0;class#Database#0" expanded="false" />
+                <element signature="method#fillBlocks#0;class#Database#0" expanded="false" />
+                <element signature="method#fillPowers#0;class#Database#0" expanded="false" />
+                <element signature="method#fillScores#0;class#Database#0" expanded="false" />
+                <element signature="method#fillGames#0;class#Database#0" expanded="false" />
+                <element signature="method#insertUser#0;class#Database#0" expanded="false" />
+                <element signature="method#insertGameMode#0;class#Database#0" expanded="false" />
+                <element signature="method#insertScore#0;class#Database#0" expanded="false" />
+                <element signature="method#insertScoreUsers#0;class#Database#0" expanded="false" />
+                <marker date="1418046676912" expanded="true" signature="1530:1548" placeholder="select * fro..user..." />
+                <marker date="1418046676912" expanded="true" signature="2284:2303" placeholder="select * fro..block..." />
+                <marker date="1418046676912" expanded="true" signature="3111:3130" placeholder="select * fro..power..." />
+                <marker date="1418046676912" expanded="true" signature="3653:3672" placeholder="select * fro..score..." />
+                <marker date="1418046676912" expanded="true" signature="4281:4305" placeholder="select * fro..score_user..." />
+                <marker date="1418046676912" expanded="true" signature="4867:4889" placeholder="select * fro..gamemode..." />
+                <marker date="1418046676912" expanded="true" signature="5485:5499" placeholder="SELECT * FRO..score..." />
+                <marker date="1418046676912" expanded="true" signature="5485:5499" placeholder="SELECT * FRO..score..." />
+                <marker date="1418046676912" expanded="true" signature="5485:5722" placeholder="SELECT * FRO..score..." />
+                <marker date="1418046676912" expanded="true" signature="5485:5750" placeholder="SELECT * FRO..score..." />
+                <marker date="1418046676912" expanded="true" signature="6205:6366" placeholder="INSERT INTO ..." />
+                <marker date="1418046676912" expanded="true" signature="7224:7316" placeholder="INSERT INTO ..." />
+                <marker date="1418046676912" expanded="true" signature="7842:7910" placeholder="INSERT INTO ..." />
+                <marker date="1418046676912" expanded="true" signature="8522:8593" placeholder="INSERT INTO ..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScoreUser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/ScoreUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -152,6 +202,8 @@
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/Program.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Paddle.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
+        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/ScoreUser.java" />
+        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/highscores/PanelHighScore.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" />
       </list>
     </option>
@@ -264,6 +316,132 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="welcome" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="registration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="highscores" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -676,7 +854,7 @@
       <workItem from="1417903717052" duration="1705000" />
       <workItem from="1417948795887" duration="1184000" />
       <workItem from="1417965655667" duration="2286000" />
-      <workItem from="1418028937316" duration="13573000" />
+      <workItem from="1418028937316" duration="16910000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1415363062491</created>
@@ -1080,11 +1258,17 @@
       <option name="project" value="LOCAL" />
       <updated>1418039883818</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Database werkt zo goed als perfect">
+      <created>1418043399735</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1418043399735</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147436000" />
+    <option name="totallyTimeSpent" value="150773000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1108,7 +1292,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1124,7 +1308,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3181818" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15921193" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15921193" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1183,7 +1367,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Nieuwe layout, nog aan bezig --&gt; geen gezaag" />
     <MESSAGE value="Dries verbeteren" />
     <MESSAGE value="Dries verbeteren (begin nieuwe layout)" />
     <MESSAGE value="Registratiepaneel werkt terug" />
@@ -1208,11 +1391,12 @@
     <MESSAGE value="Score wordt ingegeven en opgeslagen" />
     <MESSAGE value="Horizonatale bots werkt" />
     <MESSAGE value="Colission werkt perfect." />
-    <option name="LAST_COMMIT_MESSAGE" value="Colission werkt perfect." />
+    <MESSAGE value="Database werkt zo goed als perfect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Database werkt zo goed als perfect" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1264,13 +1448,6 @@
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/Power.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/ScoreUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
           <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
         </state>
       </provider>
@@ -1350,13 +1527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03736264" vertical-offset="0" max-vertical-offset="455">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/registration/RegistrationPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1121" max-vertical-offset="1734">
-          <caret line="103" column="20" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1459,17 +1629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="32" max-vertical-offset="493">
           <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/welcome/PanelHighScore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="23" max-vertical-offset="731">
-          <caret line="11" column="66" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#createComponents#0;class#PanelHighScore#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1620,37 +1779,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1929" max-vertical-offset="3876">
+          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="1870">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1113" max-vertical-offset="1870">
           <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/registration/RegistrationPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2490" max-vertical-offset="3910">
-          <caret line="225" column="50" selection-start-line="225" selection-start-column="50" selection-end-line="225" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="246" max-vertical-offset="850">
+          <caret line="104" column="34" selection-start-line="104" selection-start-column="33" selection-end-line="104" selection-end-column="34" />
+          <folding>
+            <element signature="method#createComponents#0;class#RegistrationPanel#0" expanded="false" />
+            <element signature="method#addComponents#0;class#RegistrationPanel#0" expanded="false" />
+            <element signature="method#addActionListeners#0;class#RegistrationPanel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/ScoreUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/highscores/PanelHighScore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33278146" vertical-offset="955" max-vertical-offset="3587">
-          <caret line="78" column="33" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.56345177" vertical-offset="585" max-vertical-offset="1241">
+          <caret line="156" column="67" selection-start-line="156" selection-start-column="67" selection-end-line="156" selection-end-column="67" />
           <folding>
-            <marker date="1418042724837" expanded="true" signature="1530:1548" placeholder="select * fro..user..." />
-            <marker date="1418042724837" expanded="true" signature="2284:2303" placeholder="select * fro..block..." />
-            <marker date="1418042724837" expanded="true" signature="3111:3130" placeholder="select * fro..power..." />
-            <marker date="1418042724837" expanded="true" signature="3653:3672" placeholder="select * fro..score..." />
-            <marker date="1418042724837" expanded="true" signature="4281:4305" placeholder="select * fro..score_user..." />
-            <marker date="1418042724837" expanded="true" signature="4865:4887" placeholder="select * fro..gamemode..." />
-            <marker date="1418042724837" expanded="true" signature="5304:5465" placeholder="INSERT INTO ..." />
-            <marker date="1418042724837" expanded="true" signature="6323:6415" placeholder="INSERT INTO ..." />
-            <marker date="1418042724837" expanded="true" signature="6942:7010" placeholder="INSERT INTO ..." />
-            <marker date="1418042724837" expanded="true" signature="7623:7694" placeholder="INSERT INTO ..." />
+            <element signature="method#Database#0;class#Database#0" expanded="false" />
+            <element signature="method#fillUsers#0;class#Database#0" expanded="false" />
+            <element signature="method#fillBlocks#0;class#Database#0" expanded="false" />
+            <element signature="method#fillPowers#0;class#Database#0" expanded="false" />
+            <element signature="method#fillScores#0;class#Database#0" expanded="false" />
+            <element signature="method#fillGames#0;class#Database#0" expanded="false" />
+            <element signature="method#insertUser#0;class#Database#0" expanded="false" />
+            <element signature="method#insertGameMode#0;class#Database#0" expanded="false" />
+            <element signature="method#insertScore#0;class#Database#0" expanded="false" />
+            <element signature="method#insertScoreUsers#0;class#Database#0" expanded="false" />
+            <marker date="1418046676912" expanded="true" signature="1530:1548" placeholder="select * fro..user..." />
+            <marker date="1418046676912" expanded="true" signature="2284:2303" placeholder="select * fro..block..." />
+            <marker date="1418046676912" expanded="true" signature="3111:3130" placeholder="select * fro..power..." />
+            <marker date="1418046676912" expanded="true" signature="3653:3672" placeholder="select * fro..score..." />
+            <marker date="1418046676912" expanded="true" signature="4281:4305" placeholder="select * fro..score_user..." />
+            <marker date="1418046676912" expanded="true" signature="4867:4889" placeholder="select * fro..gamemode..." />
+            <marker date="1418046676912" expanded="true" signature="5485:5499" placeholder="SELECT * FRO..score..." />
+            <marker date="1418046676912" expanded="true" signature="5485:5499" placeholder="SELECT * FRO..score..." />
+            <marker date="1418046676912" expanded="true" signature="5485:5722" placeholder="SELECT * FRO..score..." />
+            <marker date="1418046676912" expanded="true" signature="5485:5750" placeholder="SELECT * FRO..score..." />
+            <marker date="1418046676912" expanded="true" signature="6205:6366" placeholder="INSERT INTO ..." />
+            <marker date="1418046676912" expanded="true" signature="7224:7316" placeholder="INSERT INTO ..." />
+            <marker date="1418046676912" expanded="true" signature="7842:7910" placeholder="INSERT INTO ..." />
+            <marker date="1418046676912" expanded="true" signature="8522:8593" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
