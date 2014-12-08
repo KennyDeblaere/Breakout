@@ -9,7 +9,6 @@ import java.awt.*;
  * Created by Blackhat on 21/11/2014.
  */
 public class PanelLogin extends JPanel{
-    private JPanel LoginPanel;
     private ContentPanel panelContent;
     private Boolean loggedIn; //REMOVE WHEN USER-CLASS IS ADDED
     private JLabel textLabel;
@@ -21,7 +20,6 @@ public class PanelLogin extends JPanel{
         setLoggedIn(false);
         setPreferredSize(new Dimension((int) getMaximumSize().getWidth(), 100));
         setLoggedIn(false);
-        //setLayout(new FlowLayout(FlowLayout.RIGHT));
         createComponents();
         setComponents("");
         addComponents();
@@ -29,7 +27,6 @@ public class PanelLogin extends JPanel{
     }
 
     private void createComponents() {
-        LoginPanel = new JPanel();
         textLabel = new JLabel();
         loginButton = new JButton("Aanmelden");
         logoutButton = new JButton("Afmelden");

@@ -21,7 +21,7 @@ public class MainPanel extends JPanel{
     }
 
     private void createComponents() {
-        panelStatus = new StatusPanel("RUN");
+        panelStatus = new StatusPanel();
         panelCenter = new CenterPanel();
         panelLogin = new PanelLogin(panelCenter.getPanelContent());
     }
