@@ -1,5 +1,6 @@
 package analyse_en_programmeerproject.groep5.breakout.controller.menu;
 
+import analyse_en_programmeerproject.groep5.breakout.data.Database;
 import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelLogin;
 
 import java.awt.event.ActionEvent;
@@ -26,6 +27,7 @@ public class Login_outButtonController implements ActionListener {
             menuTopPanel.addLoginComponents();
         }else{
             menuTopPanel.setLoggedIn(false);
+            Database.DatabaseInstance.updateHostNameUserLogout(menuTopPanel.getLoginPanel().getUserId());
             menuTopPanel.setComponents("");
         }
     }

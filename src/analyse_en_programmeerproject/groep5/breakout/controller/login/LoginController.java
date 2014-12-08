@@ -45,6 +45,8 @@ public class LoginController implements ActionListener {
             menuTopPanel.setLoggedIn(true);
             menuTopPanel.addComponents();
             menuTopPanel.setComponents(DatabaseInstance.fillUsers().get(checkUsername()).getFirstname());
+            DatabaseInstance.updateHostNameUserLogin(checkUsername());
+            menuTopPanel.getLoginPanel().setUserId(checkUsername());
         } else {
             menuTopPanel.getLoginPanel().getErrorLabel().setVisible(true);
         }

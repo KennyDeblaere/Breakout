@@ -1,9 +1,12 @@
 package analyse_en_programmeerproject.groep5.breakout.data;
 
 import analyse_en_programmeerproject.groep5.breakout.model.*;
+import com.sun.org.apache.bcel.internal.classfile.Unknown;
 
 import java.awt.*;
 import java.lang.reflect.Field;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -226,6 +229,52 @@ public class Database {
             preparedStatement.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public void updateHostNameUserLogin(int userId){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+
+            String query = "UPDATE `user` SET hostname = '" + InetAddress.getLocalHost().getHostName() + "' WHERE userid = " + userId;
+            PreparedStatement preparedStatement = getConnection().prepareStatement(query);
+
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException | UnknownHostException e) {
+            e.printStackTrace();
+        }
+    }
+    public void updateHostNameUserLogout(int userId){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+
+            String query = "UPDATE `user` SET hostname = NULL WHERE userid = " + userId;
+            PreparedStatement preparedStatement = getConnection().prepareStatement(query);
+
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public int getUserId(){
+        try{
+            int userid = -1;
+            Class.forName("com.mysql.jdbc.Driver");
+
+            String query = "SELECT userid FROM `user` WHERE `hostname` = '" + InetAddress.getLocalHost().getHostName() + "'";
+            Statement stmt = getConnection().createStatement();
+            ResultSet rs;
+            rs = stmt.executeQuery(query);
+            while (rs.next()){
+                userid = rs.getInt("userid");
+            }
+            return userid;
+
+        } catch (SQLException | ClassNotFoundException | UnknownHostException e) {
             e.printStackTrace();
         }
     }

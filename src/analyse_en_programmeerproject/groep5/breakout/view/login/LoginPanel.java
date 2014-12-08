@@ -14,7 +14,7 @@ public class LoginPanel extends JPanel {
     private JPasswordField password;
     private JLabel usernameLabel, passwordLabel, errorLabel;
     private JButton login, cancel;
-
+    private int userId;
     private PanelLogin panelLogin;
 
     public JTextField getUsername() {
@@ -25,6 +25,12 @@ public class LoginPanel extends JPanel {
     }
     public JLabel getErrorLabel() {
         return errorLabel;
+    }
+    public int getUserId() {
+        return userId;
+    }
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public LoginPanel(PanelLogin p){
