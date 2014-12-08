@@ -6,13 +6,13 @@ import java.awt.*;
 /**
  * Created by Blackhat on 2/12/2014.
  */
-public class PanelAbout extends JPanel{
+public class AboutPanel extends JPanel{
     private JPanel about;
     private JLabel titelLabel, createLabel, licensedtoLabel, versionLabel;
     private ImagePanel imagePanel;
 
 
-    public PanelAbout(){
+    public AboutPanel(){
         super();
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 

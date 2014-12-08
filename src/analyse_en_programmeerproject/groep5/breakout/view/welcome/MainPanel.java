@@ -6,14 +6,14 @@ import java.awt.*;
 /**
  * Created by Blackhat on 21/11/2014.
  */
-public class PanelMain extends JPanel{
+public class MainPanel extends JPanel{
 
     private PanelLogin panelLogin;
-    private PanelStatus panelStatus;
-    private PanelCenter panelCenter;
+    private StatusPanel panelStatus;
+    private CenterPanel panelCenter;
 
 
-    public PanelMain() {
+    public MainPanel() {
         super();
         createComponents();
         setComponents();
@@ -21,8 +21,8 @@ public class PanelMain extends JPanel{
     }
 
     private void createComponents() {
-        panelStatus = new PanelStatus("RUN");
-        panelCenter = new PanelCenter();
+        panelStatus = new StatusPanel();
+        panelCenter = new CenterPanel();
         panelLogin = new PanelLogin(panelCenter.getPanelContent());
     }
 

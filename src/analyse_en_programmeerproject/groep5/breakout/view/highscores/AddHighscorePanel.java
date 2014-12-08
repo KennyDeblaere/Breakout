@@ -2,7 +2,7 @@ package analyse_en_programmeerproject.groep5.breakout.view.highscores;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.highscores.CancelController;
 import analyse_en_programmeerproject.groep5.breakout.controller.highscores.SubmitController;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
 
@@ -13,9 +13,9 @@ public class AddHighscorePanel extends JPanel {
     private int score;
     private JButton submit, cancel;
     private JLabel highscore;
-    private PanelCenter center;
+    private CenterPanel center;
 
-    public AddHighscorePanel(int score, PanelCenter panelCenter){
+    public AddHighscorePanel(int score, CenterPanel panelCenter){
         super();
         center = panelCenter;
         this.score = score;

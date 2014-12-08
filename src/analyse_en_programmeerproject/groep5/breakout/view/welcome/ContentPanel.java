@@ -9,15 +9,15 @@ import java.awt.*;
 /**
  * Created by Blackhat on 21/11/2014.
  */
-public class PanelContent extends JPanel {
-    private PanelCenter panelCenter;
+public class ContentPanel extends JPanel {
+    private CenterPanel panelCenter;
     private RegistrationPanel registrationPanel;
-    private PanelDifficulty panelDifficulty;
-    private PanelAbout panelAbout;
+    private DifficultyPanel panelDifficulty;
+    private AboutPanel panelAbout;
     private PanelHighScore panelHighScore;
 
 
-    public PanelContent(PanelCenter c) {
+    public ContentPanel(CenterPanel c) {
         super();
         panelCenter = c;
         setPreferredSize(new Dimension(700, 600));
@@ -27,25 +27,27 @@ public class PanelContent extends JPanel {
 
     private void createComponents() {
         registrationPanel = new RegistrationPanel(this);
-        panelDifficulty = new PanelDifficulty(panelCenter, true);
-        panelAbout = new PanelAbout();
+        panelDifficulty = new DifficultyPanel(panelCenter, true);
+        panelAbout = new AboutPanel();
         panelHighScore = new PanelHighScore();
-    }
-
-    public void addRegistrationPanel(){
-        remove(panelDifficulty);
-        add(registrationPanel);
-        revalidate();
-        repaint();
     }
 
     public RegistrationPanel getRegistration() {
         return registrationPanel;
     }
 
+    public void addRegistrationPanel(){
+        remove(panelDifficulty);
+        add(registrationPanel);
+        remove(panelAbout);
+        remove(panelHighScore);
+        revalidate();
+        repaint();
+    }
+
     public void addDifficultyPanel(boolean singleplayer){
         remove(panelDifficulty);
-        panelDifficulty = new PanelDifficulty(panelCenter,singleplayer);
+        panelDifficulty = new DifficultyPanel(panelCenter,singleplayer);
         remove(registrationPanel);
         remove(panelAbout);
         remove(panelHighScore);

@@ -2,14 +2,12 @@ package analyse_en_programmeerproject.groep5.breakout.view.welcome;
 
 import analyse_en_programmeerproject.groep5.breakout.controller.game.StartGameController;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Created by Blackhat on 04/12/2014.
  */
-public class PanelDifficulty extends JPanel{
-    private PanelCenter panelCenter;
+public class DifficultyPanel extends JPanel{
+    private CenterPanel panelCenter;
     private JButton playButton;
     private JLabel textLabel, titelLabel;
     private JComboBox difList;
@@ -17,7 +15,7 @@ public class PanelDifficulty extends JPanel{
     private String[] difficultyStrings = {"Gemakkelijk", "Gemiddeld", "Moeilijk" };
     private boolean singleplayer;
 
-    public PanelDifficulty(PanelCenter c, boolean singleplayer){
+    public DifficultyPanel(CenterPanel c, boolean singleplayer){
         super();
         panelCenter = c;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
