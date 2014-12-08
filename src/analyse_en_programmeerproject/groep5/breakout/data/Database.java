@@ -262,8 +262,9 @@ public class Database {
         }
     }
     public int getUserId(){
+        int userid = -1;
         try{
-            int userid = -1;
+
             Class.forName("com.mysql.jdbc.Driver");
 
             String query = "SELECT userid FROM `user` WHERE `hostname` = '" + InetAddress.getLocalHost().getHostName() + "'";
@@ -273,10 +274,11 @@ public class Database {
             while (rs.next()){
                 userid = rs.getInt("userid");
             }
-            return userid;
+
 
         } catch (SQLException | ClassNotFoundException | UnknownHostException e) {
             e.printStackTrace();
         }
+        return userid;
     }
 }
