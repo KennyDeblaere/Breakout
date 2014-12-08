@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Kenny on 12/11/2014.
  */
 public class Ball implements Runnable {
-    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, numberOfLines;
+    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, numberOfLines, scoreAndDif;
     private Rectangle ball;
     private int numberOfUnbreakables;
     private Paddle p1, p2;
@@ -30,9 +30,9 @@ public class Ball implements Runnable {
 
         this.singleplayer = singleplayer;
         this.difficulty = difficulty;
-        numberOfLifes  = 3;
+        numberOfLifes = 3;
 
-        createScreen(7);
+        createScreen(getNumberOfBlocks(difficulty));
         //Ball random laten starten
         startRandomX();
         startRandomY();
@@ -59,6 +59,19 @@ public class Ball implements Runnable {
         if(rDirection == 0)
             rDirection--;
         setyDirection(rDirection);
+    }
+    private int getNumberOfBlocks(int difficulty){
+        switch (difficulty){
+            case 0:
+                scoreAndDif = 1;
+                return 4;
+            case 1:
+                scoreAndDif = 2;
+                return 6;
+            default:
+                scoreAndDif = 3;
+                return 7;
+        }
     }
 
     public void setX(int x) {
@@ -132,7 +145,7 @@ public class Ball implements Runnable {
         blockCreators[3] = new BlockCreator(getXPosition(), getYPosition(),1,Color.GREEN, true, 50,50,10);
         blockCreators[4] = new BlockCreator(getXPosition(), getYPosition(),1,Color.RED, true, 75,50,10);
         blockCreators[5] = new BlockCreator(getXPosition(), getYPosition(),3,Color.BLUE, false, 100,50,10);
-        blockCreators[6] = new BlockCreator(getXPosition(), getYPosition(),-1,Color.GRAY, false,75,50,10);
+        blockCreators[6] = new BlockCreator(getXPosition(), getYPosition(),-1,Color.GRAY, false,75,50,0);
         return blockCreators;
     }
 
@@ -201,9 +214,16 @@ public class Ball implements Runnable {
                     setyDirection(getYDirection() * -1);
                     setxDirection(1);
                 }
-
+                if(ball.y <= blockCreator.getBlock().y + blockCreator.getBlock().height/2){
+                    setxDirection(getXDirection() * -1);
+                    setyDirection(-1);
+                }
+                if(ball.y > blockCreator.getBlock().y + blockCreator.getBlock().height/2 && ball.y <= blockCreator.getBlock().y + blockCreator.getBlock().height){
+                    setxDirection(getXDirection() *-1);
+                    setyDirection(1);
+                }
                 blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
-                p1Score += blockCreator.getScore();
+                p1Score += blockCreator.getScore()*scoreAndDif;
             }
             if(blockCreator.getNumberOfHitsLeft() == 0)
                 numberOfUnbreakables++;

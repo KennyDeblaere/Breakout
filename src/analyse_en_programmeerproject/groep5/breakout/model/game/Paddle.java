@@ -98,8 +98,8 @@ public class Paddle implements Runnable {
         paddle.x += xDirection;
         if(paddle.x <= 0)
             paddle.x = 0;
-        if(paddle.x >= 950)
-            paddle.x = 950;
+        if(paddle.x >= 900)
+            paddle.x = 900;
     }
 
     @Override
