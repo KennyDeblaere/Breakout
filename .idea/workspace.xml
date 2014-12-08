@@ -4,10 +4,6 @@
     <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/login/LoginPanel.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/login/LoginPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Paddle.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Paddle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/game/StartGameController.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/game/StartGameController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/highscores/SubmitController.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/highscores/SubmitController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Breakout.iws" />
@@ -80,21 +76,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginPanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/login/LoginPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3245033" vertical-offset="127" max-vertical-offset="1037">
+            <state vertical-scroll-proportion="0.0" vertical-offset="127" max-vertical-offset="1037">
               <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetHighScoreController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/menu/GetHighScoreController.java">
+      <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="952" max-vertical-offset="1870">
+              <caret line="90" column="56" selection-start-line="90" selection-start-column="56" selection-end-line="90" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1329" max-vertical-offset="3587">
+              <caret line="104" column="45" selection-start-line="104" selection-start-column="45" selection-end-line="104" selection-end-column="45" />
+              <folding>
+                <marker date="1418039226583" expanded="true" signature="1530:1548" placeholder="select * fro..user..." />
+                <marker date="1418039226583" expanded="true" signature="2284:2303" placeholder="select * fro..block..." />
+                <marker date="1418039226583" expanded="true" signature="3111:3130" placeholder="select * fro..power..." />
+                <marker date="1418039226583" expanded="true" signature="3653:3672" placeholder="select * fro..score..." />
+                <marker date="1418039226583" expanded="true" signature="4338:4362" placeholder="select * fro..score_user..." />
+                <marker date="1418039226583" expanded="true" signature="4922:4944" placeholder="select * fro..gamemode..." />
+                <marker date="1418039226583" expanded="true" signature="5361:5522" placeholder="INSERT INTO ..." />
+                <marker date="1418039226583" expanded="true" signature="6380:6472" placeholder="INSERT INTO ..." />
+                <marker date="1418039226583" expanded="true" signature="6999:7067" placeholder="INSERT INTO ..." />
+                <marker date="1418039226583" expanded="true" signature="7680:7751" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Program.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/Program.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+              <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+              <folding>
+                <element signature="e#285#286#0" expanded="true" />
+                <element signature="e#316#317#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ball.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2963576" vertical-offset="2286" max-vertical-offset="3570">
+              <caret line="195" column="18" selection-start-line="195" selection-start-column="18" selection-end-line="202" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -170,10 +210,11 @@
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/game/StartGameController.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Paddle.java" />
-        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
-        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/highscores/SubmitController.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/login/LoginPanel.java" />
+        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
+        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" />
+        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/Program.java" />
       </list>
     </option>
   </component>
@@ -263,28 +304,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="breakout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Breakout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Breakout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="breakout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -793,7 +812,7 @@
       <workItem from="1417903717052" duration="1705000" />
       <workItem from="1417948795887" duration="1184000" />
       <workItem from="1417965655667" duration="2286000" />
-      <workItem from="1418028937316" duration="6185000" />
+      <workItem from="1418028937316" duration="10158000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1415363062491</created>
@@ -1185,11 +1204,17 @@
       <option name="project" value="LOCAL" />
       <updated>1418030861573</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Score wordt ingegeven en opgeslagen">
+      <created>1418035147482</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1418035147482</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140048000" />
+    <option name="totallyTimeSpent" value="144021000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1213,7 +1238,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1229,7 +1254,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3181818" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15921193" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15921193" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1363,13 +1388,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1394">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -1632,14 +1650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1207" max-vertical-offset="1870">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/Score.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
@@ -1653,31 +1663,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1819">
           <caret line="47" column="58" selection-start-line="47" selection-start-column="58" selection-end-line="47" selection-end-column="58" />
           <folding>
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2368" max-vertical-offset="3689">
-          <caret line="186" column="34" selection-start-line="186" selection-start-column="34" selection-end-line="186" selection-end-column="34" />
-          <folding>
-            <element signature="e#2348#2349#0" expanded="true" />
-            <element signature="e#2396#2397#0" expanded="true" />
-            <element signature="e#2783#2784#0" expanded="true" />
-            <element signature="e#2813#2814#0" expanded="true" />
-            <element signature="e#2916#2917#0" expanded="true" />
-            <element signature="e#2959#2960#0" expanded="true" />
-            <element signature="e#5189#5190#0" expanded="true" />
-            <element signature="e#5228#5229#0" expanded="true" />
-            <element signature="e#5257#5258#0" expanded="true" />
-            <element signature="e#5282#5283#0" expanded="true" />
-            <element signature="e#5310#5311#0" expanded="true" />
-            <element signature="e#5335#5336#0" expanded="true" />
-            <element signature="e#5371#5372#0" expanded="true" />
-            <element signature="e#5407#5408#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="false" />
+            <element signature="e#511#512#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1698,25 +1685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1946" max-vertical-offset="3570">
-          <caret line="202" column="98" selection-start-line="202" selection-start-column="98" selection-end-line="202" selection-end-column="98" />
-          <folding>
-            <marker date="1418034553828" expanded="true" signature="-1:-1" placeholder="select * fro..user..." />
-            <marker date="1418034553828" expanded="true" signature="-1:-1" placeholder="select * fro..block..." />
-            <marker date="1418034553828" expanded="true" signature="-1:-1" placeholder="select * fro..power..." />
-            <marker date="1418034553828" expanded="true" signature="-1:-1" placeholder="select * fro..score..." />
-            <marker date="1418034553828" expanded="true" signature="-1:-1" placeholder="select * fro..score_user..." />
-            <marker date="1418034553828" expanded="true" signature="-1:-1" placeholder="select * fro..gamemode..." />
-            <marker date="1418034553828" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1418034553828" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1418034553828" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1418034553828" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/game/StartGameController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="714">
@@ -1729,22 +1697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
           <caret line="25" column="101" selection-start-line="25" selection-start-column="101" selection-end-line="25" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/menu/GetHighScoreController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/menu/Login_outButtonController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1767,8 +1719,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/login/LoginPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3245033" vertical-offset="127" max-vertical-offset="1037">
+        <state vertical-scroll-proportion="0.0" vertical-offset="127" max-vertical-offset="1037">
           <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/menu/GetHighScoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14072847" vertical-offset="0" max-vertical-offset="604">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/controller/menu/Login_outButtonController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="952" max-vertical-offset="1870">
+          <caret line="90" column="56" selection-start-line="90" selection-start-column="56" selection-end-line="90" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1329" max-vertical-offset="3587">
+          <caret line="104" column="45" selection-start-line="104" selection-start-column="45" selection-end-line="104" selection-end-column="45" />
+          <folding>
+            <marker date="1418039226583" expanded="true" signature="1530:1548" placeholder="select * fro..user..." />
+            <marker date="1418039226583" expanded="true" signature="2284:2303" placeholder="select * fro..block..." />
+            <marker date="1418039226583" expanded="true" signature="3111:3130" placeholder="select * fro..power..." />
+            <marker date="1418039226583" expanded="true" signature="3653:3672" placeholder="select * fro..score..." />
+            <marker date="1418039226583" expanded="true" signature="4338:4362" placeholder="select * fro..score_user..." />
+            <marker date="1418039226583" expanded="true" signature="4922:4944" placeholder="select * fro..gamemode..." />
+            <marker date="1418039226583" expanded="true" signature="5361:5522" placeholder="INSERT INTO ..." />
+            <marker date="1418039226583" expanded="true" signature="6380:6472" placeholder="INSERT INTO ..." />
+            <marker date="1418039226583" expanded="true" signature="6999:7067" placeholder="INSERT INTO ..." />
+            <marker date="1418039226583" expanded="true" signature="7680:7751" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding>
+            <element signature="e#285#286#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2963576" vertical-offset="2286" max-vertical-offset="3570">
+          <caret line="195" column="18" selection-start-line="195" selection-start-column="18" selection-end-line="202" selection-end-column="17" />
           <folding />
         </state>
       </provider>

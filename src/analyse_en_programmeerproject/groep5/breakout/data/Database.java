@@ -101,7 +101,8 @@ public class Database {
             ResultSet rs;
             rs = stmt.executeQuery("select * from score");
             while (rs.next()){
-                scores.add(new Score(rs.getInt("score"), rs.getDate("date"), rs.getInt("gamemodeid")));
+                //scores.add(new Score(rs.getInt("score"), new java.util.Date(rs.getDate("date").getTime()), rs.getInt("gamemodeid")));
+                System.out.println(rs.getDate("date"));
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

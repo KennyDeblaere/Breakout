@@ -193,10 +193,17 @@ public class Ball implements Runnable {
             setyDirection(+1);
         for(BlockCreator blockCreator : blockCreatorList) {
             if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
-                p1Score += blockCreator.getScore();
-                setyDirection(getYDirection() * -1);
-                setxDirection(getXDirection() * -1);
+                if(ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width/2) {
+                    setyDirection(getYDirection() * -1);
+                    setxDirection(-1);
+                }
+                if(ball.x > blockCreator.getBlock().x + blockCreator.getBlock().width/2 && ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width) {
+                    setyDirection(getYDirection() * -1);
+                    setxDirection(1);
+                }
+
                 blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
+                p1Score += blockCreator.getScore();
             }
             if(blockCreator.getNumberOfHitsLeft() == 0)
                 numberOfUnbreakables++;
