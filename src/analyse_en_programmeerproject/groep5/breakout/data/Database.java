@@ -183,10 +183,10 @@ public class Database {
         try{
             Class.forName("com.mysql.jdbc.Driver");
 
-            String query = "INSERT INTO `score` (`score`, `date`, `gamemodeid`) VALUES ('?', '?', '?')";
+            String query = "INSERT INTO `score` (`score`, `date`, `gamemodeid`) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = getConnection().prepareStatement(query);
             preparedStatement.setInt(1, score.getScore());
-            preparedStatement.setDate(2, (Date) score.getDate());
+            preparedStatement.setDate(2, new Date(new java.util.Date().getTime()));
             preparedStatement.setInt(3, score.getGamemodeid());
 
             preparedStatement.executeUpdate();
@@ -200,7 +200,7 @@ public class Database {
         try{
             Class.forName("com.mysql.jdbc.Driver");
 
-            String query = "INSERT INTO `breakout`.`score_user` (`userid`, `scoreid`) VALUES ('?', '?')";
+            String query = "INSERT INTO `breakout`.`score_user` (`userid`, `scoreid`) VALUES (?, ?)";
             PreparedStatement preparedStatement = getConnection().prepareStatement(query);
             preparedStatement.setInt(1, userid);
             preparedStatement.setInt(2, scoreid);

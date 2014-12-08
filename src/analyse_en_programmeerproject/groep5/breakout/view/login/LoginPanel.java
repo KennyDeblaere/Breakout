@@ -15,7 +15,7 @@ public class LoginPanel extends JPanel {
     private JLabel usernameLabel, passwordLabel, errorLabel;
     private JButton login, cancel;
 
-    private PanelLogin menuTopPanel;
+    private PanelLogin panelLogin;
 
     public JTextField getUsername() {
         return username;
@@ -27,8 +27,8 @@ public class LoginPanel extends JPanel {
         return errorLabel;
     }
 
-    public LoginPanel(PanelLogin topPanel){
-        menuTopPanel = topPanel;
+    public LoginPanel(PanelLogin p){
+        panelLogin = p;
         createComponents();
         addComponents();
         addListeners();
@@ -59,7 +59,7 @@ public class LoginPanel extends JPanel {
     }
 
     private void addListeners(){
-        cancel.addActionListener(new CancelController(menuTopPanel));
-        login.addActionListener(new LoginController(menuTopPanel));
+        cancel.addActionListener(new CancelController(panelLogin));
+        login.addActionListener(new LoginController(panelLogin));
     }
 }

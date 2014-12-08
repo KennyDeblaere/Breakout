@@ -183,6 +183,10 @@ public class Ball implements Runnable {
     public void collision(){
         if(ball.intersects(p1.getPaddle())){
             setyDirection(-1);
+            if(ball.x <= p1.getPaddle().x + (p1.getPaddle().width)/2)
+                setxDirection(-1);
+            if(ball.x > p1.getPaddle().x + (p1.getPaddle().width)/2)
+                setxDirection(1);
 
         }
         if(ball.intersects(p2.getPaddle()))
@@ -211,23 +215,20 @@ public class Ball implements Runnable {
             setxDirection(-1);
         }
         if(ball.y <= 0){
-            if(singleplayer)
-                setyDirection(+1);
-            else{
-                setX(p2.getX() + (p1.getPaddle().width/2));
+            if(!singleplayer){
+                setX(p2.getPaddle().x + (p1.getPaddle().width/2));
                 setY(p2.getY());
                 ball = new Rectangle(getX(),getY(),7,7);
                 numberOfLifes--;
-                System.out.println(numberOfLifes);
             }
+            setyDirection(+1);
         }
-        if(ball.y >= 750){
-            setX(p1.getX() + (p1.getPaddle().width/2));
+        if(ball.y >= 750) {
+            setX(p1.getPaddle().x + (p1.getPaddle().width/2));
             setY(p1.getY());
             ball = new Rectangle(getX(),getY(),7,7);
             numberOfLifes--;
-            System.out.println(numberOfLifes);
-            //p1 =  new Paddle(475,700,1);
+            setyDirection(-1);
         }
     }
     @Override
