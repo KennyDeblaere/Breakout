@@ -9,35 +9,29 @@ import analyse_en_programmeerproject.groep5.breakout.model.ScoreUser;
  * Created by Blackhat on 3/12/2014.
  */
 public class PanelHighScore extends JPanel{
-    private JLabel titleLabel, ranking, nameLabel, high_Score, XP;
+    private JLabel nameLabel, highScore;
 
 
     public PanelHighScore(){
-        super();
+        //super();
         setLayout(new GridLayout(6,2,5,5));
 
+        setPreferredSize(new Dimension(500, 575));
+
         createComponents();
-        setComponents();
         addComponents();
         fillPanel();
     }
     private void createComponents() {
 
-        titleLabel = new JLabel("High Score");
-        ranking = new JLabel("Ranking");
         nameLabel = new JLabel("Name");
-        high_Score = new JLabel("High Score");
-        XP = new JLabel("XP");
+        highScore = new JLabel("High Score");
     }
 
-    private void setComponents(){
-        setPreferredSize(new Dimension(500, 575));
-
-    }
 
     private void addComponents() {
         add(nameLabel);
-        add(high_Score);
+        add(highScore);
     }
     private void fillPanel(){
         JLabel username, score;
