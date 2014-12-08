@@ -125,6 +125,23 @@ public class Database {
         return scoreUsers;
     }
 
+    public List<Gamemode> fillGames(){
+        List<Gamemode> gamemode = new ArrayList<>();
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Statement stmt = getConnection().createStatement();
+            ResultSet rs;
+            rs = stmt.executeQuery("select * from gamemode");
+            while (rs.next()){
+                gamemode.add(new Gamemode(rs.getBoolean("single/multi"), rs.getInt("difficulty")));
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return gamemode;
+    }
+
     public void insertUser(User user){
         try{
             Class.forName("com.mysql.jdbc.Driver");

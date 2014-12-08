@@ -22,7 +22,7 @@ public class SubmitController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Database.DatabaseInstance.insertScore(new Score(0,new Date(), score));
+        Database.DatabaseInstance.insertScore(new Score(score, new Date(), Database.DatabaseInstance.fillGames().size()-1));
         panelCenter.addMainComponents();
     }
 }

@@ -96,16 +96,16 @@ public class Ball implements Runnable {
     public int getY() {
         return y;
     }
-    public int getxDirection() {
+    public int getXDirection() {
         return xDirection;
     }
-    public int getyDirection() {
+    public int getYDirection() {
         return yDirection;
     }
-    public int getxPosition() {
+    public int getXPosition() {
         return xPosition;
     }
-    public int getyPosition() {
+    public int getYPosition() {
         return yPosition;
     }
     public int getP2Score() {
@@ -114,29 +114,25 @@ public class Ball implements Runnable {
     public int getP1Score() {
         return p1Score;
     }
-
     public int getNumberOfUnbreakables() {
         return numberOfUnbreakables;
     }
-
-
     public boolean isSingleplayer() {
         return singleplayer;
     }
-
     public Rectangle getBall() {
         return ball;
     }
 
     private BlockCreator[] blocksInArray(){
         BlockCreator[] blockCreators = new BlockCreator[7];
-        blockCreators[0] = new BlockCreator(getxPosition(),getyPosition(),1,Color.YELLOW,false, 100,50,10);
-        blockCreators[1] = new BlockCreator(getxPosition(),getyPosition(),1,Color.ORANGE, false, 50,50,10);
-        blockCreators[2] = new BlockCreator(getxPosition(),getyPosition(),1,Color.PINK, false, 25,50,10);
-        blockCreators[3] = new BlockCreator(getxPosition(),getyPosition(),1,Color.GREEN, true, 50,50,10);
-        blockCreators[4] = new BlockCreator(getxPosition(),getyPosition(),1,Color.RED, true, 75,50,10);
-        blockCreators[5] = new BlockCreator(getxPosition(),getyPosition(),3,Color.BLUE, false, 100,50,10);
-        blockCreators[6] = new BlockCreator(getxPosition(),getyPosition(),-1,Color.GRAY, false,75,50,10);
+        blockCreators[0] = new BlockCreator(getXPosition(), getYPosition(),1,Color.YELLOW,false, 100,50,10);
+        blockCreators[1] = new BlockCreator(getXPosition(), getYPosition(),1,Color.ORANGE, false, 50,50,10);
+        blockCreators[2] = new BlockCreator(getXPosition(), getYPosition(),1,Color.PINK, false, 25,50,10);
+        blockCreators[3] = new BlockCreator(getXPosition(), getYPosition(),1,Color.GREEN, true, 50,50,10);
+        blockCreators[4] = new BlockCreator(getXPosition(), getYPosition(),1,Color.RED, true, 75,50,10);
+        blockCreators[5] = new BlockCreator(getXPosition(), getYPosition(),3,Color.BLUE, false, 100,50,10);
+        blockCreators[6] = new BlockCreator(getXPosition(), getYPosition(),-1,Color.GRAY, false,75,50,10);
         return blockCreators;
     }
 
@@ -147,21 +143,21 @@ public class Ball implements Runnable {
         while(counter < numberOfLines){
             int temp = r.nextInt(numberOfBlocks);
 
-            if(getxPosition() + blocksInArray()[temp].getBlock().width < 1000) {
+            if(getXPosition() + blocksInArray()[temp].getBlock().width < 1000) {
                 if(temp == 6)
                     numberOfUnbreakables++;
 
                 blockCreatorList.add(blocksInArray()[temp]);
-                setxPosition(getxPosition() + blocksInArray()[temp].getBlock().width);
+                setxPosition(getXPosition() + blocksInArray()[temp].getBlock().width);
             } else {
                 //waarschijnlijk meer optimaliseerbaar in een while waarmee je de rest eerst opvult ;)
                 for(int i=0; i<blocksInArray().length;i++){
-                    if(blocksInArray()[i].getBlock().width + getxPosition() == 1000)
+                    if(blocksInArray()[i].getBlock().width + getXPosition() == 1000)
                         blockCreatorList.add(blocksInArray()[i]);
                 }
 
                 counter++;
-                setyPosition(getyPosition() + 50);
+                setyPosition(getYPosition() + 50);
                 setxPosition(0);
             }
         }
@@ -187,19 +183,19 @@ public class Ball implements Runnable {
     public void collision(){
         if(ball.intersects(p1.getPaddle())){
             setyDirection(-1);
+
         }
         if(ball.intersects(p2.getPaddle()))
             setyDirection(+1);
         for(BlockCreator blockCreator : blockCreatorList) {
-            if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() > 0) {
+            if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
                 p1Score += blockCreator.getScore();
-                setyDirection(getyDirection() * -1);
-                setxDirection(getxDirection() * -1);
+                setyDirection(getYDirection() * -1);
+                setxDirection(getXDirection() * -1);
                 blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
-                if(blockCreator.getNumberOfHitsLeft() == 0)
-                    numberOfUnbreakables++;
-                System.out.println(numberOfUnbreakables);
             }
+            if(blockCreator.getNumberOfHitsLeft() == 0)
+                numberOfUnbreakables++;
         }
     }
 
