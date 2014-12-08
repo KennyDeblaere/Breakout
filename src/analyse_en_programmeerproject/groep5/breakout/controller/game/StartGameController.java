@@ -3,7 +3,7 @@ package analyse_en_programmeerproject.groep5.breakout.controller.game;
 import analyse_en_programmeerproject.groep5.breakout.data.Database;
 import analyse_en_programmeerproject.groep5.breakout.model.Gamemode;
 import analyse_en_programmeerproject.groep5.breakout.view.game.GamePanel;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,11 +13,11 @@ import java.awt.event.ActionListener;
  * Created by Kenny, Blackhat on 13/11/2014.
  */
 public class StartGameController implements ActionListener {
-    private PanelCenter panelCenter;
+    private CenterPanel panelCenter;
     private JComboBox difficulty;
     private boolean singleplayer;
 
-    public StartGameController(PanelCenter centerPanel, JComboBox difficultyLevel, boolean singleplayer){
+    public StartGameController(CenterPanel centerPanel, JComboBox difficultyLevel, boolean singleplayer){
         this.panelCenter = centerPanel;
         difficulty = difficultyLevel;
         this.singleplayer = singleplayer;

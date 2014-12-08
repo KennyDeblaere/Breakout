@@ -3,7 +3,7 @@ package analyse_en_programmeerproject.groep5.breakout.view.game;
 import analyse_en_programmeerproject.groep5.breakout.controller.game.MovePanelController;
 import analyse_en_programmeerproject.groep5.breakout.model.game.Ball;
 import analyse_en_programmeerproject.groep5.breakout.model.game.BlockCreator;
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelCenter;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,11 +17,11 @@ public class GamePanel extends JPanel {
     private Thread ball, p1;
 
     private Ball b;
-    private PanelCenter centerPanel;
+    private CenterPanel centerPanel;
 
     private boolean singleplayer;
 
-    public GamePanel(PanelCenter c, int rows, boolean singleplayer){
+    public GamePanel(CenterPanel c, int rows, boolean singleplayer){
         centerPanel = c;
         centerPanel.setBorder(BorderFactory.createLineBorder(Color.black,5,true));
         this.singleplayer = singleplayer;

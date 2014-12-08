@@ -1,10 +1,9 @@
 package analyse_en_programmeerproject.groep5.breakout.view;
 
-import analyse_en_programmeerproject.groep5.breakout.view.welcome.PanelMain;
+import analyse_en_programmeerproject.groep5.breakout.view.welcome.MainPanel;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -28,7 +27,7 @@ public class MainFrame extends JFrame {
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        PanelMain mainPanel = new PanelMain();
+        MainPanel mainPanel = new MainPanel();
         setContentPane(mainPanel);
 
 

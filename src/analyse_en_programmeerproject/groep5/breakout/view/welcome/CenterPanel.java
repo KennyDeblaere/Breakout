@@ -9,14 +9,14 @@ import java.awt.*;
 /**
  * Created by Blackhat on 04/12/2014.
  */
-public class PanelCenter extends JPanel {
-    private PanelContent panelContent;
-    private PanelButton panelButton;
+public class CenterPanel extends JPanel {
+    private ContentPanel panelContent;
+    private ButtonPanel panelButton;
     private GamePanel gamePanel;
     private AddHighscorePanel highscorePanel;
 
 
-    public PanelCenter(){
+    public CenterPanel(){
         super();
         createComponents();
         setComponents();
@@ -24,8 +24,8 @@ public class PanelCenter extends JPanel {
     }
 
     private void createComponents(){
-        panelContent = new PanelContent(this);
-        panelButton = new PanelButton(panelContent);
+        panelContent = new ContentPanel(this);
+        panelButton = new ButtonPanel(panelContent);
         gamePanel = new GamePanel(this, 1, true);
         highscorePanel = new AddHighscorePanel(0,this);
     }
@@ -71,7 +71,7 @@ public class PanelCenter extends JPanel {
         return gamePanel;
     }
 
-    public PanelContent getPanelContent() {
+    public ContentPanel getPanelContent() {
         return panelContent;
     }
 }

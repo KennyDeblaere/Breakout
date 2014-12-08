@@ -8,12 +8,12 @@ import java.awt.*;
 /**
  * Created by Blackhat on 21/11/2014.
  */
-public class PanelButton extends JPanel{
+public class ButtonPanel extends JPanel{
     private JPanel ButtonPanel;
     private JButton single, co, high, about;
-    private PanelContent panelContent;
+    private ContentPanel panelContent;
 
-    public PanelButton(PanelContent panelContent) {
+    public ButtonPanel(ContentPanel panelContent) {
         super();
         this.panelContent = panelContent;
         setPreferredSize(new Dimension(300, 600));
