@@ -151,53 +151,9 @@ public class Ball implements Runnable {
     public int getLengthBound() {
         return lengthBound;
     }
-
-    private BlockCreator[] blocksInArray(){
-        BlockCreator[] blockCreators = new BlockCreator[7];
-        blockCreators[0] = new BlockCreator(getXPosition(), getYPosition(),1, Color.YELLOW,false, 100,50,10);
-        blockCreators[1] = new BlockCreator(getXPosition(), getYPosition(),1,Color.ORANGE, false, 50,50,10);
-        blockCreators[2] = new BlockCreator(getXPosition(), getYPosition(),1,Color.PINK, false, 25,50,10);
-        blockCreators[3] = new BlockCreator(getXPosition(), getYPosition(),1,Color.GREEN, true, 50,50,10);
-        blockCreators[4] = new BlockCreator(getXPosition(), getYPosition(),1,Color.RED, true, 75,50,10);
-        blockCreators[5] = new BlockCreator(getXPosition(), getYPosition(),3,Color.BLUE, false, 100,50,10);
-        blockCreators[6] = new BlockCreator(getXPosition(), getYPosition(),-1,Color.GRAY, false,75,50,0);
-        return blockCreators;
-    }
-
-    private void createScreen(int numberOfBlocks){
-        blockCreatorList = new ArrayList<>();
-        Random r = new Random();
-        int counter = 0;
-        while(counter < numberOfLines){
-            int temp = r.nextInt(numberOfBlocks);
-
-            if(getXPosition() + blocksInArray()[temp].getBlock().width < 1000) {
-                if(temp == 6)
-                    numberOfUnbreakables++;
-
-                blockCreatorList.add(blocksInArray()[temp]);
-                setxPosition(getXPosition() + blocksInArray()[temp].getBlock().width);
-            } else {
-                //waarschijnlijk meer optimaliseerbaar in een while waarmee je de rest eerst opvult ;)
-                for(int i=0; i<blocksInArray().length;i++){
-                    if(blocksInArray()[i].getBlock().width + getXPosition() == 1000)
-                        blockCreatorList.add(blocksInArray()[i]);
-                }
-
-                counter++;
-                setyPosition(getYPosition() + 50);
-                setxPosition(0);
-            }
-        }
-        if(numberOfUnbreakables == blockCreatorList.size())
-            createScreen(numberOfBlocks);
-    }
-
-
     public List<BlockCreator> getBlockCreatorList() {
         return blockCreatorList;
     }
-
     public Paddle getP1() {
         return p1;
     }
@@ -207,6 +163,43 @@ public class Ball implements Runnable {
     public int getNumberOfLifes() {
         return numberOfLifes;
     }
+
+    private void createScreen(int numberOfBlocks){
+        BlockCreators blockCreators = new BlockCreators(getXPosition(), getYPosition());
+        blockCreatorList = new ArrayList<>();
+        Random r = new Random();
+        if(blockCreators.getBlockCreators().size() < numberOfBlocks)
+            numberOfBlocks = blockCreators.getBlockCreators().size();
+        int counter = 0;
+        while(counter < numberOfLines){
+            int temp = r.nextInt(numberOfBlocks);
+
+            if(getXPosition() + blockCreators.getBlockCreators().get(temp).getBlock().width < 1000) {
+                if(temp == 6)
+                    numberOfUnbreakables++;
+
+                blockCreatorList.add(blockCreators.getBlockCreators().get(temp));
+                setxPosition(getXPosition() + blockCreators.getBlockCreators().get(temp).getBlock().width);
+                blockCreators = new BlockCreators(getXPosition(), getYPosition());
+            } else {
+                //waarschijnlijk meer optimaliseerbaar in een while waarmee je de rest eerst opvult ;)
+                for(int i=0; i<blockCreators.getBlockCreators().size();i++){
+                    if(blockCreators.getBlockCreators().get(i).getBlock().width + getXPosition() == 1000)
+                        blockCreatorList.add(blockCreators.getBlockCreators().get(i));
+                }
+
+                counter++;
+                setyPosition(getYPosition() + 50);
+                setxPosition(0);
+                blockCreators = new BlockCreators(getXPosition(), getYPosition());
+            }
+        }
+        if(numberOfUnbreakables == blockCreatorList.size())
+            createScreen(numberOfBlocks);
+    }
+
+
+
 
     public void collision(){
         if(ball.intersects(p1.getPaddle())){

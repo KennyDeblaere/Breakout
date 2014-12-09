@@ -74,7 +74,7 @@ public class Database {
                 Field field = Class.forName("java.awt.Color").getField(rs.getString("color"));
                 //color gevonden op StackOverFlow
                 blocks.add(new Block((Color)field.get(null),rs.getInt("horizontalLength"), rs.getInt("verticalLength"),
-                        rs.getInt("numberOfHitsBeforeVanish"), rs.getInt("powerid")));
+                        rs.getInt("numberOfHitsBeforeVanish"), rs.getBoolean("haspower"), rs.getInt("score")));
             }
         } catch (IllegalAccessException | NoSuchFieldException | SQLException | ClassNotFoundException e) {
             e.printStackTrace();

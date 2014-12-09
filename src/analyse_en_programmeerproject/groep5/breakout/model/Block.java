@@ -10,14 +10,16 @@ import java.awt.*;
  */
 public class Block {
     private Color color;
-    private int horizontalLength, verticalLength, numberOfHitsBeforeVanish, powerid;
+    private int horizontalLength, verticalLength, numberOfHitsBeforeVanish, score;
+    private boolean power;
 
-    public Block(Color color, int horizontalLength, int verticalLength, int numberOfHitsBeforeVanish, int powerid){
+
+    public Block(Color color, int horizontalLength, int verticalLength, int numberOfHitsBeforeVanish, boolean power, int score){
         setColor(color);
         setHorizontalLength(horizontalLength);
         setVerticalLength(verticalLength);
         setNumberOfHitsBeforeVanish(numberOfHitsBeforeVanish);
-        setPowerid(powerid);
+        setPower(power);
     }
 
     public void setColor(Color color) {
@@ -29,11 +31,14 @@ public class Block {
     public void setNumberOfHitsBeforeVanish(int numberOfHitsBeforeVanish) {
         this.numberOfHitsBeforeVanish = numberOfHitsBeforeVanish;
     }
-    public void setPowerid(int powerid) {
-        this.powerid = powerid;
+    public void setPower(boolean power) {
+        this.power = power;
     }
     public void setVerticalLength(int verticalLength) {
         this.verticalLength = verticalLength;
+    }
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public Color getColor() {
@@ -45,10 +50,13 @@ public class Block {
     public int getNumberOfHitsBeforeVanish() {
         return numberOfHitsBeforeVanish;
     }
-    public int getPowerid() {
-        return powerid;
+    public boolean hasAPower() {
+        return power;
     }
     public int getVerticalLength() {
         return verticalLength;
+    }
+    public int getScore() {
+        return score;
     }
 }
