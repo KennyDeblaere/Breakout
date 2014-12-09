@@ -45,7 +45,7 @@ public class PowerCreator {
     }
 
     private void makeBallBigger(Ball ball){
-        if(ball.getBall().width <= 28) {
+        if(ball.getBall().width < 14) {
             ball.setLengthBound(ball.getLengthBound() - ball.getBall().width);
             ball.getBall().width *= 2;
             ball.getBall().height *= 2;
@@ -55,7 +55,7 @@ public class PowerCreator {
     }
 
     private void makePaddleLongher(Paddle paddle, Ball ball){
-        if(paddle.getPaddle().width <= 500) {
+        if(paddle.getPaddle().width < 400) {
             paddle.setLengthGo(paddle.getLengthGo() - paddle.getPaddle().width);
             paddle.getPaddle().width *= 2;
         }

@@ -33,7 +33,7 @@ public class Ball implements Runnable {
         this.singleplayer = singleplayer;
         this.difficulty = difficulty;
         numberOfLifes = 3;
-
+        System.out.println(this.difficulty);
         createScreen(getNumberOfBlocks(difficulty));
         startRandomX();
         startRandomY();
@@ -94,9 +94,6 @@ public class Ball implements Runnable {
     }
     public void setNumberOfLifes(int numberOfLifes) {
         this.numberOfLifes = numberOfLifes;
-    }
-    public void setSingleplayer(boolean singleplayer) {
-        this.singleplayer = singleplayer;
     }
 
     public int getX() {
@@ -163,7 +160,6 @@ public class Ball implements Runnable {
     public int getNumberOfLifes() {
         return numberOfLifes;
     }
-
     private void createScreen(int numberOfBlocks){
         BlockCreators blockCreators = new BlockCreators(getXPosition(), getYPosition());
         blockCreatorList = new ArrayList<>();
@@ -251,7 +247,7 @@ public class Ball implements Runnable {
         ball.x += xDirection;
         ball.y += yDirection;
 
-        if(ball.x <= ball.width){
+        if(ball.x <= 0){
             setxDirection(+1);
         }
         if(ball.x >= getLengthBound()){
