@@ -16,7 +16,7 @@ public class PowerCreator {
         if(powerup){
             switch (powerid){
                 case 0:
-                    shooter();
+                    shooter(ball);
                     break;
                 case 1:
                     makeBallBigger(ball);

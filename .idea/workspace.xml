@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="Powerups beperkt.">
+    <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/PowerCreator.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/PowerCreator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -68,8 +68,8 @@
       <file leaf-file-name="PowerCreator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/PowerCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6743802" vertical-offset="0" max-vertical-offset="1207">
-              <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.3327787" vertical-offset="106" max-vertical-offset="1207">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -809,13 +809,7 @@
       <workItem from="1418066636403" duration="678000" />
       <workItem from="1418131934114" duration="119000" />
       <workItem from="1418132225994" duration="7737000" />
-      <workItem from="1418151483348" duration="2866000" />
-    </task>
-    <task id="LOCAL-00029" summary="Collision detection">
-      <created>1416224184791</created>
-      <option name="number" value="00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1416224184791</updated>
+      <workItem from="1418151483348" duration="2899000" />
     </task>
     <task id="LOCAL-00030" summary="Begin van een blokje.">
       <created>1416232281270</created>
@@ -1105,11 +1099,17 @@
       <option name="project" value="LOCAL" />
       <updated>1418153696890</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="Powerups beperkt.">
+      <created>1418154491618</created>
+      <option name="number" value="00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1418154491618</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168221000" />
+    <option name="totallyTimeSpent" value="168254000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1138,7 +1138,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32142857" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32142857" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1146,7 +1146,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31709957" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31709957" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15848452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1208,7 +1208,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Stuk layout bijgemaakt (Aboutpanel)&#10;                Enkel nog probleempje bij het oproepen -&gt; help&#10;                + Tof logotje :D" />
     <MESSAGE value="We kunnen blokjes bijmaken, die rechtstreeks op het scherm verschijnen" />
     <MESSAGE value="Probleem opgelost met verspringend kader." />
     <MESSAGE value="Begin dynamische opbouw" />
@@ -1233,7 +1232,8 @@
     <MESSAGE value="Error met outofbound gaan gefixt." />
     <MESSAGE value="Jar maken" />
     <MESSAGE value="Blokjes worden opgehaald vanuit de databank" />
-    <option name="LAST_COMMIT_MESSAGE" value="Blokjes worden opgehaald vanuit de databank" />
+    <MESSAGE value="Powerups beperkt." />
+    <option name="LAST_COMMIT_MESSAGE" value="Powerups beperkt." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1684,8 +1684,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/PowerCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6743802" vertical-offset="0" max-vertical-offset="1207">
-          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.3327787" vertical-offset="106" max-vertical-offset="1207">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
           <folding />
         </state>
       </provider>
