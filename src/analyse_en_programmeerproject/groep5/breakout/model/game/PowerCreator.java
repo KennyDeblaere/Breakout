@@ -22,7 +22,7 @@ public class PowerCreator {
                     makeBallBigger(ball);
                     break;
                 case 2:
-                    makePaddleLongher(paddle);
+                    makePaddleLongher(paddle, ball);
                     break;
                 case 3:
                     addALife(ball);
@@ -33,23 +33,33 @@ public class PowerCreator {
     }
 
     private void addALife(Ball ball) {
-        ball.setNumberOfLifes(ball.getNumberOfLifes() + 1);
+        if(ball.getNumberOfLifes() <= 6)
+            ball.setNumberOfLifes(ball.getNumberOfLifes() + 1);
+        ball.setP1Score(ball.getP1Score() + 100);
     }
 
-    private void shooter(){
+    private void shooter(Ball ball){
         System.out.println("shoooooooooooooooooooooooooooter");
+
+        ball.setP1Score(ball.getP1Score() + 100);
     }
 
     private void makeBallBigger(Ball ball){
-        ball.setLengthBound(ball.getLengthBound() - ball.getBall().width);
-        ball.getBall().width *= 2;
-        ball.getBall().height *= 2;
+        if(ball.getBall().width <= 28) {
+            ball.setLengthBound(ball.getLengthBound() - ball.getBall().width);
+            ball.getBall().width *= 2;
+            ball.getBall().height *= 2;
+        }
+        ball.setP1Score(ball.getP1Score() + 100);
 
     }
 
-    private void makePaddleLongher(Paddle paddle){
-        paddle.setLengthGo(paddle.getLengthGo() - paddle.getPaddle().width);
-        paddle.getPaddle().width *= 2;
+    private void makePaddleLongher(Paddle paddle, Ball ball){
+        if(paddle.getPaddle().width <= 500) {
+            paddle.setLengthGo(paddle.getLengthGo() - paddle.getPaddle().width);
+            paddle.getPaddle().width *= 2;
+        }
+        ball.setP1Score(ball.getP1Score() + 100);
     }
 
 }

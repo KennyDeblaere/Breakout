@@ -6,11 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/BlockCreators.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/Block.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/Block.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" />
+    <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="Powerups beperkt.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/PowerCreator.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/PowerCreator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Breakout.iws" />
@@ -53,10 +50,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Ball.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ball.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38677686" vertical-offset="718" max-vertical-offset="3077">
+            <state vertical-scroll-proportion="0.0" vertical-offset="769" max-vertical-offset="3077">
               <caret line="171" column="69" selection-start-line="171" selection-start-column="69" selection-end-line="171" selection-end-column="69" />
               <folding>
                 <element signature="method#Ball#0;class#Ball#0" expanded="false" />
@@ -64,6 +61,16 @@
                 <element signature="method#startRandomY#0;class#Ball#0" expanded="false" />
                 <element signature="method#getNumberOfBlocks#0;class#Ball#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PowerCreator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/PowerCreator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6743802" vertical-offset="0" max-vertical-offset="1207">
+              <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,11 +139,11 @@
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/Power.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/view/game/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Paddle.java" />
-        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/PowerCreator.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/Block.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/BlockCreators.java" />
         <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
+        <option value="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/PowerCreator.java" />
       </list>
     </option>
   </component>
@@ -802,13 +809,7 @@
       <workItem from="1418066636403" duration="678000" />
       <workItem from="1418131934114" duration="119000" />
       <workItem from="1418132225994" duration="7737000" />
-      <workItem from="1418151483348" duration="2056000" />
-    </task>
-    <task id="LOCAL-00028" summary="Collision detection">
-      <created>1416220347383</created>
-      <option name="number" value="00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1416220347383</updated>
+      <workItem from="1418151483348" duration="2866000" />
     </task>
     <task id="LOCAL-00029" summary="Collision detection">
       <created>1416224184791</created>
@@ -1098,11 +1099,17 @@
       <option name="project" value="LOCAL" />
       <updated>1418139978459</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Blokjes worden opgehaald vanuit de databank">
+      <created>1418153696890</created>
+      <option name="number" value="00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1418153696890</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167411000" />
+    <option name="totallyTimeSpent" value="168221000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1201,7 +1208,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Stuk layout bijgemaakt (Aboutpanel)&#10;Enkel nog probleempje bij het oproepen -&gt; help&#10;+ Tof logotje :D" />
     <MESSAGE value="Stuk layout bijgemaakt (Aboutpanel)&#10;                Enkel nog probleempje bij het oproepen -&gt; help&#10;                + Tof logotje :D" />
     <MESSAGE value="We kunnen blokjes bijmaken, die rechtstreeks op het scherm verschijnen" />
     <MESSAGE value="Probleem opgelost met verspringend kader." />
@@ -1226,7 +1232,8 @@
     <MESSAGE value="Begin Powerup/powerdown" />
     <MESSAGE value="Error met outofbound gaan gefixt." />
     <MESSAGE value="Jar maken" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jar maken" />
+    <MESSAGE value="Blokjes worden opgehaald vanuit de databank" />
+    <option name="LAST_COMMIT_MESSAGE" value="Blokjes worden opgehaald vanuit de databank" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1601,19 +1608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/PowerCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding>
-            <element signature="e#863#864#0" expanded="true" />
-            <element signature="e#929#930#0" expanded="true" />
-            <element signature="e#958#959#0" expanded="true" />
-            <element signature="e#1028#1029#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/data/Database.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5744445" vertical-offset="265" max-vertical-offset="2839">
@@ -1677,7 +1671,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38677686" vertical-offset="718" max-vertical-offset="3077">
+        <state vertical-scroll-proportion="0.0" vertical-offset="769" max-vertical-offset="3077">
           <caret line="171" column="69" selection-start-line="171" selection-start-column="69" selection-end-line="171" selection-end-column="69" />
           <folding>
             <element signature="method#Ball#0;class#Ball#0" expanded="false" />
@@ -1685,6 +1679,14 @@
             <element signature="method#startRandomY#0;class#Ball#0" expanded="false" />
             <element signature="method#getNumberOfBlocks#0;class#Ball#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/PowerCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6743802" vertical-offset="0" max-vertical-offset="1207">
+          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
