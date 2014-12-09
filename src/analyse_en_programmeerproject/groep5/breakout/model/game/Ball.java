@@ -1,5 +1,7 @@
 package analyse_en_programmeerproject.groep5.breakout.model.game;
 
+import analyse_en_programmeerproject.groep5.breakout.data.Database;
+
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -137,7 +139,7 @@ public class Ball implements Runnable {
 
     private BlockCreator[] blocksInArray(){
         BlockCreator[] blockCreators = new BlockCreator[7];
-        blockCreators[0] = new BlockCreator(getXPosition(), getYPosition(),1,Color.YELLOW,false, 100,50,10);
+        blockCreators[0] = new BlockCreator(getXPosition(), getYPosition(),1, Color.YELLOW,false, 100,50,10);
         blockCreators[1] = new BlockCreator(getXPosition(), getYPosition(),1,Color.ORANGE, false, 50,50,10);
         blockCreators[2] = new BlockCreator(getXPosition(), getYPosition(),1,Color.PINK, false, 25,50,10);
         blockCreators[3] = new BlockCreator(getXPosition(), getYPosition(),1,Color.GREEN, true, 50,50,10);
@@ -204,6 +206,11 @@ public class Ball implements Runnable {
             setyDirection(+1);
         for(BlockCreator blockCreator : blockCreatorList) {
             if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
+                if(blockCreator.hasAPower()){
+                    Random r = new Random();
+                    int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
+                    new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), numberOfLifes, ball, p1.getPaddle());
+                }
                 if(ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width/2) {
                     setyDirection(getYDirection() * -1);
                     setxDirection(-1);

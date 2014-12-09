@@ -12,6 +12,7 @@ public class BlockCreator {
     private int x, y, numberOfHitsLeft;
     private int score;
     private Color color;
+    private boolean power;
 
 
     public BlockCreator(int x, int y, int numberOfHits, Color color, boolean power, int length, int height, int score){
@@ -21,6 +22,7 @@ public class BlockCreator {
         this.color = color;
         this.score = score;
         numberOfHitsLeft = numberOfHits;
+        this.power = power;
     }
 
     public int getX() {
@@ -36,12 +38,20 @@ public class BlockCreator {
         return score;
     }
 
+    public void setPower(boolean power) {
+        this.power = power;
+    }
+
     public int getNumberOfHitsLeft() {
         return numberOfHitsLeft;
     }
 
     public Color getColor() {
         return color;
+    }
+
+    public boolean hasAPower() {
+        return power;
     }
 
     public void setNumberOfHitsLeft(int numberOfHitsLeft) {

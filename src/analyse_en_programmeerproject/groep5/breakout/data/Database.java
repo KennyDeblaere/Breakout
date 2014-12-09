@@ -72,6 +72,7 @@ public class Database {
             rs = stmt.executeQuery("select * from block");
             while (rs.next()){
                 Field field = Class.forName("java.awt.Color").getField(rs.getString("color"));
+                //color gevonden op StackOverFlow
                 blocks.add(new Block((Color)field.get(null),rs.getInt("horizontalLength"), rs.getInt("verticalLength"),
                         rs.getInt("numberOfHitsBeforeVanish"), rs.getInt("powerid")));
             }
@@ -80,16 +81,16 @@ public class Database {
         }
         return blocks;
     }
-    public List<Power> fillPowers(){
+    public List<Power> fillPowers(boolean powerup){
         List<Power> powers = new ArrayList<>();
         try{
             Class.forName("com.mysql.jdbc.Driver");
 
             Statement stmt = getConnection().createStatement();
             ResultSet rs;
-            rs = stmt.executeQuery("select * from power");
+            rs = stmt.executeQuery("select * from power where powerup = " + powerup);
             while (rs.next()){
-                powers.add(new Power(rs.getString("function")));
+                powers.add(new Power(rs.getString("function"), rs.getBoolean("powerup")));
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
