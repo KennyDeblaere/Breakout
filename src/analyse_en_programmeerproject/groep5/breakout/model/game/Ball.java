@@ -221,7 +221,7 @@ public class Ball implements Runnable {
             setyDirection(+1);
         for(BlockCreator blockCreator : blockCreatorList) {
             if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
-                if(blockCreator.hasAPower()){
+                if(blockCreator.hasAPower() && blockCreator.getColor() == Color.GREEN){
                     Random r = new Random();
                     int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
                     if(singleplayer)
