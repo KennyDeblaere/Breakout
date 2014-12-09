@@ -78,6 +78,7 @@ public class GamePanel extends JPanel {
             g.drawString("Levens: ",0,0);
             g.setColor(Color.BLUE);
             int positionx = 100;
+
             for(int i=0; i<b.getNumberOfLifes();i++){
                 g.fillOval(positionx,0,10,10);
                 positionx += 15;

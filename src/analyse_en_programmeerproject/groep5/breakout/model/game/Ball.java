@@ -99,6 +99,10 @@ public class Ball implements Runnable {
         this.p2Score = p2Score;
     }
 
+    public void setNumberOfLifes(int numberOfLifes) {
+        this.numberOfLifes = numberOfLifes;
+    }
+
     public void setSingleplayer(boolean singleplayer) {
         this.singleplayer = singleplayer;
     }
@@ -209,7 +213,10 @@ public class Ball implements Runnable {
                 if(blockCreator.hasAPower()){
                     Random r = new Random();
                     int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
-                    new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), numberOfLifes, ball, p1.getPaddle());
+                    if(singleplayer)
+                        new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2.getPaddle());
+                    else if(! singleplayer && getYDirection() == 1)
+                            new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2.getPaddle());
                 }
                 if(ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width/2) {
                     setyDirection(getYDirection() * -1);

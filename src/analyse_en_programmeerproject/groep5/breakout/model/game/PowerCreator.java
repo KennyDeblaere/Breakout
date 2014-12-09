@@ -7,33 +7,33 @@ import java.awt.*;
  */
 public class PowerCreator {
 
-    public PowerCreator(int powerid, boolean powerup, int life, Rectangle ball, Rectangle paddle){
-        returnPower(powerid,powerup,life,ball,paddle);
+    public PowerCreator(int powerid, boolean powerup, Ball ball, Rectangle paddle){
+        returnPower(powerid,powerup,    ball,paddle);
 
     }
 
-    private void returnPower(int powerid, boolean powerup, int life, Rectangle ball, Rectangle paddle){
+    private void returnPower(int powerid, boolean powerup, Ball ball, Rectangle paddle){
         if(powerup){
             switch (powerid){
                 case 0:
                     shooter();
                     break;
                 case 1:
-                    makeBallBigger(ball);
+                    makeBallBigger(ball.getBall());
                     break;
                 case 2:
                     makePaddleLongher(paddle);
                     break;
                 case 3:
-                    addALife(life);
+                    addALife(ball);
                     break;
 
             }
         }
     }
 
-    private void addALife(int life) {
-        life++;
+    private void addALife(Ball ball) {
+        ball.setNumberOfLifes(ball.getNumberOfLifes() + 1);
     }
 
     private void shooter(){
