@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
  * Created by Kenny Deblaere.
  */
 public class Paddle implements Runnable {
-    private int x, y, xDirection, id;
+    private int x, y, xDirection, id, lengthGo;
     private Rectangle paddle;
 
     public Paddle(int x, int y, int id){
@@ -15,15 +15,18 @@ public class Paddle implements Runnable {
         setY(y);
         setId(id);
         paddle = new Rectangle(x, y, 100,10);
+        setLengthGo(1000 - paddle.width);
 
     }
 
     public int getX() {
         return x;
     }
-
     public int getY() {
         return y;
+    }
+    public int getLengthGo() {
+        return lengthGo;
     }
 
     public void setId(int id) {
@@ -38,6 +41,10 @@ public class Paddle implements Runnable {
     public void setxDirection(int xDirection) {
         this.xDirection = xDirection;
     }
+    public void setLengthGo(int lengthGo) {
+        this.lengthGo = lengthGo;
+    }
+
     public Rectangle getPaddle() {
         return paddle;
     }
@@ -98,8 +105,8 @@ public class Paddle implements Runnable {
         paddle.x += xDirection;
         if(paddle.x <= 0)
             paddle.x = 0;
-        if(paddle.x >= 900)
-            paddle.x = 900;
+        if(paddle.x >= getLengthGo())
+            paddle.x = getLengthGo();
     }
 
     @Override

@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Kenny on 12/11/2014.
  */
 public class Ball implements Runnable {
-    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, numberOfLines, scoreAndDif;
+    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, numberOfLines, scoreAndDif, topBound, lengthBound;
     private Rectangle ball;
     private int numberOfUnbreakables;
     private Paddle p1, p2;
@@ -39,6 +39,8 @@ public class Ball implements Runnable {
         startRandomY();
 
         ball = new Rectangle(getX(),getY(),7,7);
+        setTopBound(1000 - ball.height);
+        setLengthBound(1000 - ball.width);
 
         setP1Score(0);
         setP2Score(0);
@@ -52,26 +54,12 @@ public class Ball implements Runnable {
             rDirection--;
         setxDirection(rDirection);
     }
-
     private void startRandomY(){
         Random r = new Random();
         int rDirection = r.nextInt(2);
         if(rDirection == 0)
             rDirection--;
         setyDirection(rDirection);
-    }
-    private int getNumberOfBlocks(int difficulty){
-        switch (difficulty){
-            case 0:
-                scoreAndDif = 1;
-                return 4;
-            case 1:
-                scoreAndDif = 2;
-                return 6;
-            default:
-                scoreAndDif = 3;
-                return 7;
-        }
     }
 
     public void setX(int x) {
@@ -98,11 +86,15 @@ public class Ball implements Runnable {
     public void setP2Score(int p2Score) {
         this.p2Score = p2Score;
     }
-
+    public void setTopBound(int topBound) {
+        this.topBound = topBound;
+    }
+    public void setLengthBound(int lengthBound) {
+        this.lengthBound = lengthBound;
+    }
     public void setNumberOfLifes(int numberOfLifes) {
         this.numberOfLifes = numberOfLifes;
     }
-
     public void setSingleplayer(boolean singleplayer) {
         this.singleplayer = singleplayer;
     }
@@ -139,6 +131,25 @@ public class Ball implements Runnable {
     }
     public Rectangle getBall() {
         return ball;
+    }
+    private int getNumberOfBlocks(int difficulty){
+        switch (difficulty){
+            case 0:
+                scoreAndDif = 1;
+                return 4;
+            case 1:
+                scoreAndDif = 2;
+                return 6;
+            default:
+                scoreAndDif = 3;
+                return 7;
+        }
+    }
+    public int getTopBound() {
+        return topBound;
+    }
+    public int getLengthBound() {
+        return lengthBound;
     }
 
     private BlockCreator[] blocksInArray(){
@@ -214,9 +225,9 @@ public class Ball implements Runnable {
                     Random r = new Random();
                     int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
                     if(singleplayer)
-                        new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2.getPaddle());
+                        new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1);
                     else if(! singleplayer && getYDirection() == 1)
-                            new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2.getPaddle());
+                            new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2);
                 }
                 if(ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width/2) {
                     setyDirection(getYDirection() * -1);
@@ -247,10 +258,10 @@ public class Ball implements Runnable {
         ball.x += xDirection;
         ball.y += yDirection;
 
-        if(ball.x <= 7){
+        if(ball.x <= ball.width){
             setxDirection(+1);
         }
-        if(ball.x >= 993){
+        if(ball.x >= getLengthBound()){
             setxDirection(-1);
         }
         if(ball.y <= 0){
