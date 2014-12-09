@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Breakout:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" afterPath="$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/Breakout_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Breakout.iws" />
@@ -48,7 +54,7 @@
       <file leaf-file-name="Ball.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.5404959" vertical-offset="1704" max-vertical-offset="2737">
+            <state vertical-scroll-proportion="1.4330579" vertical-offset="510" max-vertical-offset="2737">
               <caret line="223" column="85" selection-start-line="223" selection-start-column="85" selection-end-line="223" selection-end-column="85" />
               <folding>
                 <element signature="method#Ball#0;class#Ball#0" expanded="false" />
@@ -354,6 +360,20 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="breakout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -543,7 +563,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/GUI" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
@@ -915,13 +935,7 @@
       <workItem from="1418051085102" duration="2963000" />
       <workItem from="1418066636403" duration="678000" />
       <workItem from="1418131934114" duration="119000" />
-      <workItem from="1418132225994" duration="7118000" />
-    </task>
-    <task id="LOCAL-00026" summary="Login, spelen werkt na het inloggen.">
-      <created>1415887364227</created>
-      <option name="number" value="00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1415887364227</updated>
+      <workItem from="1418132225994" duration="7715000" />
     </task>
     <task id="LOCAL-00027" summary="Start game&#10;">
       <created>1415889819085</created>
@@ -1211,11 +1225,17 @@
       <option name="project" value="LOCAL" />
       <updated>1418138979058</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Error met outofbound gaan gefixt.">
+      <created>1418139374854</created>
+      <option name="number" value="00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1418139374854</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164736000" />
+    <option name="totallyTimeSpent" value="165333000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1799,7 +1819,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/analyse_en_programmeerproject/groep5/breakout/model/game/Ball.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5404959" vertical-offset="1704" max-vertical-offset="2737">
+        <state vertical-scroll-proportion="1.4330579" vertical-offset="510" max-vertical-offset="2737">
           <caret line="223" column="85" selection-start-line="223" selection-start-column="85" selection-end-line="223" selection-end-column="85" />
           <folding>
             <element signature="method#Ball#0;class#Ball#0" expanded="false" />
@@ -1817,10 +1837,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>Breakout:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
