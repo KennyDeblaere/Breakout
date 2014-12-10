@@ -33,11 +33,11 @@ public class Database {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-            //String url = "jdbc:mysql://student.howest.be:3306/driesdekonsieg9v";
-            //connection = DriverManager.getConnection(url, "driesdekonsieg9v","Noovaim8OoJe");
+            String url = "jdbc:mysql://mysqlstudent/kennydeblaab7yahMySQL";
+            connection = DriverManager.getConnection(url, "kennydeblaab7yahMySQL","ce8iaw2IeLax");
 
-            String url = "jdbc:mysql://localhost/breakout";
-            connection = DriverManager.getConnection(url, "root", "");
+            //String url = "jdbc:mysql://localhost/breakout";
+            //connection = DriverManager.getConnection(url, "root", "");
 
         } catch (ClassNotFoundException | SQLException | InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
@@ -281,5 +281,20 @@ public class Database {
             e.printStackTrace();
         }
         return userid;
+    }
+
+    public void updateXPUser(int score, int userId){
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+
+            String query = "UPDATE `user` SET xp = xp + "  + score/100 + " WHERE userid = " + userId;
+            PreparedStatement preparedStatement = getConnection().prepareStatement(query);
+
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

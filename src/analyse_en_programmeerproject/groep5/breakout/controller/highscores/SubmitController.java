@@ -25,6 +25,7 @@ public class SubmitController implements ActionListener {
         Database.DatabaseInstance.insertScore(new Score(score, new Date(), Database.DatabaseInstance.fillGames().size()-1));
         if(Database.DatabaseInstance.getUserId() != -1) {
             Database.DatabaseInstance.insertScoreUsers(Database.DatabaseInstance.getUserId(), Database.DatabaseInstance.fillScores().size() - 1);
+            Database.DatabaseInstance.updateXPUser(score, Database.DatabaseInstance.getUserId());
         }
         panelCenter.addMainComponents();
     }

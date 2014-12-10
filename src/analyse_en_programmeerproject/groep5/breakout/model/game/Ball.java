@@ -235,8 +235,8 @@ public class Ball implements Runnable {
                     setyDirection(1);
                 }
                 blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
-                p1Score += blockCreator.getScore()*scoreAndDif;
-            }
+                p1Score += blockCreator.getScore();
+        }
             if(blockCreator.getNumberOfHitsLeft() == 0)
                 numberOfUnbreakables++;
         }
