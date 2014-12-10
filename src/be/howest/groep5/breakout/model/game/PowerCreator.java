@@ -13,28 +13,34 @@ public class PowerCreator {
     private void returnPower(int powerid, boolean powerup, Ball ball, Paddle paddle){
         if(powerup){
             switch (powerid){
-                case 0:
-                    shooter(ball);
+                case 0: shooter(ball);
                     break;
-                case 1:
-                    makeBallBigger(ball);
+                case 1: makeBallBigger(ball);
                     break;
-                case 2:
-                    makePaddleLongher(paddle, ball);
+                case 2: makePaddleLongher(paddle, ball);
                     break;
-                case 3:
-                    addALife(ball);
+                case 3: makeBallSlower();
                     break;
-
+                case 4: addALife(ball);
+                    break;
+            }
+        }else{
+            switch (powerid){
+                case 0: makeBallSmaller(ball);
+                    break;
+                case 1: makePaddleSmaller(paddle);
+                    break;
+                case 2: deleteALife(ball);
+                    break;
+                case 3: makeBallFaster();
+                    break;
+                case 4: makePaddleSlower();
+                    break;
             }
         }
     }
 
-    private void addALife(Ball ball) {
-        if(ball.getNumberOfLifes() <= 6)
-            ball.setNumberOfLifes(ball.getNumberOfLifes() + 1);
-        ball.setP1Score(ball.getP1Score() + 100);
-    }
+    // ---------------------- POWER UP -----------------------------------
 
     private void shooter(Ball ball){
         System.out.println("shoooooooooooooooooooooooooooter");
@@ -49,7 +55,6 @@ public class PowerCreator {
             ball.getBall().height *= 2;
         }
         ball.setP1Score(ball.getP1Score() + 100);
-
     }
 
     private void makePaddleLongher(Paddle paddle, Ball ball){
@@ -60,4 +65,43 @@ public class PowerCreator {
         ball.setP1Score(ball.getP1Score() + 100);
     }
 
+    private void makeBallSlower(){
+
+    }
+
+    private void addALife(Ball ball) {
+        if(ball.getNumberOfLifes() <= 6)
+            ball.setNumberOfLifes(ball.getNumberOfLifes() + 1);
+        ball.setP1Score(ball.getP1Score() + 100);
+    }
+
+    // ---------------------- POWER DOWN -----------------------------------
+
+    private void makeBallSmaller(Ball ball){
+        if(ball.getBall().width > 14) {
+            ball.setLengthBound(ball.getLengthBound() - ball.getBall().width);
+            ball.getBall().width /= 2;
+            ball.getBall().height /= 2;
+        }
+    }
+
+    private void makePaddleSmaller(Paddle paddle){
+        if(paddle.getPaddle().width > 400) {
+            paddle.setLengthGo(paddle.getLengthGo() - paddle.getPaddle().width);
+            paddle.getPaddle().width /= 2;
+        }
+    }
+
+    private void deleteALife(Ball ball){
+        if(ball.getNumberOfLifes() >= 2)
+            ball.setNumberOfLifes(ball.getNumberOfLifes() - 1);
+    }
+
+    private void makeBallFaster(){
+
+    }
+
+    private void makePaddleSlower(){
+
+    }
 }
