@@ -32,7 +32,7 @@ public class PowerCreator {
                     break;
                 case 2: deleteALife(ball);
                     break;
-                case 3: makeBallFaster();
+                case 3: makeBallFaster(ball);
                     break;
                 case 4: makePaddleSlower();
                     break;
@@ -45,7 +45,6 @@ public class PowerCreator {
     private void shooter(Ball ball){
         System.out.println("shoooooooooooooooooooooooooooter");
 
-        ball.setP1Score(ball.getP1Score() + 100);
     }
 
     private void makeBallBigger(Ball ball){
@@ -54,7 +53,6 @@ public class PowerCreator {
             ball.getBall().width *= 2;
             ball.getBall().height *= 2;
         }
-        ball.setP1Score(ball.getP1Score() + 100);
     }
 
     private void makePaddleLongher(Paddle paddle, Ball ball){
@@ -62,7 +60,6 @@ public class PowerCreator {
             paddle.setLengthGo(paddle.getLengthGo() - paddle.getPaddle().width);
             paddle.getPaddle().width *= 2;
         }
-        ball.setP1Score(ball.getP1Score() + 100);
     }
 
     private void makeBallSlower(){
@@ -72,7 +69,6 @@ public class PowerCreator {
     private void addALife(Ball ball) {
         if(ball.getNumberOfLifes() <= 6)
             ball.setNumberOfLifes(ball.getNumberOfLifes() + 1);
-        ball.setP1Score(ball.getP1Score() + 100);
     }
 
     // ---------------------- POWER DOWN -----------------------------------
@@ -97,8 +93,8 @@ public class PowerCreator {
             ball.setNumberOfLifes(ball.getNumberOfLifes() - 1);
     }
 
-    private void makeBallFaster(){
-
+    private void makeBallFaster(Ball ball){
+        ball.setSpeed(ball.getSpeed() +1);
     }
 
     private void makePaddleSlower(){

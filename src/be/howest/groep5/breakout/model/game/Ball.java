@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Kenny on 12/11/2014.
  */
 public class Ball implements Runnable {
-    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, numberOfLines, scoreAndDif, topBound, lengthBound;
+    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, numberOfLines, scoreAndDif, topBound, lengthBound, speed;
     private Rectangle ball;
     private int numberOfUnbreakables;
     private Paddle p1, p2;
@@ -33,7 +33,6 @@ public class Ball implements Runnable {
         this.singleplayer = singleplayer;
         this.difficulty = difficulty;
         numberOfLifes = 3;
-        System.out.println(this.difficulty);
         createScreen(getNumberOfBlocks(difficulty));
         startRandomX();
         startRandomY();
@@ -44,6 +43,7 @@ public class Ball implements Runnable {
 
         setP1Score(0);
         setP2Score(0);
+        setSpeed(7);
 
     }
 
@@ -94,6 +94,9 @@ public class Ball implements Runnable {
     }
     public void setNumberOfLifes(int numberOfLifes) {
         this.numberOfLifes = numberOfLifes;
+    }
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
     public int getX() {
@@ -160,6 +163,9 @@ public class Ball implements Runnable {
     public int getNumberOfLifes() {
         return numberOfLifes;
     }
+    public int getSpeed() {
+        return speed;
+    }
     private void createScreen(int numberOfBlocks){
         BlockCreators blockCreators = new BlockCreators(getXPosition(), getYPosition());
         blockCreatorList = new ArrayList<>();
@@ -195,8 +201,6 @@ public class Ball implements Runnable {
     }
 
 
-
-
     public void collision(){
         if(ball.intersects(p1.getPaddle())){
             setyDirection(-1);
@@ -213,10 +217,14 @@ public class Ball implements Runnable {
                 if(blockCreator.hasAPower() && blockCreator.getColor() == Color.GREEN){
                     Random r = new Random();
                     int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
-                    if(singleplayer)
+                    if(singleplayer) {
                         new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1);
-                    else if(! singleplayer && getYDirection() == 1)
-                            new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2);
+                        p1Score += 100;
+                    }
+                    else if(! singleplayer && getYDirection() == 1) {
+                        new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2);
+                        p2Score -= 100;
+                    }
                 }
                 if(blockCreator.hasAPower() && blockCreator.getColor() == Color.RED){
                     Random r = new Random();
@@ -288,7 +296,7 @@ public class Ball implements Runnable {
             while(true){
                 if(numberOfLifes != 0) {
                     move();
-                    Thread.sleep(7);
+                    Thread.sleep(getSpeed());
                 }
             }
         } catch (Exception e){
