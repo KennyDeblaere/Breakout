@@ -218,6 +218,14 @@ public class Ball implements Runnable {
                     else if(! singleplayer && getYDirection() == 1)
                             new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2);
                 }
+                if(blockCreator.hasAPower() && blockCreator.getColor() == Color.RED){
+                    Random r = new Random();
+                    int temp = r.nextInt(Database.DatabaseInstance.fillPowers(false).size());
+                    if(singleplayer)
+                        new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p1);
+                    else if(! singleplayer && getYDirection() == 1)
+                        new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p2);
+                }
                 if(ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width/2) {
                     setyDirection(getYDirection() * -1);
                     setxDirection(-1);
@@ -236,6 +244,10 @@ public class Ball implements Runnable {
                 }
                 blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
                 p1Score += blockCreator.getScore();
+                if(difficulty == 1)
+                    p1Score += 5;
+                if(difficulty == 2)
+                    p1Score += 10;
         }
             if(blockCreator.getNumberOfHitsLeft() == 0)
                 numberOfUnbreakables++;

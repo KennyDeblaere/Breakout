@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/CenterPanel.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/CenterPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/GamePanel.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/GamePanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Breakout.iws" />
@@ -53,133 +50,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Ball.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Ball.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2992">
-              <caret line="18" column="52" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.8401977" vertical-offset="1751" max-vertical-offset="3196">
+              <caret line="249" column="34" selection-start-line="249" selection-start-column="34" selection-end-line="249" selection-end-column="34" />
               <folding>
                 <element signature="method#startRandomX#0;class#Ball#0" expanded="false" />
                 <element signature="method#startRandomY#0;class#Ball#0" expanded="false" />
                 <element signature="method#getNumberOfBlocks#0;class#Ball#0" expanded="false" />
                 <element signature="method#createScreen#0;class#Ball#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="672" max-vertical-offset="2040">
-              <caret line="142" column="93" selection-start-line="142" selection-start-column="93" selection-end-line="142" selection-end-column="93" />
-              <folding>
-                <element signature="method#fillUsers#0;class#Database#0" expanded="false" />
-                <element signature="method#fillBlocks#0;class#Database#0" expanded="false" />
-                <element signature="method#fillPowers#0;class#Database#0" expanded="false" />
-                <element signature="method#fillScores#0;class#Database#0" expanded="false" />
-                <element signature="method#fillGames#0;class#Database#0" expanded="false" />
-                <element signature="method#insertUser#0;class#Database#0" expanded="false" />
-                <element signature="method#insertGameMode#0;class#Database#0" expanded="false" />
-                <element signature="method#insertScore#0;class#Database#0" expanded="false" />
-                <element signature="method#insertScoreUsers#0;class#Database#0" expanded="false" />
-                <element signature="method#updateHostNameUserLogin#0;class#Database#0" expanded="false" />
-                <marker date="1418299239446" expanded="true" signature="1528:1546" placeholder="select * fro..user..." />
-                <marker date="1418299239446" expanded="true" signature="2282:2301" placeholder="select * fro..block..." />
-                <marker date="1418299239446" expanded="true" signature="3199:3235" placeholder="select * fro..power..." />
-                <marker date="1418299239446" expanded="true" signature="3794:3813" placeholder="select * fro..score..." />
-                <marker date="1418299239446" expanded="true" signature="4413:4435" placeholder="select * fro..gamemode..." />
-                <marker date="1418299239446" expanded="true" signature="5031:5317" placeholder="SELECT * FRO..score..." />
-                <marker date="1418299239446" expanded="true" signature="5772:5933" placeholder="INSERT INTO ..." />
-                <marker date="1418299239446" expanded="true" signature="6791:6883" placeholder="INSERT INTO ..." />
-                <marker date="1418299239446" expanded="true" signature="7409:7477" placeholder="INSERT INTO ..." />
-                <marker date="1418299239446" expanded="true" signature="8089:8160" placeholder="INSERT INTO ..." />
-                <marker date="1418299239446" expanded="true" signature="9645:9740" placeholder="SELECT useri..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CenterPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/CenterPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="1275">
-              <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PowerCreator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/PowerCreator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1921">
-              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddHighscorePanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/highscores/AddHighscorePanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
-              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PanelHighScore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/highscores/PanelHighScore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="833">
-              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SinglePlayerHighscoresPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/highscores/SinglePlayerHighscoresPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GamePanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/GamePanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1887">
-              <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MultiPlayerHighscoresPanel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/highscores/MultiPlayerHighscoresPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6919275" vertical-offset="5" max-vertical-offset="663">
-              <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartGameController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-              <caret line="39" column="161" selection-start-line="39" selection-start-column="161" selection-end-line="39" selection-end-column="161" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -251,8 +132,8 @@
         <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java" />
         <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java" />
         <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/CenterPanel.java" />
-        <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java" />
         <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/GamePanel.java" />
+        <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java" />
       </list>
     </option>
   </component>
@@ -901,13 +782,7 @@
       <workItem from="1418203010305" duration="7693000" />
       <workItem from="1418246635762" duration="100000" />
       <workItem from="1418246784973" duration="3137000" />
-      <workItem from="1418290530565" duration="4736000" />
-    </task>
-    <task id="LOCAL-00035" summary="Na spelen komt menuscherm terug">
-      <created>1416487402085</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1416487402085</updated>
+      <workItem from="1418290530565" duration="5203000" />
     </task>
     <task id="LOCAL-00036" summary="Nieuwe layout, nog aan bezig --&gt; geen gezaag">
       <created>1416578357586</created>
@@ -1197,11 +1072,17 @@
       <option name="project" value="LOCAL" />
       <updated>1418298990306</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Probleem met difficulty opgelost">
+      <created>1418299780223</created>
+      <option name="number" value="00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1418299780223</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184439000" />
+    <option name="totallyTimeSpent" value="184906000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1300,7 +1181,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Spel werkt zo goed als volledig in een spel. Nog enkel de juiste afmetingen" />
     <MESSAGE value="Spel staat volledig en je kan spelen" />
     <MESSAGE value="Met creeëren nieuw scherm na het uitspelen van een level (nog niet kunnen testen, collision is nog niet in orde)" />
     <MESSAGE value="verder gewerkt aan About panel" />
@@ -1325,7 +1205,8 @@
     <MESSAGE value="Error met moeilijkheden." />
     <MESSAGE value="voorbereiden webspacedatabase" />
     <MESSAGE value="Highscores" />
-    <option name="LAST_COMMIT_MESSAGE" value="Highscores" />
+    <MESSAGE value="Probleem met difficulty opgelost" />
+    <option name="LAST_COMMIT_MESSAGE" value="Probleem met difficulty opgelost" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1719,17 +1600,17 @@
             <element signature="method#insertScore#0;class#Database#0" expanded="false" />
             <element signature="method#insertScoreUsers#0;class#Database#0" expanded="false" />
             <element signature="method#updateHostNameUserLogin#0;class#Database#0" expanded="false" />
-            <marker date="1418299239446" expanded="true" signature="1528:1546" placeholder="select * fro..user..." />
-            <marker date="1418299239446" expanded="true" signature="2282:2301" placeholder="select * fro..block..." />
-            <marker date="1418299239446" expanded="true" signature="3199:3235" placeholder="select * fro..power..." />
-            <marker date="1418299239446" expanded="true" signature="3794:3813" placeholder="select * fro..score..." />
-            <marker date="1418299239446" expanded="true" signature="4413:4435" placeholder="select * fro..gamemode..." />
-            <marker date="1418299239446" expanded="true" signature="5031:5317" placeholder="SELECT * FRO..score..." />
-            <marker date="1418299239446" expanded="true" signature="5772:5933" placeholder="INSERT INTO ..." />
-            <marker date="1418299239446" expanded="true" signature="6791:6883" placeholder="INSERT INTO ..." />
-            <marker date="1418299239446" expanded="true" signature="7409:7477" placeholder="INSERT INTO ..." />
-            <marker date="1418299239446" expanded="true" signature="8089:8160" placeholder="INSERT INTO ..." />
-            <marker date="1418299239446" expanded="true" signature="9645:9740" placeholder="SELECT useri..." />
+            <marker date="1418299239446" expanded="true" signature="-1:-1" placeholder="select * fro..user..." />
+            <marker date="1418299239446" expanded="true" signature="-1:-1" placeholder="select * fro..block..." />
+            <marker date="1418299239446" expanded="true" signature="-1:-1" placeholder="select * fro..power..." />
+            <marker date="1418299239446" expanded="true" signature="-1:-1" placeholder="select * fro..score..." />
+            <marker date="1418299239446" expanded="true" signature="-1:-1" placeholder="select * fro..gamemode..." />
+            <marker date="1418299239446" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..score..." />
+            <marker date="1418299239446" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1418299239446" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1418299239446" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1418299239446" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1418299239446" expanded="true" signature="-1:-1" placeholder="SELECT useri..." />
           </folding>
         </state>
       </provider>
@@ -1739,19 +1620,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="207" max-vertical-offset="1275">
           <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="2992">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="52" />
-          <folding>
-            <element signature="method#startRandomX#0;class#Ball#0" expanded="false" />
-            <element signature="method#startRandomY#0;class#Ball#0" expanded="false" />
-            <element signature="method#getNumberOfBlocks#0;class#Ball#0" expanded="false" />
-            <element signature="method#createScreen#0;class#Ball#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1773,10 +1641,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/highscores/MultiPlayerHighscoresPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6919275" vertical-offset="5" max-vertical-offset="663">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5" max-vertical-offset="663">
           <caret line="25" column="71" selection-start-line="25" selection-start-column="71" selection-end-line="25" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8401977" vertical-offset="1751" max-vertical-offset="3196">
+          <caret line="249" column="34" selection-start-line="249" selection-start-column="34" selection-end-line="249" selection-end-column="34" />
+          <folding>
+            <element signature="method#startRandomX#0;class#Ball#0" expanded="false" />
+            <element signature="method#startRandomY#0;class#Ball#0" expanded="false" />
+            <element signature="method#getNumberOfBlocks#0;class#Ball#0" expanded="false" />
+            <element signature="method#createScreen#0;class#Ball#0" expanded="false" />
           </folding>
         </state>
       </provider>
