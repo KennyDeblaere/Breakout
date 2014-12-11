@@ -140,7 +140,7 @@ public class Database {
             rs = stmt.executeQuery("SELECT * FROM score " +
                     "JOIN gamemode ON score.gamemodeid = gamemode.gamemodeid " +
                     "JOIN score_user ON score.scoreid = score_user.scoreid  " +
-                    "WHERE gamemode.`single/multi` = "+ singlePlayer + " ORDER BY score.score  LIMIT 5");
+                    "WHERE gamemode.`single/multi` = "+ singlePlayer + " ORDER BY score.score LIMIT 5");
             while (rs.next()){
                 scoreUsers.add(new ScoreUser(rs.getInt("score.score"), fillUsers().get(rs.getInt("score_user.userid")).getUsername()));
             }
