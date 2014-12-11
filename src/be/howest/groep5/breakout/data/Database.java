@@ -113,22 +113,6 @@ public class Database {
         }
         return scores;
     }
-    public List<ScoreUser> fillScoreUsers(){
-        List<ScoreUser> scoreUsers = new ArrayList<>();
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-
-            Statement stmt = getConnection().createStatement();
-            ResultSet rs;
-            rs = stmt.executeQuery("select * from score_user");
-            while (rs.next()){
-                scoreUsers.add(new ScoreUser(rs.getInt("userid"), rs.getString("scoreid")));
-            }
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return scoreUsers;
-    }
     public List<Gamemode> fillGames(){
         List<Gamemode> gamemode = new ArrayList<>();
         try{
@@ -156,7 +140,7 @@ public class Database {
             rs = stmt.executeQuery("SELECT * FROM score " +
                     "JOIN gamemode ON score.gamemodeid = gamemode.gamemodeid " +
                     "JOIN score_user ON score.scoreid = score_user.scoreid  " +
-                    "WHERE gamemode.`single/multi` = "+ singlePlayer + " LIMIT 5");
+                    "WHERE gamemode.`single/multi` = "+ singlePlayer + " ORDER BY score.score  LIMIT 5");
             while (rs.next()){
                 scoreUsers.add(new ScoreUser(rs.getInt("score.score"), fillUsers().get(rs.getInt("score_user.userid")).getUsername()));
             }

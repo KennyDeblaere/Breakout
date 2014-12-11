@@ -13,8 +13,9 @@ public class SinglePlayerHighscoresPanel extends JPanel {
     public SinglePlayerHighscoresPanel(){
         super();
         setLayout(new GridLayout(6,2,5,5));
-        add(new JLabel("Gebruikersnaam"));
+        add(new JLabel("Gebruikersnaam 1"));
         add(new JLabel("Highscore"));
+
         fillPanel();
 
     }
