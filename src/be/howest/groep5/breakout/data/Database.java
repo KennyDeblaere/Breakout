@@ -32,8 +32,8 @@ public class Database {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-            //String url = "jdbc:mysql://mysqlstudent/kennydeblaab7yahMySQL";
-            //connection = DriverManager.getConnection(url, "kennydeblaab7yahMySQL","ce8iaw2IeLax");
+            //String url = "jdbc:mysql://mysqlstudent/kennydeblaab7yah";
+            //connection = DriverManager.getConnection(url, "kennydeblaab7yah","ce8iaw2IeLax");
 
             String url = "jdbc:mysql://localhost/breakout";
             connection = DriverManager.getConnection(url, "root", "");
