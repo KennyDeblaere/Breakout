@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
  * Created by Blackhat on 3/12/2014.
  */
 public class ButtonController implements ActionListener{
-    private StatusPanel statusPanel;
     private ContentPanel panelContent;
     private String button;
 

@@ -1,5 +1,5 @@
 package be.howest.groep5.breakout.view.welcome;
-import be.howest.groep5.breakout.controller.menu.Login_outButtonController;
+import be.howest.groep5.breakout.controller.menu.loginOutButtonController;
 import be.howest.groep5.breakout.controller.menu.RegisterButtonController;
 import be.howest.groep5.breakout.view.login.LoginPanel;
 
@@ -57,9 +57,9 @@ public class PanelLogin extends JPanel{
     }
 
     private void addActionListeners() {
-        loginButton.addActionListener(new Login_outButtonController(this, true));
+        loginButton.addActionListener(new loginOutButtonController(this, true));
         registerButton.addActionListener(new RegisterButtonController(panelContent));
-        logoutButton.addActionListener(new Login_outButtonController(this, false));
+        logoutButton.addActionListener(new loginOutButtonController(this, false));
     }
 
     public void setLoggedIn(Boolean loggedIn) {
