@@ -30,47 +30,44 @@ public class RegisterController implements ActionListener {
         }
 
     private void createComponents(){
-        setUsername(c.getRegistration().getUsername());
-        setPassword(c.getRegistration().getPassword());
-        setRepeatedPassword(c.getRegistration().getRepeatedpassword());
-        setFirstname(c.getRegistration().getFirstname());
-        setLastname(c.getRegistration().getLastname());
-        setEmail(c.getRegistration().getEmail());
-        setDateOfBirth(c.getRegistration().getDateOfBirth());
-        setSex(c.getRegistration().getSexPanel());
+        setValues(c.getRegistration().getUsername(),
+                  c.getRegistration().getPassword(),
+                  c.getRegistration().getRepeatedpassword(),
+                  c.getRegistration().getFirstname(),
+                  c.getRegistration().getLastname(),
+                  c.getRegistration().getEmail(),
+                  c.getRegistration().getDateOfBirth(),
+                  c.getRegistration().getSexPanel());
     }
 
-    public void setUsername(JTextField username) {
+    public void setValues(JTextField username, JPasswordField password, JPasswordField repeatedPassword, JTextField firstname, JTextField lastname, JTextField email, DatePanel dateOfBirth, SexPanel sex){
         this.username = username;
-    }
-    public void setFirstname(JTextField firstname) {
-        this.firstname = firstname;
-    }
-    public void setLastname(JTextField lastname) {
-        this.lastname = lastname;
-    }
-    public void setPassword(JPasswordField password) {
         this.password = password;
-    }
-    public void setEmail(JTextField email) {
-        this.email = email;
-    }
-    public void setDateOfBirth(DatePanel dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-    public void setRepeatedPassword(JPasswordField repeatedPassword) {
         this.repeatedPassword = repeatedPassword;
-    }
-    public void setSex(SexPanel sex) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.dateOfBirth = dateOfBirth;
         this.sex = sex;
     }
+
+    private void checkValues(String iets){
+        if (iets ==""){
+            System.out.println("testtesttest");
+            JOptionPane.showMessageDialog(null, "Username moet worden ingevuld", "Opgelet", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    private void message(String message){
+
+    }
+
     public JTextField getEmail() {
         return email;
     }
     public JTextField getFirstname() {
         return firstname;
     }
-
     public JPanel getDateOfBirth() {
         return dateOfBirth;
     }
@@ -93,6 +90,7 @@ public class RegisterController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         createComponents();
+
         new Register(getUsername().getText(),getPassword().getText(),getRepeatedPassword().getText(),
                 getFirstname().getText(),getLastname().getText(),getEmail().getText(), new Date(Integer.parseInt(dateOfBirth.getYear().getText()),
                 Integer.parseInt(dateOfBirth.getMonth().getText()), Integer.parseInt(dateOfBirth.getDay().getText())),sex.getMale().isSelected());

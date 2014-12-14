@@ -1,7 +1,9 @@
 package be.howest.groep5.breakout.model;
 
 import be.howest.groep5.breakout.data.Database;
+import be.howest.groep5.breakout.controller.registration.RegisterController;
 
+import javax.swing.*;
 import java.util.Date;
 
 
@@ -79,7 +81,9 @@ public class Register {
         return input == "";
     }
 
+
     public void register(){
+
         Database.DatabaseInstance.insertUser(new User(getUsername(), getPassword(), getFirstname(), getLastname(), getEmail(), 0, getDateOfBirth(), isMan()));
         System.out.println(isMan());
     }

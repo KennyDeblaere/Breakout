@@ -1,7 +1,7 @@
 package be.howest.groep5.breakout.model.game;
 
 /**
- * Created by Kenny on 9/12/2014.
+ * Created by Kenny, Blackhat on 9/12/2014.
  */
 public class PowerCreator {
 
