@@ -6,8 +6,10 @@ import be.howest.groep5.breakout.view.game.GamePanel;
 import be.howest.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 /**
  * Created by Kenny, Blackhat on 13/11/2014.
@@ -16,11 +18,16 @@ public class StartGameController implements ActionListener {
     private CenterPanel panelCenter;
     private JComboBox difficulty;
     private boolean singleplayer;
-
+    private Robot r;
     public StartGameController(CenterPanel centerPanel, JComboBox difficultyLevel, boolean singleplayer){
         this.panelCenter = centerPanel;
         difficulty = difficultyLevel;
         this.singleplayer = singleplayer;
+        try {
+            r = new Robot();
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
     }
 
     private int countNumberOfStartingRows(int difficulty){
@@ -39,5 +46,7 @@ public class StartGameController implements ActionListener {
         Database.DatabaseInstance.insertGameMode(new Gamemode(singleplayer, difficulty.getSelectedIndex()));
         panelCenter.addGamePanel(new GamePanel(panelCenter, countNumberOfStartingRows(difficulty.getSelectedIndex()), singleplayer, difficulty.getSelectedIndex()));
         panelCenter.getGamePanel().startGame();
+        r.keyPress(KeyEvent.VK_TAB);
+        r.keyRelease(KeyEvent.VK_TAB);
     }
 }

@@ -37,7 +37,7 @@ public class GamePanel extends JPanel {
 
         setFocusable(true);
         setRequestFocusEnabled(true);
-        requestFocus();
+        requestFocusInWindow();
     }
 
     public void startGame(){

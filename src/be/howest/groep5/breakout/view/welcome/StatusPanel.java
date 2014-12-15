@@ -33,8 +33,10 @@ public class StatusPanel extends JPanel{
             statusLabel = new JLabel("Status: RUN");
             soundOnButton = new JButton(new ImageIcon(onImage));
             soundOffButton = new JButton(new ImageIcon(offImage));
-            soundOffButton.hide();
+            soundOffButton.setVisible(false);
+            soundOffButton.setFocusable(false);
             soundOnButton.addActionListener(new SoundController(false));
+            soundOnButton.setFocusable(false);
         }
 
         private void addComponents() {
