@@ -1,7 +1,6 @@
 package be.howest.groep5.breakout.view;
 
 import be.howest.groep5.breakout.controller.LogoutOnCloseController;
-import be.howest.groep5.breakout.controller.SoundController;
 import be.howest.groep5.breakout.model.multimedia.Multimedia;
 import be.howest.groep5.breakout.view.welcome.MainPanel;
 

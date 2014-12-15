@@ -1,9 +1,7 @@
 package be.howest.groep5.breakout.controller.game;
 
-import be.howest.groep5.breakout.controller.SoundController;
 import be.howest.groep5.breakout.data.Database;
 import be.howest.groep5.breakout.model.Gamemode;
-import be.howest.groep5.breakout.model.multimedia.Sound;
 import be.howest.groep5.breakout.view.game.GamePanel;
 import be.howest.groep5.breakout.view.welcome.CenterPanel;
 
@@ -18,13 +16,11 @@ import java.awt.event.KeyEvent;
  */
 public class StartGameController implements ActionListener {
     private SoundController soundController;
-    private Thread tread;
     private CenterPanel panelCenter;
     private JComboBox difficulty;
     private boolean singleplayer;
     private Robot r;
     public StartGameController(CenterPanel centerPanel, JComboBox difficultyLevel, boolean singleplayer){
-        tread = new Thread(soundController);
         this.panelCenter = centerPanel;
         difficulty = difficultyLevel;
         this.singleplayer = singleplayer;
@@ -49,7 +45,7 @@ public class StartGameController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Database.DatabaseInstance.insertGameMode(new Gamemode(singleplayer, difficulty.getSelectedIndex()));
-        tread.start();
+        new SoundController();
         panelCenter.addGamePanel(new GamePanel(panelCenter, countNumberOfStartingRows(difficulty.getSelectedIndex()), singleplayer, difficulty.getSelectedIndex()));
         panelCenter.getGamePanel().startGame();
         r.keyPress(KeyEvent.VK_TAB);

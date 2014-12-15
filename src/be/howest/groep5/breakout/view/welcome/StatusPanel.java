@@ -1,8 +1,5 @@
 package be.howest.groep5.breakout.view.welcome;
 
-import be.howest.groep5.breakout.controller.SoundController;
-import be.howest.groep5.breakout.model.multimedia.Multimedia;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;

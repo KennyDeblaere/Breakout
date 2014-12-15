@@ -1,6 +1,7 @@
 package be.howest.groep5.breakout.controller.game;
 
 import be.howest.groep5.breakout.model.game.Ball;
+import be.howest.groep5.breakout.model.multimedia.Sound;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -21,6 +22,8 @@ public class MovePanelController extends KeyAdapter {
             b.setPlaying(!b.isPlaying());
             b.getP1().setPlaying(b.isPlaying());
             b.getP2().setPlaying(b.isPlaying());
+            Sound sound = new Sound();
+            sound.pause();
         }
 
     }
