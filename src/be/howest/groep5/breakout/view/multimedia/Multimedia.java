@@ -1,6 +1,12 @@
 package be.howest.groep5.breakout.view.multimedia;
 
+import com.sun.media.jfxmedia.events.PlayerStateEvent;
 import javazoom.jl.player.Player;
+import sun.audio.AudioData;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import sun.audio.ContinuousAudioDataStream;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -19,9 +25,9 @@ public class Multimedia {
         } catch (IOException e) {
             System.out.println("Image laad niet in!");
         }
-        try {
 
-            File file = new File("src/be/howest/groep5/breakout/multimedia/300.mp3");
+        try {
+           File file = new File("src/be/howest/groep5/breakout/multimedia/300.mp3");
             FileInputStream fis = new FileInputStream(file);
             BufferedInputStream bis = new BufferedInputStream(fis);
             Player player = new Player(bis);
@@ -29,6 +35,7 @@ public class Multimedia {
         } catch (Exception e){
             System.out.println("Probleem bij mediaspeler!");
         }
+
     }
 
     public BufferedImage getIconImage() {
