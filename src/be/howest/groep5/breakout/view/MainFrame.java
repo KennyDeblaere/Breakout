@@ -1,5 +1,6 @@
 package be.howest.groep5.breakout.view;
 
+import be.howest.groep5.breakout.controller.LogoutOnCloseController;
 import be.howest.groep5.breakout.view.multimedia.Multimedia;
 import be.howest.groep5.breakout.view.welcome.MainPanel;
 import javax.swing.*;
@@ -23,6 +24,8 @@ public class MainFrame extends JFrame {
 
         MainPanel mainPanel = new MainPanel();
         setContentPane(mainPanel);
+
+        addWindowListener(new LogoutOnCloseController());
 
 
         pack();
