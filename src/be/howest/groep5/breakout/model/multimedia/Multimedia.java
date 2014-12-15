@@ -1,5 +1,7 @@
 package be.howest.groep5.breakout.model.multimedia;
 
+import be.howest.groep5.breakout.controller.SoundController;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -26,7 +28,7 @@ public class Multimedia implements Runnable {
     @Override
     public void run() {
         while (true){
-            new Sound();
+            new SoundController(true);
         }
     }
 }

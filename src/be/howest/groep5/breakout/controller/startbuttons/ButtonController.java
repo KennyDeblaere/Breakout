@@ -17,6 +17,7 @@ public class ButtonController implements ActionListener{
         this.panelContent = panelContent;
         this.button = button;
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (button) {
