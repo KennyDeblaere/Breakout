@@ -12,7 +12,6 @@ public class DifficultyPanel extends JPanel{
     private JButton playButton;
     private JLabel textLabel, titelLabel;
     private JComboBox difList;
-    private String difficultyLevel;
     private String[] difficultyStrings = {"Gemakkelijk", "Gemiddeld", "Moeilijk" };
     private boolean singleplayer;
 

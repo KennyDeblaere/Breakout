@@ -12,7 +12,7 @@ import java.awt.*;
 public class MultiPlayerHighscoresPanel extends JPanel {
     public MultiPlayerHighscoresPanel(){
         super();
-        setLayout(new GridLayout(6,5,5,5));
+        setLayout(new GridLayout(6, 5, 5, 5));
         add(new JLabel("Gebruikersnaam 1 "));
         add(new JLabel("Score 1"));
         add(new JLabel("Gebruikersnaam 2"));
@@ -25,6 +25,7 @@ public class MultiPlayerHighscoresPanel extends JPanel {
         JLabel username, score;
         for(ScoreUser su : Database.DatabaseInstance.fillTopScores(true)){
             username = new JLabel(su.getUserName());
+            username.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2, true));
             add(username);
             score = new JLabel("" + su.getScore());
             add(score);
