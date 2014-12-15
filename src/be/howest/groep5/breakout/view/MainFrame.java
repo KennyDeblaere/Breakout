@@ -1,16 +1,10 @@
 package be.howest.groep5.breakout.view;
 
 import be.howest.groep5.breakout.controller.LogoutOnCloseController;
-import be.howest.groep5.breakout.view.multimedia.Multimedia;
+import be.howest.groep5.breakout.model.multimedia.Multimedia;
 import be.howest.groep5.breakout.view.welcome.MainPanel;
-import sun.audio.AudioData;
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
 
 import javax.swing.*;
-import java.io.File;
-import java.io.FileInputStream;
 
 /**
  * Created by

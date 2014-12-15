@@ -1,4 +1,4 @@
-package be.howest.groep5.breakout.view.multimedia;
+package be.howest.groep5.breakout.model.multimedia;
 
 import javazoom.jl.player.Player;
 import java.io.BufferedInputStream;
