@@ -1,12 +1,8 @@
 package be.howest.groep5.breakout.view;
 
-import be.howest.groep5.breakout.controller.LogoutOnCloseController;
+import be.howest.groep5.breakout.view.multimedia.Multimedia;
 import be.howest.groep5.breakout.view.welcome.MainPanel;
-
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.File;
-import java.io.IOException;
 
 /**
  * Created by
@@ -18,20 +14,8 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         super();
 
-        try {
-            setIconImage(ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Icon.jpg")));
-        } catch (IOException e) {
-            System.out.println("Image laad niet in!");
-        }
-
-        try {
-
-
-        } catch(Exception ex) {
-            System.out.println("Error with playing sound.");
-            ex.printStackTrace();
-        }
-
+        Multimedia multimedia = new Multimedia();
+        setIconImage(multimedia.getIconImage());
 
         setTitle("Breakout (c) 2014 groep 5");
         setVisible(true);
@@ -39,7 +23,7 @@ public class MainFrame extends JFrame {
 
         MainPanel mainPanel = new MainPanel();
         setContentPane(mainPanel);
-        addWindowListener(new LogoutOnCloseController());
+
 
         pack();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
