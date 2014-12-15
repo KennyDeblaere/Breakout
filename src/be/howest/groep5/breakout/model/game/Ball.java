@@ -214,7 +214,7 @@ public class Ball implements Runnable {
             setyDirection(+1);
         for(BlockCreator blockCreator : blockCreatorList) {
             if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
-                if(blockCreator.hasAPower() && blockCreator.getColor() == Color.decode("#12E81C")){
+                if(blockCreator.hasAPowerUp()){
                     Random r = new Random();
                     int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
                     if(singleplayer) {
@@ -226,7 +226,7 @@ public class Ball implements Runnable {
                         p2Score -= 100;
                     }
                 }
-                if(blockCreator.hasAPower() && blockCreator.getColor() == Color.decode("#FF1A00")){
+                if(blockCreator.hasAPowerDown()){
                     Random r = new Random();
                     int temp = r.nextInt(Database.DatabaseInstance.fillPowers(false).size());
                     if(singleplayer)

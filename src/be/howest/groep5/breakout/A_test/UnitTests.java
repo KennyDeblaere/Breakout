@@ -48,7 +48,7 @@ public class UnitTests {
     public void testBlockCreator() throws Exception {
         boolean exception = false;
         try {
-            BlockCreator block = new BlockCreator(5, 5, 3, Color.RED, true, 100, 20, 20);
+            BlockCreator block = new BlockCreator(5, 5, 3, Color.RED, true, false, 100, 20, 20);
         } catch (Exception e){
             exception = true;
         }

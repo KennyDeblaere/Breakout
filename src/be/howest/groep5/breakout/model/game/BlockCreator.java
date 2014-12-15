@@ -10,17 +10,18 @@ public class BlockCreator {
     private int x, y, numberOfHitsLeft;
     private int score;
     private Color color;
-    private boolean power;
+    private boolean powerUp, powerDown;
 
 
-    public BlockCreator(int x, int y, int numberOfHits, Color color, boolean power, int length, int height, int score){
+    public BlockCreator(int x, int y, int numberOfHits, Color color, boolean powerUp, boolean powerDown, int length, int height, int score){
         block = new Rectangle(x, y, length,height);
         this.x = x;
         this.y = y;
         this.color = color;
         this.score = score;
         numberOfHitsLeft = numberOfHits;
-        this.power = power;
+        this.powerUp = powerUp;
+        this.powerDown = powerDown;
     }
 
     public int getX() {
@@ -36,8 +37,8 @@ public class BlockCreator {
         return score;
     }
 
-    public void setPower(boolean power) {
-        this.power = power;
+    public void setPowerUp(boolean powerUp) {
+        this.powerUp = powerUp;
     }
 
     public int getNumberOfHitsLeft() {
@@ -48,8 +49,12 @@ public class BlockCreator {
         return color;
     }
 
-    public boolean hasAPower() {
-        return power;
+    public boolean hasAPowerUp() {
+        return powerUp;
+    }
+
+    public boolean hasAPowerDown() {
+        return powerDown;
     }
 
     public void setNumberOfHitsLeft(int numberOfHitsLeft) {

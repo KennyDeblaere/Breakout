@@ -14,7 +14,7 @@ public class BlockCreators {
     public BlockCreators(int x, int y){
         blockCreators = new ArrayList<>();
         for(Block b : Database.DatabaseInstance.fillBlocks()){
-            blockCreators.add(new BlockCreator(x,y,b.getNumberOfHitsBeforeVanish(),b.getColor(), b.hasAPower(),b.getHorizontalLength(),b.getVerticalLength(),b.getScore()));
+            blockCreators.add(new BlockCreator(x,y,b.getNumberOfHitsBeforeVanish(),b.getColor(), b.hasAPowerUp(),b.hasAPowerDown(), b.getHorizontalLength(),b.getVerticalLength(),b.getScore()));
         }
     }
 
