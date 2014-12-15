@@ -39,8 +39,8 @@ public class StatusPanel extends JPanel{
         }
 
     private void addActionListener(){
-        soundOnButton.addActionListener(new Multimedia());
-        soundOffButton.addActionListener(new Multimedia());
+        //soundOnButton.addActionListener(new Multimedia());
+        //soundOffButton.addActionListener(new Multimedia());
     }
 
     private void addComponents() {
