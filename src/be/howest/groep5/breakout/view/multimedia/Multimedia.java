@@ -16,7 +16,7 @@ import java.io.*;
 /**
  * Created by Blackhat on 15/12/2014.
  */
-public class Multimedia {
+public class Multimedia implements Runnable {
     private BufferedImage Image;
 
     public Multimedia() {
@@ -25,20 +25,16 @@ public class Multimedia {
         } catch (IOException e) {
             System.out.println("Image laad niet in!");
         }
-
-        try {
-           File file = new File("src/be/howest/groep5/breakout/multimedia/300.mp3");
-            FileInputStream fis = new FileInputStream(file);
-            BufferedInputStream bis = new BufferedInputStream(fis);
-            Player player = new Player(bis);
-            player.play();
-        } catch (Exception e){
-            System.out.println("Probleem bij mediaspeler!");
-        }
-
     }
 
     public BufferedImage getIconImage() {
         return Image;
+    }
+
+    @Override
+    public void run() {
+        while (true){
+            new Sound();
+        }
     }
 }

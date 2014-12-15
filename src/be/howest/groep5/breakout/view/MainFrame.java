@@ -3,7 +3,14 @@ package be.howest.groep5.breakout.view;
 import be.howest.groep5.breakout.controller.LogoutOnCloseController;
 import be.howest.groep5.breakout.view.multimedia.Multimedia;
 import be.howest.groep5.breakout.view.welcome.MainPanel;
+import sun.audio.AudioData;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import sun.audio.ContinuousAudioDataStream;
+
 import javax.swing.*;
+import java.io.File;
+import java.io.FileInputStream;
 
 /**
  * Created by
@@ -15,8 +22,6 @@ public class MainFrame extends JFrame {
     public MainFrame() {
         super();
 
-        Multimedia multimedia = new Multimedia();
-        setIconImage(multimedia.getIconImage());
 
         setTitle("Breakout (c) 2014 groep 5");
         setVisible(true);
@@ -25,8 +30,12 @@ public class MainFrame extends JFrame {
         MainPanel mainPanel = new MainPanel();
         setContentPane(mainPanel);
 
-        addWindowListener(new LogoutOnCloseController());
+        Multimedia multimedia = new Multimedia();
+        setIconImage(multimedia.getIconImage());
 
+        addWindowListener(new LogoutOnCloseController());
+        Thread t1 = new Thread(multimedia);
+        t1.start();
 
         pack();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
