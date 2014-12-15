@@ -18,7 +18,7 @@ public class MainFrame extends JFrame {
         super();
 
         try {
-            setIconImage(ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\Pictures\\Icon.jpg")));
+            setIconImage(ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Icon.jpg")));
         } catch (IOException e) {
             System.out.println("Image laad niet in!");
         }
