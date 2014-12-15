@@ -23,6 +23,14 @@ public class MainFrame extends JFrame {
             System.out.println("Image laad niet in!");
         }
 
+        try {
+
+
+        } catch(Exception ex) {
+            System.out.println("Error with playing sound.");
+            ex.printStackTrace();
+        }
+
         setTitle("Breakout (c) 2014 groep 5");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
