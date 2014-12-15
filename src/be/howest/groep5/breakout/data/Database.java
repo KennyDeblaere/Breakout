@@ -71,7 +71,7 @@ public class Database {
             rs = stmt.executeQuery("select * from block");
             while (rs.next()){
                 blocks.add(new Block(Color.decode(rs.getString("color")),rs.getInt("horizontalLength"), rs.getInt("verticalLength"),
-                        rs.getInt("numberOfHitsBeforeVanish"), rs.getBoolean("haspower"), rs.getInt("score")));
+                        rs.getInt("numberOfHitsBeforeVanish"), rs.getBoolean("haspowerup"), rs.getBoolean("haspowerdown"), rs.getInt("score")));
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();

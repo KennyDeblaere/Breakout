@@ -11,15 +11,17 @@ import java.awt.*;
 public class Block {
     private Color color;
     private int horizontalLength, verticalLength, numberOfHitsBeforeVanish, score;
-    private boolean power;
+    private boolean powerUp, powerDown;
 
 
-    public Block(Color color, int horizontalLength, int verticalLength, int numberOfHitsBeforeVanish, boolean power, int score){
+    public Block(Color color, int horizontalLength, int verticalLength, int numberOfHitsBeforeVanish, boolean powerup, boolean powerdown, int score){
         setColor(color);
         setHorizontalLength(horizontalLength);
         setVerticalLength(verticalLength);
         setNumberOfHitsBeforeVanish(numberOfHitsBeforeVanish);
-        setPower(power);
+        setPowerUp(powerup);
+        setPowerDown(powerdown);
+        setScore(score);
     }
 
     public void setColor(Color color) {
@@ -31,14 +33,17 @@ public class Block {
     public void setNumberOfHitsBeforeVanish(int numberOfHitsBeforeVanish) {
         this.numberOfHitsBeforeVanish = numberOfHitsBeforeVanish;
     }
-    public void setPower(boolean power) {
-        this.power = power;
+    public void setPowerUp(boolean powerUp) {
+        this.powerUp = powerUp;
     }
     public void setVerticalLength(int verticalLength) {
         this.verticalLength = verticalLength;
     }
     public void setScore(int score) {
         this.score = score;
+    }
+    public void setPowerDown(boolean powerDown) {
+        this.powerDown = powerDown;
     }
 
     public Color getColor() {
@@ -50,9 +55,13 @@ public class Block {
     public int getNumberOfHitsBeforeVanish() {
         return numberOfHitsBeforeVanish;
     }
-    public boolean hasAPower() {
-        return power;
+    public boolean hasAPowerUp() {
+        return powerUp;
     }
+    public boolean hasAPowerDown() {
+        return powerDown;
+    }
+
     public int getVerticalLength() {
         return verticalLength;
     }
