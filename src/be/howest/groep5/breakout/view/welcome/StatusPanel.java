@@ -1,6 +1,8 @@
 package be.howest.groep5.breakout.view.welcome;
 
 import be.howest.groep5.breakout.controller.SoundController;
+import be.howest.groep5.breakout.model.multimedia.Multimedia;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -17,10 +19,11 @@ public class StatusPanel extends JPanel{
     private BufferedImage onImage, offImage;
 
     public StatusPanel() {
-            super();
-            setPreferredSize(new Dimension((int)getMaximumSize().getWidth(),40));
-            createComponents();
-            addComponents();
+        super();
+        setPreferredSize(new Dimension((int)getMaximumSize().getWidth(),40));
+        createComponents();
+        addActionListener();
+        addComponents();
     }
 
     private void createComponents() {
@@ -33,18 +36,15 @@ public class StatusPanel extends JPanel{
             statusLabel = new JLabel("Status: RUN");
             soundOnButton = new JButton(new ImageIcon(onImage));
             soundOffButton = new JButton(new ImageIcon(offImage));
-            soundOffButton.setVisible(false);
-            soundOffButton.setFocusable(false);
-            soundOnButton.addActionListener(new SoundController(false));
-            soundOnButton.setFocusable(false);
         }
 
-        private void addComponents() {
+    private void addActionListener(){
+        soundOnButton.addActionListener(new Multimedia());
+        soundOffButton.addActionListener(new Multimedia());
+    }
+
+    private void addComponents() {
             add(soundOnButton);
-            add(soundOffButton);
             add(statusLabel);
-        }
-
-
-
+    }
 }

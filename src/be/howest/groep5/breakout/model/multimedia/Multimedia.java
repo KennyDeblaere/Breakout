@@ -3,6 +3,8 @@ package be.howest.groep5.breakout.model.multimedia;
 import be.howest.groep5.breakout.controller.SoundController;
 
 import javax.imageio.ImageIO;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -10,8 +12,10 @@ import java.io.IOException;
 /**
  * Created by Blackhat on 15/12/2014.
  */
-public class Multimedia implements Runnable {
+public class Multimedia implements ActionListener{
     private BufferedImage Image;
+    private SoundController soundController;
+    private Thread tread;
 
     public Multimedia() {
         try {
@@ -19,6 +23,8 @@ public class Multimedia implements Runnable {
         } catch (IOException e) {
             System.out.println("Image laad niet in!");
         }
+        tread = new Thread(soundController);
+        tread.start();
     }
 
     public BufferedImage getIconImage() {
@@ -26,9 +32,7 @@ public class Multimedia implements Runnable {
     }
 
     @Override
-    public void run() {
-        while (true){
-            new SoundController(true);
-        }
+    public void actionPerformed(ActionEvent e) {
+            tread.start();
     }
 }

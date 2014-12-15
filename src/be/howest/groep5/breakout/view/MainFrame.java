@@ -18,14 +18,12 @@ public class MainFrame extends JFrame {
         super();
         Multimedia multimedia = new Multimedia();
         MainPanel mainPanel = new MainPanel();
-
         setTitle("Breakout (c) 2014 groep 5");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(mainPanel);
         setIconImage(multimedia.getIconImage());
         addWindowListener(new LogoutOnCloseController());
-        SoundController sound = new SoundController(true);
 
         pack();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
