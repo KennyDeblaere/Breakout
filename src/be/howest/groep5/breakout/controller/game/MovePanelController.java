@@ -17,6 +17,12 @@ public class MovePanelController extends KeyAdapter {
     public void keyPressed(KeyEvent e) {
         b.getP1().keyPressed(e);
         b.getP2().keyPressed(e);
+        if(e.getKeyCode() == KeyEvent.VK_P) {
+            b.setPlaying(!b.isPlaying());
+            b.getP1().setPlaying(b.isPlaying());
+            b.getP2().setPlaying(b.isPlaying());
+        }
+
     }
 
     @Override
