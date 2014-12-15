@@ -9,11 +9,13 @@ import java.awt.event.KeyEvent;
 public class Paddle implements Runnable {
     private int x, y, xDirection, id, lengthGo;
     private Rectangle paddle;
+    private boolean playing;
 
     public Paddle(int x, int y, int id){
         setX(x);
         setY(y);
         setId(id);
+        playing = true;
         paddle = new Rectangle(x, y, 100,10);
         setLengthGo(1000 - paddle.width);
 
@@ -44,9 +46,16 @@ public class Paddle implements Runnable {
     public void setLengthGo(int lengthGo) {
         this.lengthGo = lengthGo;
     }
+    public void setPlaying(boolean playing) {
+        this.playing = playing;
+    }
 
     public Rectangle getPaddle() {
         return paddle;
+    }
+
+    public boolean isPlaying() {
+        return playing;
     }
 
     public void keyPressed(KeyEvent e) {
@@ -113,7 +122,8 @@ public class Paddle implements Runnable {
     public void run() {
         try{
             while (true){
-                move();
+                if(isPlaying())
+                    move();
                 Thread.sleep(8);
             }
         }catch (Exception e){

@@ -15,7 +15,7 @@ public class Ball implements Runnable {
     private int numberOfUnbreakables;
     private Paddle p1, p2;
     private List<BlockCreator> blockCreatorList;
-    private boolean singleplayer;
+    private boolean singleplayer, playing;
     public Ball(boolean singleplayer, int difficulty, int numberOfLines){
         p1 = new Paddle(475,700,1);
         p2 = new Paddle(475,15, 2);
@@ -40,6 +40,7 @@ public class Ball implements Runnable {
         ball = new Rectangle(getX(),getY(),7,7);
         setTopBound(1000 - ball.height);
         setLengthBound(1000 - ball.width);
+        playing = true;
 
         setP1Score(0);
         setP2Score(0);
@@ -97,6 +98,9 @@ public class Ball implements Runnable {
     }
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+    public void setPlaying(boolean playing) {
+        this.playing = playing;
     }
 
     public int getX() {
@@ -166,6 +170,11 @@ public class Ball implements Runnable {
     public int getSpeed() {
         return speed;
     }
+
+    public boolean isPlaying() {
+        return playing;
+    }
+
     private void createScreen(int numberOfBlocks){
         BlockCreators blockCreators = new BlockCreators(getXPosition(), getYPosition());
         blockCreatorList = new ArrayList<>();
@@ -196,8 +205,6 @@ public class Ball implements Runnable {
                 blockCreators = new BlockCreators(getXPosition(), getYPosition());
             }
         }
-        if(numberOfUnbreakables == blockCreatorList.size())
-            createScreen(numberOfBlocks);
     }
 
 
@@ -294,10 +301,10 @@ public class Ball implements Runnable {
     public void run() {
         try{
             while(true){
-                if(numberOfLifes != 0) {
+                if(isPlaying() && numberOfLifes != 0) {
                     move();
-                    Thread.sleep(getSpeed());
                 }
+                Thread.sleep(getSpeed());
             }
         } catch (Exception e){
             System.err.println(e.getMessage());
