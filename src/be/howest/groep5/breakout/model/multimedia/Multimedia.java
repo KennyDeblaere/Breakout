@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.Buffer;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -14,7 +15,7 @@ import java.util.Observer;
  * Created by Blackhat on 15/12/2014.
  */
 public class Multimedia implements Observer{
-    private BufferedImage Image;
+    private BufferedImage image, mainBackground;
     private boolean playing;
     private Sound s;
 
@@ -23,7 +24,8 @@ public class Multimedia implements Observer{
         playing = false;
 
         try {
-            Image = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Icon.jpg")));
+            image = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Icon.jpg")));
+            mainBackground = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\testbg.png")));
             setS(new Sound());
         } catch (JavaLayerException | IOException e) {
             System.out.println("Image laad niet in!");
@@ -45,8 +47,9 @@ public class Multimedia implements Observer{
     }
 
     public BufferedImage getIconImage() {
-        return Image;
+        return image;
     }
+    public BufferedImage getMainBackground() { return  mainBackground; }
 
 
     @Override

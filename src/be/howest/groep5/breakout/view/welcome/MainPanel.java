@@ -1,5 +1,7 @@
 package be.howest.groep5.breakout.view.welcome;
 
+import be.howest.groep5.breakout.model.multimedia.Multimedia;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,6 +13,8 @@ public class MainPanel extends JPanel{
     private PanelLogin panelLogin;
     private StatusPanel panelStatus;
     private CenterPanel panelCenter;
+    private Multimedia multimedia = new Multimedia();
+    private Image background;
 
 
     public MainPanel() {
@@ -18,6 +22,7 @@ public class MainPanel extends JPanel{
         createComponents();
         setComponents();
         addComponents();
+        setBackground();
     }
 
     private void createComponents() {
@@ -35,5 +40,15 @@ public class MainPanel extends JPanel{
         add(panelLogin, BorderLayout.NORTH);
         add(panelCenter);
         add(panelStatus, BorderLayout.SOUTH);
+    }
+
+    private void setBackground() {
+        background = multimedia.getMainBackground();
+        repaint();
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        g.drawImage(background, 0, 0, null);
     }
 }

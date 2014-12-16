@@ -5,6 +5,7 @@ import be.howest.groep5.breakout.view.login.LoginPanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 /**
  * Created by Blackhat on 21/11/2014.

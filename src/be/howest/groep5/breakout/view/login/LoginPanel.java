@@ -68,4 +68,6 @@ public class LoginPanel extends JPanel {
         cancel.addActionListener(new CancelController(panelLogin));
         login.addActionListener(new LoginController(panelLogin));
     }
+
+
 }
