@@ -1,6 +1,7 @@
 package be.howest.groep5.breakout.view.welcome;
 
 import be.howest.groep5.breakout.view.game.GamePanel;
+import be.howest.groep5.breakout.view.game.ScorePanel;
 import be.howest.groep5.breakout.view.highscores.AddHighscorePanel;
 
 import javax.swing.*;
@@ -13,6 +14,7 @@ public class CenterPanel extends JPanel {
     private ContentPanel panelContent;
     private ButtonPanel panelButton;
     private GamePanel gamePanel;
+    private ScorePanel scorePanel;
     private AddHighscorePanel highscorePanel;
 
 
@@ -27,45 +29,48 @@ public class CenterPanel extends JPanel {
         panelContent = new ContentPanel(this);
         panelButton = new ButtonPanel(panelContent);
         gamePanel = new GamePanel(this, 1, true,0);
+        scorePanel = new ScorePanel(true);
         highscorePanel = new AddHighscorePanel(0,this);
     }
 
     private void setComponents(){
-
-        panelContent.setBorder(BorderFactory.createLineBorder(Color.RED));
-        panelButton.setBackground(Color.GRAY);
+        setBorder(BorderFactory.createLineBorder(Color.black,5));
     }
 
     public void addMainComponents(){
-        remove(gamePanel);
-        remove(highscorePanel);
+        removePanel();
         add(panelButton);
         add(panelContent);
-        revalidate();
-        repaint();
+        re();
     }
 
     public void addGamePanel(GamePanel gamePanel){
+        removePanel();
         this.gamePanel = gamePanel;
-        remove(panelButton);
-        remove(highscorePanel);
-        remove(panelContent);
         add(this.gamePanel);
-        revalidate();
-        repaint();
+        add(this.scorePanel);
+        re();
     }
 
     public void addHighScoreAddPanel(int score){
+        removePanel();
         highscorePanel = new AddHighscorePanel(score, this);
-        remove(panelButton);
-        remove(gamePanel);
-        remove(panelContent);
         add(highscorePanel);
+        re();
+    }
+
+    private void re(){
         revalidate();
         repaint();
     }
 
-
+    private void removePanel(){
+        remove(highscorePanel);
+        remove(panelButton);
+        remove(gamePanel);
+        remove(scorePanel);
+        remove(panelContent);
+    }
 
     public GamePanel getGamePanel() {
         return gamePanel;

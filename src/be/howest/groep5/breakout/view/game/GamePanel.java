@@ -23,7 +23,6 @@ public class GamePanel extends JPanel {
 
     public GamePanel(CenterPanel c, int rows, boolean singleplayer, int difficulty){
         centerPanel = c;
-        centerPanel.setBorder(BorderFactory.createLineBorder(Color.black,5,true));
         this.singleplayer = singleplayer;
 
         b = new Ball(singleplayer, difficulty, rows);

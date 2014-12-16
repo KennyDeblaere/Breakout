@@ -34,7 +34,7 @@ public class MainPanel extends JPanel{
     private void setComponents() {
         //panelLogin.setBackground(Color.GRAY);
         //panelStatus.setBackground(Color.GRAY);
-        //Maakt de panels doorzictig
+        //Maakt de panels doorzichtig
         panelLogin.setOpaque(false);
         panelStatus.setOpaque(false);
     }

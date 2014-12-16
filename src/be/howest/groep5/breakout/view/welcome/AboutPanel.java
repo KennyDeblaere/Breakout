@@ -1,6 +1,7 @@
 package be.howest.groep5.breakout.view.welcome;
 
 import javax.swing.*;
+import javax.swing.text.StyledEditorKit;
 import java.awt.*;
 
 /**
@@ -31,6 +32,7 @@ public class AboutPanel extends JPanel{
     }
 
     private void setComponents(){
+        titelLabel.setFont(new Font(null, Font.BOLD, 30));
         createLabel.setText(convertToMultiline("Created by: \n   Deblaere Kenny - CCCP | Dekoninck Dries - CCCP | Vansteelandt Benjamin - SSD"));
         licensedtoLabel.setText(convertToMultiline("Licensed to: \n   " + System.getProperty("user.name")));
         versionLabel.setText(convertToMultiline("Version: \n   1.6.4"));
@@ -39,7 +41,6 @@ public class AboutPanel extends JPanel{
         about.add(createLabel);
         about.add(licensedtoLabel);
         about.add(versionLabel);
-
     }
 
     private void addComponents() {
