@@ -25,7 +25,7 @@ public class Multimedia implements Observer{
 
         try {
             image = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Icon.jpg")));
-            mainBackground = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\testbg.png")));
+            mainBackground = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\background.png")));
             setS(new Sound());
         } catch (JavaLayerException | IOException e) {
             System.out.println("Image laad niet in!");

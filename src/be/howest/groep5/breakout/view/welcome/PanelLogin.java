@@ -16,6 +16,7 @@ public class PanelLogin extends JPanel{
     private JLabel textLabel;
     private JButton loginButton, logoutButton, registerButton;
     private LoginPanel loginPanel;
+    private Font font;
 
     public PanelLogin(ContentPanel c) {
         panelContent = c;
@@ -42,6 +43,10 @@ public class PanelLogin extends JPanel{
         } else {
             textLabel.setText("Je speelt nu als gast");
         }
+
+        textLabel.setForeground(Color.white);
+        font = new Font("Tahoma", Font.BOLD, 15);
+        textLabel.setFont(font);
         loginButton.setVisible(!loggedIn);
         registerButton.setVisible(!loggedIn);
         registerButton.setFocusable(false);
