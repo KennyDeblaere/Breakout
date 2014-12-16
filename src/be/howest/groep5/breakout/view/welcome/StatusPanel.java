@@ -1,5 +1,8 @@
 package be.howest.groep5.breakout.view.welcome;
 
+import be.howest.groep5.breakout.controller.multimedia.SoundController;
+import be.howest.groep5.breakout.model.multimedia.Multimedia;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -14,13 +17,17 @@ public class StatusPanel extends JPanel{
     private JLabel statusLabel;
     private JButton soundOnButton, soundOffButton;
     private BufferedImage onImage, offImage;
+    private Multimedia multimedia;
+    private Thread thread;
 
     public StatusPanel() {
         super();
-        setPreferredSize(new Dimension((int)getMaximumSize().getWidth(),40));
+        multimedia = new Multimedia();
+
+        setPreferredSize(new Dimension((int) getMaximumSize().getWidth(), 40));
         createComponents();
-        addActionListener();
         addComponents();
+        addActionListener();
     }
 
     private void createComponents() {
@@ -33,15 +40,30 @@ public class StatusPanel extends JPanel{
             statusLabel = new JLabel("Status: RUN");
             soundOnButton = new JButton(new ImageIcon(onImage));
             soundOffButton = new JButton(new ImageIcon(offImage));
+        soundOnButton.setFocusable(false);
         }
 
     private void addActionListener(){
-        //soundOnButton.addActionListener(new Multimedia());
-        //soundOffButton.addActionListener(new Multimedia());
+        soundOnButton.addActionListener(new SoundController(this));
+        soundOffButton.addActionListener(new SoundController(this));
+
     }
 
-    private void addComponents() {
-            add(soundOnButton);
+    public void addComponents() {
+        add(soundOnButton);
+        add(soundOffButton);
+        if(!multimedia.isPlaying()) {
+            soundOffButton.setVisible(false);
+            soundOnButton.setVisible(true);
+        }
+        else{
+            soundOnButton.setVisible(false);
+            soundOffButton.setVisible(true);
+        }
             add(statusLabel);
+    }
+
+    public Multimedia getMultimedia() {
+        return multimedia;
     }
 }

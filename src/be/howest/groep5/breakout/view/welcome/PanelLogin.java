@@ -42,11 +42,9 @@ public class PanelLogin extends JPanel{
             textLabel.setText("Je speelt nu als gast");
         }
         loginButton.setVisible(!loggedIn);
-        //loginButton.setFocusable(false);
         registerButton.setVisible(!loggedIn);
         registerButton.setFocusable(false);
         logoutButton.setVisible(loggedIn);
-        logoutButton.setFocusable(false);
     }
 
     public void addComponents() {

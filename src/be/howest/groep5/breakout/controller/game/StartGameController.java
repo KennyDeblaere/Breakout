@@ -15,7 +15,6 @@ import java.awt.event.KeyEvent;
  * Created by Kenny, Blackhat on 13/11/2014.
  */
 public class StartGameController implements ActionListener {
-    private SoundController soundController;
     private CenterPanel panelCenter;
     private JComboBox difficulty;
     private boolean singleplayer;
@@ -45,7 +44,6 @@ public class StartGameController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Database.DatabaseInstance.insertGameMode(new Gamemode(singleplayer, difficulty.getSelectedIndex()));
-        new SoundController();
         panelCenter.addGamePanel(new GamePanel(panelCenter, countNumberOfStartingRows(difficulty.getSelectedIndex()), singleplayer, difficulty.getSelectedIndex()));
         panelCenter.getGamePanel().startGame();
         r.keyPress(KeyEvent.VK_TAB);

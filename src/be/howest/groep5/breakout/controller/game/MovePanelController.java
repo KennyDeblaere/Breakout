@@ -22,8 +22,6 @@ public class MovePanelController extends KeyAdapter {
             b.setPlaying(!b.isPlaying());
             b.getP1().setPlaying(b.isPlaying());
             b.getP2().setPlaying(b.isPlaying());
-            Sound sound = new Sound();
-            sound.pause();
         }
 
     }
