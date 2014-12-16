@@ -9,11 +9,15 @@ import java.awt.*;
 /**
  * Created by Blackhat on 16/12/2014.
  */
+
+//TODO registreert nog niet of singleplayer = true
+
+
 public class ScorePanel extends JPanel{
     private JPanel scorePanel, singlePanel, coopPanel, infoPanel;
     private JLabel titelLabel, scoresingle, scorecoop, pause, timer;
     private int seconds = 10;
-    private Boolean singleplayer;
+    private Boolean singleplayer = false;
     private Multimedia multimedia;
     private Image background;
 
@@ -65,7 +69,9 @@ public class ScorePanel extends JPanel{
         infoPanel.setOpaque(false);
         scorePanel.add(titelLabel);
         scorePanel.add(singlePanel);
-        if (!singleplayer){
+        System.out.println("singleplayer in score = " + singleplayer);
+        if (singleplayer == false){
+            System.out.println("singleplayer in score in if = " + singleplayer);
             scorePanel.add(coopPanel);
         }
         scorePanel.add(infoPanel);

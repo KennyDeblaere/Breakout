@@ -3,6 +3,7 @@ package be.howest.groep5.breakout.view.welcome;
 import be.howest.groep5.breakout.view.game.GamePanel;
 import be.howest.groep5.breakout.view.game.ScorePanel;
 import be.howest.groep5.breakout.view.highscores.AddHighscorePanel;
+import be.howest.groep5.breakout.view.welcome.DifficultyPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +12,7 @@ import java.awt.*;
  * Created by Blackhat on 04/12/2014.
  */
 public class CenterPanel extends JPanel {
+    private DifficultyPanel difficultyPanel;
     private ContentPanel panelContent;
     private ButtonPanel panelButton;
     private GamePanel gamePanel;
@@ -79,9 +81,5 @@ public class CenterPanel extends JPanel {
 
     public ContentPanel getPanelContent() {
         return panelContent;
-    }
-
-    public void setSingleplayer(boolean singleplayer) {
-        this.singlePlayer = singleplayer;
     }
 }

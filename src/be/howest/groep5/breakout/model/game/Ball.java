@@ -9,6 +9,9 @@ import java.util.List;
 /**
  * Created by Kenny on 12/11/2014.
  */
+
+// TODO co-op = 2 ballen, 1 per paddle
+
 public class Ball implements Runnable {
     private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, numberOfLines, scoreAndDif, topBound, lengthBound, speed;
     private Rectangle ball;
