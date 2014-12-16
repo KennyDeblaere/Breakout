@@ -18,6 +18,7 @@ public class Multimedia implements Observer{
     private BufferedImage image, mainBackground;
     private boolean playing;
     private Sound s;
+    private Thread musicThread;
 
 
     public Multimedia() {
@@ -30,6 +31,12 @@ public class Multimedia implements Observer{
         } catch (JavaLayerException | IOException e) {
             System.out.println("Image laad niet in!");
         }
+        musicThread = new Thread() {
+            @Override
+            public void run() {
+                playSound();
+            }
+        };
     }
 
     public void setPlaying(boolean playing) {
@@ -51,15 +58,17 @@ public class Multimedia implements Observer{
     }
     public BufferedImage getMainBackground() { return  mainBackground; }
 
+    private void playSound() {
+        try {
+            getS().getPlayer().play();
+        } catch (JavaLayerException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @Override
     public void update(Observable o, Object arg) {
-        if(isPlaying())
-            try {
-                getS().getPlayer().play();
-            } catch (JavaLayerException e) {
-                e.printStackTrace();
-            }
-
+        playSound();
     }
 }
