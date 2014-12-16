@@ -1,6 +1,7 @@
 package be.howest.groep5.breakout.view.welcome;
 
 import be.howest.groep5.breakout.view.game.GamePanel;
+import be.howest.groep5.breakout.view.game.ScorePanel;
 import be.howest.groep5.breakout.view.highscores.AddHighscorePanel;
 
 import javax.swing.*;
@@ -13,6 +14,7 @@ public class CenterPanel extends JPanel {
     private ContentPanel panelContent;
     private ButtonPanel panelButton;
     private GamePanel gamePanel;
+    private ScorePanel scorePanel;
     private AddHighscorePanel highscorePanel;
 
 
@@ -27,17 +29,17 @@ public class CenterPanel extends JPanel {
         panelContent = new ContentPanel(this);
         panelButton = new ButtonPanel(panelContent);
         gamePanel = new GamePanel(this, 1, true,0);
+        scorePanel = new ScorePanel(true);
         highscorePanel = new AddHighscorePanel(0,this);
     }
 
     private void setComponents(){
-
-        panelContent.setBorder(BorderFactory.createLineBorder(Color.RED));
-        panelButton.setBackground(Color.GRAY);
+        setBorder(BorderFactory.createLineBorder(Color.black,5));
     }
 
     public void addMainComponents(){
         remove(gamePanel);
+        remove(scorePanel);
         remove(highscorePanel);
         add(panelButton);
         add(panelContent);
@@ -51,6 +53,7 @@ public class CenterPanel extends JPanel {
         remove(highscorePanel);
         remove(panelContent);
         add(this.gamePanel);
+        add(this.scorePanel);
         revalidate();
         repaint();
     }
@@ -59,13 +62,12 @@ public class CenterPanel extends JPanel {
         highscorePanel = new AddHighscorePanel(score, this);
         remove(panelButton);
         remove(gamePanel);
+        remove(scorePanel);
         remove(panelContent);
         add(highscorePanel);
         revalidate();
         repaint();
     }
-
-
 
     public GamePanel getGamePanel() {
         return gamePanel;

@@ -2,7 +2,6 @@ package be.howest.groep5.breakout.view.welcome;
 
 import be.howest.groep5.breakout.view.highscores.PanelHighScore;
 import be.howest.groep5.breakout.view.registration.RegistrationPanel;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -13,6 +12,7 @@ public class ContentPanel extends JPanel {
     private CenterPanel panelCenter;
     private RegistrationPanel registrationPanel;
     private DifficultyPanel panelDifficulty;
+    private HowToPlayPanel howToPlayPanel;
     private AboutPanel panelAbout;
     private PanelHighScore panelHighScore;
 
@@ -28,6 +28,7 @@ public class ContentPanel extends JPanel {
     private void createComponents() {
         registrationPanel = new RegistrationPanel(this);
         panelDifficulty = new DifficultyPanel(panelCenter, true);
+        howToPlayPanel = new HowToPlayPanel();
         panelAbout = new AboutPanel();
         panelHighScore = new PanelHighScore();
     }
@@ -37,51 +38,52 @@ public class ContentPanel extends JPanel {
     }
 
     public void addRegistrationPanel(){
-        remove(panelDifficulty);
+        removePanels();
         add(registrationPanel);
-        remove(panelAbout);
-        remove(panelHighScore);
-        revalidate();
-        repaint();
+        re();
     }
 
     public void addDifficultyPanel(boolean singleplayer){
-        remove(panelDifficulty);
+        removePanels();
         panelDifficulty = new DifficultyPanel(panelCenter,singleplayer);
-        remove(registrationPanel);
-        remove(panelAbout);
-        remove(panelHighScore);
-
         add(panelDifficulty);
-        revalidate();
-        repaint();
+        re();
     }
 
 
     public void addHighScorePanel(){
-        remove(registrationPanel);
-        remove(panelDifficulty);
-        remove(panelAbout);
+        removePanels();
         add(panelHighScore);
-        revalidate();
-        repaint();
+        re();
+    }
+
+    public void addHowToPlayPanel(){
+        removePanels();
+        add(howToPlayPanel);
+        re();
     }
 
     public void addAboutPanel(){
-        remove(registrationPanel);
-        remove(panelDifficulty);
-        remove(panelHighScore);
+        removePanels();
         add(panelAbout);
+        re();
+    }
+
+    public void addMainComponents() {
+        removePanels();
+        re();
+    }
+
+    private void re(){
         revalidate();
         repaint();
     }
 
-    public void addMainComponents() {
+    private void removePanels(){
         remove(registrationPanel);
         remove(panelDifficulty);
         remove(panelAbout);
         remove(panelHighScore);
-        revalidate();
-        repaint();
+        remove(howToPlayPanel);
     }
 }

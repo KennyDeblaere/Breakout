@@ -27,6 +27,8 @@ public class ButtonController implements ActionListener{
                 break;
             case "High":  panelContent.addHighScorePanel();
                 break;
+            case "Howto":  panelContent.addHowToPlayPanel();
+                break;
             case "About":  panelContent.addAboutPanel();
                 break;
         }
