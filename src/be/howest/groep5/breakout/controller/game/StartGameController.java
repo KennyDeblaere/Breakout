@@ -31,14 +31,15 @@ public class StartGameController implements ActionListener {
     }
 
     private int countNumberOfStartingRows(int difficulty){
-        switch (difficulty) {
+        /*switch (difficulty) {
             case 0:
                 return 3;
             case 1:
                 return  5;
             default:
                 return  8;
-        }
+        }*/
+        return 3 + difficulty * 2; //performantie?
     }
 
     @Override

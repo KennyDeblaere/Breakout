@@ -24,7 +24,7 @@ public class MainFrame extends JFrame {
         setIconImage(multimedia.getIconImage());
         addWindowListener(new LogoutOnCloseController());
 
-        pack();
+        //pack();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 }

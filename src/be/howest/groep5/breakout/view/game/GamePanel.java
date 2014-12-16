@@ -73,6 +73,7 @@ public class GamePanel extends JPanel {
         }
     }
     public void draw(Graphics g){
+        requestFocus();
         if(b.getNumberOfLifes() != 0) {
             g.setColor(Color.black);
             g.drawString("Levens: ",0,0);
