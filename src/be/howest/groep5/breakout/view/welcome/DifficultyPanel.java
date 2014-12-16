@@ -47,7 +47,6 @@ public class DifficultyPanel extends JPanel{
         difficultyPanel.add(textLabel);
         difficultyPanel.add(difList);
         difficultyPanel.add(playButton);
-
     }
 
     private void addComponents() {

@@ -38,35 +38,38 @@ public class CenterPanel extends JPanel {
     }
 
     public void addMainComponents(){
-        remove(gamePanel);
-        remove(scorePanel);
-        remove(highscorePanel);
+        removePanel();
         add(panelButton);
         add(panelContent);
-        revalidate();
-        repaint();
+        re();
     }
 
     public void addGamePanel(GamePanel gamePanel){
+        removePanel();
         this.gamePanel = gamePanel;
-        remove(panelButton);
-        remove(highscorePanel);
-        remove(panelContent);
         add(this.gamePanel);
         add(this.scorePanel);
+        re();
+    }
+
+    public void addHighScoreAddPanel(int score){
+        removePanel();
+        highscorePanel = new AddHighscorePanel(score, this);
+        add(highscorePanel);
+        re();
+    }
+
+    private void re(){
         revalidate();
         repaint();
     }
 
-    public void addHighScoreAddPanel(int score){
-        highscorePanel = new AddHighscorePanel(score, this);
+    private void removePanel(){
+        remove(highscorePanel);
         remove(panelButton);
         remove(gamePanel);
         remove(scorePanel);
         remove(panelContent);
-        add(highscorePanel);
-        revalidate();
-        repaint();
     }
 
     public GamePanel getGamePanel() {
