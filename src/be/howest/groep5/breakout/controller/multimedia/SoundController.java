@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 import java.util.Observable;
 
 /**
- * Created by Kenny on 16/12/2014.
+ * Created by Kenny and Benjamin on 16/12/2014.
  */
 public class SoundController extends Observable implements ActionListener {
     private Multimedia multimedia;
@@ -28,6 +28,11 @@ public class SoundController extends Observable implements ActionListener {
         multimedia.setPlaying(!multimedia.isPlaying());
         statusPanel.addComponents();
         setChanged();
-        notifyObservers();
+        (new Thread() {
+            @Override
+            public void run() {
+                notifyObservers();
+            }
+        }).start();
     }
 }
