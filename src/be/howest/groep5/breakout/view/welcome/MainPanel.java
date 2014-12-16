@@ -13,7 +13,7 @@ public class MainPanel extends JPanel{
     private PanelLogin panelLogin;
     private StatusPanel panelStatus;
     private CenterPanel panelCenter;
-    private Multimedia multimedia = new Multimedia();
+    private Multimedia multimedia;
     private Image background;
 
 
@@ -37,6 +37,7 @@ public class MainPanel extends JPanel{
         //Maakt de panels doorzichtig
         panelLogin.setOpaque(false);
         panelStatus.setOpaque(false);
+        multimedia = new Multimedia();
     }
 
     private void addComponents(){

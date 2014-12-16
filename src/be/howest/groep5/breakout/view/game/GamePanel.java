@@ -15,16 +15,13 @@ public class GamePanel extends JPanel {
     private Image dbImage;
     private Graphics dbGraphics;
     private Thread ball, p1;
-
     private Ball b;
     private CenterPanel centerPanel;
-
     private boolean singleplayer;
 
     public GamePanel(CenterPanel c, int rows, boolean singleplayer, int difficulty){
         centerPanel = c;
         this.singleplayer = singleplayer;
-
         b = new Ball(singleplayer, difficulty, rows);
         setPreferredSize(new Dimension(1001, 710));
         setBackground(Color.WHITE);
@@ -106,9 +103,5 @@ public class GamePanel extends JPanel {
         //g.drawString("" + b.getP1Score(), 15, 20);
         //g.drawString("" + b.getP2Score(),15,200);
         repaint();
-    }
-
-    public void setSingleplayer(boolean singleplayer) {
-        this.singleplayer = singleplayer;
     }
 }

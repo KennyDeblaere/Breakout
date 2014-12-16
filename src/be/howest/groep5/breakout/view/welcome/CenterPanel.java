@@ -16,6 +16,7 @@ public class CenterPanel extends JPanel {
     private GamePanel gamePanel;
     private ScorePanel scorePanel;
     private AddHighscorePanel highscorePanel;
+    private boolean singlePlayer;
 
 
     public CenterPanel(){
@@ -28,8 +29,8 @@ public class CenterPanel extends JPanel {
     private void createComponents(){
         panelContent = new ContentPanel(this);
         panelButton = new ButtonPanel(panelContent);
-        gamePanel = new GamePanel(this, 1, true,0);
-        scorePanel = new ScorePanel(true);
+        gamePanel = new GamePanel(this, 1, singlePlayer,0);
+        scorePanel = new ScorePanel(singlePlayer);
         highscorePanel = new AddHighscorePanel(0,this);
     }
 
@@ -78,5 +79,9 @@ public class CenterPanel extends JPanel {
 
     public ContentPanel getPanelContent() {
         return panelContent;
+    }
+
+    public void setSingleplayer(boolean singleplayer) {
+        this.singlePlayer = singleplayer;
     }
 }
