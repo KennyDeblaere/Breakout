@@ -76,7 +76,7 @@ public class UnitTests {
         Paddle p = new Paddle(500, 10, 1);
         boolean exception = false;
         try {
-            PowerCreator power = new PowerCreator(1, true, b, p);
+            PowerCreator power = new PowerCreator(1, true, b, p, 100,100);
         } catch (Exception e){
             exception = true;
         }

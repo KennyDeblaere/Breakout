@@ -79,7 +79,7 @@ public class ScreenCreate {
 
             if(getXPosition() + blockCreators.getBlockCreators().get(temp).getBlock().width < 1000) {
                 if(temp == 6)
-                    setNumberOfBlocks(getNumberOfBlocks() + 1);
+                    setNumberOfBrokenBlocks(getNumberOfBrokenBlocks() + 1);
 
                 blockCreatorList.add(blockCreators.getBlockCreators().get(temp));
                 setXPosition(getXPosition() + blockCreators.getBlockCreators().get(temp).getBlock().width);
