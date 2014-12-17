@@ -14,11 +14,7 @@ public class Sound implements Runnable{
     @Override
     public void run() {
         try {
-            File file = new File("src/be/howest/groep5/breakout/multimedia/Breakout.mp3");
-            FileInputStream fis = new FileInputStream(file);
-            BufferedInputStream bis = new BufferedInputStream(fis);
-            player = new Player(bis);
-            player.play();
+
         } catch (Exception e){
             System.out.println("Probleem bij mediaspeler!");
         }
