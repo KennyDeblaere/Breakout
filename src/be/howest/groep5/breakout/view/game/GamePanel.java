@@ -20,18 +20,20 @@ public class GamePanel extends JPanel {
     private Ball b;
     private CenterPanel centerPanel;
     private boolean singleplayer;
-    private int levelNumber, numberOfBlocks;
+    private int levelNumber, numberOfBlocks, difficulty;
     private ScreenCreate screenCreate;
 
     public GamePanel(CenterPanel c, boolean singleplayer, int difficulty){
         centerPanel = c;
         this.singleplayer = singleplayer;
+        this.difficulty = difficulty;
         b = new Ball(singleplayer, difficulty);
         setPreferredSize(new Dimension(1001, 710));
         setBackground(Color.WHITE);
         ball = new Thread(b);
         p1 = new Thread(b.getP1());
-        screenCreate = new ScreenCreate(singleplayer,0,getNumberOfBlocks(difficulty));
+        levelNumber = 0;
+        screenCreate = new ScreenCreate(singleplayer,levelNumber,getNumberOfBlocks(difficulty));
 
         addKeyListener(new MovePanelController(b));
 
@@ -42,9 +44,9 @@ public class GamePanel extends JPanel {
 
     private int getNumberOfBlocks(int difficulty){
         if(difficulty == 0)
-            numberOfBlocks = 3;
+            numberOfBlocks = 4;
         else if(difficulty == 1)
-            numberOfBlocks = 5;
+            numberOfBlocks = 6;
         else
             numberOfBlocks = Database.DatabaseInstance.fillBlocks().size();
         return numberOfBlocks;
@@ -98,8 +100,18 @@ public class GamePanel extends JPanel {
             g.setColor(Color.decode("#666666"));
             g.fillOval(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
             drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
+            if(b.getPowerCreator().isIntersection()) {
+                g.fillRect(b.getPowerCreator().getPower().x, b.getPowerCreator().getPower().y, b.getPowerCreator().getPower().width, b.getPowerCreator().getPower().height);
+            }
             if (!b.isSingleplayer()) {
                 drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
+            }
+            if(screenCreate.getNumberOfBrokenBlocks() == screenCreate.getBlockCreatorList().size()){
+                levelNumber += 1;
+                screenCreate = new ScreenCreate(singleplayer,levelNumber,getNumberOfBlocks(difficulty));
+                b.setScreenCreate(screenCreate);
+                b.getBall().x = b.getP1().getPaddle().x + b.getP1().getPaddle().width/2;
+                b.setPlaying(false);
             }
             for(BlockCreator blockCreator: screenCreate.getBlockCreatorList()) {
                 if (blockCreator.getNumberOfHitsLeft() != 0) {

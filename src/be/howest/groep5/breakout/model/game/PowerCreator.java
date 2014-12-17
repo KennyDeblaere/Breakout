@@ -1,16 +1,46 @@
 package be.howest.groep5.breakout.model.game;
 
+import java.awt.*;
+
 /**
  * Created by Kenny, Blackhat on 9/12/2014.
  */
-public class PowerCreator {
+public class PowerCreator implements Runnable {
+    private Rectangle power;
+    private Ball ball;
+    private Paddle paddle;
+    private int yDirection;
+    private boolean intersection;
 
-    public PowerCreator(int powerid, boolean powerup, Ball ball, Paddle paddle){
-        returnPower(powerid,powerup,ball,paddle);
+    public PowerCreator(int powerid, boolean powerup, Ball ball, Paddle paddle, int x, int y){
+        power = new Rectangle(x, y+50, 15,15);
+        if(!ball.isSingleplayer())
+            setyDirection(ball.getYDirection() * -1);
+        else
+            setyDirection(1);
+        //returnPower(powerid,powerup,ball,paddle);
 
     }
 
-    private void returnPower(int powerid, boolean powerup, Ball ball, Paddle paddle){
+    public void setyDirection(int yDirection) {
+        this.yDirection = yDirection;
+    }
+
+    public void setIntersection(boolean intersection) {
+        this.intersection = intersection;
+    }
+
+    public int getyDirection() {
+        return yDirection;
+    }
+    public Rectangle getPower() {
+        return power;
+    }
+    public boolean isIntersection() {
+        return intersection;
+    }
+
+    public void returnPower(int powerid, boolean powerup, Ball ball, Paddle paddle){
         if(powerup){
             switch (powerid){
                 case 0: shooter(ball);
@@ -62,8 +92,8 @@ public class PowerCreator {
         }
     }
 
-    private void makeBallSlower(){
-
+    private void makeBallSlower() {
+        ball.setSpeed(ball.getSpeed() - 1);
     }
 
     private void addALife(Ball ball) {
@@ -74,7 +104,7 @@ public class PowerCreator {
     // ---------------------- POWER DOWN -----------------------------------
 
     private void makeBallSmaller(Ball ball){
-        if(ball.getBall().width > 14) {
+        if(ball.getBall().width < 14) {
             ball.setLengthBound(ball.getLengthBound() - ball.getBall().width);
             ball.getBall().width /= 2;
             ball.getBall().height /= 2;
@@ -82,7 +112,7 @@ public class PowerCreator {
     }
 
     private void makePaddleSmaller(Paddle paddle){
-        if(paddle.getPaddle().width > 400) {
+        if(paddle.getPaddle().width < 50) {
             paddle.setLengthGo(paddle.getLengthGo() - paddle.getPaddle().width);
             paddle.getPaddle().width /= 2;
         }
@@ -97,7 +127,25 @@ public class PowerCreator {
         ball.setSpeed(ball.getSpeed() +1);
     }
 
+    private void move(){
+        power.y += getyDirection();
+        if(power.y > 800)
+            setIntersection(false);
+    }
+
     private void makePaddleSlower(){
 
+    }
+
+    @Override
+    public void run() {
+        while (true){
+            move();
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

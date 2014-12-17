@@ -18,6 +18,7 @@ public class Ball implements Runnable {
     private Paddle p1, p2;
     private boolean singleplayer, playing;
     private ScreenCreate screenCreate;
+    private PowerCreator powerCreator;
     public Ball(boolean singleplayer, int difficulty){
         p1 = new Paddle(475,700,1);
         p2 = new Paddle(475,10, 2);
@@ -42,6 +43,7 @@ public class Ball implements Runnable {
         setP1Score(0);
         setP2Score(0);
         setSpeed(Database.DatabaseInstance.fillLevels().get(0).getBallSpeed());
+        powerCreator = new PowerCreator(1,true, this, p1,0,0);
 
     }
 
@@ -125,6 +127,9 @@ public class Ball implements Runnable {
     public int getSpeed() {
         return speed;
     }
+    public PowerCreator getPowerCreator() {
+        return powerCreator;
+    }
     public boolean isPlaying() {
         return playing;
     }
@@ -148,13 +153,20 @@ public class Ball implements Runnable {
         if(blockCreator.hasAPowerUp()){
             Random r = new Random();
             int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
-            if(singleplayer) {
-                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1);
-                p1Score += 100;
-            }
-            else if(getYDirection() == 1) {
-                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2);
-                p2Score += 100;
+            powerCreator = new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
+            powerCreator.setIntersection(true);
+            Thread t = new Thread(powerCreator);
+            t.start();
+            if(powerCreator.getPower().intersects(p1.getPaddle())) {
+                if (singleplayer) {
+                    powerCreator.setIntersection(false);
+                    System.out.println("intersect");
+                    powerCreator.returnPower(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1);
+                    p1Score += 100;
+                } else if (getYDirection() == 1) {
+                    new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2, blockCreator.getX(), blockCreator.getY());
+                    p2Score += 100;
+                }
             }
         }
 
@@ -162,11 +174,11 @@ public class Ball implements Runnable {
             Random r = new Random();
             int temp = r.nextInt(Database.DatabaseInstance.fillPowers(false).size());
             if(singleplayer) {
-                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p1);
+                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
                 p1Score -= 100;
             }
             else if(! singleplayer && getYDirection() == 1) {
-                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p2);
+                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p2, blockCreator.getX(), blockCreator.getY());
                 p2Score -= 100;
             }
         }
@@ -192,12 +204,15 @@ public class Ball implements Runnable {
         }
     }
     private void afterCollision(BlockCreator blockCreator){
+        if (blockCreator.getNumberOfHitsLeft() == 1)
+            screenCreate.setNumberOfBrokenBlocks(screenCreate.getNumberOfBrokenBlocks() + 1);
         blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
         p1Score += blockCreator.getScore();
         if (difficulty == 1)
             p1Score += 5;
         if (difficulty == 2)
             p1Score += 10;
+
     }
 
     public void collision(){
@@ -212,13 +227,19 @@ public class Ball implements Runnable {
             setyDirection(+1);
         for(BlockCreator blockCreator : getScreenCreate().getBlockCreatorList()) {
             if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
-                powersCollision(blockCreator);
+                //powersCollision(blockCreator);
+                if(blockCreator.hasAPowerUp()) {
+                    Random r = new Random();
+                    int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
+                    powerCreator = new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
+                    powerCreator.setIntersection(true);
+                    Thread t = new Thread(powerCreator);
+                    t.start();
+                }
                 blockBounceHorizontal(blockCreator);
                 blockBounceVertical(blockCreator);
                 afterCollision(blockCreator);
             }
-            if (blockCreator.getNumberOfHitsLeft() == 0)
-                screenCreate.setNumberOfBrokenBlocks(screenCreate.getNumberOfBrokenBlocks() + 1);
         }
     }
 
