@@ -13,20 +13,19 @@ import java.util.List;
 // TODO co-op = 2 ballen, 1 per paddle
 
 public class Ball implements Runnable {
-    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, numberOfLines, scoreAndDif, topBound, lengthBound, speed;
+    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, scoreAndDif, topBound, lengthBound, speed;
     private Rectangle ball;
     private int numberOfUnbreakables;
     private Paddle p1, p2;
     private List<BlockCreator> blockCreatorList;
     private boolean singleplayer, playing;
-    public Ball(boolean singleplayer, int difficulty, int numberOfLines){
+    public Ball(boolean singleplayer, int difficulty){
         p1 = new Paddle(475,700,1);
-        p2 = new Paddle(475,15, 2);
+        p2 = new Paddle(475,10, 2);
 
         numberOfUnbreakables = 0;
 
         this.difficulty = difficulty;
-        this.numberOfLines = numberOfLines;
 
         setX(p1.getX() + (p1.getPaddle().width / 2));
         setY(p1.getY());
@@ -36,18 +35,17 @@ public class Ball implements Runnable {
         this.singleplayer = singleplayer;
         this.difficulty = difficulty;
         numberOfLifes = 3;
-        createScreen(getNumberOfBlocks(difficulty));
         startRandomX();
         startRandomY();
 
-        ball = new Rectangle(getX(),getY(),7,7);
+        ball = new Rectangle(getX(),getY(),15,15);
         setTopBound(1000 - ball.height);
         setLengthBound(1000 - ball.width);
-        playing = true;
+        playing = false;
 
         setP1Score(0);
         setP2Score(0);
-        setSpeed(7);
+        setSpeed(Database.DatabaseInstance.fillLevels().get(0).getBallSpeed());
 
     }
 
@@ -173,42 +171,10 @@ public class Ball implements Runnable {
     public int getSpeed() {
         return speed;
     }
-
     public boolean isPlaying() {
         return playing;
     }
 
-    private void createScreen(int numberOfBlocks){
-        BlockCreators blockCreators = new BlockCreators(getXPosition(), getYPosition());
-        blockCreatorList = new ArrayList<>();
-        Random r = new Random();
-        if(blockCreators.getBlockCreators().size() < numberOfBlocks)
-            numberOfBlocks = blockCreators.getBlockCreators().size();
-        int counter = 0;
-        while(counter < numberOfLines){
-            int temp = r.nextInt(numberOfBlocks);
-
-            if(getXPosition() + blockCreators.getBlockCreators().get(temp).getBlock().width < 1000) {
-                if(temp == 6)
-                    numberOfUnbreakables++;
-
-                blockCreatorList.add(blockCreators.getBlockCreators().get(temp));
-                setxPosition(getXPosition() + blockCreators.getBlockCreators().get(temp).getBlock().width);
-                blockCreators = new BlockCreators(getXPosition(), getYPosition());
-            } else {
-                //waarschijnlijk meer optimaliseerbaar in een while waarmee je de rest eerst opvult ;)
-                for(int i=0; i<blockCreators.getBlockCreators().size();i++){
-                    if(blockCreators.getBlockCreators().get(i).getBlock().width + getXPosition() == 1000)
-                        blockCreatorList.add(blockCreators.getBlockCreators().get(i));
-                }
-
-                counter++;
-                setyPosition(getYPosition() + 50);
-                setxPosition(0);
-                blockCreators = new BlockCreators(getXPosition(), getYPosition());
-            }
-        }
-    }
 
 
     public void collision(){

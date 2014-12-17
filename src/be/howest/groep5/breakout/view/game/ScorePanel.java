@@ -44,7 +44,7 @@ public class ScorePanel extends JPanel{
         coopPanel = new JPanel();
         titelLabel = new JLabel("Scorebord");
         scoresingle = new JLabel("Score: " + gamePanel.getB().getP1Score());
-        scorecoop = new JLabel("Score: " + gamePanel.getB().getP1Score());
+        scorecoop = new JLabel("Score: " + gamePanel.getB().getP2Score());
         pause = new JLabel("<html>Druk op \"P\"<br> of \"spatie\" \n om te pauzeren</html>");
         timer = new JLabel("<html>Power up/down voor :<br>" + seconds + " \n  seconden</html>");
     }

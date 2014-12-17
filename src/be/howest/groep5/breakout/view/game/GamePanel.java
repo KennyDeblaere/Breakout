@@ -22,7 +22,7 @@ public class GamePanel extends JPanel {
     public GamePanel(CenterPanel c, int rows, boolean singleplayer, int difficulty){
         centerPanel = c;
         this.singleplayer = singleplayer;
-        b = new Ball(singleplayer, difficulty, rows);
+        b = new Ball(singleplayer, difficulty);
         setPreferredSize(new Dimension(1001, 710));
         setBackground(Color.WHITE);
         ball = new Thread(b);
@@ -86,14 +86,14 @@ public class GamePanel extends JPanel {
             if (!b.isSingleplayer()) {
                 drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
             }
-            for(BlockCreator blockCreator: b.getBlockCreatorList()) {
+            /*for(BlockCreator blockCreator: b.getBlockCreatorList()) {
                 if (blockCreator.getNumberOfHitsLeft() != 0) {
                     g.setColor(blockCreator.getColor());
                     g.fillRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
                     g.setColor(Color.black);
                     g.drawRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
                 }
-            }
+            }*/
         }
         else{
             centerPanel.addHighScoreAddPanel(b.getP1Score());

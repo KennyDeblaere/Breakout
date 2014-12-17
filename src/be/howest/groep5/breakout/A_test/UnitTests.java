@@ -35,7 +35,7 @@ public class UnitTests {
     public void testBall() throws Exception {
         boolean exception = false;
         try {
-            Ball b = new Ball(true, 0, 3);
+            Ball b = new Ball(true, 3);
         } catch (Exception e){
             exception = true;
         }
@@ -72,7 +72,7 @@ public class UnitTests {
 
     @Test
     public void testPowerCreator() throws Exception {
-        Ball b = new Ball(true, 0, 3);
+        Ball b = new Ball(true, 0);
         Paddle p = new Paddle(500, 10, 1);
         boolean exception = false;
         try {
