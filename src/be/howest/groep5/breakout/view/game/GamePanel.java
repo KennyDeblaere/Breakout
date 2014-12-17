@@ -5,6 +5,7 @@ import be.howest.groep5.breakout.data.Database;
 import be.howest.groep5.breakout.model.game.Ball;
 import be.howest.groep5.breakout.model.game.BlockCreator;
 import be.howest.groep5.breakout.model.game.ScreenCreate;
+import be.howest.groep5.breakout.model.multimedia.Multimedia;
 import be.howest.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
@@ -22,6 +23,7 @@ public class GamePanel extends JPanel {
     private boolean singleplayer;
     private int levelNumber, numberOfBlocks, difficulty;
     private ScreenCreate screenCreate;
+    private Multimedia m;
 
     public GamePanel(CenterPanel c, boolean singleplayer, int difficulty){
         centerPanel = c;
@@ -34,6 +36,7 @@ public class GamePanel extends JPanel {
         p1 = new Thread(b.getP1());
         levelNumber = 0;
         screenCreate = new ScreenCreate(singleplayer,levelNumber,getNumberOfBlocks(difficulty));
+        m = new Multimedia();
 
         addKeyListener(new MovePanelController(b));
 
@@ -91,11 +94,11 @@ public class GamePanel extends JPanel {
             g.setColor(Color.black);
             g.drawString("Levens: ",0,0);
             g.setColor(Color.BLUE);
-            int positionx = 100;
+            int positionx = 5;
 
             for(int i=0; i<b.getNumberOfLifes();i++){
-                g.fillOval(positionx,0,10,10);
-                positionx += 15;
+                g.drawImage(m.getLife(), positionx, 10, null);
+                positionx += 25;
             }
             g.setColor(Color.decode("#666666"));
             g.fillOval(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
@@ -119,6 +122,7 @@ public class GamePanel extends JPanel {
                     g.fillRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
                     g.setColor(Color.black);
                     g.drawRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
+                    blockCreator.getBlock().
                 }
             }
         }

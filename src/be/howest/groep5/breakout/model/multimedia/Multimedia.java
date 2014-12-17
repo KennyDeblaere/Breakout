@@ -15,7 +15,7 @@ import java.util.Observer;
  * Created by Blackhat on 15/12/2014.
  */
 public class Multimedia implements Observer{
-    private BufferedImage image, mainBackground;
+    private BufferedImage image, mainBackground, life;
     private boolean playing;
     private Sound s;
 
@@ -26,6 +26,7 @@ public class Multimedia implements Observer{
         try {
             image = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Icon.jpg")));
             mainBackground = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\background.png")));
+            life = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\heart.png")));
             setS(new Sound());
         } catch (Exception e)/*(JavaLayerException | IOException e)*/ {
             System.out.println("Image laad niet in!");
@@ -50,6 +51,8 @@ public class Multimedia implements Observer{
         return image;
     }
     public BufferedImage getMainBackground() { return  mainBackground; }
+
+    public BufferedImage getLife() { return life; }
 
 
     @Override
