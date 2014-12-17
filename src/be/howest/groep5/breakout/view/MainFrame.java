@@ -1,8 +1,11 @@
 package be.howest.groep5.breakout.view;
 
 import be.howest.groep5.breakout.controller.LogoutOnCloseController;
+import be.howest.groep5.breakout.controller.multimedia.SoundController;
 import be.howest.groep5.breakout.model.multimedia.Multimedia;
 import be.howest.groep5.breakout.view.welcome.MainPanel;
+import be.howest.groep5.breakout.view.welcome.StatusPanel;
+import com.sun.xml.internal.ws.api.message.Packet;
 
 import javax.swing.*;
 
@@ -22,6 +25,7 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(mainPanel);
         setIconImage(multimedia.getIconImage());
+        SoundController sound = new SoundController();
         addWindowListener(new LogoutOnCloseController());
 
         //pack();

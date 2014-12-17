@@ -4,8 +4,11 @@ import be.howest.groep5.breakout.controller.multimedia.SoundController;
 import be.howest.groep5.breakout.model.multimedia.Multimedia;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -13,17 +16,16 @@ import java.io.IOException;
 /**
  * Created by Blackhat on 21/11/2014.
  */
-public class StatusPanel extends JPanel{
+public class StatusPanel extends JPanel implements ActionListener{
     private JLabel statusLabel;
     private JButton soundOnButton, soundOffButton;
     private BufferedImage onImage, offImage;
     private Multimedia multimedia;
-    private Thread thread;
 
-    public StatusPanel() {
+    public StatusPanel(){
         super();
-        multimedia = new Multimedia();
 
+        multimedia = new Multimedia();
         setPreferredSize(new Dimension((int) getMaximumSize().getWidth(), 40));
         createComponents();
         addComponents();
@@ -40,19 +42,19 @@ public class StatusPanel extends JPanel{
             statusLabel = new JLabel("Status: RUN");
             soundOnButton = new JButton(new ImageIcon(onImage));
             soundOffButton = new JButton(new ImageIcon(offImage));
-        soundOnButton.setFocusable(false);
+            soundOnButton.setFocusable(false);
         }
 
     private void addActionListener(){
-        soundOnButton.addActionListener(new SoundController(this));
-        soundOffButton.addActionListener(new SoundController(this));
+        soundOnButton.addActionListener(this);
+        soundOffButton.addActionListener(this);
 
     }
 
     public void addComponents() {
         add(soundOnButton);
         add(soundOffButton);
-        if(!multimedia.isPlaying()) {
+        if(multimedia.isPlaying()) {
             soundOffButton.setVisible(false);
             soundOnButton.setVisible(true);
         }
@@ -63,7 +65,29 @@ public class StatusPanel extends JPanel{
             add(statusLabel);
     }
 
-    public Multimedia getMultimedia() {
-        return multimedia;
+    public static void setVolume(int value){
+        try {
+            Line line = AudioSystem.getLine(Port.Info.SPEAKER);
+            line.open();
+            FloatControl control =(FloatControl)line.getControl(FloatControl.Type.VOLUME);
+            control.setValue(value);
+            line.close();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (multimedia.isPlaying()){
+            multimedia.setPlaying(false);
+            setVolume(0);
+
+        }
+        else{
+            multimedia.setPlaying(true);
+            setVolume(1);
+        }
+        addComponents();
     }
 }

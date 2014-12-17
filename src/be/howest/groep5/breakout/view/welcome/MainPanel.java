@@ -1,6 +1,8 @@
 package be.howest.groep5.breakout.view.welcome;
 
+import be.howest.groep5.breakout.controller.multimedia.SoundController;
 import be.howest.groep5.breakout.model.multimedia.Multimedia;
+import be.howest.groep5.breakout.model.multimedia.Sound;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +16,7 @@ public class MainPanel extends JPanel{
     private StatusPanel panelStatus;
     private CenterPanel panelCenter;
     private Multimedia multimedia;
+    private SoundController soundController;
     private Image background;
 
 
