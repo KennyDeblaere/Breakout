@@ -39,7 +39,7 @@ public class ScreenCreate {
             this.levelNumber = 0;
     }
     public void setNumberOfBlocks(int numberOfBlocks) {
-        if(numberOfBlocks >= 0 && numberOfBlocks <= Database.DatabaseInstance.fillBlocks().size())
+        if(numberOfBlocks > 0 && numberOfBlocks <= Database.DatabaseInstance.fillBlocks().size())
             this.numberOfBlocks = numberOfBlocks;
         else
             this.numberOfBlocks = Database.DatabaseInstance.fillBlocks().size();

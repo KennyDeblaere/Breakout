@@ -43,7 +43,7 @@ public class GamePanel extends JPanel {
     private int getNumberOfBlocks(int difficulty){
         if(difficulty == 0)
             numberOfBlocks = 3;
-        if(difficulty == 1)
+        else if(difficulty == 1)
             numberOfBlocks = 5;
         else
             numberOfBlocks = Database.DatabaseInstance.fillBlocks().size();
