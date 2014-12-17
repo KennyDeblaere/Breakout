@@ -13,24 +13,20 @@ import java.util.List;
 // TODO co-op = 2 ballen, 1 per paddle
 
 public class Ball implements Runnable {
-    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, scoreAndDif, topBound, lengthBound, speed;
+    private int x, y, xDirection, yDirection, p1Score, p2Score, numberOfLifes, difficulty, topBound, lengthBound, speed;
     private Rectangle ball;
-    private int numberOfUnbreakables;
     private Paddle p1, p2;
-    private List<BlockCreator> blockCreatorList;
     private boolean singleplayer, playing;
+    private ScreenCreate screenCreate;
     public Ball(boolean singleplayer, int difficulty){
         p1 = new Paddle(475,700,1);
         p2 = new Paddle(475,10, 2);
 
-        numberOfUnbreakables = 0;
 
         this.difficulty = difficulty;
 
         setX(p1.getX() + (p1.getPaddle().width / 2));
-        setY(p1.getY());
-        setxPosition(0);
-        setyPosition(100);
+        setY(p1.getY() - p1.getPaddle().height);
 
         this.singleplayer = singleplayer;
         this.difficulty = difficulty;
@@ -49,20 +45,6 @@ public class Ball implements Runnable {
 
     }
 
-    private void startRandomX(){
-        Random r = new Random();
-        int rDirection = r.nextInt(2);
-        if(rDirection == 0)
-            rDirection--;
-        setxDirection(rDirection);
-    }
-    private void startRandomY(){
-        Random r = new Random();
-        int rDirection = r.nextInt(2);
-        if(rDirection == 0)
-            rDirection--;
-        setyDirection(rDirection);
-    }
 
     public void setX(int x) {
         this.x = x;
@@ -75,12 +57,6 @@ public class Ball implements Runnable {
     }
     public void setyDirection(int yDirection) {
         this.yDirection = yDirection;
-    }
-    public void setxPosition(int xPosition) {
-        this.xPosition = xPosition;
-    }
-    public void setyPosition(int yPosition) {
-        this.yPosition = yPosition;
     }
     public void setP1Score(int p1Score) {
         this.p1Score = p1Score;
@@ -103,6 +79,9 @@ public class Ball implements Runnable {
     public void setPlaying(boolean playing) {
         this.playing = playing;
     }
+    public void setScreenCreate(ScreenCreate screenCreate) {
+        this.screenCreate = screenCreate;
+    }
 
     public int getX() {
         return x;
@@ -116,20 +95,11 @@ public class Ball implements Runnable {
     public int getYDirection() {
         return yDirection;
     }
-    public int getXPosition() {
-        return xPosition;
-    }
-    public int getYPosition() {
-        return yPosition;
-    }
     public int getP2Score() {
         return p2Score;
     }
     public int getP1Score() {
         return p1Score;
-    }
-    public int getNumberOfUnbreakables() {
-        return numberOfUnbreakables;
     }
     public boolean isSingleplayer() {
         return singleplayer;
@@ -137,27 +107,11 @@ public class Ball implements Runnable {
     public Rectangle getBall() {
         return ball;
     }
-    private int getNumberOfBlocks(int difficulty){
-        switch (difficulty){
-            case 0:
-                scoreAndDif = 1;
-                return 4;
-            case 1:
-                scoreAndDif = 2;
-                return 6;
-            default:
-                scoreAndDif = 3;
-                return 7;
-        }
-    }
-    public int getTopBound() {
-        return topBound;
+    public ScreenCreate getScreenCreate() {
+        return screenCreate;
     }
     public int getLengthBound() {
         return lengthBound;
-    }
-    public List<BlockCreator> getBlockCreatorList() {
-        return blockCreatorList;
     }
     public Paddle getP1() {
         return p1;
@@ -176,6 +130,75 @@ public class Ball implements Runnable {
     }
 
 
+    private void startRandomX(){
+        Random r = new Random();
+        int rDirection = r.nextInt(2);
+        if(rDirection == 0)
+            rDirection--;
+        setxDirection(rDirection);
+    }
+    private void startRandomY(){
+        if(singleplayer)
+            setyDirection(-1);
+        else
+            setyDirection(1);
+    }
+
+    private void powersCollision(BlockCreator blockCreator){
+        if(blockCreator.hasAPowerUp()){
+            Random r = new Random();
+            int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
+            if(singleplayer) {
+                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1);
+                p1Score += 100;
+            }
+            else if(getYDirection() == 1) {
+                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2);
+                p2Score += 100;
+            }
+        }
+
+        if(blockCreator.hasAPowerDown()){
+            Random r = new Random();
+            int temp = r.nextInt(Database.DatabaseInstance.fillPowers(false).size());
+            if(singleplayer) {
+                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p1);
+                p1Score -= 100;
+            }
+            else if(! singleplayer && getYDirection() == 1) {
+                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p2);
+                p2Score -= 100;
+            }
+        }
+    }
+    private void blockBounceHorizontal(BlockCreator blockCreator){
+        if(ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width/2) {
+            setyDirection(getYDirection() * -1);
+            setxDirection(-1);
+        }
+        if(ball.x > blockCreator.getBlock().x + blockCreator.getBlock().width/2 && ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width) {
+            setyDirection(getYDirection() * -1);
+            setxDirection(1);
+        }
+    }
+    private void blockBounceVertical(BlockCreator blockCreator){
+        if(ball.y <= blockCreator.getBlock().y + blockCreator.getBlock().height/2){
+            setxDirection(getXDirection() * -1);
+            setyDirection(-1);
+        }
+        if(ball.y > blockCreator.getBlock().y + blockCreator.getBlock().height/2 && ball.y <= blockCreator.getBlock().y + blockCreator.getBlock().height){
+            setxDirection(getXDirection() *-1);
+            setyDirection(1);
+        }
+    }
+    private void afterCollision(BlockCreator blockCreator){
+        blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
+        p1Score += blockCreator.getScore();
+        if (difficulty == 1)
+            p1Score += 5;
+        if (difficulty == 2)
+            p1Score += 10;
+    }
 
     public void collision(){
         if(ball.intersects(p1.getPaddle())){
@@ -184,57 +207,18 @@ public class Ball implements Runnable {
                 setxDirection(-1);
             if(ball.x > p1.getPaddle().x + (p1.getPaddle().width)/2)
                 setxDirection(1);
-
         }
         if(ball.intersects(p2.getPaddle()))
             setyDirection(+1);
-        for(BlockCreator blockCreator : blockCreatorList) {
+        for(BlockCreator blockCreator : getScreenCreate().getBlockCreatorList()) {
             if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
-                if(blockCreator.hasAPowerUp()){
-                    Random r = new Random();
-                    int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
-                    if(singleplayer) {
-                        new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1);
-                        p1Score += 100;
-                    }
-                    else if(! singleplayer && getYDirection() == 1) {
-                        new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2);
-                        p2Score -= 100;
-                    }
-                }
-                if(blockCreator.hasAPowerDown()){
-                    Random r = new Random();
-                    int temp = r.nextInt(Database.DatabaseInstance.fillPowers(false).size());
-                    if(singleplayer)
-                        new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p1);
-                    else if(! singleplayer && getYDirection() == 1)
-                        new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p2);
-                }
-                if(ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width/2) {
-                    setyDirection(getYDirection() * -1);
-                    setxDirection(-1);
-                }
-                if(ball.x > blockCreator.getBlock().x + blockCreator.getBlock().width/2 && ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width) {
-                    setyDirection(getYDirection() * -1);
-                    setxDirection(1);
-                }
-                if(ball.y <= blockCreator.getBlock().y + blockCreator.getBlock().height/2){
-                    setxDirection(getXDirection() * -1);
-                    setyDirection(-1);
-                }
-                if(ball.y > blockCreator.getBlock().y + blockCreator.getBlock().height/2 && ball.y <= blockCreator.getBlock().y + blockCreator.getBlock().height){
-                    setxDirection(getXDirection() *-1);
-                    setyDirection(1);
-                }
-                blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
-                p1Score += blockCreator.getScore();
-                if(difficulty == 1)
-                    p1Score += 5;
-                if(difficulty == 2)
-                    p1Score += 10;
-        }
-            if(blockCreator.getNumberOfHitsLeft() == 0)
-                numberOfUnbreakables++;
+                powersCollision(blockCreator);
+                blockBounceHorizontal(blockCreator);
+                blockBounceVertical(blockCreator);
+                afterCollision(blockCreator);
+            }
+            if (blockCreator.getNumberOfHitsLeft() == 0)
+                screenCreate.setNumberOfBrokenBlocks(screenCreate.getNumberOfBrokenBlocks() + 1);
         }
     }
 
@@ -253,17 +237,21 @@ public class Ball implements Runnable {
             if(!singleplayer){
                 setX(p2.getPaddle().x + (p1.getPaddle().width/2));
                 setY(p2.getY());
-                ball = new Rectangle(getX(),getY(),7,7);
+                ball = new Rectangle(getX(),getY(),15,15);
                 numberOfLifes--;
+                playing = false;
             }
             setyDirection(+1);
         }
         if(ball.y >= 750) {
-            setX(p1.getPaddle().x + (p1.getPaddle().width/2));
-            setY(p1.getY());
-            ball = new Rectangle(getX(),getY(),7,7);
+            if(playing) {
+                setX(p1.getPaddle().x + (p1.getPaddle().width / 2));
+                setY(p1.getY() - p1.getPaddle().height);
+                ball = new Rectangle(getX(), getY(), 15, 15);
+            }
             numberOfLifes--;
             setyDirection(-1);
+            playing = false;
         }
     }
     @Override

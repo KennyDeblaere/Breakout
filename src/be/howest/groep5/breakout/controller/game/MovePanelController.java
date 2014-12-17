@@ -23,7 +23,6 @@ public class MovePanelController extends KeyAdapter {
             b.getP1().setPlaying(b.isPlaying());
             b.getP2().setPlaying(b.isPlaying());
 
-            System.out.println(b.isPlaying());
         }
 
     }
