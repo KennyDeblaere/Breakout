@@ -5,7 +5,7 @@ import javax.swing.text.StyledEditorKit;
 import java.awt.*;
 
 /**
- * Created by Blackhat on 2/12/2014.
+ * Created by Dries Dekoninck on 2/12/2014.
  */
 public class AboutPanel extends JPanel{
     private JPanel about;
@@ -27,7 +27,7 @@ public class AboutPanel extends JPanel{
         createLabel = new JLabel();
         licensedtoLabel = new JLabel();
         versionLabel = new JLabel();
-        imagePanel = new ImagePanel();
+        imagePanel = new ImagePanel("Icon.jpg");
 
     }
 

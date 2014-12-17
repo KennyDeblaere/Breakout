@@ -1,8 +1,10 @@
 package be.howest.groep5.breakout.view.game;
 
 import be.howest.groep5.breakout.controller.game.MovePanelController;
+import be.howest.groep5.breakout.data.Database;
 import be.howest.groep5.breakout.model.game.Ball;
 import be.howest.groep5.breakout.model.game.BlockCreator;
+import be.howest.groep5.breakout.model.game.ScreenCreate;
 import be.howest.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
@@ -15,28 +17,39 @@ public class GamePanel extends JPanel {
     private Image dbImage;
     private Graphics dbGraphics;
     private Thread ball, p1;
-
     private Ball b;
     private CenterPanel centerPanel;
-
     private boolean singleplayer;
+    private int levelNumber, numberOfBlocks, difficulty;
+    private ScreenCreate screenCreate;
 
-    public GamePanel(CenterPanel c, int rows, boolean singleplayer, int difficulty){
+    public GamePanel(CenterPanel c, boolean singleplayer, int difficulty){
         centerPanel = c;
         this.singleplayer = singleplayer;
-
-        b = new Ball(singleplayer, difficulty, rows);
+        this.difficulty = difficulty;
+        b = new Ball(singleplayer, difficulty);
         setPreferredSize(new Dimension(1001, 710));
         setBackground(Color.WHITE);
         ball = new Thread(b);
         p1 = new Thread(b.getP1());
-
+        levelNumber = 0;
+        screenCreate = new ScreenCreate(singleplayer,levelNumber,getNumberOfBlocks(difficulty));
 
         addKeyListener(new MovePanelController(b));
 
         setFocusable(true);
         setRequestFocusEnabled(true);
         requestFocusInWindow();
+    }
+
+    private int getNumberOfBlocks(int difficulty){
+        if(difficulty == 0)
+            numberOfBlocks = 4;
+        else if(difficulty == 1)
+            numberOfBlocks = 6;
+        else
+            numberOfBlocks = Database.DatabaseInstance.fillBlocks().size();
+        return numberOfBlocks;
     }
 
     public void startGame(){
@@ -46,6 +59,7 @@ public class GamePanel extends JPanel {
             Thread p2 = new Thread(b.getP2());
             p2.start();
         }
+        b.setScreenCreate(screenCreate);
     }
 
     public void paint(Graphics g){
@@ -86,10 +100,20 @@ public class GamePanel extends JPanel {
             g.setColor(Color.decode("#666666"));
             g.fillOval(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
             drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
+            if(b.getPowerCreator().isIntersection()) {
+                g.fillRect(b.getPowerCreator().getPower().x, b.getPowerCreator().getPower().y, b.getPowerCreator().getPower().width, b.getPowerCreator().getPower().height);
+            }
             if (!b.isSingleplayer()) {
                 drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
             }
-            for(BlockCreator blockCreator: b.getBlockCreatorList()) {
+            if(screenCreate.getNumberOfBrokenBlocks() == screenCreate.getBlockCreatorList().size()){
+                levelNumber += 1;
+                screenCreate = new ScreenCreate(singleplayer,levelNumber,getNumberOfBlocks(difficulty));
+                b.setScreenCreate(screenCreate);
+                b.getBall().x = b.getP1().getPaddle().x + b.getP1().getPaddle().width/2;
+                b.setPlaying(false);
+            }
+            for(BlockCreator blockCreator: screenCreate.getBlockCreatorList()) {
                 if (blockCreator.getNumberOfHitsLeft() != 0) {
                     g.setColor(blockCreator.getColor());
                     g.fillRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
@@ -108,7 +132,7 @@ public class GamePanel extends JPanel {
         repaint();
     }
 
-    public void setSingleplayer(boolean singleplayer) {
-        this.singleplayer = singleplayer;
+    public Ball getB() {
+        return b;
     }
 }

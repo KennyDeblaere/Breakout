@@ -9,6 +9,9 @@ import be.howest.groep5.breakout.model.game.BlockCreator;
 import be.howest.groep5.breakout.model.game.Paddle;
 import be.howest.groep5.breakout.model.game.PowerCreator;
 import static org.junit.Assert.*;
+/**
+ * Created by Dries Dekoninck on 13/11/2014.
+ */
 
 public class UnitTests {
 
@@ -35,7 +38,7 @@ public class UnitTests {
     public void testBall() throws Exception {
         boolean exception = false;
         try {
-            Ball b = new Ball(true, 0, 3);
+            Ball b = new Ball(true, 3);
         } catch (Exception e){
             exception = true;
         }
@@ -72,11 +75,11 @@ public class UnitTests {
 
     @Test
     public void testPowerCreator() throws Exception {
-        Ball b = new Ball(true, 0, 3);
+        Ball b = new Ball(true, 0);
         Paddle p = new Paddle(500, 10, 1);
         boolean exception = false;
         try {
-            PowerCreator power = new PowerCreator(1, true, b, p);
+            PowerCreator power = new PowerCreator(1, true, b, p, 100,100);
         } catch (Exception e){
             exception = true;
         }

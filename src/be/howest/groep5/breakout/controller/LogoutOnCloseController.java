@@ -6,7 +6,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 /**
- * Created by Kenny on 15/12/2014.
+ * Created by Kenny, Dries Dekoninck on 15/12/2014.
  */
 public class LogoutOnCloseController extends WindowAdapter {
 

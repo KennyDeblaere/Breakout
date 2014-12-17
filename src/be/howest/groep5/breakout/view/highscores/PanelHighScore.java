@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Blackhat on 3/12/2014.
+ * Created by Dries Dekoninck on 3/12/2014.
  */
 public class PanelHighScore extends JPanel{
     private JLabel nameLabel, highScore;

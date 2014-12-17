@@ -1,19 +1,22 @@
 package be.howest.groep5.breakout.view.welcome;
 
+import be.howest.groep5.breakout.controller.multimedia.SoundController;
 import be.howest.groep5.breakout.model.multimedia.Multimedia;
+import be.howest.groep5.breakout.model.multimedia.Sound;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Blackhat on 21/11/2014.
+ * Created by Dries Dekoninck on 21/11/2014.
  */
 public class MainPanel extends JPanel{
 
     private PanelLogin panelLogin;
     private StatusPanel panelStatus;
     private CenterPanel panelCenter;
-    private Multimedia multimedia = new Multimedia();
+    private Multimedia multimedia;
+    private SoundController soundController;
     private Image background;
 
 
@@ -37,6 +40,7 @@ public class MainPanel extends JPanel{
         //Maakt de panels doorzichtig
         panelLogin.setOpaque(false);
         panelStatus.setOpaque(false);
+        multimedia = new Multimedia();
     }
 
     private void addComponents(){

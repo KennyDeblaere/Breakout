@@ -1,7 +1,7 @@
 package be.howest.groep5.breakout.view.welcome;
 
 /**
- * Created by Blackhat on 5/12/2014.
+ * Created by Dries Dekoninck on 5/12/2014.
  */
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
@@ -14,9 +14,9 @@ public class ImagePanel extends JPanel{
 
     private BufferedImage image;
 
-    public ImagePanel() {
+    public ImagePanel(String foto) {
         try {
-            image = ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Icon.jpg"));
+            image = ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\" + foto));
         } catch (IOException ex) {
             System.out.println("Foto kan niet worden ingeladen...");
         }

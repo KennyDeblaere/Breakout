@@ -3,13 +3,11 @@ package be.howest.groep5.breakout.data;
 import be.howest.groep5.breakout.model.*;
 
 import java.awt.*;
-import java.lang.reflect.Field;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
@@ -39,7 +37,7 @@ public class Database {
             connection = DriverManager.getConnection(url, "root", "");
 
         } catch (ClassNotFoundException | SQLException | InstantiationException | IllegalAccessException ex) {
-            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Database.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }
 
@@ -126,6 +124,22 @@ public class Database {
             e.printStackTrace();
         }
         return gamemode;
+    }
+    public List<Level> fillLevels(){
+        List<Level> levels = new ArrayList<>();
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Statement stmt = getConnection().createStatement();
+            ResultSet rs;
+            rs = stmt.executeQuery("select * from level");
+            while (rs.next()){
+                levels.add(new Level(rs.getInt("ballspeed"), rs.getInt("palletlength"), rs.getInt("numberofrows")));
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return levels;
     }
 
     public List<ScoreUser> fillTopScores(boolean singlePlayer){
