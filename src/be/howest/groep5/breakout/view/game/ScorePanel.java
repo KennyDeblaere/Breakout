@@ -14,7 +14,7 @@ import java.awt.*;
 public class ScorePanel extends JPanel {
     private Ball b;
     private JPanel scorePanel, singlePanel, coopPanel, infoPanel, lifePanel;
-    private JLabel titelLabel, scoresingle, scorecoop, pause, timer;
+    private JLabel titelLabel, scoresingle, scorecoop, pause, timer, life;
     private int seconds = 10;
     private Boolean singleplayer = false;
     private Multimedia multimedia;
@@ -47,6 +47,7 @@ public class ScorePanel extends JPanel {
         scorecoop = new JLabel("Score: " + gamePanel.getB().getP2Score());
         pause = new JLabel("<html>Druk op \"P\"<br> of \"spatie\" \n om te pauzeren</html>");
         timer = new JLabel("<html>Power up/down voor :<br>" + seconds + " \n  seconden</html>");
+        life = new JLabel("3");
     }
 
     private void setComponents() {
@@ -57,6 +58,7 @@ public class ScorePanel extends JPanel {
         scorecoop.setForeground(Color.white);
         pause.setForeground(Color.white);
         timer.setForeground(Color.white);
+        life.setForeground(Color.white);
         //------------ singlePanel ----------------
         singlePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Speler 1", TitledBorder.LEFT, TitledBorder.TOP, fonts, Color.white));
         singlePanel.setPreferredSize(new Dimension(175, 150));
@@ -75,7 +77,7 @@ public class ScorePanel extends JPanel {
         lifePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Levens", TitledBorder.LEFT, TitledBorder.TOP, fonts, Color.white));
         lifePanel.setPreferredSize(new Dimension(175, 50));
         lifePanel.setOpaque(false);
-
+        lifePanel.add(life);
         //------------ ScorePanel -----------------
         scorePanel.add(titelLabel);
         scorePanel.add(lifePanel);
