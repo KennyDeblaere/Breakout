@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/AboutPanel.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/AboutPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/HowToPlayPanel.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/HowToPlayPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/ImagePanel.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/ImagePanel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/multimedia/screenshot.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Breakout.iws" />
@@ -55,8 +53,8 @@
       <file leaf-file-name="HowToPlayPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/HowToPlayPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6004273" vertical-offset="433" max-vertical-offset="1020">
-              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.85470086" vertical-offset="433" max-vertical-offset="1020">
+              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -842,13 +840,7 @@
       <workItem from="1418759781703" duration="826000" />
       <workItem from="1418760685333" duration="11135000" />
       <workItem from="1418801693006" duration="6980000" />
-      <workItem from="1418820369456" duration="2483000" />
-    </task>
-    <task id="LOCAL-00061" summary="alle layoutclasses aangepast, bezig met difficulty aan game toe te voegen">
-      <created>1417828833457</created>
-      <option name="number" value="00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1417828833457</updated>
+      <workItem from="1418820369456" duration="2518000" />
     </task>
     <task id="LOCAL-00062" summary="Difficulty in database toegevoegd.">
       <created>1417966075479</created>
@@ -1138,11 +1130,17 @@
       <option name="project" value="LOCAL" />
       <updated>1418820555870</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="Sound werkt van in het begin&#10;Muteknop werkt&#10;Howtopanel afgewerkt">
+      <created>1418822876256</created>
+      <option name="number" value="00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1418822876257</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258523000" />
+    <option name="totallyTimeSpent" value="258558000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1212,7 +1210,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Highscores" />
     <MESSAGE value="Probleem met difficulty opgelost" />
     <MESSAGE value="Powerdowns bij aanraking" />
     <MESSAGE value="Sout opgelost" />
@@ -1237,7 +1234,8 @@
     <MESSAGE value="Levels in de database" />
     <MESSAGE value="Sound werkt van in het begin" />
     <MESSAGE value="Sound werkt van in het begin&#10;Muteknop werkt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sound werkt van in het begin&#10;Muteknop werkt" />
+    <MESSAGE value="Sound werkt van in het begin&#10;Muteknop werkt&#10;Howtopanel afgewerkt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sound werkt van in het begin&#10;Muteknop werkt&#10;Howtopanel afgewerkt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1677,8 +1675,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/HowToPlayPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6004273" vertical-offset="433" max-vertical-offset="1020">
-          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.85470086" vertical-offset="433" max-vertical-offset="1020">
+          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
           <folding />
         </state>
       </provider>
