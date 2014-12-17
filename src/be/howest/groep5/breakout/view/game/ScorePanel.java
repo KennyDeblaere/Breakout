@@ -20,11 +20,12 @@ public class ScorePanel extends JPanel{
     private Boolean singleplayer = false;
     private Multimedia multimedia;
     private Image background;
+    private GamePanel gamePanel;
 
-    public ScorePanel(boolean singleplayer){
+    public ScorePanel(GamePanel gamePanel){
         super();
 
-        this.singleplayer = singleplayer;
+        this.gamePanel = gamePanel;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setPreferredSize(new Dimension(200, 710));
         setBackground(Color.white);
@@ -41,11 +42,11 @@ public class ScorePanel extends JPanel{
         infoPanel = new JPanel(new GridLayout(2,1,0,10));
         singlePanel = new JPanel();
         coopPanel = new JPanel();
-        titelLabel = new JLabel("Scoreboard");
-        scoresingle = new JLabel("Score: 0");
-        scorecoop = new JLabel("Score: 0");
-        pause = new JLabel("Press \"P\" for pause the game");
-        timer = new JLabel("Power up/down for : " + seconds + "seconds");
+        titelLabel = new JLabel("Scorebord");
+        scoresingle = new JLabel("Score: " + gamePanel.getB().getP1Score());
+        scorecoop = new JLabel("Score: " + gamePanel.getB().getP1Score());
+        pause = new JLabel("<html>Druk op \"P\"<br> of \"spatie\" \n om te pauzeren</html>");
+        timer = new JLabel("<html>Power up/down voor :<br>" + seconds + " \n  seconden</html>");
     }
 
     private void setComponents(){
@@ -56,11 +57,11 @@ public class ScorePanel extends JPanel{
         scorecoop.setForeground(Color.white);
         pause.setForeground(Color.white);
         timer.setForeground(Color.white);
-        singlePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Player 1", TitledBorder.LEFT, TitledBorder.TOP, fonts, Color.white));
+        singlePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Speler 1", TitledBorder.LEFT, TitledBorder.TOP, fonts, Color.white));
         singlePanel.setPreferredSize(new Dimension(175, 150));
         singlePanel.add(scoresingle);
         singlePanel.setOpaque(false);
-        coopPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Player 2", TitledBorder.LEFT, TitledBorder.TOP, fonts, Color.white));
+        coopPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Speler 2", TitledBorder.LEFT, TitledBorder.TOP, fonts, Color.white));
         coopPanel.setPreferredSize(new Dimension(175, 150));
         coopPanel.add(scorecoop);
         coopPanel.setOpaque(false);
@@ -69,9 +70,7 @@ public class ScorePanel extends JPanel{
         infoPanel.setOpaque(false);
         scorePanel.add(titelLabel);
         scorePanel.add(singlePanel);
-        System.out.println("singleplayer in score = " + singleplayer);
-        if (singleplayer == false){
-            System.out.println("singleplayer in score in if = " + singleplayer);
+        if (!gamePanel.getB().isSingleplayer()){
             scorePanel.add(coopPanel);
         }
         scorePanel.add(infoPanel);

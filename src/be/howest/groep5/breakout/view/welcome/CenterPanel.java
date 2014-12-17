@@ -32,7 +32,7 @@ public class CenterPanel extends JPanel {
         panelContent = new ContentPanel(this);
         panelButton = new ButtonPanel(panelContent);
         gamePanel = new GamePanel(this, 1, singlePlayer,0);
-        scorePanel = new ScorePanel(singlePlayer);
+        scorePanel = new ScorePanel(gamePanel);
         highscorePanel = new AddHighscorePanel(0,this);
     }
 
@@ -50,6 +50,7 @@ public class CenterPanel extends JPanel {
     public void addGamePanel(GamePanel gamePanel){
         removePanel();
         this.gamePanel = gamePanel;
+        scorePanel = new ScorePanel(this.gamePanel);
         add(this.gamePanel);
         add(this.scorePanel);
         re();

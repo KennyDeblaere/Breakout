@@ -104,4 +104,8 @@ public class GamePanel extends JPanel {
         //g.drawString("" + b.getP2Score(),15,200);
         repaint();
     }
+
+    public Ball getB() {
+        return b;
+    }
 }
