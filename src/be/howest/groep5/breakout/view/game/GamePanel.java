@@ -122,7 +122,6 @@ public class GamePanel extends JPanel {
                     g.fillRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
                     g.setColor(Color.black);
                     g.drawRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
-                    blockCreator.getBlock().
                 }
             }
         }
