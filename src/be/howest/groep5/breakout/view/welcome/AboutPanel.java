@@ -27,7 +27,7 @@ public class AboutPanel extends JPanel{
         createLabel = new JLabel();
         licensedtoLabel = new JLabel();
         versionLabel = new JLabel();
-        imagePanel = new ImagePanel();
+        imagePanel = new ImagePanel("Icon.jpg");
 
     }
 

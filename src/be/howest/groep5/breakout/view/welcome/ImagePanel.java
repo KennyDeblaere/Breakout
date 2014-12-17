@@ -14,9 +14,9 @@ public class ImagePanel extends JPanel{
 
     private BufferedImage image;
 
-    public ImagePanel() {
+    public ImagePanel(String foto) {
         try {
-            image = ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Icon.jpg"));
+            image = ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\" + foto));
         } catch (IOException ex) {
             System.out.println("Foto kan niet worden ingeladen...");
         }
