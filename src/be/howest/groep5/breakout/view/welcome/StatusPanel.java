@@ -24,7 +24,7 @@ public class StatusPanel extends JPanel implements ActionListener{
 
     public StatusPanel(){
         super();
-
+        setVolume(1);
         multimedia = new Multimedia();
         setPreferredSize(new Dimension((int) getMaximumSize().getWidth(), 40));
         createComponents();
