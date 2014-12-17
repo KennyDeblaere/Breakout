@@ -27,7 +27,7 @@ public class Multimedia implements Observer{
             image = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Icon.jpg")));
             mainBackground = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\background.png")));
             setS(new Sound());
-        } catch (JavaLayerException | IOException e) {
+        } catch (Exception e)/*(JavaLayerException | IOException e)*/ {
             System.out.println("Image laad niet in!");
         }
     }
@@ -54,12 +54,14 @@ public class Multimedia implements Observer{
 
     @Override
     public void update(Observable o, Object arg) {
-        if(isPlaying())
+        //TODO: Dit oplossen
+       /* if(isPlaying())
             try {
                 getS().getPlayer().play();
+
             } catch (JavaLayerException e) {
                 e.printStackTrace();
             }
-
+*/
     }
 }
