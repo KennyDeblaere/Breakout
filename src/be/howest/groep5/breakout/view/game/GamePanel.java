@@ -1,8 +1,10 @@
 package be.howest.groep5.breakout.view.game;
 
 import be.howest.groep5.breakout.controller.game.MovePanelController;
+import be.howest.groep5.breakout.data.Database;
 import be.howest.groep5.breakout.model.game.Ball;
 import be.howest.groep5.breakout.model.game.BlockCreator;
+import be.howest.groep5.breakout.model.game.ScreenCreate;
 import be.howest.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
@@ -18,8 +20,10 @@ public class GamePanel extends JPanel {
     private Ball b;
     private CenterPanel centerPanel;
     private boolean singleplayer;
+    private int levelNumber, numberOfBlocks;
+    private ScreenCreate screenCreate;
 
-    public GamePanel(CenterPanel c, int rows, boolean singleplayer, int difficulty){
+    public GamePanel(CenterPanel c, boolean singleplayer, int difficulty){
         centerPanel = c;
         this.singleplayer = singleplayer;
         b = new Ball(singleplayer, difficulty);
@@ -27,13 +31,23 @@ public class GamePanel extends JPanel {
         setBackground(Color.WHITE);
         ball = new Thread(b);
         p1 = new Thread(b.getP1());
-
+        screenCreate = new ScreenCreate(singleplayer,0,getNumberOfBlocks(difficulty));
 
         addKeyListener(new MovePanelController(b));
 
         setFocusable(true);
         setRequestFocusEnabled(true);
         requestFocusInWindow();
+    }
+
+    private int getNumberOfBlocks(int difficulty){
+        if(difficulty == 0)
+            numberOfBlocks = 3;
+        if(difficulty == 1)
+            numberOfBlocks = 5;
+        else
+            numberOfBlocks = Database.DatabaseInstance.fillBlocks().size();
+        return numberOfBlocks;
     }
 
     public void startGame(){
@@ -43,6 +57,7 @@ public class GamePanel extends JPanel {
             Thread p2 = new Thread(b.getP2());
             p2.start();
         }
+        b.setScreenCreate(screenCreate);
     }
 
     public void paint(Graphics g){
@@ -86,14 +101,14 @@ public class GamePanel extends JPanel {
             if (!b.isSingleplayer()) {
                 drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
             }
-            /*for(BlockCreator blockCreator: b.getBlockCreatorList()) {
+            for(BlockCreator blockCreator: screenCreate.getBlockCreatorList()) {
                 if (blockCreator.getNumberOfHitsLeft() != 0) {
                     g.setColor(blockCreator.getColor());
                     g.fillRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
                     g.setColor(Color.black);
                     g.drawRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
                 }
-            }*/
+            }
         }
         else{
             centerPanel.addHighScoreAddPanel(b.getP1Score());

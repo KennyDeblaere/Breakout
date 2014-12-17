@@ -45,7 +45,7 @@ public class StartGameController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Database.DatabaseInstance.insertGameMode(new Gamemode(singleplayer, difficulty.getSelectedIndex()));
-        panelCenter.addGamePanel(new GamePanel(panelCenter, countNumberOfStartingRows(difficulty.getSelectedIndex()), singleplayer, difficulty.getSelectedIndex()));
+        panelCenter.addGamePanel(new GamePanel(panelCenter, singleplayer, difficulty.getSelectedIndex()));
         panelCenter.getGamePanel().startGame();
         r.keyPress(KeyEvent.VK_TAB);
         r.keyRelease(KeyEvent.VK_TAB);

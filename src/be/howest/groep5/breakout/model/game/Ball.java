@@ -13,24 +13,21 @@ import java.util.List;
 // TODO co-op = 2 ballen, 1 per paddle
 
 public class Ball implements Runnable {
-    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, scoreAndDif, topBound, lengthBound, speed;
+    private int x, y, xDirection, yDirection, xPosition, yPosition, p1Score, p2Score, numberOfLifes, difficulty, topBound, lengthBound, speed;
     private Rectangle ball;
     private int numberOfUnbreakables;
     private Paddle p1, p2;
-    private List<BlockCreator> blockCreatorList;
     private boolean singleplayer, playing;
+    private ScreenCreate screenCreate;
     public Ball(boolean singleplayer, int difficulty){
         p1 = new Paddle(475,700,1);
         p2 = new Paddle(475,10, 2);
 
-        numberOfUnbreakables = 0;
 
         this.difficulty = difficulty;
 
         setX(p1.getX() + (p1.getPaddle().width / 2));
-        setY(p1.getY());
-        setxPosition(0);
-        setyPosition(100);
+        setY(p1.getY() - p1.getPaddle().height);
 
         this.singleplayer = singleplayer;
         this.difficulty = difficulty;
@@ -57,11 +54,10 @@ public class Ball implements Runnable {
         setxDirection(rDirection);
     }
     private void startRandomY(){
-        Random r = new Random();
-        int rDirection = r.nextInt(2);
-        if(rDirection == 0)
-            rDirection--;
-        setyDirection(rDirection);
+        if(singleplayer)
+            setyDirection(-1);
+        else
+            setyDirection(1);
     }
 
     public void setX(int x) {
@@ -103,6 +99,9 @@ public class Ball implements Runnable {
     public void setPlaying(boolean playing) {
         this.playing = playing;
     }
+    public void setScreenCreate(ScreenCreate screenCreate) {
+        this.screenCreate = screenCreate;
+    }
 
     public int getX() {
         return x;
@@ -137,28 +136,17 @@ public class Ball implements Runnable {
     public Rectangle getBall() {
         return ball;
     }
-    private int getNumberOfBlocks(int difficulty){
-        switch (difficulty){
-            case 0:
-                scoreAndDif = 1;
-                return 4;
-            case 1:
-                scoreAndDif = 2;
-                return 6;
-            default:
-                scoreAndDif = 3;
-                return 7;
-        }
+    public ScreenCreate getScreenCreate() {
+        return screenCreate;
     }
+
     public int getTopBound() {
         return topBound;
     }
     public int getLengthBound() {
         return lengthBound;
     }
-    public List<BlockCreator> getBlockCreatorList() {
-        return blockCreatorList;
-    }
+
     public Paddle getP1() {
         return p1;
     }
@@ -188,7 +176,7 @@ public class Ball implements Runnable {
         }
         if(ball.intersects(p2.getPaddle()))
             setyDirection(+1);
-        for(BlockCreator blockCreator : blockCreatorList) {
+        for(BlockCreator blockCreator : getScreenCreate().getBlockCreatorList()) {
             if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
                 if(blockCreator.hasAPowerUp()){
                     Random r = new Random();
@@ -253,17 +241,21 @@ public class Ball implements Runnable {
             if(!singleplayer){
                 setX(p2.getPaddle().x + (p1.getPaddle().width/2));
                 setY(p2.getY());
-                ball = new Rectangle(getX(),getY(),7,7);
+                ball = new Rectangle(getX(),getY(),15,15);
                 numberOfLifes--;
+                playing = false;
             }
             setyDirection(+1);
         }
         if(ball.y >= 750) {
-            setX(p1.getPaddle().x + (p1.getPaddle().width/2));
-            setY(p1.getY());
-            ball = new Rectangle(getX(),getY(),7,7);
+            if(playing) {
+                setX(p1.getPaddle().x + (p1.getPaddle().width / 2));
+                setY(p1.getY() - p1.getPaddle().height);
+                ball = new Rectangle(getX(), getY(), 15, 15);
+            }
             numberOfLifes--;
             setyDirection(-1);
+            playing = false;
         }
     }
     @Override

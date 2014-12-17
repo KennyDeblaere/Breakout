@@ -63,6 +63,9 @@ public class ScreenCreate {
     public int getNumberOfBrokenBlocks() {
         return numberOfBrokenBlocks;
     }
+    public List<BlockCreator> getBlockCreatorList() {
+        return blockCreatorList;
+    }
 
     private void createScreen(int numberOfBlocks){
         BlockCreators blockCreators = new BlockCreators(getXPosition(), getYPosition());
