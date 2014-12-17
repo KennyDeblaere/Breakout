@@ -4,41 +4,29 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Dries Dekoninck on 3/12/2014.
+ * Created by Benjamin Vansteelandt on 17/12/2014.
  */
 public class PanelHighScore extends JPanel{
     private JLabel nameLabel, highScore;
     private JPanel singlePlayerHighscore, multiPlayerHighscore;
+    private HighscorePanelCreator highscorePanelCreator;
 
 
     public PanelHighScore(){
-        //super();
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        createComponents();
-        addSinglePlayer();
-
+        //createComponents();
+        //addSinglePlayer();
+        addComponents();
         setPreferredSize(new Dimension(500, 575));
 ;
     }
-    private void createComponents(){
-        singlePlayerHighscore = new SinglePlayerHighscoresPanel();
-        multiPlayerHighscore = new MultiPlayerHighscoresPanel();
-    }
 
-    private void addSinglePlayer(){
+    private void addComponents() {
+        highscorePanelCreator = new HighscorePanelCreator();
+
         add(new JLabel("Singleplayer"));
-        add(singlePlayerHighscore);
+        add(highscorePanelCreator.createHighscorePanel(true,5));
         add(new JLabel("Multiplayer"));
-        add(multiPlayerHighscore);
-        revalidate();
-        repaint();
+        add(highscorePanelCreator.createHighscorePanel(false,5));
     }
-
-    private void addMultiPlayer(){
-        remove(singlePlayerHighscore);
-        add(multiPlayerHighscore);
-        revalidate();
-        repaint();
-    }
-
 }
