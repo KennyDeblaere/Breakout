@@ -9,6 +9,9 @@ import be.howest.groep5.breakout.model.game.BlockCreator;
 import be.howest.groep5.breakout.model.game.Paddle;
 import be.howest.groep5.breakout.model.game.PowerCreator;
 import static org.junit.Assert.*;
+/**
+ * Created by Dries Dekoninck on 13/11/2014.
+ */
 
 public class UnitTests {
 

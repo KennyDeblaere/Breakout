@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Created by Blackhat on 3/12/2014.
+ * Created by Dries Dekoninck on 3/12/2014.
  */
 public class ButtonController implements ActionListener{
     private ContentPanel contentPanel;

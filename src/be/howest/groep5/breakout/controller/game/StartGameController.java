@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 /**
- * Created by Kenny, Blackhat on 13/11/2014.
+ * Created by Kenny, Dries Dekoninck on 13/11/2014.
  */
 public class StartGameController implements ActionListener {
     private CenterPanel panelCenter;

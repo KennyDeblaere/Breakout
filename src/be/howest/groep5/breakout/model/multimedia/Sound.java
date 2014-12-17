@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 
 /**
- * Created by Blackhat on 15/12/2014.
+ * Created by Dries Dekoninck on 15/12/2014.
  */
 public class Sound implements Runnable{
     private Player player;

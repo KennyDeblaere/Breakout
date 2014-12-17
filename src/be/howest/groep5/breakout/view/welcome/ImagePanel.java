@@ -1,7 +1,7 @@
 package be.howest.groep5.breakout.view.welcome;
 
 /**
- * Created by Blackhat on 5/12/2014.
+ * Created by Dries Dekoninck on 5/12/2014.
  */
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;

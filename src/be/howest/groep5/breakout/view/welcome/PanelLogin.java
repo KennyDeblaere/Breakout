@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * Created by Blackhat on 21/11/2014.
+ * Created by Dries Dekoninck on 21/11/2014.
  */
 public class PanelLogin extends JPanel{
     private ContentPanel panelContent;

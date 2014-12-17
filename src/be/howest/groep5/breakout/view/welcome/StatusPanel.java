@@ -14,7 +14,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by Blackhat on 21/11/2014.
+ * Created by Dries Dekoninck on 21/11/2014.
  */
 public class StatusPanel extends JPanel implements ActionListener{
     private JLabel statusLabel;

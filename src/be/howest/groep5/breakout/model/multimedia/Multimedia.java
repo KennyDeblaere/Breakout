@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by Blackhat on 15/12/2014.
+ * Created by Dries Dekoninck on 15/12/2014.
  */
 public class Multimedia{
     private BufferedImage image, mainBackground;

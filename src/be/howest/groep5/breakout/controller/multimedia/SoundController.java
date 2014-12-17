@@ -3,7 +3,7 @@ package be.howest.groep5.breakout.controller.multimedia;
 import be.howest.groep5.breakout.model.multimedia.Sound;
 
 /**
- * Created by Kenny, Dries and Benjamin on 16/12/2014.
+ * Created by Dries Dekoninck on 16/12/2014.
  */
 public class SoundController {
     private Sound sound;

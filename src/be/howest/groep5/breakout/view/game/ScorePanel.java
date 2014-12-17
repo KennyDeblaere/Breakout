@@ -8,7 +8,7 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
- * Created by Blackhat on 16/12/2014.
+ * Created by Dries Dekoninck on 16/12/2014.
  */
 
 public class ScorePanel extends JPanel {
