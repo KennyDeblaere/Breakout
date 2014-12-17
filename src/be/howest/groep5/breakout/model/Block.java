@@ -61,7 +61,6 @@ public class Block {
     public boolean hasAPowerDown() {
         return powerDown;
     }
-
     public int getVerticalLength() {
         return verticalLength;
     }
