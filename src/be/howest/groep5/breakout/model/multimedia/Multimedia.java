@@ -5,9 +5,7 @@ import javazoom.jl.decoder.JavaLayerException;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.Buffer;
 import java.util.Observable;
 import java.util.Observer;
 
