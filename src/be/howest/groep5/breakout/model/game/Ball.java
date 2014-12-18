@@ -222,7 +222,7 @@ public class Ball implements Runnable {
             p1Score += 5;
         if (difficulty == 2)
             p1Score += 10;
-
+        notifyObservers();
     }
 
     public void collision(){
@@ -252,8 +252,6 @@ public class Ball implements Runnable {
                 powerCreator.returnPower();
             }
         }
-
-        notifyObservers();
     }
 
     public void move(){
@@ -274,6 +272,7 @@ public class Ball implements Runnable {
                 ball = new Rectangle(getX(),getY(),15,15);
                 numberOfLifes--;
                 playing = false;
+                notifyObservers();
             }
             setyDirection(+1);
         }
@@ -286,6 +285,7 @@ public class Ball implements Runnable {
             numberOfLifes--;
             setyDirection(-1);
             playing = false;
+            notifyObservers();
         }
     }
     @Override

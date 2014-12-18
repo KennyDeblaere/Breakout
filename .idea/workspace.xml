@@ -7,9 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/ContentPanel.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/ContentPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/GamePanel.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/GamePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/ScorePanel.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/ScorePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="071016a6-7d87-4721-84a3-fcdf0a4e5db6" name="Failed commit: Default" comment="img" />
@@ -52,21 +52,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ScorePanel.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ScorePanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/ScorePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5752961" vertical-offset="1377" max-vertical-offset="2567">
-              <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2567">
+              <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ball.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Ball.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1946" max-vertical-offset="4335">
-              <caret line="246" column="13" selection-start-line="246" selection-start-column="13" selection-end-line="246" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.50165564" vertical-offset="3284" max-vertical-offset="4335">
+              <caret line="274" column="34" selection-start-line="274" selection-start-column="34" selection-end-line="274" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartGameController.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="697">
+              <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -132,16 +142,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HowToPlayPanel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/HowToPlayPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1071">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ImagePanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/ImagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -171,7 +171,9 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/GamePanel.java" />
+        <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java" />
         <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/ScorePanel.java" />
+        <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java" />
       </list>
     </option>
   </component>
@@ -323,6 +325,102 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breakout" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breakout" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="game" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breakout" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breakout" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -812,7 +910,7 @@
       <workItem from="1418911247557" duration="1858000" />
       <workItem from="1418913417537" duration="545000" />
       <workItem from="1418913976266" duration="187000" />
-      <workItem from="1418914191367" duration="286000" />
+      <workItem from="1418914191367" duration="979000" />
     </task>
     <task id="LOCAL-00070" summary="Refactoring panels">
       <created>1418053847078</created>
@@ -1010,11 +1108,15 @@
       <created>1418914160542</created>
       <updated>1418914160542</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="sounds">
+      <created>1418914484741</created>
+      <updated>1418914484741</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268710000" />
+    <option name="totallyTimeSpent" value="269403000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1038,7 +1140,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32729805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1060,7 +1162,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.195" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15123859" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15123859" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1329,13 +1431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49536425" vertical-offset="0" max-vertical-offset="755">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/multimedia/SoundController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33774835" vertical-offset="0" max-vertical-offset="755">
@@ -1476,14 +1571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3111" max-vertical-offset="3808">
-          <caret line="246" column="13" selection-start-line="246" selection-start-column="13" selection-end-line="246" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/ContentPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1683">
@@ -1500,10 +1587,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="25" max-vertical-offset="697">
+          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/ScorePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5752961" vertical-offset="1377" max-vertical-offset="2567">
-          <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2567">
+          <caret line="60" column="37" selection-start-line="60" selection-start-column="37" selection-end-line="60" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50165564" vertical-offset="3284" max-vertical-offset="4335">
+          <caret line="274" column="34" selection-start-line="274" selection-start-column="34" selection-end-line="274" selection-end-column="34" />
           <folding />
         </state>
       </provider>
