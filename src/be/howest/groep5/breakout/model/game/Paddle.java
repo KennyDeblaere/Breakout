@@ -9,15 +9,18 @@ import java.awt.event.KeyEvent;
 public class Paddle implements Runnable {
     private int x, y, xDirection, id, lengthGo;
     private Rectangle paddle;
+    private int speed, width;
     private boolean playing;
 
-    public Paddle(int x, int y, int id){
+    public Paddle(int x, int y, int width, int id){
         setX(x);
         setY(y);
+        setWidth(width);
         setId(id);
         playing = false;
-        paddle = new Rectangle(x, y, 100,10);
-        setLengthGo(1000 - paddle.width);
+        paddle = new Rectangle(getX(), getY(), getWidth(),10);
+        setLengthGo(1000 - getWidth());
+        setSpeed(4);
 
     }
 
@@ -29,6 +32,12 @@ public class Paddle implements Runnable {
     }
     public int getLengthGo() {
         return lengthGo;
+    }
+    public int getSpeed() {
+        return speed;
+    }
+    public int getWidth() {
+        return width;
     }
 
     public void setId(int id) {
@@ -49,6 +58,12 @@ public class Paddle implements Runnable {
     public void setPlaying(boolean playing) {
         this.playing = playing;
     }
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+    public void setWidth(int width) {
+        this.width = width;
+    }
 
     public Rectangle getPaddle() {
         return paddle;
@@ -56,54 +71,6 @@ public class Paddle implements Runnable {
 
     public boolean isPlaying() {
         return playing;
-    }
-
-    public void keyPressed(KeyEvent e) {
-        switch (id) {
-            default:
-                System.out.println("Please enter a valid id in paddleConstructor");
-                break;
-            case 1:
-                if (e.getKeyCode() == e.VK_LEFT) {
-                    setxDirection(-1);
-                }
-                if (e.getKeyCode() == e.VK_RIGHT) {
-                    setxDirection(+1);
-                }
-                break;
-            case 2:
-                if (e.getKeyCode() == e.VK_Q) {
-                    setxDirection(-1);
-                }
-                if (e.getKeyCode() == e.VK_D) {
-                    setxDirection(+1);
-                }
-                break;
-        }
-    }
-    public void keyReleased(KeyEvent e) {
-        switch (id) {
-            default:
-                System.out.println("Please enter a valid id in paddleConstructor");
-                break;
-            case 1:
-                if (e.getKeyCode() == e.VK_LEFT) {
-                    setxDirection(0);
-                }
-                if (e.getKeyCode() == e.VK_RIGHT) {
-                    setxDirection(0);
-                }
-                break;
-            case 2:
-                if (e.getKeyCode() == e.VK_Q) {
-                    setxDirection(0);
-                }
-                if (e.getKeyCode() == e.VK_D) {
-                    setxDirection(0);
-
-                }
-                break;
-        }
     }
 
     public int getId() {
@@ -124,7 +91,7 @@ public class Paddle implements Runnable {
             while (true){
                 if(isPlaying())
                     move();
-                Thread.sleep(4);
+                Thread.sleep(getSpeed());
             }
         }catch (Exception e){
             System.err.println(e.getMessage());
