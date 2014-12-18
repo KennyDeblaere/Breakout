@@ -21,6 +21,6 @@ public class CancelController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        c.addMainComponents();
+        c.addDifficultyPanel(true);
     }
 }

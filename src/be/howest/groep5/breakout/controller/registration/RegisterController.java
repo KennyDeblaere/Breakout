@@ -94,6 +94,6 @@ public class RegisterController implements ActionListener {
         new Register(getUsername().getText(),getPassword().getText(),getRepeatedPassword().getText(),
                 getFirstname().getText(),getLastname().getText(),getEmail().getText(), new Date(Integer.parseInt(dateOfBirth.getYear().getText()),
                 Integer.parseInt(dateOfBirth.getMonth().getText()), Integer.parseInt(dateOfBirth.getDay().getText())),sex.getMale().isSelected());
-        c.addMainComponents();
+        c.addDifficultyPanel(true);
     }
 }
