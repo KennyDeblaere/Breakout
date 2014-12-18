@@ -77,6 +77,10 @@ public class ContentPanel extends JPanel {
         re();
     }
 
+    public void afsluiten(){
+        System.exit(0);
+    }
+
     private void re(){
         revalidate();
         repaint();

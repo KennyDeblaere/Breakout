@@ -30,6 +30,8 @@ public class ButtonController implements ActionListener{
                 break;
             case "About":  contentPanel.addAboutPanel();
                 break;
+            case "Sluiten":  contentPanel.afsluiten();
+                break;
         }
     }
 }
