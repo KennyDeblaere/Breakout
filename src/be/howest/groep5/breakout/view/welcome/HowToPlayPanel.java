@@ -21,7 +21,7 @@ public class HowToPlayPanel extends JPanel{
     }
 
     private void createComponents() {
-        titelLabel = new JLabel("How to play?");
+        titelLabel = new JLabel("Instructies");
         howtoplay = new JPanel();
         howto = new JLabel();
         imagePanel = new ImagePanel("screenshot.jpg");
