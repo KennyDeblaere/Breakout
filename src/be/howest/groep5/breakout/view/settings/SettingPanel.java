@@ -1,5 +1,8 @@
 package be.howest.groep5.breakout.view.settings;
 
+import be.howest.groep5.breakout.controller.multimedia.SoundController;
+import be.howest.groep5.breakout.model.multimedia.Sound;
+
 import javax.sound.sampled.*;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -17,7 +20,7 @@ public class SettingPanel extends JPanel implements ActionListener, ChangeListen
     private JSlider volume;
     private JComboBox soundList;
     private String[] soundStrings = {"Sound 1", "Sound 2", "Sound 3", "Sound 4", "Sound 5", "Sound 6", "Sound 7", "Sound 8", "Sound 9" };
-    private String soundnumber;
+    private int soundnumber;
 
     public SettingPanel(){
         super();
@@ -38,7 +41,7 @@ public class SettingPanel extends JPanel implements ActionListener, ChangeListen
     private void setComponents() {
         titelLabel.setFont(new Font(null, Font.BOLD, 30));
         soundList.setSelectedIndex(0);
-        //soundList.actionPerformed(this);
+        soundList.addActionListener(this);
         volume.addChangeListener(this);
         setting.add(titelLabel);
         setting.add(soundList);
@@ -70,6 +73,8 @@ public class SettingPanel extends JPanel implements ActionListener, ChangeListen
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        soundnumber = soundList.getSelectedIndex();
+        //SoundController soundController = new SoundController(soundnumber);
+        Sound sound = new Sound(soundnumber);
     }
 }

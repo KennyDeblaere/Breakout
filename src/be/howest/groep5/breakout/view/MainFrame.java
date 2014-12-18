@@ -31,7 +31,7 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(mainPanel);
         setIconImage(multimedia.getIconImage());
-        SoundController sound = new SoundController();
+        SoundController sound = new SoundController(1);
         addWindowListener(new LogoutOnCloseController());
 
         //pack();
