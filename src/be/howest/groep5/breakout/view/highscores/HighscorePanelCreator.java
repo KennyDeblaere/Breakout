@@ -4,7 +4,6 @@ import be.howest.groep5.breakout.data.Database;
 import be.howest.groep5.breakout.model.ScoreUser;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.util.*;
 
