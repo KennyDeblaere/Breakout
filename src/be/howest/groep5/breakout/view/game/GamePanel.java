@@ -23,8 +23,14 @@ public class GamePanel extends JPanel {
     private int levelNumber, numberOfBlocks, difficulty;
     private ScreenCreate screenCreate;
     private ScorePanel scorePanel;
+    private Multimedia multimedia;
+    private Image background;
 
     public GamePanel(CenterPanel c, boolean singleplayer, int difficulty){
+        setOpaque(false);
+        multimedia = new Multimedia();
+        background = multimedia.getGamebackground();
+
         centerPanel = c;
         this.singleplayer = singleplayer;
         this.difficulty = difficulty;
@@ -33,13 +39,16 @@ public class GamePanel extends JPanel {
         b.setSpeed(Database.DatabaseInstance.fillLevels().get(levelNumber).getBallSpeed());
 
         setPreferredSize(new Dimension(1001, 710));
-        setBackground(Color.WHITE);
+        //setBackground(Color.WHITE);
         ball = new Thread(b);
         p1 = new Thread(b.getP1());
         screenCreate = new ScreenCreate(singleplayer,levelNumber,getNumberOfBlocks(difficulty));
 
         addKeyListener(new MovePanelController(b));
 
+
+
+        repaint();
         setFocusable(true);
         setRequestFocusEnabled(true);
         requestFocusInWindow();
@@ -135,5 +144,10 @@ public class GamePanel extends JPanel {
 
     public Ball getB() {
         return b;
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        g.drawImage(background, 0, 0, null);
     }
 }

@@ -1,11 +1,13 @@
 package be.howest.groep5.breakout.view.welcome;
 
+import be.howest.groep5.breakout.model.multimedia.Multimedia;
 import be.howest.groep5.breakout.view.game.GamePanel;
 import be.howest.groep5.breakout.view.game.ScorePanel;
 import be.howest.groep5.breakout.view.highscores.AddHighscorePanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 
 /**
  * Created by Dries Dekoninck on 04/12/2014.
@@ -17,6 +19,8 @@ public class CenterPanel extends JPanel {
     private GamePanel gamePanel;
     private ScorePanel scorePanel;
     private AddHighscorePanel highscorePanel;
+    private Multimedia multimedia;
+    private Image background;
     private boolean isSinglePlayer;
 
 
@@ -25,6 +29,7 @@ public class CenterPanel extends JPanel {
         createComponents();
         setComponents();
         addMainComponents();
+        repaint();
     }
 
     private void createComponents(){
@@ -32,6 +37,8 @@ public class CenterPanel extends JPanel {
         panelButton = new ButtonPanel(panelContent);
         gamePanel = new GamePanel(this,isSinglePlayer,0);
         scorePanel = new ScorePanel(gamePanel, isSinglePlayer);
+        multimedia = new Multimedia();
+        background = multimedia.getSubbackground();
         highscorePanel = new AddHighscorePanel(0,this);
     }
 
@@ -93,5 +100,10 @@ public class CenterPanel extends JPanel {
 
     public void setGameMode(Boolean isSinglePlayer) {
         this.isSinglePlayer = isSinglePlayer;
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        g.drawImage(background, 0, 0, null);
     }
 }

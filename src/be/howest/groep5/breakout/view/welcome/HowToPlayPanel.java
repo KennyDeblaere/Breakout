@@ -28,7 +28,10 @@ public class HowToPlayPanel extends JPanel{
     }
 
     private void setComponents(){
+        setOpaque(false);
+        howtoplay.setOpaque(false);
         titelLabel.setFont(new Font(null, Font.BOLD, 30));
+        titelLabel.setForeground(Color.white);
         howto.setText(convertToMultiline(
                         "Game opties: \n" +
                         "1) Kies in het menu \"Singleplayer\" of \"CO-OP\" \n" +
@@ -40,6 +43,7 @@ public class HowToPlayPanel extends JPanel{
                         "6) In het zijpaneel zie je ook het aantal levens en de timer van hoelang de powerups/downs \ndie je hebt geraakt gelden \n\n" +
                         "Na het spel: \n" +
                         "7) Sla je score op om in de rangschikking te worden opgenomen"));
+        howto.setForeground(Color.white);
         imagePanel.setPreferredSize(new Dimension(600,400));
         howtoplay.setPreferredSize(new Dimension(600, 250));
         howtoplay.add(howto);

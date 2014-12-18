@@ -2,6 +2,7 @@ package be.howest.groep5.breakout.view.welcome;
 
 import be.howest.groep5.breakout.controller.startbuttons.ButtonController;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 /**
@@ -15,7 +16,7 @@ public class ButtonPanel extends JPanel{
     public ButtonPanel(ContentPanel panelContent) {
         super();
         this.panelContent = panelContent;
-        setPreferredSize(new Dimension(300, 600));
+        setPreferredSize(new Dimension(300, 250));
         createComponents();
         setComponents();
         addComponents();
@@ -23,7 +24,7 @@ public class ButtonPanel extends JPanel{
     }
 
     private void createComponents() {
-        ButtonPanel = new JPanel(new GridLayout(6,1,0,30));
+        ButtonPanel = new JPanel(new GridLayout(6,1,0,0));
         single = new JButton("Single Player");
         co = new JButton("Co-op");
         high = new JButton("Topscore");
@@ -32,18 +33,18 @@ public class ButtonPanel extends JPanel{
     }
 
     private void setComponents() {
-        setBackground(Color.GRAY);
+        //setBackground(Color.GRAY);
         single.setPreferredSize(new Dimension(150, 50));
         co.setPreferredSize(new Dimension(150, 50));
         high.setPreferredSize(new Dimension(150, 50));
         about.setPreferredSize(new Dimension(150, 50));
         howto.setPreferredSize(new Dimension(150, 50));
-        ButtonPanel.setBackground(Color.GRAY);
         ButtonPanel.add(single);
         ButtonPanel.add(co);
         ButtonPanel.add(high);
         ButtonPanel.add(howto);
         ButtonPanel.add(about);
+        setOpaque(false);
     }
 
     private void addComponents() {

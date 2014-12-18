@@ -5,6 +5,8 @@ import be.howest.groep5.breakout.view.registration.RegistrationPanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Dries Dekoninck on 21/11/2014.
@@ -24,6 +26,7 @@ public class ContentPanel extends JPanel {
         setPreferredSize(new Dimension(700, 600));
         createComponents();
         addMainComponents();
+        setOpaque(false);
     }
 
     private void createComponents() {

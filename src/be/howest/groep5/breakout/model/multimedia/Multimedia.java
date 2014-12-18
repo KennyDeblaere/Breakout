@@ -4,19 +4,21 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.nio.Buffer;
 
 /**
  * Created by Dries Dekoninck on 15/12/2014.
  */
 public class Multimedia{
-    private BufferedImage image, mainBackground;
+    private BufferedImage image, mainBackground, subbackground, contentbackground, gamebackground;
     private boolean playing = true;
 
     public Multimedia() {
         try {
-            image = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/Icon.jpg")));
+            image = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/Icon.png")));
             mainBackground = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/background.png")));
-
+            subbackground = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/subbackground.png")));
+            gamebackground = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/gamebackground.png")));
         } catch (IOException e) {
             System.out.println("Image laad niet in!");
         }
@@ -35,4 +37,6 @@ public class Multimedia{
     public BufferedImage getMainBackground() {
         return  mainBackground;
     }
+    public BufferedImage getSubbackground() { return subbackground; }
+    public BufferedImage getGamebackground() { return gamebackground; }
 }

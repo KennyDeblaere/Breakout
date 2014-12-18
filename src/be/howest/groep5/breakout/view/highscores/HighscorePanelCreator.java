@@ -31,6 +31,7 @@ public class HighscorePanelCreator {
 
         createComponents();
         fillHighScore();
+        toReturnPanel.setOpaque(false);
 
         return  toReturnPanel;
     }
@@ -52,20 +53,20 @@ public class HighscorePanelCreator {
         System.out.println("got here");
         System.out.println(scores);
 
-        /*if (scores.size() > 0 && scores.size() < 5) {
-            for (int i = 0; i < (scores.size()); i++) {
-                usernameLabel = new JLabel(Database.DatabaseInstance.fillTopScores(singlePlayer).get(i).getUserName());
-                toReturnPanel.add(usernameLabel);
-                scoreLabel = new JLabel(""+Database.DatabaseInstance.fillTopScores(singlePlayer).get(i).getScore());
-                toReturnPanel.add(scoreLabel);
-            }
-        }*/
-
-        for(ScoreUser score : scores){
+       for(ScoreUser score : scores){
             usernameLabel = new JLabel(score.getUserName());
             toReturnPanel.add(usernameLabel);
             scoreLabel = new JLabel("" + score.getScore());
             toReturnPanel.add(scoreLabel);
         }
+           //Dummy creator:
+         /*if (scores.size() > 0 && scores.size() < 5) {
+            for (int i = 0; i < (5-scores.size()); i++) {
+                usernameLabel = new JLabel("-");
+                toReturnPanel.add(usernameLabel);
+                scoreLabel = new JLabel("-");
+                toReturnPanel.add(scoreLabel);
+            }
+        }*/
     }
 }
