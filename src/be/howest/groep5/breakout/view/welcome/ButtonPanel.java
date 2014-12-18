@@ -27,8 +27,8 @@ public class ButtonPanel extends JPanel{
         ButtonPanel = new JPanel(new GridLayout(6,1,0,30));
         single = new JButton("Single Player");
         co = new JButton("Co-op");
-        high = new JButton("Topscore");
-        howto = new JButton("Hoe spelen?");
+        high = new JButton("Topscores");
+        howto = new JButton("Instructies");
         about = new JButton("Over");
     }
 
