@@ -23,7 +23,6 @@ public class GamePanel extends JPanel {
     private boolean singleplayer;
     private int levelNumber, numberOfBlocks, difficulty;
     private ScreenCreate screenCreate;
-    private Multimedia m;
 
     public GamePanel(CenterPanel c, boolean singleplayer, int difficulty){
         centerPanel = c;
@@ -36,7 +35,6 @@ public class GamePanel extends JPanel {
         p1 = new Thread(b.getP1());
         levelNumber = 0;
         screenCreate = new ScreenCreate(singleplayer,levelNumber,getNumberOfBlocks(difficulty));
-        m = new Multimedia();
 
         addKeyListener(new MovePanelController(b));
 
@@ -91,15 +89,6 @@ public class GamePanel extends JPanel {
     public void draw(Graphics g){
         requestFocus();
         if(b.getNumberOfLifes() != 0) {
-            g.setColor(Color.black);
-            g.drawString("Levens: ",0,0);
-            g.setColor(Color.BLUE);
-            int positionx = 5;
-
-            for(int i=0; i<b.getNumberOfLifes();i++){
-                g.drawImage(m.getLife(), positionx, 10, null);
-                positionx += 25;
-            }
             g.setColor(Color.decode("#666666"));
             g.fillOval(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
             drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
@@ -129,9 +118,6 @@ public class GamePanel extends JPanel {
             centerPanel.addHighScoreAddPanel(b.getP1Score());
 
         }
-        //g.setColor(Color.black);
-        //g.drawString("" + b.getP1Score(), 15, 20);
-        //g.drawString("" + b.getP2Score(),15,200);
         repaint();
     }
 

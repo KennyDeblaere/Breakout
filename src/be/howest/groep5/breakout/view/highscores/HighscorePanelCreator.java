@@ -4,10 +4,7 @@ import be.howest.groep5.breakout.data.Database;
 import be.howest.groep5.breakout.model.ScoreUser;
 
 import javax.swing.*;
-//import java.awt.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Benjamin on 17/12/2014.
