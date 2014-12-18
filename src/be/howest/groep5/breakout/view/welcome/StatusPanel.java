@@ -24,7 +24,7 @@ public class StatusPanel extends JPanel implements ActionListener, ChangeListene
 
     public StatusPanel(){
         super();
-        setVolume(1);
+        setVolume(60);
         multimedia = new Multimedia();
         setPreferredSize(new Dimension((int) getMaximumSize().getWidth(), 40));
         createComponents();
@@ -42,7 +42,7 @@ public class StatusPanel extends JPanel implements ActionListener, ChangeListene
         soundOnButton = new JButton(new ImageIcon(onImage));
         soundOffButton = new JButton(new ImageIcon(offImage));
         soundOnButton.setFocusable(false);
-        volume = new JSlider(0,100,50);
+        volume = new JSlider(0,100,60);
         volume.addChangeListener(this);
     }
 
@@ -83,18 +83,16 @@ public class StatusPanel extends JPanel implements ActionListener, ChangeListene
         if (multimedia.isPlaying()){
             multimedia.setPlaying(false);
             setVolume(0);
-
         }
         else{
             multimedia.setPlaying(true);
-            setVolume(1);
+            setVolume(volume.getValue());
         }
         addComponents();
     }
 
     public void stateChanged(ChangeEvent e) {
         int vol = volume.getValue();
-        setVolume((float)vol);
-
+        setVolume((float) vol);
     }
 }
