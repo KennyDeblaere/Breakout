@@ -33,8 +33,17 @@ public class Database {
             //String url = "jdbc:mysql://mysqlstudent/kennydeblaab7yah";
             //connection = DriverManager.getConnection(url, "kennydeblaab7yah","ce8iaw2IeLax");
 
-            String url = "jdbc:mysql://localhost/breakout";
-            connection = DriverManager.getConnection(url, "root", "");
+            //String url = "jdbc:mysql://localhost/breakout";
+            //connection = DriverManager.getConnection(url, "root", "");
+
+            //String url = "jdbc:mysql://db4free.net:3306/projectdatabank";
+            //connection = DriverManager.getConnection(url, "konidri","ce8iaw2IeLax");
+
+            String url = "jdbc:mysql://sql5.freemysqlhosting.net:3306/sql561713";
+            connection = DriverManager.getConnection(url, "sql561713","qU9%lG7%");
+
+            //login pw: kzKCphMhaRmC
+
 
         } catch (ClassNotFoundException | SQLException | InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(Database.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -118,7 +127,7 @@ public class Database {
             ResultSet rs;
             rs = stmt.executeQuery("select * from gamemode");
             while (rs.next()){
-                gamemode.add(new Gamemode(rs.getBoolean("single/multi"), rs.getInt("difficulty")));
+                gamemode.add(new Gamemode(rs.getBoolean("singlemulti"), rs.getInt("difficulty")));
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -152,7 +161,7 @@ public class Database {
             rs = stmt.executeQuery("SELECT * FROM score " +
                     "JOIN gamemode ON score.gamemodeid = gamemode.gamemodeid " +
                     "JOIN score_user ON score.scoreid = score_user.scoreid  " +
-                    "WHERE gamemode.`single/multi` = "+ singlePlayer + " ORDER BY score.score LIMIT 5");
+                    "WHERE gamemode.singlemulti = "+ singlePlayer + " ORDER BY score.score LIMIT 5");
             while (rs.next()){
                 scoreUsers.add(new ScoreUser(rs.getInt("score.score"), fillUsers().get(rs.getInt("score_user.userid")).getUsername()));
             }
@@ -186,7 +195,7 @@ public class Database {
         try{
             Class.forName("com.mysql.jdbc.Driver");
 
-            String query = "INSERT INTO `gamemode` (`single/multi`, `difficulty`) " +
+            String query = "INSERT INTO `gamemode` (`singlemulti`, `difficulty`) " +
                     "VALUES (?, ?)";
             PreparedStatement preparedStatement = getConnection().prepareStatement(query);
             preparedStatement.setBoolean(1, gamemode.isSingleplayer());

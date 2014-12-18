@@ -14,8 +14,7 @@ public class PanelHighScore extends JPanel{
     public PanelHighScore(){
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         addComponents();
-        setPreferredSize(new Dimension(500, 575));
-;
+        setPreferredSize(new Dimension(500, 575));;
     }
 
     private void addComponents() {
