@@ -24,6 +24,7 @@ public class DifficultyPanel extends JPanel{
         difficultyPanel = new JPanel(new GridLayout(5,1,0,20));
         this.singleplayer = singleplayer;
 
+        setOpaque(false);
         createComponents();
         setComponents();
         setTitle(singleplayer);
@@ -35,13 +36,16 @@ public class DifficultyPanel extends JPanel{
         titelLabel = new JLabel();
         emptyLabel = new JLabel();
         titelLabel.setFont(new Font(null, Font.BOLD, 20));
+        titelLabel.setForeground(Color.white);
         textLabel = new JLabel("Kies de moeilijkheid");
+        textLabel.setForeground(Color.white);
         playButton = new JButton("Start!");
         difList = new JComboBox(difficultyStrings);
     }
 
     private void setComponents(){
         difList.setSelectedIndex(0);
+        difficultyPanel.setOpaque(false);
         difficultyPanel.add(emptyLabel);
         difficultyPanel.add(titelLabel);
         difficultyPanel.add(textLabel);
