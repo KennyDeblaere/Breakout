@@ -5,6 +5,7 @@ import be.howest.groep5.breakout.data.Database;
 import be.howest.groep5.breakout.model.game.Ball;
 import be.howest.groep5.breakout.model.game.BlockCreator;
 import be.howest.groep5.breakout.model.game.ScreenCreate;
+import be.howest.groep5.breakout.model.multimedia.Multimedia;
 import be.howest.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
@@ -23,13 +24,8 @@ public class GamePanel extends JPanel {
     private int levelNumber, numberOfBlocks, difficulty;
     private ScreenCreate screenCreate;
     private ScorePanel scorePanel;
-    private Multimedia multimedia;
-    private Image background;
 
     public GamePanel(CenterPanel c, boolean singleplayer, int difficulty){
-        setOpaque(false);
-        multimedia = new Multimedia();
-        background = multimedia.getGamebackground();
 
         centerPanel = c;
         this.singleplayer = singleplayer;
@@ -39,7 +35,7 @@ public class GamePanel extends JPanel {
         b.setSpeed(Database.DatabaseInstance.fillLevels().get(levelNumber).getBallSpeed());
 
         setPreferredSize(new Dimension(1001, 710));
-        //setBackground(Color.WHITE);
+        setBackground(Color.white);
         ball = new Thread(b);
         p1 = new Thread(b.getP1());
         screenCreate = new ScreenCreate(singleplayer,levelNumber,getNumberOfBlocks(difficulty));
@@ -144,10 +140,5 @@ public class GamePanel extends JPanel {
 
     public Ball getB() {
         return b;
-    }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        g.drawImage(background, 0, 0, null);
     }
 }
