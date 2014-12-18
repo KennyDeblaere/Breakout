@@ -25,7 +25,7 @@ public class ContentPanel extends JPanel {
         panelCenter = c;
         setPreferredSize(new Dimension(700, 600));
         createComponents();
-        addMainComponents();
+        addDifficultyPanel(true);
         setOpaque(false);
     }
 
