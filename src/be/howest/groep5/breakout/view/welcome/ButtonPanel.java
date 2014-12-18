@@ -10,7 +10,7 @@ import java.awt.*;
  */
 public class ButtonPanel extends JPanel{
     private JPanel ButtonPanel;
-    private JButton single, co, high, howto, about;
+    private JButton single, co, high, howto, setting, about;
     private ContentPanel panelContent;
 
     public ButtonPanel(ContentPanel panelContent) {
@@ -24,12 +24,13 @@ public class ButtonPanel extends JPanel{
     }
 
     private void createComponents() {
-        ButtonPanel = new JPanel(new GridLayout(5,1,0,30));
+        ButtonPanel = new JPanel(new GridLayout(6,1,0,30));
         single = new JButton("Single Player");
-        co = new JButton("co-op");
-        high = new JButton("Highscore");
-        howto = new JButton("How To Play");
-        about = new JButton("About");
+        co = new JButton("Co-op");
+        high = new JButton("Topscore");
+        howto = new JButton("Hoe spelen?");
+        setting = new JButton("Instellingen");
+        about = new JButton("Over");
     }
 
     private void setComponents() {
@@ -44,6 +45,7 @@ public class ButtonPanel extends JPanel{
         ButtonPanel.add(co);
         ButtonPanel.add(high);
         ButtonPanel.add(howto);
+        ButtonPanel.add(setting);
         ButtonPanel.add(about);
     }
 
@@ -56,6 +58,7 @@ public class ButtonPanel extends JPanel{
         co.addActionListener(new ButtonController(panelContent,"CO"));
         high.addActionListener(new ButtonController(panelContent, "High"));
         howto.addActionListener(new ButtonController(panelContent, "Howto"));
+        setting.addActionListener(new ButtonController(panelContent, "Setting"));
         about.addActionListener(new ButtonController(panelContent, "About"));
     }
 }
