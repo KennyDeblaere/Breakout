@@ -33,11 +33,12 @@ public class Database {
             //String url = "jdbc:mysql://mysqlstudent/kennydeblaab7yah";
             //connection = DriverManager.getConnection(url, "kennydeblaab7yah","ce8iaw2IeLax");
 
+            //String url = "jdbc:mysql://localhost/breakout";
+            //connection = DriverManager.getConnection(url, "root", "");
+
             String url = "jdbc:mysql://db4free.net:3306/projectdatabank";
             connection = DriverManager.getConnection(url, "konidri","ce8iaw2IeLax");
 
-            //String url = "jdbc:mysql://localhost/breakout";
-            //connection = DriverManager.getConnection(url, "root", "");
 
         } catch (ClassNotFoundException | SQLException | InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(Database.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
