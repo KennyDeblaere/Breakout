@@ -159,40 +159,26 @@ public class Ball implements Runnable {
     }
 
     private void powersCollision(BlockCreator blockCreator){
+        Random r = new Random();
+
         if(blockCreator.hasAPowerUp()){
-            Random r = new Random();
             int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
             powerCreator = new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
             powerCreator.setIntersection(true);
             Thread t = new Thread(powerCreator);
             t.start();
-            /*System.out.println(p1.getPaddle().intersects(powerCreator.getPower()));
-            if(p1.getPaddle().intersects(powerCreator.getPower())) {
-                if (singleplayer) {
-                    powerCreator.setIntersection(false);
-                    System.out.println("intersect");
-                    powerCreator.returnPower(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1);
-                    p1Score += 100;
-                } else if (getYDirection() == 1) {
-                    new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2, blockCreator.getX(), blockCreator.getY());
-                    p2Score += 100;
-                }
-            }*/
+        }
+        if(blockCreator.hasAPowerDown()){
+            int temp = r.nextInt(Database.DatabaseInstance.fillPowers(false).size());
+            powerCreator = new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
+            powerCreator.setIntersection(true);
+            Thread t = new Thread(powerCreator);
+            t.start();
         }
 
-        if(blockCreator.hasAPowerDown()){
-            Random r = new Random();
-            int temp = r.nextInt(Database.DatabaseInstance.fillPowers(false).size());
-            if(singleplayer) {
-                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
-                p1Score -= 100;
-            }
-            else if(! singleplayer && getYDirection() == 1) {
-                new PowerCreator(temp, Database.DatabaseInstance.fillPowers(false).get(temp).isPowerup(), this, p2, blockCreator.getX(), blockCreator.getY());
-                p2Score -= 100;
-            }
-        }
+
     }
+    
     private void blockBounceHorizontal(BlockCreator blockCreator){
         if(ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width/2) {
             setyDirection(getYDirection() * -1);
@@ -222,7 +208,19 @@ public class Ball implements Runnable {
             p1Score += 5;
         if (difficulty == 2)
             p1Score += 10;
+        notifyObservers();
+    }
 
+    private void powerCollisionWithPaddle(){
+        if(p1.getPaddle().intersects(powerCreator.getPower()) || p2.getPaddle().intersects(powerCreator.getPower())) {
+            powerCreator.setIntersection(false);
+            powerCreator.returnPower();
+            powerCreator.setIntersection(false);
+        }
+        if(p2.getPaddle().intersects(powerCreator.getPower())) {
+            powerCreator.setPaddle(p2);
+
+        }
     }
 
     public void collision(){
@@ -245,6 +243,7 @@ public class Ball implements Runnable {
                 blockBounceVertical(blockCreator);
                 afterCollision(blockCreator);
             }
+            powerCollisionWithPaddle();
         }
         if(p1.getPaddle().intersects(powerCreator.getPower())) {
             powerCreator.setIntersection(false);
@@ -252,8 +251,6 @@ public class Ball implements Runnable {
                 powerCreator.returnPower();
             }
         }
-
-        notifyObservers();
     }
 
     public void move(){
@@ -274,6 +271,7 @@ public class Ball implements Runnable {
                 ball = new Rectangle(getX(),getY(),15,15);
                 numberOfLifes--;
                 playing = false;
+                notifyObservers();
             }
             setyDirection(+1);
         }
@@ -286,6 +284,7 @@ public class Ball implements Runnable {
             numberOfLifes--;
             setyDirection(-1);
             playing = false;
+            notifyObservers();
         }
     }
     @Override

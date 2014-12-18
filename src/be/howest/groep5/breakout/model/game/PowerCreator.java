@@ -84,8 +84,12 @@ public class PowerCreator implements Runnable {
                 case 4: addALife(getBall());
                     break;
             }
+            if(getyDirection() == 1)
+                getBall().setP2Score(getBall().getP2Score() + 100);
+            else
+                getBall().setP1Score(getBall().getP1Score() + 100);
         }else{
-            switch (powerid){
+            switch (getPowerid()){
                 case 0: makeBallSmaller(getBall());
                     break;
                 case 1: makePaddleSmaller(getPaddle());
@@ -97,6 +101,10 @@ public class PowerCreator implements Runnable {
                 case 4: makePaddleSlower();
                     break;
             }
+            if(getyDirection() == 1)
+                getBall().setP2Score(getBall().getP2Score() - 100);
+            else
+                getBall().setP1Score(getBall().getP1Score() - 100);
         }
     }
 
@@ -108,7 +116,7 @@ public class PowerCreator implements Runnable {
     }
 
     private void makeBallBigger(Ball ball){
-        if(ball.getBall().width < 14) {
+        if(ball.getBall().width < 16) {
             ball.setLengthBound(ball.getLengthBound() - ball.getBall().width);
             ball.getBall().width *= 2;
             ball.getBall().height *= 2;
@@ -116,14 +124,14 @@ public class PowerCreator implements Runnable {
     }
 
     private void makePaddleLongher(Paddle paddle, Ball ball){
-        if(paddle.getPaddle().width < 400) {
+        if(paddle.getPaddle().width*2 < 400) {
             paddle.setLengthGo(paddle.getLengthGo() - paddle.getPaddle().width);
             paddle.getPaddle().width *= 2;
         }
     }
 
     private void makeBallSlower() {
-        ball.setSpeed(ball.getSpeed() - 1);
+        ball.setSpeed(5);
     }
 
     private void addALife(Ball ball) {

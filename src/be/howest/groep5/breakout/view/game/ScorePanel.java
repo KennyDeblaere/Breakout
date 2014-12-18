@@ -58,7 +58,7 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         JPanel toReturnPanel = new JPanel();
 
         toReturnPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), spelerNaam, TitledBorder.LEFT, TitledBorder.TOP, new Font(null, Font.BOLD, 15), Color.white));
-        toReturnPanel.setPreferredSize(new Dimension(175, 150));
+        toReturnPanel.setPreferredSize(new Dimension(175, 65));
 
         if (isCoOp) {
             scorecoop = new JLabel("Score: " + gamePanel.getB().getP2Score());
@@ -108,8 +108,8 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         scorePanel.add(titelLabel);
         scorePanel.add(lifePanel);
         scorePanel.add(singlePanel);
-        System.out.println(gamePanel.getGameMode());
-        if (!gamePanel.getGameMode()) {
+        System.out.println(gamePanel.getB().isSingleplayer());
+        if (gamePanel.getB().isSingleplayer()) {
             scorePanel.add(coopPanel);
         }
 
