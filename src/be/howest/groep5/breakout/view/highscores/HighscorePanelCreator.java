@@ -41,7 +41,7 @@ public class HighscorePanelCreator {
         if (singlePlayer){
             name = "Singleplayer";
         }else{
-            name = "Multiplayer";
+            name = "Co-op";
         }
         toReturnPanel = new JPanel();
         toReturnPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), name,0,0,null,Color.white));
