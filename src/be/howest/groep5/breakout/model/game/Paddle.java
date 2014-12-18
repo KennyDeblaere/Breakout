@@ -17,7 +17,7 @@ public class Paddle implements Runnable {
         setY(y);
         setId(id);
         playing = false;
-        paddle = new Rectangle(x, y, width,10);
+        paddle = new Rectangle(getX(), getY(), width,10);
         setLengthGo(1000 - paddle.width);
         setSpeed(4);
 
@@ -64,54 +64,6 @@ public class Paddle implements Runnable {
 
     public boolean isPlaying() {
         return playing;
-    }
-
-    public void keyPressed(KeyEvent e) {
-        switch (id) {
-            default:
-                System.out.println("Please enter a valid id in paddleConstructor");
-                break;
-            case 1:
-                if (e.getKeyCode() == e.VK_LEFT) {
-                    setxDirection(-1);
-                }
-                if (e.getKeyCode() == e.VK_RIGHT) {
-                    setxDirection(+1);
-                }
-                break;
-            case 2:
-                if (e.getKeyCode() == e.VK_Q) {
-                    setxDirection(-1);
-                }
-                if (e.getKeyCode() == e.VK_D) {
-                    setxDirection(+1);
-                }
-                break;
-        }
-    }
-    public void keyReleased(KeyEvent e) {
-        switch (id) {
-            default:
-                System.out.println("Please enter a valid id in paddleConstructor");
-                break;
-            case 1:
-                if (e.getKeyCode() == e.VK_LEFT) {
-                    setxDirection(0);
-                }
-                if (e.getKeyCode() == e.VK_RIGHT) {
-                    setxDirection(0);
-                }
-                break;
-            case 2:
-                if (e.getKeyCode() == e.VK_Q) {
-                    setxDirection(0);
-                }
-                if (e.getKeyCode() == e.VK_D) {
-                    setxDirection(0);
-
-                }
-                break;
-        }
     }
 
     public int getId() {
