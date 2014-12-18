@@ -111,7 +111,7 @@ public class GamePanel extends JPanel {
                 drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
             }
             if(b.getShooterCreator() != null){
-                g.setColor(Color.decode("#C5E9F9"));
+                g.setColor(Color.decode("#43ABDC"));
                 g.fillRect(b.getShooterCreator().getShooter().x, b.getShooterCreator().getShooter().y, b.getShooterCreator().getShooter().width, b.getShooterCreator().getShooter().height);
             }
             if(screenCreate.getNumberOfBrokenBlocks() == screenCreate.getBlockCreatorList().size()){

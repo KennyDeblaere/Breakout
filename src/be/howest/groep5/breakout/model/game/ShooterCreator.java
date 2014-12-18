@@ -9,18 +9,17 @@ public class ShooterCreator implements Runnable {
     private int yDirection;
     private Ball ball;
     private Rectangle shooter;
-    private boolean intersect;
+    private boolean playing;
 
     public ShooterCreator(Ball ball){
         this.ball = ball;
-        intersect = true;
+        playing = true;
         setyDirection(-1);
         if(!ball.isSinglePlayer()) {
             setyDirection(-ball.getYDirection());
         }
         createShooter();
         ball.setShooterCreator(this);
-        ball.setShoot(true);
     }
     private void createShooter(){
         if(!ball.isSinglePlayer() && getyDirection() == 1){
@@ -28,14 +27,22 @@ public class ShooterCreator implements Runnable {
         } else {
             shooter = new Rectangle(ball.getP1().getPaddle().x, ball.getP1().getPaddle().y, 10, 5);
         }
+        ball.setShoot(true);
     }
     public void setyDirection(int yDirection) {
         this.yDirection = yDirection;
     }
+
+    public void setPlaying(boolean playing) {
+        this.playing = playing;
+    }
+
     public int getyDirection() {
         return yDirection;
     }
-
+    public boolean isPlaying() {
+        return playing;
+    }
     public Rectangle getShooter() {
         return shooter;
     }
@@ -48,7 +55,8 @@ public class ShooterCreator implements Runnable {
     @Override
     public void run() {
         while (true) {
-            move();
+            if(isPlaying())
+                move();
             try {
                 Thread.sleep(10);
             } catch (InterruptedException e) {
