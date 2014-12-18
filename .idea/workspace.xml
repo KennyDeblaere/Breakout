@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/PowerCreator.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/PowerCreator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/ScorePanel.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/ScorePanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="071016a6-7d87-4721-84a3-fcdf0a4e5db6" name="Failed commit: Default" comment="img" />
@@ -54,8 +55,8 @@
       <file leaf-file-name="ScorePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/ScorePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="2567">
-              <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2567">
+              <caret line="153" column="10" selection-start-line="153" selection-start-column="10" selection-end-line="153" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -64,9 +65,26 @@
       <file leaf-file-name="Ball.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2089" max-vertical-offset="4743">
-              <caret line="204" column="49" selection-start-line="204" selection-start-column="49" selection-end-line="204" selection-end-column="49" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="4145" max-vertical-offset="4777">
+              <caret line="334" column="12" selection-start-line="334" selection-start-column="12" selection-end-line="334" selection-end-column="12" />
+              <folding>
+                <element signature="e#10503#10504#0" expanded="true" />
+                <element signature="e#10535#10536#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PowerCreator.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/PowerCreator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.55921054" vertical-offset="731" max-vertical-offset="2924">
+              <caret line="96" column="27" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2512#2724#0" expanded="true" />
+                <element signature="e#2723#2724#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,12 +109,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DifficultyPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/DifficultyPanel.java">
+      <file leaf-file-name="CenterPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/CenterPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1190">
-              <caret line="39" column="51" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="51" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1547">
+              <caret line="48" column="50" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+              <folding>
+                <element signature="e#2338#2339#0" expanded="true" />
+                <element signature="e#2370#2371#0" expanded="true" />
+                <element signature="e#2415#2416#0" expanded="true" />
+                <element signature="e#2450#2451#0" expanded="true" />
+                <element signature="e#2505#2506#0" expanded="true" />
+                <element signature="e#2557#2558#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,16 +146,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sound.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/multimedia/Sound.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="544">
-              <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="StartGameController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -141,10 +156,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55921054" vertical-offset="2363" max-vertical-offset="5253">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2363" max-vertical-offset="5253">
               <caret line="174" column="93" selection-start-line="174" selection-start-column="93" selection-end-line="174" selection-end-column="93" />
               <folding>
                 <marker date="1418918183696" expanded="true" signature="1855:1873" placeholder="select * fro..user..." />
@@ -185,6 +200,9 @@
         <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java" />
         <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java" />
         <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java" />
+        <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/CenterPanel.java" />
+        <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/ScorePanel.java" />
+        <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/PowerCreator.java" />
       </list>
     </option>
   </component>
@@ -332,11 +350,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="welcome" />
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -358,29 +372,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="multimedia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Breakout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Breakout" />
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="breakout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
+              <option name="myItemId" value="game" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -871,13 +867,7 @@
       <workItem from="1418914191367" duration="286000" />
       <workItem from="1418915097914" duration="101000" />
       <workItem from="1418915208731" duration="2513000" />
-      <workItem from="1418917737071" duration="744000" />
-    </task>
-    <task id="LOCAL-00073" summary="Begin Powerup/powerdown">
-      <created>1418137568150</created>
-      <option name="number" value="00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1418137568150</updated>
+      <workItem from="1418917737071" duration="2210000" />
     </task>
     <task id="LOCAL-00074" summary="Error met outofbound gaan gefixt.">
       <created>1418138979058</created>
@@ -1167,11 +1157,17 @@
       <option name="project" value="LOCAL" />
       <updated>1418917851694</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="Scoreinput">
+      <created>1418918492482</created>
+      <option name="number" value="00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1418918492482</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272068000" />
+    <option name="totallyTimeSpent" value="273534000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1214,6 +1210,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19488817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32575756" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1223,7 +1220,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32575756" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1241,7 +1237,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Sout opgelost" />
     <MESSAGE value="Powerups en mooi kleur van blokjes" />
     <MESSAGE value="Test classe" />
     <MESSAGE value="Test classes + highscores uitgebreid" />
@@ -1266,7 +1261,8 @@
     <MESSAGE value="sounds" />
     <MESSAGE value="Powers werken" />
     <MESSAGE value="P2Score" />
-    <option name="LAST_COMMIT_MESSAGE" value="P2Score" />
+    <MESSAGE value="Scoreinput" />
+    <option name="LAST_COMMIT_MESSAGE" value="Scoreinput" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1501,18 +1497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/CenterPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1377">
-          <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2128#2129#0" expanded="false" />
-            <element signature="e#2208#2209#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/highscores/HighscorePanelCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1071">
@@ -1545,14 +1529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
           <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/PowerCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1522" max-vertical-offset="2635">
-          <caret line="94" column="48" selection-start-line="94" selection-start-column="48" selection-end-line="94" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1618,26 +1594,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/ContentPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1683">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/GamePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1674" max-vertical-offset="2312">
           <caret line="137" column="56" selection-start-line="137" selection-start-column="56" selection-end-line="137" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/ScorePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1377" max-vertical-offset="2567">
-          <caret line="110" column="50" selection-start-line="110" selection-start-column="50" selection-end-line="110" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -1650,17 +1610,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java">
+    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/ContentPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2089" max-vertical-offset="4743">
-          <caret line="204" column="49" selection-start-line="204" selection-start-column="49" selection-end-line="204" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1683">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/CenterPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="538" max-vertical-offset="1547">
+          <caret line="48" column="50" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+          <folding>
+            <element signature="e#2338#2339#0" expanded="true" />
+            <element signature="e#2370#2371#0" expanded="true" />
+            <element signature="e#2415#2416#0" expanded="true" />
+            <element signature="e#2450#2451#0" expanded="true" />
+            <element signature="e#2505#2506#0" expanded="true" />
+            <element signature="e#2557#2558#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55921054" vertical-offset="2363" max-vertical-offset="5253">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2363" max-vertical-offset="5253">
           <caret line="174" column="93" selection-start-line="174" selection-start-column="93" selection-end-line="174" selection-end-column="93" />
           <folding>
             <marker date="1418918183696" expanded="true" signature="1855:1873" placeholder="select * fro..user..." />
@@ -1675,6 +1650,37 @@
             <marker date="1418918183696" expanded="true" signature="8343:8411" placeholder="INSERT INTO ..." />
             <marker date="1418918183696" expanded="true" signature="9023:9094" placeholder="INSERT INTO ..." />
             <marker date="1418918183696" expanded="true" signature="10579:10674" placeholder="SELECT useri..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4145" max-vertical-offset="4777">
+          <caret line="334" column="12" selection-start-line="334" selection-start-column="12" selection-end-line="334" selection-end-column="12" />
+          <folding>
+            <element signature="e#10503#10504#0" expanded="true" />
+            <element signature="e#10535#10536#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/game/ScorePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2567">
+          <caret line="153" column="10" selection-start-line="153" selection-start-column="10" selection-end-line="153" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/PowerCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55921054" vertical-offset="731" max-vertical-offset="2924">
+          <caret line="96" column="27" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2512#2724#0" expanded="true" />
+            <element signature="e#2723#2724#0" expanded="true" />
           </folding>
         </state>
       </provider>
