@@ -9,16 +9,17 @@ import java.awt.event.KeyEvent;
 public class Paddle implements Runnable {
     private int x, y, xDirection, id, lengthGo;
     private Rectangle paddle;
-    private int speed;
+    private int speed, width;
     private boolean playing;
 
     public Paddle(int x, int y, int width, int id){
         setX(x);
         setY(y);
+        setWidth(width);
         setId(id);
         playing = false;
-        paddle = new Rectangle(getX(), getY(), width,10);
-        setLengthGo(1000 - paddle.width);
+        paddle = new Rectangle(getX(), getY(), getWidth(),10);
+        setLengthGo(1000 - getWidth());
         setSpeed(4);
 
     }
@@ -34,6 +35,9 @@ public class Paddle implements Runnable {
     }
     public int getSpeed() {
         return speed;
+    }
+    public int getWidth() {
+        return width;
     }
 
     public void setId(int id) {
@@ -56,6 +60,9 @@ public class Paddle implements Runnable {
     }
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+    public void setWidth(int width) {
+        this.width = width;
     }
 
     public Rectangle getPaddle() {

@@ -109,6 +109,11 @@ public class GamePanel extends JPanel {
                 levelNumber += 1;
                 screenCreate = new ScreenCreate(singleplayer,levelNumber,getNumberOfBlocks(difficulty));
                 b.setScreenCreate(screenCreate);
+                b.setSpeed(Database.DatabaseInstance.fillLevels().get(levelNumber).getBallSpeed());
+                b.getP1().setWidth(Database.DatabaseInstance.fillLevels().get(levelNumber).getPaddleLength());
+                b.getP1().setLengthGo(1000 - b.getP1().getWidth());
+                b.getP2().setWidth(Database.DatabaseInstance.fillLevels().get(levelNumber).getPaddleLength());
+                b.getP2().setLengthGo(1000 - b.getP1().getWidth() );
                 b.getBall().x = b.getP1().getPaddle().x + b.getP1().getPaddle().width/2;
                 b.setPlaying(false);
             }
