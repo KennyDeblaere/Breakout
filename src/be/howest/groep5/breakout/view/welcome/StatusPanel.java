@@ -65,7 +65,7 @@ public class StatusPanel extends JPanel implements ActionListener{
             add(statusLabel);
     }
 
-    public static void setVolume(float value){
+    public static void setVolume(int value){
         try {
             Line line = AudioSystem.getLine(Port.Info.SPEAKER);
             line.open();
@@ -86,7 +86,7 @@ public class StatusPanel extends JPanel implements ActionListener{
         }
         else{
             multimedia.setPlaying(true);
-            setVolume((float)0.6);
+            setVolume(1);
         }
         addComponents();
     }

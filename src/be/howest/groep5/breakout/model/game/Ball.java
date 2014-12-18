@@ -175,8 +175,10 @@ public class Ball implements Runnable {
             Thread t = new Thread(powerCreator);
             t.start();
         }
-    }
 
+
+    }
+    
     private void blockBounceHorizontal(BlockCreator blockCreator){
         if(ball.x <= blockCreator.getBlock().x + blockCreator.getBlock().width/2) {
             setyDirection(getYDirection() * -1);
@@ -198,54 +200,27 @@ public class Ball implements Runnable {
         }
     }
     private void afterCollision(BlockCreator blockCreator){
-
         if (blockCreator.getNumberOfHitsLeft() == 1)
             screenCreate.setNumberOfBrokenBlocks(screenCreate.getNumberOfBrokenBlocks() + 1);
         blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
-        //begint te tellen vanaf een groene blok.
-        int score = 0;
-        score += blockCreator.getScore();
+        p1Score += blockCreator.getScore();
         if (difficulty == 1)
-            score += 5;
+            p1Score += 5;
         if (difficulty == 2)
-            score += 10;
-        if(getYDirection() == 1)
-            p2Score += score;
-        if(getYDirection() == -1)
-            p1Score += score;
+            p1Score += 10;
         notifyObservers();
     }
 
-    private void cornerCollision(BlockCreator blockCreator){
-        if(ball.x + ball.width == blockCreator.getBlock().x && ball.y + ball.width == blockCreator.getBlock().y){
-            setyDirection(-1);
-            setxDirection(1);
-        }
-        if(ball.x + ball.width == blockCreator.getBlock().x && ball.y + ball.width == blockCreator.getBlock().y + blockCreator.getBlock().height){
-            setyDirection(1);
-            setxDirection(1);
-        }
-        if(ball.x == blockCreator.getBlock().x + blockCreator.getBlock().width && ball.y == blockCreator.getBlock().y){
-            setyDirection(-1);
-            setxDirection(-1);
-        }
-        if(ball.x == blockCreator.getBlock().x + blockCreator.getBlock().width && ball.y == blockCreator.getBlock().y + blockCreator.getBlock().height){
-            setyDirection(1);
-            setxDirection(-1);
-        }
-    }
-
     private void powerCollisionWithPaddle(){
-
-        if(p2.getPaddle().intersects(powerCreator.getPower())) {
-            powerCreator.setPaddle(p2);
-        }
         if(p1.getPaddle().intersects(powerCreator.getPower()) || p2.getPaddle().intersects(powerCreator.getPower())) {
             powerCreator.setIntersection(false);
             powerCreator.returnPower();
-            notifyObservers();
+            powerCreator.setIntersection(false);
         }
+        if(p2.getPaddle().intersects(powerCreator.getPower())) {
+            powerCreator.setPaddle(p2);
 
+        }
     }
 
     public void collision(){
@@ -263,7 +238,7 @@ public class Ball implements Runnable {
         for(BlockCreator blockCreator : getScreenCreate().getBlockCreatorList()) {
             if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
                 powersCollision(blockCreator);
-                cornerCollision(blockCreator);
+
                 blockBounceHorizontal(blockCreator);
                 blockBounceVertical(blockCreator);
                 afterCollision(blockCreator);

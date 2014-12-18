@@ -1,8 +1,6 @@
 package be.howest.groep5.breakout.model.game;
 
 import java.awt.*;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Created by Kenny, Blackhat on 9/12/2014.
@@ -90,13 +88,6 @@ public class PowerCreator implements Runnable {
                 getBall().setP2Score(getBall().getP2Score() + 100);
             else
                 getBall().setP1Score(getBall().getP1Score() + 100);
-            new Timer().schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    for(int i = 0; i<1; i++)
-                        System.out.println("Gedaaaan");
-                }
-            }, 10000);
         }else{
             switch (getPowerid()){
                 case 0: makeBallSmaller(getBall());

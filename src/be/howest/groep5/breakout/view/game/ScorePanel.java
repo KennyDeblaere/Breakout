@@ -122,12 +122,9 @@ public class ScorePanel extends JPanel implements ScoreObserver {
     }
 
     public void changeTexts(int singlePlayerScore, int coopScore, int numberOfLives){
-        //remove(scorePanel);
         scoresingle.setText("Score: " + singlePlayerScore);
         scorecoop.setText("Score: " + coopScore);
         life.setText("" + numberOfLives);
-        //add(scorePanel);
-        //revalidate();
         repaint();
     }
 
@@ -144,15 +141,9 @@ public class ScorePanel extends JPanel implements ScoreObserver {
     }
 
 
-    /*@Override
-    public void update(Observable o, Object arg) {
-        changeTexts(gamePanel.getB().getP1Score(),gamePanel.getB().getP2Score(), gamePanel.getB().getNumberOfLifes());
-    }*/
-
     @Override
     public void update(int p1Score, int p2score, int numberOfLifesLeft) {
-        //changeTexts(p1Score, p2score, numberOfLifesLeft);
-        //System.out.println(p1Score+" - "+p2score+" - "+numberOfLifesLeft);
+        changeTexts(p1Score, p2score, numberOfLifesLeft);
     }
 }
 

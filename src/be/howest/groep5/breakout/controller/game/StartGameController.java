@@ -37,6 +37,7 @@ public class StartGameController implements ActionListener {
         panelCenter.addGamePanel(new GamePanel(panelCenter, singleplayer, difficulty.getSelectedIndex()));
         panelCenter.getGamePanel().startGame();
         panelCenter.setGameMode(singleplayer);
+        System.out.println("set: " + singleplayer);
         r.keyPress(KeyEvent.VK_TAB);
         r.keyRelease(KeyEvent.VK_TAB);
     }

@@ -172,7 +172,7 @@ public class Database {
                     " AND score_user.userid = user.userid" +
                     " ORDER BY score DESC LIMIT 5");
             while (rs.next()){
-                scoreUsers.add(new ScoreUser(rs.getInt("score.score"), rs.getString("username")));
+                scoreUsers.add(new ScoreUser(rs.getInt("score.score"), fillUsers().get(rs.getInt("score_user.userid")).getUsername()));
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
