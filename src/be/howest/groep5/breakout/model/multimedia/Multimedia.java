@@ -29,9 +29,10 @@ public class Multimedia{
     public boolean isPlaying() {
         return playing;
     }
-
     public BufferedImage getIconImage() {
         return image;
     }
-    public BufferedImage getMainBackground() { return  mainBackground; }
+    public BufferedImage getMainBackground() {
+        return  mainBackground;
+    }
 }

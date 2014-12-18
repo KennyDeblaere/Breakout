@@ -4,6 +4,7 @@ import be.howest.groep5.breakout.data.Database;
 import be.howest.groep5.breakout.model.ScoreUser;
 
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
@@ -16,14 +17,32 @@ import java.awt.*;
 
 public class HighscorePanelCreator {
     private JPanel toReturnPanel;
+    private JLabel usernameLabel, scoreLabel;
     private boolean singlePlayer;
+    private int maxAmountOfRows;
 
     public JPanel createHighscorePanel(Boolean isSinglePlayer, int maxAmountOfRows) {
-        toReturnPanel = new JPanel();
-        toReturnPanel.setLayout(new GridLayout(maxAmountOfRows, 2));
         this.singlePlayer = isSinglePlayer;
-        JLabel usernameLabel, scoreLabel;
+        this.maxAmountOfRows = maxAmountOfRows;
+        createComponents();
+        fillHighScore();
 
+        return  toReturnPanel;
+    }
+
+    private void createComponents(){
+        String name;
+        if (singlePlayer){
+            name = "Singleplayer";
+        }else{
+            name = "Multiplayer";
+        }
+        toReturnPanel = new JPanel();
+        toReturnPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.black, 2, true), name));
+        toReturnPanel.setLayout(new GridLayout(maxAmountOfRows, 2));
+    }
+
+    private void fillHighScore(){
         if (Database.DatabaseInstance.fillTopScores(singlePlayer).size() > 0 && Database.DatabaseInstance.fillTopScores(singlePlayer).size() < 5) {
             for (int i = 0; i < (Database.DatabaseInstance.fillTopScores(singlePlayer).size()); i++) {
                 usernameLabel = new JLabel(Database.DatabaseInstance.fillTopScores(singlePlayer).get(i).getUserName());
@@ -39,7 +58,5 @@ public class HighscorePanelCreator {
             scoreLabel = new JLabel("" + score.getScore());
             toReturnPanel.add(scoreLabel);
         }
-
-        return  toReturnPanel;
     }
 }
