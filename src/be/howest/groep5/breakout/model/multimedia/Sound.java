@@ -16,7 +16,7 @@ public class Sound implements Runnable{
     public void run() {
         try {
             while(loop) {
-                File file = new File("src/be/howest/groep5/breakout/multimedia/Breakout.mp3");
+                File file = new File("src/be/howest/groep5/breakout/multimedia/sounds/Breakout_sound9.mp3");
                 FileInputStream fis = new FileInputStream(file);
                 BufferedInputStream bis = new BufferedInputStream(fis);
                 player = new Player(bis);

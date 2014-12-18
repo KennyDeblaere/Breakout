@@ -14,8 +14,8 @@ public class Multimedia{
 
     public Multimedia() {
         try {
-            image = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Icon.jpg")));
-            mainBackground = (ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\background.png")));
+            image = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/Icon.jpg")));
+            mainBackground = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/background.png")));
 
         } catch (IOException e) {
             System.out.println("Image laad niet in!");

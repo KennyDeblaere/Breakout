@@ -34,8 +34,8 @@ public class StatusPanel extends JPanel implements ActionListener{
 
     private void createComponents() {
             try {
-                onImage = ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Sound_on.png"));
-                offImage = ImageIO.read(new File("src\\be\\howest\\groep5\\breakout\\multimedia\\Sound_off.png"));
+                onImage = ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/Sound_on.png"));
+                offImage = ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/Sound_off.png"));
             } catch (IOException ex) {
                 System.out.println("Foto Sound kan niet worden ingeladen...");
             }
