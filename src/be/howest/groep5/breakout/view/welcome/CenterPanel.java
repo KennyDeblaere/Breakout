@@ -35,7 +35,7 @@ public class CenterPanel extends JPanel {
     private void createComponents(){
         panelContent = new ContentPanel(this);
         panelButton = new ButtonPanel(panelContent);
-        gamePanel = new GamePanel(this,isSinglePlayer,0);
+        gamePanel = new GamePanel(this,isSinglePlayer,0, this);
         scorePanel = new ScorePanel(gamePanel, isSinglePlayer);
         multimedia = new Multimedia();
         background = multimedia.getSubbackground();

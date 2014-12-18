@@ -24,9 +24,11 @@ public class GamePanel extends JPanel {
     private int levelNumber, numberOfBlocks, difficulty;
     private ScreenCreate screenCreate;
     private ScorePanel scorePanel;
+    private JPanel parent;
 
-    public GamePanel(CenterPanel c, boolean singleplayer, int difficulty){
+    public GamePanel(CenterPanel c, boolean singleplayer, int difficulty, JPanel parent){
 
+        this.parent = parent;
         centerPanel = c;
         this.singleplayer = singleplayer;
         this.difficulty = difficulty;
@@ -49,6 +51,8 @@ public class GamePanel extends JPanel {
         setRequestFocusEnabled(true);
         requestFocusInWindow();
     }
+
+    public JPanel getCenterPanel() { return parent; }
 
     private int getNumberOfBlocks(int difficulty){
         if(difficulty == 0)
