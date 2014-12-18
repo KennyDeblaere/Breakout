@@ -29,12 +29,14 @@ public class GamePanel extends JPanel {
         centerPanel = c;
         this.singleplayer = singleplayer;
         this.difficulty = difficulty;
-        b = new Ball(singleplayer, difficulty);
+        b = new Ball(singleplayer, difficulty, Database.DatabaseInstance.fillLevels().get(levelNumber).getPaddleLength());
+        levelNumber = 0;
+        b.setSpeed(Database.DatabaseInstance.fillLevels().get(levelNumber).getBallSpeed());
+
         setPreferredSize(new Dimension(1001, 710));
         setBackground(Color.WHITE);
         ball = new Thread(b);
         p1 = new Thread(b.getP1());
-        levelNumber = 0;
         screenCreate = new ScreenCreate(singleplayer,levelNumber,getNumberOfBlocks(difficulty));
 
         addKeyListener(new MovePanelController(b));

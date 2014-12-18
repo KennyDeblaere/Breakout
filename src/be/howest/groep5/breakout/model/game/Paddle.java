@@ -12,12 +12,12 @@ public class Paddle implements Runnable {
     private int speed;
     private boolean playing;
 
-    public Paddle(int x, int y, int id){
+    public Paddle(int x, int y, int width, int id){
         setX(x);
         setY(y);
         setId(id);
         playing = false;
-        paddle = new Rectangle(x, y, 100,10);
+        paddle = new Rectangle(x, y, width,10);
         setLengthGo(1000 - paddle.width);
         setSpeed(4);
 

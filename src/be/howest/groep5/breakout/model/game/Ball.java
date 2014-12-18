@@ -20,9 +20,9 @@ public class Ball implements Runnable {
     private ScreenCreate screenCreate;
     private PowerCreator powerCreator;
     private boolean intersected;
-    public Ball(boolean singleplayer, int difficulty){
-        p1 = new Paddle(475,700,1);
-        p2 = new Paddle(475,10, 2);
+    public Ball(boolean singleplayer, int difficulty, int panelWidth){
+        p1 = new Paddle(475,700,panelWidth,1);
+        p2 = new Paddle(475,10, panelWidth, 2);
 
 
         this.difficulty = difficulty;

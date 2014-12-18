@@ -32,7 +32,7 @@ public class MovePanelController extends KeyAdapter {
             case 2:
                 if (e.getKeyCode() == e.VK_Q) {
                     b.getP2().setxDirection(-1);
-                    if(!b.isIntersected()){
+                    if(!b.isIntersected() && !b.isSingleplayer()){
                         b.getP1().setSpeed(b.getP2().getSpeed()/2);
                     }
                     else
@@ -40,7 +40,7 @@ public class MovePanelController extends KeyAdapter {
                 }
                 if (e.getKeyCode() == e.VK_D) {
                     b.getP2().setxDirection(+1);
-                    if(!b.isIntersected()){
+                    if(!b.isIntersected() && !b.isSingleplayer()){
                         b.getP1().setSpeed(b.getP2().getSpeed()/2);
                     }
                     else
@@ -64,7 +64,7 @@ public class MovePanelController extends KeyAdapter {
             case 2:
                 if (e.getKeyCode() == e.VK_Q) {
                     b.getP2().setxDirection(-1);
-                    if(!b.isIntersected()){
+                    if(!b.isIntersected() && !b.isSingleplayer()){
                         b.getP1().setSpeed(b.getP2().getSpeed()/2);
                     }
                     else
@@ -72,7 +72,7 @@ public class MovePanelController extends KeyAdapter {
                 }
                 if (e.getKeyCode() == e.VK_D) {
                     b.getP2().setxDirection(+1);
-                    if(!b.isIntersected()){
+                    if(!b.isIntersected() && !b.isSingleplayer()){
                         b.getP1().setSpeed(b.getP2().getSpeed()/2);
                     }
                     else
