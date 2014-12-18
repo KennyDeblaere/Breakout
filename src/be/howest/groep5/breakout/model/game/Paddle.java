@@ -15,7 +15,7 @@ public class Paddle implements Runnable {
         setX(x);
         setY(y);
         setId(id);
-        playing = true;
+        playing = false;
         paddle = new Rectangle(x, y, 100,10);
         setLengthGo(1000 - paddle.width);
 

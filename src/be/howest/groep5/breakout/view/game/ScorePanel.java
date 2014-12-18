@@ -32,6 +32,7 @@ public class ScorePanel extends JPanel {
         createComponents();
         setComponents();
         addComponents();
+        changeTexts(gamePanel.getB().getP1Score(),gamePanel.getB().getP2Score(),gamePanel.getB().getNumberOfLifes());
         setBackground();
     }
 
@@ -50,7 +51,37 @@ public class ScorePanel extends JPanel {
         life = new JLabel("3");
     }
 
-    private void setComponents() {
+    private void setSinglePanel(int singlePlayerScore){
+        singlePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Speler 1", TitledBorder.LEFT, TitledBorder.TOP, new Font(null, Font.BOLD, 15), Color.white));
+        singlePanel.setPreferredSize(new Dimension(175, 150));
+        singlePanel.add(scoresingle);
+        singlePanel.setOpaque(false);
+        revalidate();
+        repaint();
+    }
+
+    private void setCoopPanel(int coopPlayerScore){
+        coopPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Speler 2", TitledBorder.LEFT, TitledBorder.TOP, new Font(null, Font.BOLD, 15), Color.white));
+        coopPanel.setPreferredSize(new Dimension(175, 150));
+        coopPanel.add(scorecoop);
+        coopPanel.setOpaque(false);
+    }
+
+    private void setInfoPanel(){
+        infoPanel.add(pause);
+        infoPanel.add(timer);
+        infoPanel.setOpaque(false);
+    }
+
+    private void setLifePanel(int numberOfLives){
+        lifePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Levens", TitledBorder.LEFT, TitledBorder.TOP, new Font(null, Font.BOLD, 15), Color.white));
+        lifePanel.setPreferredSize(new Dimension(175, 50));
+        lifePanel.setOpaque(false);
+        lifePanel.add(life);
+    }
+
+
+    public void setComponents() {
         Font fonts = new Font(null, Font.BOLD, 15);
         titelLabel.setFont(new Font(null, Font.BOLD, 30));
         titelLabel.setForeground(Color.white);
@@ -60,24 +91,13 @@ public class ScorePanel extends JPanel {
         timer.setForeground(Color.white);
         life.setForeground(Color.white);
         //------------ singlePanel ----------------
-        singlePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Speler 1", TitledBorder.LEFT, TitledBorder.TOP, fonts, Color.white));
-        singlePanel.setPreferredSize(new Dimension(175, 150));
-        singlePanel.add(scoresingle);
-        singlePanel.setOpaque(false);
+        setSinglePanel(0);
         //------------ coopPanel ------------------
-        coopPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Speler 2", TitledBorder.LEFT, TitledBorder.TOP, fonts, Color.white));
-        coopPanel.setPreferredSize(new Dimension(175, 150));
-        coopPanel.add(scorecoop);
-        coopPanel.setOpaque(false);
+        setCoopPanel(0);
         //------------ infoPanel ------------------
-        infoPanel.add(pause);
-        infoPanel.add(timer);
-        infoPanel.setOpaque(false);
+        setInfoPanel();
         //------------ lifePanel ------------------
-        lifePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Levens", TitledBorder.LEFT, TitledBorder.TOP, fonts, Color.white));
-        lifePanel.setPreferredSize(new Dimension(175, 50));
-        lifePanel.setOpaque(false);
-        lifePanel.add(life);
+        setLifePanel(gamePanel.getB().getNumberOfLifes());
         //------------ ScorePanel -----------------
         scorePanel.add(titelLabel);
         scorePanel.add(lifePanel);
@@ -85,12 +105,23 @@ public class ScorePanel extends JPanel {
         if (!gamePanel.getB().isSingleplayer()) {
             scorePanel.add(coopPanel);
         }
+
         scorePanel.add(infoPanel);
         scorePanel.setOpaque(false);
     }
 
     private void addComponents() {
         add(scorePanel);
+    }
+
+    public void changeTexts(int singlePlayerScore, int coopScore, int numberOfLives){
+        remove(scorePanel);
+        scoresingle.setText("Score: " + singlePlayerScore);
+        scorecoop.setText("Score: " + coopScore);
+        life.setText("" + numberOfLives);
+        add(scorePanel);
+        revalidate();
+        repaint();
     }
 
     private void setBackground() {

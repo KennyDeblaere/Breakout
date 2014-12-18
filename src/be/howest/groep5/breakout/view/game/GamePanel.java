@@ -23,6 +23,7 @@ public class GamePanel extends JPanel {
     private boolean singleplayer;
     private int levelNumber, numberOfBlocks, difficulty;
     private ScreenCreate screenCreate;
+    private ScorePanel scorePanel;
 
     public GamePanel(CenterPanel c, boolean singleplayer, int difficulty){
         centerPanel = c;
@@ -51,6 +52,10 @@ public class GamePanel extends JPanel {
         else
             numberOfBlocks = Database.DatabaseInstance.fillBlocks().size();
         return numberOfBlocks;
+    }
+
+    public void setScorePanel(ScorePanel scorePanel) {
+        this.scorePanel = scorePanel;
     }
 
     public void startGame(){
@@ -113,6 +118,7 @@ public class GamePanel extends JPanel {
                     g.drawRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
                 }
             }
+            scorePanel.changeTexts(b.getP1Score(), b.getP2Score(), b.getNumberOfLifes());
         }
         else{
             centerPanel.addHighScoreAddPanel(b.getP1Score());
