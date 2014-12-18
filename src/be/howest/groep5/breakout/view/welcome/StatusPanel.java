@@ -77,8 +77,6 @@ public class StatusPanel extends JPanel implements ActionListener{
         }
     }
 
-    public Multimedia getMultimedia() { return multimedia; }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (multimedia.isPlaying()){

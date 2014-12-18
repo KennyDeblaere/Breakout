@@ -35,10 +35,12 @@ public class MainPanel extends JPanel{
     }
 
     private void setComponents() {
+        //panelLogin.setBackground(Color.GRAY);
+        //panelStatus.setBackground(Color.GRAY);
+        //Maakt de panels doorzichtig
         panelLogin.setOpaque(false);
         panelStatus.setOpaque(false);
         multimedia = new Multimedia();
-        soundController = new SoundController(panelStatus);
     }
 
     private void addComponents(){
