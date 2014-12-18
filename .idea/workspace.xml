@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="071016a6-7d87-4721-84a3-fcdf0a4e5db6" name="Failed commit: Default" comment="img" />
@@ -62,10 +61,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ball.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ball.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40526316" vertical-offset="2089" max-vertical-offset="4743">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2089" max-vertical-offset="4743">
               <caret line="204" column="49" selection-start-line="204" selection-start-column="49" selection-end-line="204" selection-end-column="49" />
               <folding />
             </state>
@@ -142,12 +141,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImagePanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/ImagePanel.java">
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="527">
-              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
-              <folding />
+            <state vertical-scroll-proportion="0.55921054" vertical-offset="2363" max-vertical-offset="5253">
+              <caret line="174" column="93" selection-start-line="174" selection-start-column="93" selection-end-line="174" selection-end-column="93" />
+              <folding>
+                <marker date="1418918183696" expanded="true" signature="1855:1873" placeholder="select * fro..user..." />
+                <marker date="1418918183696" expanded="true" signature="2609:2628" placeholder="select * fro..block..." />
+                <marker date="1418918183696" expanded="true" signature="3379:3415" placeholder="select * fro..power..." />
+                <marker date="1418918183696" expanded="true" signature="3974:3993" placeholder="select * fro..score..." />
+                <marker date="1418918183696" expanded="true" signature="4593:4615" placeholder="select * fro..gamemode..." />
+                <marker date="1418918183696" expanded="true" signature="5174:5193" placeholder="select * fro..level..." />
+                <marker date="1418918183696" expanded="true" signature="5955:6289" placeholder="SELECT score..score..." />
+                <marker date="1418918183696" expanded="true" signature="6707:6868" placeholder="INSERT INTO ..." />
+                <marker date="1418918183696" expanded="true" signature="7726:7817" placeholder="INSERT INTO ..." />
+                <marker date="1418918183696" expanded="true" signature="8343:8411" placeholder="INSERT INTO ..." />
+                <marker date="1418918183696" expanded="true" signature="9023:9094" placeholder="INSERT INTO ..." />
+                <marker date="1418918183696" expanded="true" signature="10579:10674" placeholder="SELECT useri..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,6 +184,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/controller/game/StartGameController.java" />
         <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java" />
+        <option value="$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java" />
       </list>
     </option>
   </component>
@@ -346,6 +359,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="multimedia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breakout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -836,13 +871,7 @@
       <workItem from="1418914191367" duration="286000" />
       <workItem from="1418915097914" duration="101000" />
       <workItem from="1418915208731" duration="2513000" />
-      <workItem from="1418917737071" duration="103000" />
-    </task>
-    <task id="LOCAL-00072" summary="Begin Powerup/powerdown">
-      <created>1418135686502</created>
-      <option name="number" value="00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1418135686502</updated>
+      <workItem from="1418917737071" duration="744000" />
     </task>
     <task id="LOCAL-00073" summary="Begin Powerup/powerdown">
       <created>1418137568150</created>
@@ -1132,11 +1161,17 @@
       <option name="project" value="LOCAL" />
       <updated>1418915722889</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="P2Score">
+      <created>1418917851694</created>
+      <option name="number" value="00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1418917851694</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271427000" />
+    <option name="totallyTimeSpent" value="272068000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1160,7 +1195,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32729805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1173,7 +1208,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32359308" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14935064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14935064" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32729805" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19488817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1206,7 +1241,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Powerdowns bij aanraking" />
     <MESSAGE value="Sout opgelost" />
     <MESSAGE value="Powerups en mooi kleur van blokjes" />
     <MESSAGE value="Test classe" />
@@ -1231,7 +1265,8 @@
     <MESSAGE value="img" />
     <MESSAGE value="sounds" />
     <MESSAGE value="Powers werken" />
-    <option name="LAST_COMMIT_MESSAGE" value="Powers werken" />
+    <MESSAGE value="P2Score" />
+    <option name="LAST_COMMIT_MESSAGE" value="P2Score" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1470,6 +1505,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="587" max-vertical-offset="1377">
           <caret line="51" column="49" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2128#2129#0" expanded="false" />
+            <element signature="e#2208#2209#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1498,13 +1538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="106" max-vertical-offset="1343">
           <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="5100">
-          <caret line="36" column="12" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1619,9 +1652,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/model/game/Ball.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40526316" vertical-offset="2089" max-vertical-offset="4743">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2089" max-vertical-offset="4743">
           <caret line="204" column="49" selection-start-line="204" selection-start-column="49" selection-end-line="204" selection-end-column="49" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/be/howest/groep5/breakout/data/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55921054" vertical-offset="2363" max-vertical-offset="5253">
+          <caret line="174" column="93" selection-start-line="174" selection-start-column="93" selection-end-line="174" selection-end-column="93" />
+          <folding>
+            <marker date="1418918183696" expanded="true" signature="1855:1873" placeholder="select * fro..user..." />
+            <marker date="1418918183696" expanded="true" signature="2609:2628" placeholder="select * fro..block..." />
+            <marker date="1418918183696" expanded="true" signature="3379:3415" placeholder="select * fro..power..." />
+            <marker date="1418918183696" expanded="true" signature="3974:3993" placeholder="select * fro..score..." />
+            <marker date="1418918183696" expanded="true" signature="4593:4615" placeholder="select * fro..gamemode..." />
+            <marker date="1418918183696" expanded="true" signature="5174:5193" placeholder="select * fro..level..." />
+            <marker date="1418918183696" expanded="true" signature="5955:6289" placeholder="SELECT score..score..." />
+            <marker date="1418918183696" expanded="true" signature="6707:6868" placeholder="INSERT INTO ..." />
+            <marker date="1418918183696" expanded="true" signature="7726:7817" placeholder="INSERT INTO ..." />
+            <marker date="1418918183696" expanded="true" signature="8343:8411" placeholder="INSERT INTO ..." />
+            <marker date="1418918183696" expanded="true" signature="9023:9094" placeholder="INSERT INTO ..." />
+            <marker date="1418918183696" expanded="true" signature="10579:10674" placeholder="SELECT useri..." />
+          </folding>
         </state>
       </provider>
     </entry>
