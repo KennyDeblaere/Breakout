@@ -302,7 +302,7 @@ public class Ball implements Runnable {
         }
     }
 
-    //Voor de kenny:
+    //Voor de kenny :
 
     public void addObserver(ScoreObserver o) {
         observers.add(o);
