@@ -6,10 +6,6 @@ import be.howest.groep5.breakout.model.multimedia.Multimedia;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Observable;
-import java.util.Observer;
 
 /**
  * Created by Dries Dekoninck on 16/12/2014.
@@ -108,8 +104,8 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         scorePanel.add(titelLabel);
         scorePanel.add(lifePanel);
         scorePanel.add(singlePanel);
-        System.out.println(gamePanel.getB().isSingleplayer());
-        if (gamePanel.getB().isSingleplayer()) {
+        System.out.println(gamePanel.getB().isSinglePlayer());
+        if (gamePanel.getB().isSinglePlayer()) {
             scorePanel.add(coopPanel);
         }
 

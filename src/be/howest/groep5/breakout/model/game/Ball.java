@@ -14,18 +14,23 @@ import java.util.List;
 // TODO co-op = 2 ballen, 1 per paddle
 
 public class Ball implements Runnable {
-    private int x, y, xDirection, yDirection, p1Score, p2Score, numberOfLifes, difficulty, topBound, lengthBound, speed;
+    private int x, y, xDirection, yDirection, p1Score, p2Score, numberOfLifes, difficulty, topBound, lengthBound, speed, startSpeed, startWidth, level;
     private Rectangle ball;
     private Paddle p1, p2;
-    private boolean singleplayer, playing;
+    private boolean singlePlayer, playing;
     private ScreenCreate screenCreate;
     private PowerCreator powerCreator;
     private boolean intersected;
     private List<ScoreObserver> observers;
 
-    public Ball(boolean singleplayer, int difficulty, int panelWidth){
+    public Ball(boolean singlePlayer, int difficulty, int panelWidth){
         p1 = new Paddle(475,700,panelWidth,1);
         p2 = new Paddle(475,10, panelWidth, 2);
+        setLevel(0);
+
+
+        setStartSpeed(Database.DatabaseInstance.fillLevels().get(getLevel()).getBallSpeed());
+        setStartWidth(15);
 
 
         this.difficulty = difficulty;
@@ -34,7 +39,7 @@ public class Ball implements Runnable {
         setX(p1.getX() + (p1.getPaddle().width / 2));
         setY(p1.getY() - p1.getPaddle().height);
 
-        this.singleplayer = singleplayer;
+        this.singlePlayer = singlePlayer;
         this.difficulty = difficulty;
         numberOfLifes = 3;
         startRandomX();
@@ -49,7 +54,7 @@ public class Ball implements Runnable {
 
         setP1Score(0);
         setP2Score(0);
-        setSpeed(Database.DatabaseInstance.fillLevels().get(0).getBallSpeed());
+        setSpeed(Database.DatabaseInstance.fillLevels().get(getLevel()).getBallSpeed());
         powerCreator = new PowerCreator(1,true, this, p1,0,0);
 
     }
@@ -91,6 +96,16 @@ public class Ball implements Runnable {
     public void setScreenCreate(ScreenCreate screenCreate) {
         this.screenCreate = screenCreate;
     }
+    public void setStartSpeed(int startSpeed) {
+        this.startSpeed = startSpeed;
+    }
+    public void setStartWidth(int startWidth) {
+        this.startWidth = startWidth;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     public int getX() {
         return x;
@@ -110,8 +125,8 @@ public class Ball implements Runnable {
     public int getP1Score() {
         return p1Score;
     }
-    public boolean isSingleplayer() {
-        return singleplayer;
+    public boolean isSinglePlayer() {
+        return singlePlayer;
     }
     public Rectangle getBall() {
         return ball;
@@ -137,6 +152,16 @@ public class Ball implements Runnable {
     public PowerCreator getPowerCreator() {
         return powerCreator;
     }
+    public int getLevel() {
+        return level;
+    }
+    public int getStartSpeed() {
+        return startSpeed;
+    }
+    public int getStartWidth() {
+        return startWidth;
+    }
+
     public boolean isPlaying() {
         return playing;
     }
@@ -152,7 +177,7 @@ public class Ball implements Runnable {
         setxDirection(rDirection);
     }
     private void startRandomY(){
-        if(singleplayer)
+        if(singlePlayer)
             setyDirection(-1);
         else
             setyDirection(1);
@@ -247,7 +272,7 @@ public class Ball implements Runnable {
         }
         if(p1.getPaddle().intersects(powerCreator.getPower())) {
             powerCreator.setIntersection(false);
-            if(isSingleplayer()){
+            if(isSinglePlayer()){
                 powerCreator.returnPower();
             }
         }
@@ -265,7 +290,7 @@ public class Ball implements Runnable {
             setxDirection(-1);
         }
         if(ball.y <= 0){
-            if(!singleplayer){
+            if(!singlePlayer){
                 setX(p2.getPaddle().x + (p1.getPaddle().width/2));
                 setY(p2.getY());
                 ball = new Rectangle(getX(),getY(),15,15);

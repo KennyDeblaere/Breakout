@@ -5,12 +5,9 @@ import be.howest.groep5.breakout.data.Database;
 import be.howest.groep5.breakout.model.game.Ball;
 import be.howest.groep5.breakout.model.game.BlockCreator;
 import be.howest.groep5.breakout.model.game.ScreenCreate;
-import be.howest.groep5.breakout.model.multimedia.Multimedia;
 import be.howest.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.awt.*;
 
 /**
@@ -66,7 +63,7 @@ public class GamePanel extends JPanel {
     public void startGame(){
         ball.start();
         p1.start();
-        if(!b.isSingleplayer()){
+        if(!b.isSinglePlayer()){
             Thread p2 = new Thread(b.getP2());
             p2.start();
         }
@@ -105,7 +102,7 @@ public class GamePanel extends JPanel {
             if(b.getPowerCreator().isIntersection()) {
                 g.fillRect(b.getPowerCreator().getPower().x, b.getPowerCreator().getPower().y, b.getPowerCreator().getPower().width, b.getPowerCreator().getPower().height);
             }
-            if (!b.isSingleplayer()) {
+            if (!b.isSinglePlayer()) {
                 drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
             }
             if(screenCreate.getNumberOfBrokenBlocks() == screenCreate.getBlockCreatorList().size()){
@@ -114,10 +111,9 @@ public class GamePanel extends JPanel {
                 b.setScreenCreate(screenCreate);
                 b.setSpeed(Database.DatabaseInstance.fillLevels().get(levelNumber).getBallSpeed());
                 b.getP1().setWidth(Database.DatabaseInstance.fillLevels().get(levelNumber).getPaddleLength());
-                b.getP1().setLengthGo(1000 - b.getP1().getWidth());
                 b.getP2().setWidth(Database.DatabaseInstance.fillLevels().get(levelNumber).getPaddleLength());
-                b.getP2().setLengthGo(1000 - b.getP1().getWidth() );
                 b.getBall().x = b.getP1().getPaddle().x + b.getP1().getPaddle().width/2;
+                b.setStartSpeed(Database.DatabaseInstance.fillLevels().get(levelNumber).getBallSpeed());
                 b.setPlaying(false);
             }
             for(BlockCreator blockCreator: screenCreate.getBlockCreatorList()) {

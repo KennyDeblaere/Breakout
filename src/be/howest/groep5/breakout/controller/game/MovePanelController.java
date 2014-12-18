@@ -1,7 +1,6 @@
 package be.howest.groep5.breakout.controller.game;
 
 import be.howest.groep5.breakout.model.game.Ball;
-import be.howest.groep5.breakout.model.multimedia.Sound;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -16,7 +15,6 @@ public class MovePanelController extends KeyAdapter {
     }
     @Override
     public void keyPressed(KeyEvent e) {
-        //int startSpeed = b.getP1().getSpeed();
         switch (b.getP1().getId()) {
             default:
                 System.out.println("Please enter a valid id in paddleConstructor");
@@ -32,7 +30,7 @@ public class MovePanelController extends KeyAdapter {
             case 2:
                 if (e.getKeyCode() == e.VK_Q) {
                     b.getP2().setxDirection(-1);
-                    if(!b.isIntersected() && !b.isSingleplayer()){
+                    if(!b.isIntersected() && !b.isSinglePlayer()){
                         b.getP1().setSpeed(b.getP2().getSpeed()/2);
                     }
                     else
@@ -40,7 +38,7 @@ public class MovePanelController extends KeyAdapter {
                 }
                 if (e.getKeyCode() == e.VK_D) {
                     b.getP2().setxDirection(+1);
-                    if(!b.isIntersected() && !b.isSingleplayer()){
+                    if(!b.isIntersected() && !b.isSinglePlayer()){
                         b.getP1().setSpeed(b.getP2().getSpeed()/2);
                     }
                     else
@@ -64,7 +62,7 @@ public class MovePanelController extends KeyAdapter {
             case 2:
                 if (e.getKeyCode() == e.VK_Q) {
                     b.getP2().setxDirection(-1);
-                    if(!b.isIntersected() && !b.isSingleplayer()){
+                    if(!b.isIntersected() && !b.isSinglePlayer()){
                         b.getP1().setSpeed(b.getP2().getSpeed()/2);
                     }
                     else
@@ -72,7 +70,7 @@ public class MovePanelController extends KeyAdapter {
                 }
                 if (e.getKeyCode() == e.VK_D) {
                     b.getP2().setxDirection(+1);
-                    if(!b.isIntersected() && !b.isSingleplayer()){
+                    if(!b.isIntersected() && !b.isSinglePlayer()){
                         b.getP1().setSpeed(b.getP2().getSpeed()/2);
                     }
                     else
@@ -84,6 +82,7 @@ public class MovePanelController extends KeyAdapter {
             b.setPlaying(!b.isPlaying());
             b.getP1().setPlaying(b.isPlaying());
             b.getP2().setPlaying(b.isPlaying());
+            b.getPowerCreator().setPlaying(b.isPlaying());
         }
 
 

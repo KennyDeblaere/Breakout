@@ -1,13 +1,12 @@
 package be.howest.groep5.breakout.model.game;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 
 /**
  * Created by Kenny Deblaere.
  */
 public class Paddle implements Runnable {
-    private int x, y, xDirection, id, lengthGo;
+    private int x, y, xDirection, id, lengthGo, startWidth, startSpeed;
     private Rectangle paddle;
     private int speed, width;
     private boolean playing;
@@ -17,6 +16,8 @@ public class Paddle implements Runnable {
         setY(y);
         setWidth(width);
         setId(id);
+        setStartWidth(width);
+        setStartSpeed(4);
         playing = false;
         paddle = new Rectangle(getX(), getY(), getWidth(),10);
         setSpeed(4);
@@ -64,9 +65,21 @@ public class Paddle implements Runnable {
         this.width = width;
         setLengthGo(1000 - width);
     }
+    public void setStartWidth(int startWidth) {
+        this.startWidth = startWidth;
+    }
+    public void setStartSpeed(int startSpeed) {
+        this.startSpeed = startSpeed;
+    }
 
     public Rectangle getPaddle() {
         return paddle;
+    }
+    public int getStartWidth() {
+        return startWidth;
+    }
+    public int getStartSpeed() {
+        return startSpeed;
     }
 
     public boolean isPlaying() {

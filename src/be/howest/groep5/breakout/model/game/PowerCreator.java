@@ -10,7 +10,7 @@ public class PowerCreator implements Runnable {
     private Ball ball;
     private Paddle paddle;
     private int yDirection, powerid;
-    private boolean intersection, powerup;
+    private boolean intersection, powerup, playing;
 
     public PowerCreator(int powerid, boolean powerup, Ball ball, Paddle paddle, int x, int y){
         setPower(new Rectangle(x, y+50, 15,15));
@@ -18,10 +18,11 @@ public class PowerCreator implements Runnable {
         setPowerup(powerup);
         setPaddle(paddle);
         setBall(ball);
-        if(!ball.isSingleplayer())
+        if(!ball.isSinglePlayer())
             setyDirection(ball.getYDirection() * -1);
         else
             setyDirection(1);
+        playing = true;
 
     }
 
@@ -45,6 +46,9 @@ public class PowerCreator implements Runnable {
     }
     public void setIntersection(boolean intersection) {
         this.intersection = intersection;
+    }
+    public void setPlaying(boolean playing) {
+        this.playing = playing;
     }
 
     public int getyDirection() {
@@ -71,13 +75,19 @@ public class PowerCreator implements Runnable {
     }
 
     public void returnPower(){
+        getBall().setSpeed(getBall().getStartSpeed());
+        getBall().getBall().width = getBall().getStartWidth();
+        getBall().getBall().height = getBall().getBall().width;
+        getPaddle().getPaddle().width = getPaddle().getStartWidth();
+        System.out.println(getPaddle().getPaddle().width);
+        getPaddle().setSpeed(getPaddle().getStartSpeed());
         if(isPowerup()){
             switch (getPowerid()){
                 case 0: shooter(getBall());
                     break;
                 case 1: makeBallBigger(getBall());
                     break;
-                case 2: makePaddleLongher(getPaddle(), getBall());
+                case 2: makePaddleLonger(getPaddle(), getBall());
                     break;
                 case 3: makeBallSlower();
                     break;
@@ -115,19 +125,15 @@ public class PowerCreator implements Runnable {
 
     }
 
-    private void makeBallBigger(Ball ball){
-        if(ball.getBall().width < 16) {
-            ball.setLengthBound(ball.getLengthBound() - ball.getBall().width);
-            ball.getBall().width *= 2;
-            ball.getBall().height *= 2;
-        }
+    private void makeBallBigger(Ball ball) {
+        ball.setLengthBound(ball.getLengthBound() - ball.getBall().width);
+        ball.getBall().width *= 2;
+        ball.getBall().height *= 2;
     }
 
-    private void makePaddleLongher(Paddle paddle, Ball ball){
-        if(paddle.getPaddle().width*2 < 400) {
-            paddle.setLengthGo(paddle.getLengthGo() - paddle.getPaddle().width);
-            paddle.getPaddle().width *= 2;
-        }
+    private void makePaddleLonger(Paddle paddle, Ball ball) {
+        paddle.setLengthGo(paddle.getLengthGo() - paddle.getPaddle().width);
+        paddle.getPaddle().width *= 2;
     }
 
     private void makeBallSlower() {
@@ -174,6 +180,7 @@ public class PowerCreator implements Runnable {
     private void makePaddleSlower(){
 
     }
+
 
     @Override
     public void run() {
