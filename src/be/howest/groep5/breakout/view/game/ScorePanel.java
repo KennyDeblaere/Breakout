@@ -108,7 +108,8 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         scorePanel.add(titelLabel);
         scorePanel.add(lifePanel);
         scorePanel.add(singlePanel);
-        if (!isSingleplayer) {
+        System.out.println(gamePanel.getGameMode());
+        if (!gamePanel.getGameMode()) {
             scorePanel.add(coopPanel);
         }
 

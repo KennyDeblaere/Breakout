@@ -135,6 +135,8 @@ public class GamePanel extends JPanel {
         repaint();
     }
 
+    public Boolean getGameMode() { return singleplayer; }
+
     public Ball getB() {
         return b;
     }
