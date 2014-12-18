@@ -25,7 +25,7 @@ public class ContentPanel extends JPanel {
         panelCenter = c;
         setPreferredSize(new Dimension(700, 600));
         createComponents();
-        addDifficultyPanel(true);
+        addMainComponents();
     }
 
     private void createComponents() {
@@ -75,6 +75,11 @@ public class ContentPanel extends JPanel {
     public void addAboutPanel(){
         removePanels();
         add(panelAbout);
+        re();
+    }
+
+    public void addMainComponents() {
+        removePanels();
         re();
     }
 
