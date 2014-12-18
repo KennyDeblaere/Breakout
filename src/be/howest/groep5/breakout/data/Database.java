@@ -156,12 +156,21 @@ public class Database {
         try{
             Class.forName("com.mysql.jdbc.Driver");
 
+            int gameMode;
+
+            if (singlePlayer) {
+                gameMode=1;
+            } else {
+                gameMode=0;
+            }
+
             Statement stmt = getConnection().createStatement();
             ResultSet rs;
-            rs = stmt.executeQuery("SELECT * FROM score " +
-                    "JOIN gamemode ON score.gamemodeid = gamemode.gamemodeid " +
-                    "JOIN score_user ON score.scoreid = score_user.scoreid  " +
-                    "WHERE gamemode.singlemulti = "+ singlePlayer + " ORDER BY score.score LIMIT 5");
+            rs = stmt.executeQuery("SELECT score, singlemulti, difficulty, username"+
+                    " FROM score JOIN gamemode JOIN user JOIN score_user WHERE score.gamemodeid = gamemode.gamemodeid"+
+                    " AND singlemulti = "+ gameMode +
+                    " AND score_user.userid = user.userid" +
+                    " ORDER BY score DESC LIMIT 5");
             while (rs.next()){
                 scoreUsers.add(new ScoreUser(rs.getInt("score.score"), fillUsers().get(rs.getInt("score_user.userid")).getUsername()));
             }
