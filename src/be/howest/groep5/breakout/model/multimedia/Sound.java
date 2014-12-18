@@ -1,7 +1,6 @@
 package be.howest.groep5.breakout.model.multimedia;
 
 import javazoom.jl.player.Player;
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 
@@ -10,21 +9,14 @@ import java.io.FileInputStream;
  */
 public class Sound implements Runnable{
     private static Player player;
-    private int soundnumber;
     private File file;
-    public Sound(int number){
-
-        soundnumber = number;
-        file = new File("src/be/howest/groep5/breakout/multimedia/sounds/Breakout_sound" + soundnumber + ".mp3");
-    }
 
     @Override
     public void run() {
         try {
-
             while(true) {
+                file = new File("src/be/howest/groep5/breakout/multimedia/sounds/Breakout_sound1.mp3");
                 FileInputStream fis = new FileInputStream(file);
-                //BufferedInputStream bis = new BufferedInputStream(fis);
                 player = new Player(fis);
                 player.play();
             }

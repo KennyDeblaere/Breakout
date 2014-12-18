@@ -2,7 +2,6 @@ package be.howest.groep5.breakout.view.welcome;
 
 import be.howest.groep5.breakout.view.highscores.PanelHighScore;
 import be.howest.groep5.breakout.view.registration.RegistrationPanel;
-import be.howest.groep5.breakout.view.settings.SettingPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +16,6 @@ public class ContentPanel extends JPanel {
     private HowToPlayPanel howToPlayPanel;
     private AboutPanel panelAbout;
     private PanelHighScore panelHighScore;
-    private SettingPanel settingPanel;
 
 
     public ContentPanel(CenterPanel c) {
@@ -33,7 +31,6 @@ public class ContentPanel extends JPanel {
         panelDifficulty = new DifficultyPanel(panelCenter, true);
         howToPlayPanel = new HowToPlayPanel();
         panelAbout = new AboutPanel();
-        settingPanel = new SettingPanel();
         panelHighScore = new PanelHighScore();
     }
 
@@ -66,12 +63,6 @@ public class ContentPanel extends JPanel {
         re();
     }
 
-    public void addSettingPanel(){
-        removePanels();
-        add(settingPanel);
-        re();
-    }
-
     public void addAboutPanel(){
         removePanels();
         add(panelAbout);
@@ -94,7 +85,6 @@ public class ContentPanel extends JPanel {
         remove(panelAbout);
         remove(panelHighScore);
         remove(howToPlayPanel);
-        remove(settingPanel);
     }
 
 }

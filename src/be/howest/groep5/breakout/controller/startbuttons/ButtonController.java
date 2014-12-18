@@ -28,8 +28,6 @@ public class ButtonController implements ActionListener{
                 break;
             case "Howto":  contentPanel.addHowToPlayPanel();
                 break;
-            case "Setting":  contentPanel.addSettingPanel();
-                break;
             case "About":  contentPanel.addAboutPanel();
                 break;
         }

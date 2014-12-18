@@ -1,11 +1,11 @@
 package be.howest.groep5.breakout.view.welcome;
 
-import be.howest.groep5.breakout.controller.multimedia.SoundController;
 import be.howest.groep5.breakout.model.multimedia.Multimedia;
-
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,9 +16,9 @@ import java.io.IOException;
 /**
  * Created by Dries Dekoninck on 21/11/2014.
  */
-public class StatusPanel extends JPanel implements ActionListener{
-    private JLabel statusLabel;
+public class StatusPanel extends JPanel implements ActionListener, ChangeListener{
     private JButton soundOnButton, soundOffButton;
+    private JSlider volume;
     private BufferedImage onImage, offImage;
     private Multimedia multimedia;
 
@@ -33,27 +33,28 @@ public class StatusPanel extends JPanel implements ActionListener{
     }
 
     private void createComponents() {
-            try {
+        try {
                 onImage = ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/Sound_on.png"));
                 offImage = ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/Sound_off.png"));
-            } catch (IOException ex) {
+        } catch (IOException ex) {
                 System.out.println("Foto Sound kan niet worden ingeladen...");
-            }
-            statusLabel = new JLabel("Status: RUN");
-            soundOnButton = new JButton(new ImageIcon(onImage));
-            soundOffButton = new JButton(new ImageIcon(offImage));
-            soundOnButton.setFocusable(false);
         }
+        soundOnButton = new JButton(new ImageIcon(onImage));
+        soundOffButton = new JButton(new ImageIcon(offImage));
+        soundOnButton.setFocusable(false);
+        volume = new JSlider(0,100,50);
+        volume.addChangeListener(this);
+    }
 
     private void addActionListener(){
         soundOnButton.addActionListener(this);
         soundOffButton.addActionListener(this);
-
     }
 
     public void addComponents() {
         add(soundOnButton);
         add(soundOffButton);
+        add(volume);
         if(multimedia.isPlaying()) {
             soundOffButton.setVisible(false);
             soundOnButton.setVisible(true);
@@ -62,10 +63,10 @@ public class StatusPanel extends JPanel implements ActionListener{
             soundOnButton.setVisible(false);
             soundOffButton.setVisible(true);
         }
-            add(statusLabel);
     }
 
-    public static void setVolume(int value){
+    public static void setVolume(float value){
+        value /= 100;
         try {
             Line line = AudioSystem.getLine(Port.Info.SPEAKER);
             line.open();
@@ -89,5 +90,11 @@ public class StatusPanel extends JPanel implements ActionListener{
             setVolume(1);
         }
         addComponents();
+    }
+
+    public void stateChanged(ChangeEvent e) {
+        int vol = volume.getValue();
+        setVolume((float)vol);
+
     }
 }

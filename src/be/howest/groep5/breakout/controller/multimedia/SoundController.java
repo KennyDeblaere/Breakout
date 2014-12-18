@@ -9,8 +9,8 @@ public class SoundController {
     private Sound sound;
     private Thread t1;
 
-    public SoundController(int soundnumber){
-            t1 = new Thread(new Sound(soundnumber));
+    public SoundController(){
+            t1 = new Thread(new Sound());
             t1.start();
     }
 }

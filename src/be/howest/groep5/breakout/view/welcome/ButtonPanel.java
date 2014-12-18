@@ -1,7 +1,6 @@
 package be.howest.groep5.breakout.view.welcome;
 
 import be.howest.groep5.breakout.controller.startbuttons.ButtonController;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,7 +9,7 @@ import java.awt.*;
  */
 public class ButtonPanel extends JPanel{
     private JPanel ButtonPanel;
-    private JButton single, co, high, howto, setting, about;
+    private JButton single, co, high, howto, about;
     private ContentPanel panelContent;
 
     public ButtonPanel(ContentPanel panelContent) {
@@ -29,7 +28,6 @@ public class ButtonPanel extends JPanel{
         co = new JButton("Co-op");
         high = new JButton("Topscore");
         howto = new JButton("Hoe spelen?");
-        setting = new JButton("Instellingen");
         about = new JButton("Over");
     }
 
@@ -45,7 +43,6 @@ public class ButtonPanel extends JPanel{
         ButtonPanel.add(co);
         ButtonPanel.add(high);
         ButtonPanel.add(howto);
-        ButtonPanel.add(setting);
         ButtonPanel.add(about);
     }
 
@@ -58,7 +55,6 @@ public class ButtonPanel extends JPanel{
         co.addActionListener(new ButtonController(panelContent,"CO"));
         high.addActionListener(new ButtonController(panelContent, "High"));
         howto.addActionListener(new ButtonController(panelContent, "Howto"));
-        setting.addActionListener(new ButtonController(panelContent, "Setting"));
         about.addActionListener(new ButtonController(panelContent, "About"));
     }
 }
