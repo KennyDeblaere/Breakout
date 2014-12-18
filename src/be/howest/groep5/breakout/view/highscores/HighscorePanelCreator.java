@@ -6,6 +6,7 @@ import be.howest.groep5.breakout.model.ScoreUser;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.util.*;
 
 /**
  * Created by Benjamin on 17/12/2014.
@@ -20,10 +21,14 @@ public class HighscorePanelCreator {
     private JLabel usernameLabel, scoreLabel;
     private boolean singlePlayer;
     private int maxAmountOfRows;
+    private java.util.List<ScoreUser> scores;
 
     public JPanel createHighscorePanel(Boolean isSinglePlayer, int maxAmountOfRows) {
         this.singlePlayer = isSinglePlayer;
         this.maxAmountOfRows = maxAmountOfRows;
+
+        scores = new ArrayList<ScoreUser>();
+
         createComponents();
         fillHighScore();
 
@@ -43,16 +48,20 @@ public class HighscorePanelCreator {
     }
 
     private void fillHighScore(){
-        if (Database.DatabaseInstance.fillTopScores(singlePlayer).size() > 0 && Database.DatabaseInstance.fillTopScores(singlePlayer).size() < 5) {
-            for (int i = 0; i < (Database.DatabaseInstance.fillTopScores(singlePlayer).size()); i++) {
+        scores = Database.DatabaseInstance.fillTopScores(singlePlayer);
+        System.out.println("got here");
+        System.out.println(scores);
+
+        /*if (scores.size() > 0 && scores.size() < 5) {
+            for (int i = 0; i < (scores.size()); i++) {
                 usernameLabel = new JLabel(Database.DatabaseInstance.fillTopScores(singlePlayer).get(i).getUserName());
                 toReturnPanel.add(usernameLabel);
                 scoreLabel = new JLabel(""+Database.DatabaseInstance.fillTopScores(singlePlayer).get(i).getScore());
                 toReturnPanel.add(scoreLabel);
             }
-        }
+        }*/
 
-        for(ScoreUser score : Database.DatabaseInstance.fillTopScores(singlePlayer)){
+        for(ScoreUser score : scores){
             usernameLabel = new JLabel(score.getUserName());
             toReturnPanel.add(usernameLabel);
             scoreLabel = new JLabel("" + score.getScore());
