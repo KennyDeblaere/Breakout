@@ -16,7 +16,7 @@ public class ButtonPanel extends JPanel{
     public ButtonPanel(ContentPanel panelContent) {
         super();
         this.panelContent = panelContent;
-        setPreferredSize(new Dimension(300, 250));
+        setPreferredSize(new Dimension(300, 400));
         createComponents();
         setComponents();
         addComponents();
@@ -24,21 +24,21 @@ public class ButtonPanel extends JPanel{
     }
 
     private void createComponents() {
-        ButtonPanel = new JPanel(new GridLayout(6,1,0,0));
+        ButtonPanel = new JPanel(new GridLayout(6,1,0,30));
         single = new JButton("Single Player");
         co = new JButton("Co-op");
-        high = new JButton("Topscore");
-        howto = new JButton("Hoe spelen?");
+        high = new JButton("Topscores");
+        howto = new JButton("Instructies");
         about = new JButton("Over");
     }
 
     private void setComponents() {
-        //setBackground(Color.GRAY);
         single.setPreferredSize(new Dimension(150, 50));
         co.setPreferredSize(new Dimension(150, 50));
         high.setPreferredSize(new Dimension(150, 50));
         about.setPreferredSize(new Dimension(150, 50));
         howto.setPreferredSize(new Dimension(150, 50));
+        ButtonPanel.setOpaque(false);
         ButtonPanel.add(single);
         ButtonPanel.add(co);
         ButtonPanel.add(high);

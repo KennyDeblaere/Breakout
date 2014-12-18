@@ -166,7 +166,7 @@ public class Database {
 
             Statement stmt = getConnection().createStatement();
             ResultSet rs;
-            rs = stmt.executeQuery("SELECT score, singlemulti, difficulty, username"+
+            rs = stmt.executeQuery("SELECT DISTINCT score, singlemulti, difficulty, username"+
                     " FROM score JOIN gamemode JOIN user JOIN score_user WHERE score.gamemodeid = gamemode.gamemodeid"+
                     " AND singlemulti = "+ gameMode +
                     " AND score_user.userid = user.userid" +
