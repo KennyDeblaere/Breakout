@@ -9,23 +9,40 @@ public class PowerCreator implements Runnable {
     private Rectangle power;
     private Ball ball;
     private Paddle paddle;
-    private int yDirection;
-    private boolean intersection;
+    private int yDirection, powerid;
+    private boolean intersection, powerup;
 
     public PowerCreator(int powerid, boolean powerup, Ball ball, Paddle paddle, int x, int y){
-        power = new Rectangle(x, y+50, 15,15);
+        setPower(new Rectangle(x, y+50, 15,15));
+        setPowerid(powerid);
+        setPowerup(powerup);
+        setPaddle(paddle);
+        setBall(ball);
         if(!ball.isSingleplayer())
             setyDirection(ball.getYDirection() * -1);
         else
             setyDirection(1);
-        //returnPower(powerid,powerup,ball,paddle);
 
     }
 
     public void setyDirection(int yDirection) {
         this.yDirection = yDirection;
     }
-
+    public void setBall(Ball ball) {
+        this.ball = ball;
+    }
+    public void setPaddle(Paddle paddle) {
+        this.paddle = paddle;
+    }
+    public void setPower(Rectangle power) {
+        this.power = power;
+    }
+    public void setPowerup(boolean powerup) {
+        this.powerup = powerup;
+    }
+    public void setPowerid(int powerid) {
+        this.powerid = powerid;
+    }
     public void setIntersection(boolean intersection) {
         this.intersection = intersection;
     }
@@ -36,33 +53,46 @@ public class PowerCreator implements Runnable {
     public Rectangle getPower() {
         return power;
     }
+    public int getPowerid() {
+        return powerid;
+    }
+    public Paddle getPaddle() {
+        return paddle;
+    }
+    public boolean isPowerup() {
+        return powerup;
+    }
+    public Ball getBall() {
+        return ball;
+    }
+
     public boolean isIntersection() {
         return intersection;
     }
 
-    public void returnPower(int powerid, boolean powerup, Ball ball, Paddle paddle){
-        if(powerup){
-            switch (powerid){
-                case 0: shooter(ball);
+    public void returnPower(){
+        if(isPowerup()){
+            switch (getPowerid()){
+                case 0: shooter(getBall());
                     break;
-                case 1: makeBallBigger(ball);
+                case 1: makeBallBigger(getBall());
                     break;
-                case 2: makePaddleLongher(paddle, ball);
+                case 2: makePaddleLongher(getPaddle(), getBall());
                     break;
                 case 3: makeBallSlower();
                     break;
-                case 4: addALife(ball);
+                case 4: addALife(getBall());
                     break;
             }
         }else{
             switch (powerid){
-                case 0: makeBallSmaller(ball);
+                case 0: makeBallSmaller(getBall());
                     break;
-                case 1: makePaddleSmaller(paddle);
+                case 1: makePaddleSmaller(getPaddle());
                     break;
-                case 2: deleteALife(ball);
+                case 2: deleteALife(getBall());
                     break;
-                case 3: makeBallFaster(ball);
+                case 3: makeBallFaster(getBall());
                     break;
                 case 4: makePaddleSlower();
                     break;

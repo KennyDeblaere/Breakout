@@ -161,7 +161,8 @@ public class Ball implements Runnable {
             powerCreator.setIntersection(true);
             Thread t = new Thread(powerCreator);
             t.start();
-            if(powerCreator.getPower().intersects(p1.getPaddle())) {
+            /*System.out.println(p1.getPaddle().intersects(powerCreator.getPower()));
+            if(p1.getPaddle().intersects(powerCreator.getPower())) {
                 if (singleplayer) {
                     powerCreator.setIntersection(false);
                     System.out.println("intersect");
@@ -171,7 +172,7 @@ public class Ball implements Runnable {
                     new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p2, blockCreator.getX(), blockCreator.getY());
                     p2Score += 100;
                 }
-            }
+            }*/
         }
 
         if(blockCreator.hasAPowerDown()){
@@ -233,18 +234,17 @@ public class Ball implements Runnable {
         }
         for(BlockCreator blockCreator : getScreenCreate().getBlockCreatorList()) {
             if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
-                //powersCollision(blockCreator);
-                if(blockCreator.hasAPowerUp()) {
-                    Random r = new Random();
-                    int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
-                    powerCreator = new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
-                    powerCreator.setIntersection(true);
-                    Thread t = new Thread(powerCreator);
-                    t.start();
-                }
+                powersCollision(blockCreator);
+
                 blockBounceHorizontal(blockCreator);
                 blockBounceVertical(blockCreator);
                 afterCollision(blockCreator);
+            }
+        }
+        if(p1.getPaddle().intersects(powerCreator.getPower())) {
+            powerCreator.setIntersection(false);
+            if(isSingleplayer()){
+                powerCreator.returnPower();
             }
         }
     }
