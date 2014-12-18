@@ -126,7 +126,7 @@ public class ScorePanel extends JPanel implements ScoreObserver {
 
 
     private void setBackground() {
-        background = multimedia.getMainBackground();
+        background = multimedia.getScorebackground();
         repaint();
     }
 
@@ -140,6 +140,9 @@ public class ScorePanel extends JPanel implements ScoreObserver {
     @Override
     public void update(int p1Score, int p2score, int numberOfLifesLeft) {
         changeTexts(p1Score, p2score, numberOfLifesLeft);
+        if (numberOfLifesLeft == 0) {
+            gamePanel.getCenterPanel().remove(this);
+        }
     }
 }
 

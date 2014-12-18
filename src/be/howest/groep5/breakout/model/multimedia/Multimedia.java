@@ -10,13 +10,14 @@ import java.nio.Buffer;
  * Created by Dries Dekoninck on 15/12/2014.
  */
 public class Multimedia{
-    private BufferedImage image, mainBackground, subbackground, contentbackground, gamebackground;
+    private BufferedImage image, mainBackground, subbackground, scorebackground, gamebackground;
     private boolean playing = true;
 
     public Multimedia() {
         try {
             image = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/Icon.png")));
             mainBackground = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/background.png")));
+            scorebackground = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/@background.png")));
             subbackground = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/subbackground.png")));
             gamebackground = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/gamebackground.png")));
         } catch (IOException e) {
@@ -38,5 +39,6 @@ public class Multimedia{
         return  mainBackground;
     }
     public BufferedImage getSubbackground() { return subbackground; }
+    public BufferedImage getScorebackground() { return scorebackground; }
     public BufferedImage getGamebackground() { return gamebackground; }
 }

@@ -209,7 +209,7 @@ public class Ball implements Runnable {
 
         if(blockCreator.hasAPowerUp()){
             int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
-            powerCreator = new PowerCreator(0, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
+            powerCreator = new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
             powerCreator.setIntersection(true);
             Thread t = new Thread(powerCreator);
             t.start();
@@ -269,13 +269,12 @@ public class Ball implements Runnable {
         }
     }
     private void shooterCollision(BlockCreator blockCreator){
-        if(getShooterCreator()!= null && getShooterCreator().getShooter().intersects(blockCreator.getBlock())) {
-            /*setShoot(false);
+        if(canShoot() && getShooterCreator().getShooter().intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
             powersCollision(blockCreator);
             blockBounceHorizontal(blockCreator);
             blockBounceVertical(blockCreator);
-            afterCollision(blockCreator);*/
-            System.out.println("inter");
+            afterCollision(blockCreator);
+            setShoot(false);
         }
 
     }
@@ -303,8 +302,8 @@ public class Ball implements Runnable {
                     blockBounceVertical(blockCreator);
 
                     afterCollision(blockCreator);
-                    shooterCollision(blockCreator);
                 }
+                shooterCollision(blockCreator);
                 powerCollisionWithPaddle();
             }
         }

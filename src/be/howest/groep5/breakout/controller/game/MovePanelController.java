@@ -83,6 +83,8 @@ public class MovePanelController extends KeyAdapter {
             b.getP1().setPlaying(b.isPlaying());
             b.getP2().setPlaying(b.isPlaying());
             b.getPowerCreator().setPlaying(b.isPlaying());
+            if(b.getShooterCreator() != null)
+                b.getShooterCreator().setPlaying(b.isPlaying());
         }
 
 
