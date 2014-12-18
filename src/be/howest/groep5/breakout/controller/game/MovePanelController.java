@@ -16,20 +16,125 @@ public class MovePanelController extends KeyAdapter {
     }
     @Override
     public void keyPressed(KeyEvent e) {
-        b.getP1().keyPressed(e);
-        b.getP2().keyPressed(e);
+        //int startSpeed = b.getP1().getSpeed();
+        switch (b.getP1().getId()) {
+            default:
+                System.out.println("Please enter a valid id in paddleConstructor");
+                break;
+            case 1:
+                if (e.getKeyCode() == e.VK_LEFT) {
+                    b.getP1().setxDirection(-1);
+                }
+                if (e.getKeyCode() == e.VK_RIGHT) {
+                    b.getP1().setxDirection(+1);
+                }
+                break;
+            case 2:
+                if (e.getKeyCode() == e.VK_Q) {
+                    b.getP2().setxDirection(-1);
+                    if(!b.isIntersected()){
+                        b.getP1().setSpeed(b.getP2().getSpeed()/2);
+                    }
+                    else
+                        b.getP1().setSpeed(b.getP2().getSpeed());
+                }
+                if (e.getKeyCode() == e.VK_D) {
+                    b.getP2().setxDirection(+1);
+                    if(!b.isIntersected()){
+                        b.getP1().setSpeed(b.getP2().getSpeed()/2);
+                    }
+                    else
+                        b.getP1().setSpeed(b.getP2().getSpeed());
+                }
+                break;
+        }
+        switch (b.getP2().getId()) {
+            default:
+                System.out.println("Please enter a valid id in paddleConstructor");
+                break;
+            case 1:
+                if (e.getKeyCode() == e.VK_LEFT) {
+                    b.getP2().setxDirection(-1);
+
+                }
+                if (e.getKeyCode() == e.VK_RIGHT) {
+                    b.getP2().setxDirection(+1);
+                }
+                break;
+            case 2:
+                if (e.getKeyCode() == e.VK_Q) {
+                    b.getP2().setxDirection(-1);
+                    if(!b.isIntersected()){
+                        b.getP1().setSpeed(b.getP2().getSpeed()/2);
+                    }
+                    else
+                        b.getP1().setSpeed(b.getP2().getSpeed());
+                }
+                if (e.getKeyCode() == e.VK_D) {
+                    b.getP2().setxDirection(+1);
+                    if(!b.isIntersected()){
+                        b.getP1().setSpeed(b.getP2().getSpeed()/2);
+                    }
+                    else
+                        b.getP1().setSpeed(b.getP2().getSpeed());
+                }
+                break;
+        }
         if(e.getKeyCode() == KeyEvent.VK_P || e.getKeyCode() == KeyEvent.VK_SPACE) {
             b.setPlaying(!b.isPlaying());
             b.getP1().setPlaying(b.isPlaying());
             b.getP2().setPlaying(b.isPlaying());
-
         }
+
 
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        b.getP1().keyReleased(e);
-        b.getP2().keyReleased(e);
+        switch (b.getP1().getId()) {
+            default:
+                System.out.println("Please enter a valid id in paddleConstructor");
+                break;
+            case 1:
+                if (e.getKeyCode() == e.VK_LEFT) {
+                    b.getP1().setxDirection(0);
+                }
+                if (e.getKeyCode() == e.VK_RIGHT) {
+                    b.getP1().setxDirection(0);
+                }
+                break;
+            case 2:
+                if (e.getKeyCode() == e.VK_Q) {
+                    b.getP2().setxDirection(0);
+                }
+                if (e.getKeyCode() == e.VK_D) {
+                    b.getP2().setxDirection(0);
+                }
+                break;
+        }
+        switch (b.getP2().getId()) {
+            default:
+                System.out.println("Please enter a valid id in paddleConstructor");
+                break;
+            case 1:
+                if (e.getKeyCode() == e.VK_LEFT) {
+                    b.getP2().setxDirection(0);
+                }
+                if (e.getKeyCode() == e.VK_RIGHT) {
+                    b.getP2().setxDirection(0);
+                }
+                break;
+            case 2:
+                if (e.getKeyCode() == e.VK_Q) {
+                    b.getP2().setxDirection(0);
+                }
+                if (e.getKeyCode() == e.VK_D) {
+                    b.getP2().setxDirection(0);
+                }
+                break;
+        }
+        if(!b.isIntersected()){
+            b.getP1().setSpeed(b.getP2().getSpeed());
+        }
     }
 }

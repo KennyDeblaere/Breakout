@@ -118,8 +118,6 @@ public class GamePanel extends JPanel {
                     g.drawRect(blockCreator.getBlock().x, blockCreator.getBlock().y, blockCreator.getBlock().width, blockCreator.getBlock().height);
                 }
             }
-            Thread t = new Thread(scorePanel);
-            t.start();
         }
         else{
             centerPanel.addHighScoreAddPanel(b.getP1Score());

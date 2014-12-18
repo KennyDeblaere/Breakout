@@ -19,12 +19,14 @@ public class Ball implements Runnable {
     private boolean singleplayer, playing;
     private ScreenCreate screenCreate;
     private PowerCreator powerCreator;
+    private boolean intersected;
     public Ball(boolean singleplayer, int difficulty){
         p1 = new Paddle(475,700,1);
         p2 = new Paddle(475,10, 2);
 
 
         this.difficulty = difficulty;
+        intersected = false;
 
         setX(p1.getX() + (p1.getPaddle().width / 2));
         setY(p1.getY() - p1.getPaddle().height);
@@ -133,7 +135,9 @@ public class Ball implements Runnable {
     public boolean isPlaying() {
         return playing;
     }
-
+    public boolean isIntersected() {
+        return intersected;
+    }
 
     private void startRandomX(){
         Random r = new Random();
@@ -223,8 +227,10 @@ public class Ball implements Runnable {
             if(ball.x > p1.getPaddle().x + (p1.getPaddle().width)/2)
                 setxDirection(1);
         }
-        if(ball.intersects(p2.getPaddle()))
+        if(ball.intersects(p2.getPaddle())) {
+            intersected = true;
             setyDirection(+1);
+        }
         for(BlockCreator blockCreator : getScreenCreate().getBlockCreatorList()) {
             if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
                 //powersCollision(blockCreator);

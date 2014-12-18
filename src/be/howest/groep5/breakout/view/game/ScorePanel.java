@@ -8,12 +8,14 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * Created by Dries Dekoninck on 16/12/2014.
  */
 
-public class ScorePanel extends JPanel implements Runnable {
+public class ScorePanel extends JPanel implements Observer {
     private Ball b;
     private JPanel scorePanel, singlePanel, coopPanel, infoPanel, lifePanel;
     private JLabel titelLabel, scoresingle, scorecoop, pause, timer, life;
@@ -53,7 +55,7 @@ public class ScorePanel extends JPanel implements Runnable {
         life = new JLabel("3");
     }
 
-    private void setSinglePanel(int singlePlayerScore){
+    private void setSinglePanel(){
         singlePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Speler 1", TitledBorder.LEFT, TitledBorder.TOP, new Font(null, Font.BOLD, 15), Color.white));
         singlePanel.setPreferredSize(new Dimension(175, 150));
         singlePanel.add(scoresingle);
@@ -62,7 +64,7 @@ public class ScorePanel extends JPanel implements Runnable {
         repaint();
     }
 
-    private void setCoopPanel(int coopPlayerScore){
+    private void setCoopPanel(){
         coopPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Speler 2", TitledBorder.LEFT, TitledBorder.TOP, new Font(null, Font.BOLD, 15), Color.white));
         coopPanel.setPreferredSize(new Dimension(175, 150));
         coopPanel.add(scorecoop);
@@ -75,7 +77,7 @@ public class ScorePanel extends JPanel implements Runnable {
         infoPanel.setOpaque(false);
     }
 
-    private void setLifePanel(int numberOfLives){
+    private void setLifePanel(){
         lifePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Levens", TitledBorder.LEFT, TitledBorder.TOP, new Font(null, Font.BOLD, 15), Color.white));
         lifePanel.setPreferredSize(new Dimension(175, 50));
         lifePanel.setOpaque(false);
@@ -93,13 +95,13 @@ public class ScorePanel extends JPanel implements Runnable {
         timer.setForeground(Color.white);
         life.setForeground(Color.white);
         //------------ singlePanel ----------------
-        setSinglePanel(0);
+        setSinglePanel();
         //------------ coopPanel ------------------
-        setCoopPanel(0);
+        setCoopPanel();
         //------------ infoPanel ------------------
         setInfoPanel();
         //------------ lifePanel ------------------
-        setLifePanel(gamePanel.getB().getNumberOfLifes());
+        setLifePanel();
         //------------ ScorePanel -----------------
         scorePanel.add(titelLabel);
         scorePanel.add(lifePanel);
@@ -138,18 +140,10 @@ public class ScorePanel extends JPanel implements Runnable {
         g.drawImage(background, 0, 0, null);
     }
 
-    @Override
-    public void run() {
-        Timer timer = new Timer(10, new ActionListener() {
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                changeTexts(gamePanel.getB().getP1Score(),gamePanel.getB().getP2Score(), gamePanel.getB().getNumberOfLifes());
-            }
-        });
-        timer.setRepeats(true);
-        timer.setCoalesce(true);
-        timer.start();
+    @Override
+    public void update(Observable o, Object arg) {
+        changeTexts(gamePanel.getB().getP1Score(),gamePanel.getB().getP2Score(), gamePanel.getB().getNumberOfLifes());
     }
 }
 
