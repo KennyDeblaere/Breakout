@@ -30,13 +30,10 @@ public class StartGameController implements ActionListener {
         }
     }
 
-    private int countNumberOfStartingRows(int difficulty){
-        return 3 + difficulty * 2;
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //Database.DatabaseInstance.insertGameMode(new Gamemode(singleplayer, difficulty.getSelectedIndex()));
+        Database.DatabaseInstance.insertGameMode(new Gamemode(singleplayer, difficulty.getSelectedIndex()));
         panelCenter.addGamePanel(new GamePanel(panelCenter, singleplayer, difficulty.getSelectedIndex()));
         panelCenter.getGamePanel().startGame();
         r.keyPress(KeyEvent.VK_TAB);

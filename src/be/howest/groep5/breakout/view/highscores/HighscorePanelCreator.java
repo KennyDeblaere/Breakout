@@ -19,25 +19,24 @@ import java.util.List;
 
 public class HighscorePanelCreator {
     private JPanel toReturnPanel;
-    private List<ScoreUser> scores = new ArrayList<ScoreUser>();
+    private boolean singlePlayer;
 
     public JPanel createHighscorePanel(Boolean isSinglePlayer, int maxAmountOfRows) {
         toReturnPanel = new JPanel();
         toReturnPanel.setLayout(new GridLayout(maxAmountOfRows, 2));
-
+        this.singlePlayer = isSinglePlayer;
         JLabel usernameLabel, scoreLabel;
-        scores = Database.DatabaseInstance.fillTopScores(isSinglePlayer);
 
-        if (scores.size() < 5) {
-            for (int i = 0; i < (5-scores.size()); i++) {
-                usernameLabel = new JLabel("Benjameister");
+        if (Database.DatabaseInstance.fillTopScores(singlePlayer).size() > 0 && Database.DatabaseInstance.fillTopScores(singlePlayer).size() < 5) {
+            for (int i = 0; i < (5-Database.DatabaseInstance.fillTopScores(singlePlayer).size()); i++) {
+                usernameLabel = new JLabel(Database.DatabaseInstance.fillTopScores(singlePlayer).get(i).getUserName());
                 toReturnPanel.add(usernameLabel);
-                scoreLabel = new JLabel("0");
+                scoreLabel = new JLabel(""+Database.DatabaseInstance.fillTopScores(singlePlayer).get(i).getScore());
                 toReturnPanel.add(scoreLabel);
             }
         }
 
-        for(ScoreUser score : scores){
+        for(ScoreUser score : Database.DatabaseInstance.fillTopScores(singlePlayer)){
             usernameLabel = new JLabel(score.getUserName());
             toReturnPanel.add(usernameLabel);
             scoreLabel = new JLabel("" + score.getScore());
