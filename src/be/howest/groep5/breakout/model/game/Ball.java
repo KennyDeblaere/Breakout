@@ -19,7 +19,7 @@ public class Ball implements Runnable {
     private boolean singlePlayer, playing;
     private ScreenCreate screenCreate;
     private PowerCreator powerCreator;
-    private boolean intersected;
+    private boolean intersected, breakBlocks;
     private List<ScoreObserver> observers;
 
     public Ball(boolean singlePlayer, int difficulty, int panelWidth){
@@ -34,6 +34,7 @@ public class Ball implements Runnable {
 
         this.difficulty = difficulty;
         intersected = false;
+        breakBlocks = true;
 
         setX(p1.getX() + (p1.getPaddle().width / 2));
         setY(p1.getY() - p1.getPaddle().height);
@@ -101,7 +102,9 @@ public class Ball implements Runnable {
     public void setStartWidth(int startWidth) {
         this.startWidth = startWidth;
     }
-
+    public void setBreakBlocks(boolean breakBlocks) {
+        this.breakBlocks = breakBlocks;
+    }
     public void setLevel(int level) {
         this.level = level;
     }
@@ -166,6 +169,10 @@ public class Ball implements Runnable {
     }
     public boolean isIntersected() {
         return intersected;
+    }
+
+    public boolean canBreakBlocks() {
+        return breakBlocks;
     }
 
     private void startRandomX(){
@@ -254,20 +261,24 @@ public class Ball implements Runnable {
                 setxDirection(-1);
             if(ball.x > p1.getPaddle().x + (p1.getPaddle().width)/2)
                 setxDirection(1);
+            setBreakBlocks(true);
         }
         if(ball.intersects(p2.getPaddle())) {
             intersected = true;
             setyDirection(+1);
+            setBreakBlocks(true);
         }
-        for(BlockCreator blockCreator : getScreenCreate().getBlockCreatorList()) {
-            if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
-                powersCollision(blockCreator);
+        if(canBreakBlocks()) {
+            for (BlockCreator blockCreator : getScreenCreate().getBlockCreatorList()) {
+                if (ball.intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
+                    powersCollision(blockCreator);
 
-                blockBounceHorizontal(blockCreator);
-                blockBounceVertical(blockCreator);
-                afterCollision(blockCreator);
+                    blockBounceHorizontal(blockCreator);
+                    blockBounceVertical(blockCreator);
+                    afterCollision(blockCreator);
+                }
+                powerCollisionWithPaddle();
             }
-            powerCollisionWithPaddle();
         }
         if(p1.getPaddle().intersects(powerCreator.getPower())) {
             powerCreator.setIntersection(false);

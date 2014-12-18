@@ -114,7 +114,7 @@ public class GamePanel extends JPanel {
                 b.getP2().setWidth(Database.DatabaseInstance.fillLevels().get(levelNumber).getPaddleLength());
                 b.getBall().x = b.getP1().getPaddle().x + b.getP1().getPaddle().width/2;
                 b.setStartSpeed(Database.DatabaseInstance.fillLevels().get(levelNumber).getBallSpeed());
-                b.setPlaying(false);
+                b.setBreakBlocks(false);
             }
             for(BlockCreator blockCreator: screenCreate.getBlockCreatorList()) {
                 if (blockCreator.getNumberOfHitsLeft() != 0) {
