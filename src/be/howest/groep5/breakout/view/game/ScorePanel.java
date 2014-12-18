@@ -6,12 +6,14 @@ import be.howest.groep5.breakout.model.multimedia.Multimedia;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Dries Dekoninck on 16/12/2014.
  */
 
-public class ScorePanel extends JPanel {
+public class ScorePanel extends JPanel implements Runnable {
     private Ball b;
     private JPanel scorePanel, singlePanel, coopPanel, infoPanel, lifePanel;
     private JLabel titelLabel, scoresingle, scorecoop, pause, timer, life;
@@ -115,14 +117,15 @@ public class ScorePanel extends JPanel {
     }
 
     public void changeTexts(int singlePlayerScore, int coopScore, int numberOfLives){
-        remove(scorePanel);
+        //remove(scorePanel);
         scoresingle.setText("Score: " + singlePlayerScore);
         scorecoop.setText("Score: " + coopScore);
         life.setText("" + numberOfLives);
-        add(scorePanel);
-        revalidate();
+        //add(scorePanel);
+        //revalidate();
         repaint();
     }
+
 
     private void setBackground() {
         background = multimedia.getMainBackground();
@@ -133,6 +136,20 @@ public class ScorePanel extends JPanel {
     @Override
     protected void paintComponent (Graphics g){
         g.drawImage(background, 0, 0, null);
+    }
+
+    @Override
+    public void run() {
+        Timer timer = new Timer(10, new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                changeTexts(gamePanel.getB().getP1Score(),gamePanel.getB().getP2Score(), gamePanel.getB().getNumberOfLifes());
+            }
+        });
+        timer.setRepeats(true);
+        timer.setCoalesce(true);
+        timer.start();
     }
 }
 
