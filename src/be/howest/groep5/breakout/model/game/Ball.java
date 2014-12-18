@@ -1,6 +1,7 @@
 package be.howest.groep5.breakout.model.game;
 
 import be.howest.groep5.breakout.data.Database;
+import be.howest.groep5.breakout.view.game.ScoreObserver;
 
 import java.awt.*;
 import java.util.*;
@@ -20,6 +21,8 @@ public class Ball implements Runnable {
     private ScreenCreate screenCreate;
     private PowerCreator powerCreator;
     private boolean intersected;
+    private List<ScoreObserver> observers;
+
     public Ball(boolean singleplayer, int difficulty, int panelWidth){
         p1 = new Paddle(475,700,panelWidth,1);
         p2 = new Paddle(475,10, panelWidth, 2);
@@ -41,6 +44,8 @@ public class Ball implements Runnable {
         setTopBound(1000 - ball.height);
         setLengthBound(1000 - ball.width);
         playing = false;
+
+        observers = new ArrayList<ScoreObserver>();
 
         setP1Score(0);
         setP2Score(0);
@@ -247,6 +252,8 @@ public class Ball implements Runnable {
                 powerCreator.returnPower();
             }
         }
+
+        notifyObservers();
     }
 
     public void move(){
@@ -292,6 +299,16 @@ public class Ball implements Runnable {
             }
         } catch (Exception e){
             System.err.println(e.getMessage());
+        }
+    }
+
+    public void addObserver(ScoreObserver o) {
+        observers.add(o);
+    }
+
+    public void notifyObservers() {
+        for (ScoreObserver o : observers) {
+            o.update(p1Score, p2Score, numberOfLifes);
         }
     }
 }

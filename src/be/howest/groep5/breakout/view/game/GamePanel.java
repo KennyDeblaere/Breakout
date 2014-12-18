@@ -9,6 +9,8 @@ import be.howest.groep5.breakout.model.multimedia.Multimedia;
 import be.howest.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.*;
 
 /**
@@ -58,6 +60,7 @@ public class GamePanel extends JPanel {
 
     public void setScorePanel(ScorePanel scorePanel) {
         this.scorePanel = scorePanel;
+        getB().addObserver(scorePanel);
     }
 
     public void startGame(){
@@ -128,7 +131,6 @@ public class GamePanel extends JPanel {
         }
         else{
             centerPanel.addHighScoreAddPanel(b.getP1Score());
-
         }
         repaint();
     }

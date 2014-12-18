@@ -42,7 +42,7 @@ public class Database {
             //String url = "jdbc:mysql://sql5.freemysqlhosting.net:3306/sql561713";
             //connection = DriverManager.getConnection(url, "sql561713","qU9%lG7%");
 
-            //login pw: kzKCphMhaRmC
+            //^login pw: kzKCphMhaRmC
 
 
         } catch (ClassNotFoundException | SQLException | InstantiationException | IllegalAccessException ex) {

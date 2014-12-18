@@ -15,20 +15,21 @@ import java.util.Observer;
  * Created by Dries Dekoninck on 16/12/2014.
  */
 
-public class ScorePanel extends JPanel implements Observer {
+public class ScorePanel extends JPanel implements ScoreObserver {
     private Ball b;
     private JPanel scorePanel, singlePanel, coopPanel, infoPanel, lifePanel;
     private JLabel titelLabel, scoresingle, scorecoop, pause, timer, life;
     private int seconds = 10;
-    private Boolean singleplayer = false;
+    private Boolean isSingleplayer = false;
     private Multimedia multimedia;
     private Image background;
     private GamePanel gamePanel;
 
-    public ScorePanel(GamePanel gamePanel) {
+    public ScorePanel(GamePanel gamePanel, Boolean isSinglePlayer) {
         super();
 
         this.gamePanel = gamePanel;
+        this.isSingleplayer = isSinglePlayer;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setPreferredSize(new Dimension(200, 710));
         setBackground(Color.white);
@@ -48,27 +49,29 @@ public class ScorePanel extends JPanel implements Observer {
         singlePanel = new JPanel();
         coopPanel = new JPanel();
         titelLabel = new JLabel("Scorebord");
-        scoresingle = new JLabel("Score: " + gamePanel.getB().getP1Score());
-        scorecoop = new JLabel("Score: " + gamePanel.getB().getP2Score());
-        pause = new JLabel("<html>Druk op \"P\"<br> of \"spatie\" \n om te pauzeren</html>");
+        pause = new JLabel("<html>Druk op \" P \"<br> of \"spatie\" \n om te pauzeren</html>");
         timer = new JLabel("<html>Power up/down voor :<br>" + seconds + " \n  seconden</html>");
         life = new JLabel("3");
     }
 
-    private void setSinglePanel(){
-        singlePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Speler 1", TitledBorder.LEFT, TitledBorder.TOP, new Font(null, Font.BOLD, 15), Color.white));
-        singlePanel.setPreferredSize(new Dimension(175, 150));
-        singlePanel.add(scoresingle);
-        singlePanel.setOpaque(false);
-        revalidate();
-        repaint();
-    }
+    private JPanel playerScorePanelCreator(String spelerNaam, Boolean isCoOp) {
+        JPanel toReturnPanel = new JPanel();
 
-    private void setCoopPanel(){
-        coopPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), "Speler 2", TitledBorder.LEFT, TitledBorder.TOP, new Font(null, Font.BOLD, 15), Color.white));
-        coopPanel.setPreferredSize(new Dimension(175, 150));
-        coopPanel.add(scorecoop);
-        coopPanel.setOpaque(false);
+        toReturnPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(Color.white, 2, true), spelerNaam, TitledBorder.LEFT, TitledBorder.TOP, new Font(null, Font.BOLD, 15), Color.white));
+        toReturnPanel.setPreferredSize(new Dimension(175, 150));
+
+        if (isCoOp) {
+            scorecoop = new JLabel("Score: " + gamePanel.getB().getP2Score());
+            scorecoop.setForeground(Color.white);
+            toReturnPanel.add(scorecoop);
+        } else {
+            scoresingle = new JLabel("Score: " + gamePanel.getB().getP1Score());
+            scoresingle.setForeground(Color.white);
+            toReturnPanel.add(scoresingle);
+        }
+        toReturnPanel.setOpaque(false);
+
+        return toReturnPanel;
     }
 
     private void setInfoPanel(){
@@ -89,15 +92,14 @@ public class ScorePanel extends JPanel implements Observer {
         Font fonts = new Font(null, Font.BOLD, 15);
         titelLabel.setFont(new Font(null, Font.BOLD, 30));
         titelLabel.setForeground(Color.white);
-        scoresingle.setForeground(Color.white);
-        scorecoop.setForeground(Color.white);
         pause.setForeground(Color.white);
         timer.setForeground(Color.white);
         life.setForeground(Color.white);
         //------------ singlePanel ----------------
-        setSinglePanel();
+        //setSinglePanel();
+        singlePanel = playerScorePanelCreator("Speler 1", false);
         //------------ coopPanel ------------------
-        setCoopPanel();
+        coopPanel = playerScorePanelCreator("Speler 2", true);
         //------------ infoPanel ------------------
         setInfoPanel();
         //------------ lifePanel ------------------
@@ -106,7 +108,7 @@ public class ScorePanel extends JPanel implements Observer {
         scorePanel.add(titelLabel);
         scorePanel.add(lifePanel);
         scorePanel.add(singlePanel);
-        if (!gamePanel.getB().isSingleplayer()) {
+        if (!isSingleplayer) {
             scorePanel.add(coopPanel);
         }
 
@@ -141,9 +143,15 @@ public class ScorePanel extends JPanel implements Observer {
     }
 
 
-    @Override
+    /*@Override
     public void update(Observable o, Object arg) {
         changeTexts(gamePanel.getB().getP1Score(),gamePanel.getB().getP2Score(), gamePanel.getB().getNumberOfLifes());
+    }*/
+
+    @Override
+    public void update(int p1Score, int p2score, int numberOfLifesLeft) {
+        changeTexts(p1Score, p2score, numberOfLifesLeft);
+        System.out.println(p1Score+" - "+p2score+" - "+numberOfLifesLeft);
     }
 }
 
