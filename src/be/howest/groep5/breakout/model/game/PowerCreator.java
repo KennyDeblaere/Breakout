@@ -12,6 +12,7 @@ public class PowerCreator implements Runnable {
     private int yDirection, powerid;
     private boolean intersection, powerup, playing;
     private int teller;
+    private ShooterCreator shooterCreator;
 
     public PowerCreator(int powerid, boolean powerup, Ball ball, Paddle paddle, int x, int y){
         setPower(new Rectangle(x, y+50, 15,15));
@@ -79,6 +80,7 @@ public class PowerCreator implements Runnable {
     public void returnPower(){
 
         while (teller < 1) {
+            shooterCreator = null;
             getBall().setSpeed(getBall().getStartSpeed());
             getBall().getBall().width = getBall().getStartWidth();
             getBall().getBall().height = getBall().getBall().width;
@@ -137,8 +139,10 @@ public class PowerCreator implements Runnable {
     // ---------------------- POWER UP -----------------------------------
 
     private void shooter(Ball ball){
-        System.out.println("shoooooooooooooooooooooooooooter");
-
+        //System.out.println("shoooooooooooooooooooooooooooter");
+        shooterCreator = new ShooterCreator(ball);
+        Thread thread = new Thread(shooterCreator);
+        thread.start();
     }
 
     private void makeBallBigger(Ball ball) {

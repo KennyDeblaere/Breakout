@@ -19,7 +19,8 @@ public class Ball implements Runnable {
     private boolean singlePlayer, playing;
     private ScreenCreate screenCreate;
     private PowerCreator powerCreator;
-    private boolean intersected, breakBlocks;
+    private ShooterCreator shooterCreator;
+    private boolean intersected, breakBlocks, shoot;
     private List<ScoreObserver> observers;
 
     public Ball(boolean singlePlayer, int difficulty, int panelWidth){
@@ -31,6 +32,7 @@ public class Ball implements Runnable {
         setStartSpeed(Database.DatabaseInstance.fillLevels().get(getLevel()).getBallSpeed());
         setStartWidth(15);
 
+        shoot = false;
 
         this.difficulty = difficulty;
         intersected = false;
@@ -108,6 +110,12 @@ public class Ball implements Runnable {
     public void setLevel(int level) {
         this.level = level;
     }
+    public void setShooterCreator(ShooterCreator shooterCreator) {
+        this.shooterCreator = shooterCreator;
+    }
+    public void setShoot(boolean shoot) {
+        this.shoot = shoot;
+    }
 
     public int getX() {
         return x;
@@ -163,6 +171,13 @@ public class Ball implements Runnable {
     public int getStartWidth() {
         return startWidth;
     }
+    public ShooterCreator getShooterCreator() {
+        return shooterCreator;
+    }
+
+    public boolean canShoot() {
+        return shoot;
+    }
 
     public boolean isPlaying() {
         return playing;
@@ -194,7 +209,7 @@ public class Ball implements Runnable {
 
         if(blockCreator.hasAPowerUp()){
             int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
-            powerCreator = new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
+            powerCreator = new PowerCreator(0, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
             powerCreator.setIntersection(true);
             Thread t = new Thread(powerCreator);
             t.start();
@@ -253,6 +268,17 @@ public class Ball implements Runnable {
 
         }
     }
+    private void shooterCollision(BlockCreator blockCreator){
+        if(getShooterCreator()!= null && getShooterCreator().getShooter().intersects(blockCreator.getBlock())) {
+            /*setShoot(false);
+            powersCollision(blockCreator);
+            blockBounceHorizontal(blockCreator);
+            blockBounceVertical(blockCreator);
+            afterCollision(blockCreator);*/
+            System.out.println("inter");
+        }
+
+    }
 
     public void collision(){
         if(ball.intersects(p1.getPaddle())){
@@ -275,7 +301,9 @@ public class Ball implements Runnable {
 
                     blockBounceHorizontal(blockCreator);
                     blockBounceVertical(blockCreator);
+
                     afterCollision(blockCreator);
+                    shooterCollision(blockCreator);
                 }
                 powerCollisionWithPaddle();
             }
@@ -286,6 +314,7 @@ public class Ball implements Runnable {
                 powerCreator.returnPower();
             }
         }
+
     }
 
     public void move(){
