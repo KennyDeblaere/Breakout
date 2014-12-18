@@ -19,7 +19,6 @@ public class Paddle implements Runnable {
         setId(id);
         playing = false;
         paddle = new Rectangle(getX(), getY(), getWidth(),10);
-        setLengthGo(1000 - getWidth());
         setSpeed(4);
 
     }
@@ -63,6 +62,7 @@ public class Paddle implements Runnable {
     }
     public void setWidth(int width) {
         this.width = width;
+        setLengthGo(1000 - width);
     }
 
     public Rectangle getPaddle() {
