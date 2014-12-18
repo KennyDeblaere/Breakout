@@ -10,11 +10,12 @@ import java.io.FileInputStream;
  */
 public class Sound implements Runnable{
     private Player player;
+    private Boolean loop = true;
 
     @Override
     public void run() {
         try {
-            while(true) {
+            while(loop) {
                 File file = new File("src/be/howest/groep5/breakout/multimedia/Breakout.mp3");
                 FileInputStream fis = new FileInputStream(file);
                 BufferedInputStream bis = new BufferedInputStream(fis);
