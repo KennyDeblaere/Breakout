@@ -2,6 +2,7 @@ package be.howest.groep5.breakout.view.welcome;
 
 import be.howest.groep5.breakout.controller.multimedia.SoundController;
 import be.howest.groep5.breakout.model.multimedia.Multimedia;
+import be.howest.groep5.breakout.view.settings.SettingPanel;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
@@ -21,10 +22,11 @@ public class StatusPanel extends JPanel implements ActionListener{
     private JButton soundOnButton, soundOffButton;
     private BufferedImage onImage, offImage;
     private Multimedia multimedia;
+    private SettingPanel settingPanel;
 
     public StatusPanel(){
         super();
-        setVolume(1);
+        settingPanel.setVolume(6);
         multimedia = new Multimedia();
         setPreferredSize(new Dimension((int) getMaximumSize().getWidth(), 40));
         createComponents();
@@ -65,28 +67,17 @@ public class StatusPanel extends JPanel implements ActionListener{
             add(statusLabel);
     }
 
-    public static void setVolume(int value){
-        try {
-            Line line = AudioSystem.getLine(Port.Info.SPEAKER);
-            line.open();
-            FloatControl control =(FloatControl)line.getControl(FloatControl.Type.VOLUME);
-            control.setValue(value);
-            line.close();
-        } catch (LineUnavailableException e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (multimedia.isPlaying()){
             multimedia.setPlaying(false);
-            setVolume(0);
+            settingPanel.setVolume(0);
 
         }
         else{
             multimedia.setPlaying(true);
-            setVolume(1);
+            settingPanel.setVolume((float)60);
         }
         addComponents();
     }

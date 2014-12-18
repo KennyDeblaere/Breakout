@@ -96,5 +96,4 @@ public class ContentPanel extends JPanel {
         remove(howToPlayPanel);
         remove(settingPanel);
     }
-
 }
