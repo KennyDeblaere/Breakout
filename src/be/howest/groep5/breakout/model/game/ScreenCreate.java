@@ -67,29 +67,42 @@ public class ScreenCreate {
         return blockCreatorList;
     }
 
-    private void createScreen(int numberOfBlocks){
+    private void createScreen(int numberOfBlocks) {
         BlockCreators blockCreators = new BlockCreators(getXPosition(), getYPosition());
         blockCreatorList = new ArrayList<>();
         Random r = new Random();
-        if(blockCreators.getBlockCreators().size() < numberOfBlocks)
+        if (blockCreators.getBlockCreators().size() < numberOfBlocks)
             numberOfBlocks = blockCreators.getBlockCreators().size();
         int counter = 0;
-        while(counter < Database.DatabaseInstance.fillLevels().get(getLevelNumber()).getNumberOfRows()){
+        while (counter < Database.DatabaseInstance.fillLevels().get(getLevelNumber()).getNumberOfRows()) {
             int temp = r.nextInt(numberOfBlocks);
 
-            if(getXPosition() + blockCreators.getBlockCreators().get(temp).getBlock().width < 1000) {
-                if(temp == 6)
+            if (getXPosition() + blockCreators.getBlockCreators().get(temp).getBlock().width < 1000) {
+                if (temp == 6)
                     setNumberOfBrokenBlocks(getNumberOfBrokenBlocks() + 1);
 
                 blockCreatorList.add(blockCreators.getBlockCreators().get(temp));
                 setXPosition(getXPosition() + blockCreators.getBlockCreators().get(temp).getBlock().width);
                 blockCreators = new BlockCreators(getXPosition(), getYPosition());
             } else {
-                //waarschijnlijk meer optimaliseerbaar in een while waarmee je de rest eerst opvult ;)
-                for(int i=0; i<numberOfBlocks;i++){
-                    if(blockCreators.getBlockCreators().get(i).getBlock().width + getXPosition() == 1000)
-                        blockCreatorList.add(blockCreators.getBlockCreators().get(i));
+                List<BlockCreator> tempList;
+                while (getXPosition() < 1000) {
+                    tempList = new ArrayList<>();
+                    for (int i = 0; i < numberOfBlocks; i++) {
+                        if (blockCreators.getBlockCreators().get(i).getBlock().width + getXPosition() <= 1000)
+                            tempList.add(blockCreators.getBlockCreators().get(i));
+                    }
+                    temp = r.nextInt(tempList.size());
+                    if (getXPosition() + tempList.get(temp).getBlock().width <= 1000) {
+                        if (temp == 6)
+                            setNumberOfBrokenBlocks(getNumberOfBrokenBlocks() + 1);
+                        blockCreatorList.add(tempList.get(temp));
+                        setXPosition(getXPosition() + tempList.get(temp).getBlock().width);
+                        blockCreators = new BlockCreators(getXPosition(), getYPosition());
+                    }
                 }
+
+
 
                 counter++;
                 setYPosition(getYPosition() + 50);
