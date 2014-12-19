@@ -33,7 +33,6 @@ public class UnitTests {
         }
         if(exception) {
             fail("Database connection failed!");
-            exceptionMessage("Database connection");
         }
     }
 
@@ -105,10 +104,4 @@ public class UnitTests {
             fail("Block Class failed!");
         }
     } // TODO tests van model
-
-    private void exceptionMessage(String message){
-        JOptionPane.showMessageDialog(null, message + " failed!", "ATTENTION", JOptionPane.ERROR_MESSAGE);
-        System.exit(0);
-
-    }
 }
