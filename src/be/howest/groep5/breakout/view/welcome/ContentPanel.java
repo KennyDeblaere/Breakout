@@ -77,7 +77,7 @@ public class ContentPanel extends JPanel {
         re();
     }
 
-    public void afsluiten(){
+    public void shutDown(){
         System.exit(0);
     }
 

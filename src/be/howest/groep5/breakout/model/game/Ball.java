@@ -269,7 +269,7 @@ public class Ball implements Runnable {
         }
     }
     private void shooterCollision(BlockCreator blockCreator){
-        if(canShoot() && getShooterCreator().getShooter().intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
+        if(canShoot() && getShooterCreator() != null && getShooterCreator().getShooter().intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
             powersCollision(blockCreator);
             blockBounceHorizontal(blockCreator);
             blockBounceVertical(blockCreator);
@@ -292,6 +292,9 @@ public class Ball implements Runnable {
             intersected = true;
             setyDirection(+1);
             setBreakBlocks(true);
+        }
+        if(getShooterCreator() != null && ball.intersects(getShooterCreator().getShooter())){
+
         }
         if(canBreakBlocks()) {
             for (BlockCreator blockCreator : getScreenCreate().getBlockCreatorList()) {

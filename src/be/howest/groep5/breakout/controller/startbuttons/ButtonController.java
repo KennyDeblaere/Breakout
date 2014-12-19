@@ -1,5 +1,6 @@
 package be.howest.groep5.breakout.controller.startbuttons;
 
+import be.howest.groep5.breakout.data.Database;
 import be.howest.groep5.breakout.view.welcome.ContentPanel;
 
 import java.awt.event.ActionEvent;
@@ -30,7 +31,9 @@ public class ButtonController implements ActionListener{
                 break;
             case "About":  contentPanel.addAboutPanel();
                 break;
-            case "Sluiten":  contentPanel.afsluiten();
+            case "Sluiten":
+                contentPanel.shutDown();
+                Database.DatabaseInstance.updateHostNameUserLogout(Database.DatabaseInstance.getUserId());
                 break;
         }
     }
