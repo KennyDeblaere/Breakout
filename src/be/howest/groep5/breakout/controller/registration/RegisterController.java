@@ -3,7 +3,6 @@ package be.howest.groep5.breakout.controller.registration;
 import be.howest.groep5.breakout.model.Register;
 import be.howest.groep5.breakout.view.registration.DatePanel;
 import be.howest.groep5.breakout.view.registration.SexPanel;
-//import CenterPanel;
 import be.howest.groep5.breakout.view.welcome.ContentPanel;
 
 
@@ -49,17 +48,6 @@ public class RegisterController implements ActionListener {
         this.email = email;
         this.dateOfBirth = dateOfBirth;
         this.sex = sex;
-    }
-
-    private void checkValues(String iets){
-        if (iets ==""){
-            System.out.println("testtesttest");
-            JOptionPane.showMessageDialog(null, "Username moet worden ingevuld", "Opgelet", JOptionPane.WARNING_MESSAGE);
-        }
-    }
-
-    private void message(String message){
-
     }
 
     public JTextField getEmail() {
