@@ -6,6 +6,7 @@ package be.howest.groep5.breakout.model;
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
+
 public class Power {
     private String function;
     private boolean powerup;

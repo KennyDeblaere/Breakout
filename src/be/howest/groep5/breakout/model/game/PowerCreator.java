@@ -3,8 +3,12 @@ package be.howest.groep5.breakout.model.game;
 import java.awt.*;
 
 /**
- * Created by Kenny, Blackhat on 9/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class PowerCreator implements Runnable {
     private Rectangle power;
     private Ball ball;
@@ -136,7 +140,6 @@ public class PowerCreator implements Runnable {
 
     }
 
-    // ---------------------- POWER UP -----------------------------------
 
     private void shooter(Ball ball){
         shooterCreator = new ShooterCreator(ball);
@@ -163,8 +166,6 @@ public class PowerCreator implements Runnable {
         if(ball.getNumberOfLifes() <= 6)
             ball.setNumberOfLifes(ball.getNumberOfLifes() + 1);
     }
-
-    // ---------------------- POWER DOWN -----------------------------------
 
     private void makeBallSmaller(Ball ball) {
         ball.setLengthBound(ball.getLengthBound() - ball.getBall().width);

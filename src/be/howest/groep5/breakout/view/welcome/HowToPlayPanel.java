@@ -4,8 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Dries Dekoninck on 16/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class HowToPlayPanel extends JPanel{
     private JPanel howtoplay;
     private JLabel titelLabel, howto;

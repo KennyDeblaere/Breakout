@@ -3,8 +3,12 @@ package be.howest.groep5.breakout.model.game;
 import java.awt.*;
 
 /**
- * Created by Kenny on 18/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class ShooterCreator implements Runnable {
     private int yDirection;
     private Ball ball;

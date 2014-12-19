@@ -7,8 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Kenny on 9/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class BlockCreators {
     private List<BlockCreator> blockCreators;
     public BlockCreators(int x, int y){

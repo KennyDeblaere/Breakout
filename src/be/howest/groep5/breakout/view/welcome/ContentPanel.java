@@ -5,12 +5,14 @@ import be.howest.groep5.breakout.view.registration.RegistrationPanel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Created by Dries Dekoninck on 21/11/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class ContentPanel extends JPanel {
     private CenterPanel panelCenter;
     private RegistrationPanel registrationPanel;
@@ -44,39 +46,39 @@ public class ContentPanel extends JPanel {
     public void addRegistrationPanel(){
         removePanels();
         add(registrationPanel);
-        re();
+        reDraw();
     }
 
     public void addDifficultyPanel(boolean singleplayer){
         removePanels();
         panelDifficulty = new DifficultyPanel(panelCenter,singleplayer);
         add(panelDifficulty);
-        re();
+        reDraw();
     }
 
     public void addHighScorePanel(){
         removePanels();
         add(panelHighScore);
-        re();
+        reDraw();
     }
 
     public void addHowToPlayPanel(){
         removePanels();
         add(howToPlayPanel);
-        re();
+        reDraw();
     }
 
     public void addAboutPanel(){
         removePanels();
         add(panelAbout);
-        re();
+        reDraw();
     }
 
     public void shutDown(){
         System.exit(0);
     }
 
-    private void re(){
+    private void reDraw(){
         revalidate();
         repaint();
     }

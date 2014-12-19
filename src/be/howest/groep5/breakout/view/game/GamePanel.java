@@ -12,8 +12,12 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Kenny, Blackhat on 12/11/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class GamePanel extends JPanel {
     private Image dbImage;
     private Graphics dbGraphics;
@@ -111,7 +115,6 @@ public class GamePanel extends JPanel {
             g.fillOval(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
             drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
             if(b.getPowerCreator().isIntersection()) {
-                //g.fillRect(b.getPowerCreator().getPower().x, b.getPowerCreator().getPower().y, b.getPowerCreator().getPower().width, b.getPowerCreator().getPower().height);
                 g.drawImage(b.getPower(),b.getPowerCreator().getPower().x, b.getPowerCreator().getPower().y, null);
             }
             if (!b.isSinglePlayer()) {

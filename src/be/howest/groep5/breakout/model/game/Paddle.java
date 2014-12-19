@@ -3,8 +3,12 @@ package be.howest.groep5.breakout.model.game;
 import java.awt.*;
 
 /**
- * Created by Kenny Deblaere.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class Paddle implements Runnable {
     private int x, y, xDirection, id, lengthGo, startWidth, startSpeed;
     private Rectangle paddle;

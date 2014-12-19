@@ -17,10 +17,11 @@ import java.net.URL;
 
 /**
  * Created by
- *      Kenny Deblaere.
+ *      Kenny Deblaere
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
+
 public class MainFrame extends JFrame {
     public MainFrame() {
         super();
@@ -34,7 +35,6 @@ public class MainFrame extends JFrame {
         SoundController sound = new SoundController();
         addWindowListener(new LogoutOnCloseController());
 
-        //pack();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
 
     }

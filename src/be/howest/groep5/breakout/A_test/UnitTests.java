@@ -15,12 +15,13 @@ import be.howest.groep5.breakout.model.game.PowerCreator;
 
 import static org.junit.Assert.*;
 /**
- * Created by Dries Dekoninck on 13/11/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 
 public class UnitTests extends Exception{
-
-    //-------------- DATABASE TESTS ----------------------
 
     @Test
     public void testGetConnection() {
@@ -38,7 +39,6 @@ public class UnitTests extends Exception{
         }
     }
 
-    //-------------- GAME MODEL TESTS --------------------
     @Test
     public void testBall() {
         boolean exception = false;
@@ -93,7 +93,6 @@ public class UnitTests extends Exception{
         }
     }
 
-    //-------------- MODEL TESTS -------------------------
     @Test
     public void testBlock() {
         boolean exception = false;
@@ -106,7 +105,6 @@ public class UnitTests extends Exception{
             fail("Block Class failed!");
         }
     }
-    //-------------- MULTIMEDIA TESTS -------------------------
     @Test
     public void testSoundController() {
         boolean exception = false;

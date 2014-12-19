@@ -7,8 +7,13 @@ import be.howest.groep5.breakout.view.welcome.CenterPanel;
 import javax.swing.*;
 
 /**
- * Created by Kenny on 5/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
+
 public class AddHighscorePanel extends JPanel {
     private int score;
     private JButton submit, cancel;

@@ -8,10 +8,11 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by
- *      Kenny Deblaere.
+ *      Kenny Deblaere
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
+
 public class loginOutButtonController implements ActionListener {
     private PanelLogin panelLogin;
     private boolean login;

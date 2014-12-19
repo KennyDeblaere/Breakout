@@ -3,7 +3,6 @@ package be.howest.groep5.breakout.controller.registration;
 import be.howest.groep5.breakout.model.Register;
 import be.howest.groep5.breakout.view.registration.DatePanel;
 import be.howest.groep5.breakout.view.registration.SexPanel;
-//import CenterPanel;
 import be.howest.groep5.breakout.view.welcome.ContentPanel;
 
 
@@ -14,10 +13,11 @@ import java.util.Date;
 
 /**
  * Created by
- *      Kenny Deblaere.
+ *      Kenny Deblaere
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
+
 public class RegisterController implements ActionListener {
     private ContentPanel c;
     private JTextField username, firstname, lastname, email;

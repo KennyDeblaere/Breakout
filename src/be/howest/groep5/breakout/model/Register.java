@@ -9,10 +9,11 @@ import java.util.Date;
 
 /**
  * Created by
- *      Kenny Deblaere.
+ *      Kenny Deblaere
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
+
 public class Register {
     private String username, firstname, lastname, password, email;
     private Date dateOfBirth;

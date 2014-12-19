@@ -7,8 +7,12 @@ import be.howest.groep5.breakout.view.welcome.PanelLogin;
 import javax.swing.*;
 
 /**
- * Created by Kenny on 13/11/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class LoginPanel extends JPanel {
     private JTextField username;
     private JPasswordField password;

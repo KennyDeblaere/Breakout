@@ -3,8 +3,12 @@ package be.howest.groep5.breakout.model.game;
 import java.awt.*;
 
 /**
- * Created by Kenny on 17/11/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class BlockCreator {
     private Rectangle block;
     private int x, y, numberOfHitsLeft;

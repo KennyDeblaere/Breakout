@@ -10,8 +10,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * Created by Dries Dekoninck on 04/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class CenterPanel extends JPanel {
     private DifficultyPanel difficultyPanel;
     private ContentPanel panelContent;
@@ -64,7 +68,6 @@ public class CenterPanel extends JPanel {
                 scorePanel = new ScorePanel(p);
             }
         }).start();
-        //scorePanel = new ScorePanel(this.gamePanel);
         add(this.gamePanel);
         add(this.scorePanel);
         reDraw();

@@ -6,8 +6,12 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 /**
- * Created by Kenny Deblaere.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class MovePanelController extends KeyAdapter {
     private Ball b;
     public MovePanelController(Ball ball){

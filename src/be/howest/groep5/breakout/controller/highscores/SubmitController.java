@@ -9,8 +9,12 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 
 /**
- * Created by Kenny on 5/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class SubmitController implements ActionListener {
     private CenterPanel panelCenter;
     private int score;

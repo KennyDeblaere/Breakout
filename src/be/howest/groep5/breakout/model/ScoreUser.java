@@ -2,10 +2,11 @@ package be.howest.groep5.breakout.model;
 
 /**
  * Created by
- *      Kenny Deblaere.
+ *      Kenny Deblaere
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
+
 public class ScoreUser {
     private int score;
     private String username;

@@ -8,10 +8,11 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by
- *      Kenny Deblaere.
+ *      Kenny Deblaere
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
+
 public class RegisterButtonController implements ActionListener {
     private ContentPanel c;
     public RegisterButtonController(ContentPanel panelContent) {

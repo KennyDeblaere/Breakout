@@ -5,8 +5,12 @@ import java.io.File;
 import java.io.FileInputStream;
 
 /**
- * Created by Dries Dekoninck on 15/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class Sound implements Runnable{
     private static Player player;
     private File file;

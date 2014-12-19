@@ -7,8 +7,12 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Created by Kenny on 17/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class ScreenCreate {
     private List<BlockCreator> blockCreatorList;
     private int levelNumber, numberOfBrokenBlocks, xPosition, yPosition, numberOfBlocks;

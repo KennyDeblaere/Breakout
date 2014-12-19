@@ -7,7 +7,10 @@ import java.awt.*;
 import java.util.*;
 
 /**
- * Created by Benjamin, Dries Dekoninck on 17/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
 
 public class HighscorePanelCreator {
@@ -53,7 +56,6 @@ public class HighscorePanelCreator {
            scoreLabel.setForeground(Color.white);
            toReturnPanel.add(scoreLabel);
         }
-           //Dummy creator:
          if (scores.size() > 0 && scores.size() < 5) {
             for (int i = 0; i < (5-scores.size()); i++) {
                 usernameLabel = new JLabel("-");

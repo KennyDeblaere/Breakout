@@ -4,8 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Dries Dekoninck on 2/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class AboutPanel extends JPanel{
     private JPanel about;
     private JLabel titelLabel, createLabel, licensedtoLabel, versionLabel;

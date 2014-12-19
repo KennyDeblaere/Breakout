@@ -5,8 +5,12 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Dries Dekoninck on 21/11/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class MainPanel extends JPanel{
 
     private PanelLogin panelLogin;

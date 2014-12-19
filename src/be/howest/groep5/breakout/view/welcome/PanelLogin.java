@@ -8,11 +8,15 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * Created by Dries Dekoninck on 21/11/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class PanelLogin extends JPanel{
     private ContentPanel panelContent;
-    private Boolean loggedIn; //REMOVE WHEN USER-CLASS IS ADDED
+    private Boolean loggedIn;
     private JLabel textLabel;
     private JButton loginButton, logoutButton, registerButton;
     private LoginPanel loginPanel;

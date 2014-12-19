@@ -16,6 +16,7 @@ import java.util.logging.Logger;
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
+
 public class Database {
     public static Database DatabaseInstance = new Database();
 
@@ -30,19 +31,9 @@ public class Database {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-            //String url = "jdbc:mysql://mysqlstudent/kennydeblaab7yah";
-            //connection = DriverManager.getConnection(url, "kennydeblaab7yah","ce8iaw2IeLax");
 
             String url = "jdbc:mysql://localhost/breakout";
             connection = DriverManager.getConnection(url, "root", "");
-
-            //String url = "jdbc:mysql://db4free.net:3306/projectdatabank";
-            //connection = DriverManager.getConnection(url, "konidri","ce8iaw2IeLax");
-
-            //String url = "jdbc:mysql://sql5.freemysqlhosting.net:3306/sql561713";
-            //connection = DriverManager.getConnection(url, "sql561713","qU9%lG7%");
-
-            //^login pw: kzKCphMhaRmC
 
 
         } catch (ClassNotFoundException | SQLException | InstantiationException | IllegalAccessException ex) {

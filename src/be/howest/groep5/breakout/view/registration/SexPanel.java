@@ -3,8 +3,12 @@ package be.howest.groep5.breakout.view.registration;
 import javax.swing.*;
 
 /**
- * Created by Kenny Deblaere.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class SexPanel extends JPanel {
     private JRadioButton male, female;
 

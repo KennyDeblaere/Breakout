@@ -4,10 +4,11 @@ import java.util.Date;
 
 /**
  * Created by
- *      Kenny Deblaere.
+ *      Kenny Deblaere
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
+
 public class User {
     private String username, firstname, lastname, password, email;
     private int xp;

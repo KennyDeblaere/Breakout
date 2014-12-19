@@ -6,8 +6,12 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 /**
- * Created by Dries Dekoninck on 21/11/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class ButtonPanel extends JPanel{
     private JPanel ButtonPanel;
     private JButton single, co, high, howto, about, sluiten;

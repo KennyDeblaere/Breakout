@@ -1,6 +1,5 @@
 package be.howest.groep5.breakout.controller.registration;
 
-//import CenterPanel;
 import be.howest.groep5.breakout.view.welcome.ContentPanel;
 
 import java.awt.event.ActionEvent;
@@ -8,7 +7,7 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by
- *      Kenny Deblaere.
+ *      Kenny Deblaere
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */

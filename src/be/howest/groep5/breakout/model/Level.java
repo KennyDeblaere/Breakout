@@ -1,8 +1,12 @@
 package be.howest.groep5.breakout.model;
 
 /**
- * Created by Kenny on 17/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class Level {
     private int ballSpeed, paddleLength, numberOfRows;
 

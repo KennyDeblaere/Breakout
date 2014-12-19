@@ -10,10 +10,11 @@ import java.awt.*;
 
 /**
  * Created by
- *      Kenny Deblaere.
+ *      Kenny Deblaere
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
+
 public class RegistrationPanel extends JPanel {
     private JTextField username, firstname, lastname, email;
     private JPasswordField password, repeatedpassword;
@@ -104,7 +105,6 @@ public class RegistrationPanel extends JPanel {
     public RegistrationPanel(ContentPanel c){
         this.content = c;
         setLayout(new GridLayout(9,2,5,5));
-        //setPreferredSize(new Dimension(500,300));
         createComponents();
         addComponents();
         addActionListeners();

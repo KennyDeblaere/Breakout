@@ -5,10 +5,11 @@ import java.awt.*;
 
 /**
  * Created by
- *      Kenny Deblaere.
+ *      Kenny Deblaere
  *      Dries Dekoninck
  *      Benjamin Vansteelandt
  */
+
 public class DatePanel extends JPanel {
     private JTextField day,month,year;
 

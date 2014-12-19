@@ -1,8 +1,12 @@
 package be.howest.groep5.breakout.view.welcome;
 
 /**
- * Created by Dries Dekoninck on 5/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -25,7 +29,7 @@ public class ImagePanel extends JPanel{
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(image, 0, 0, null); // see javadoc for more info on the parameters
+        g.drawImage(image, 0, 0, null);
     }
 
 }

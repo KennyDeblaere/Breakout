@@ -6,8 +6,12 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by Dries Dekoninck on 15/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class Multimedia{
     private BufferedImage image, mainBackground, subbackground, scorebackground, gamebackground, power1, power2, power3;
     private boolean playing = true;
@@ -33,7 +37,6 @@ public class Multimedia{
     }
 
     private BufferedImage newPower() {
-        //
         if (powerTeller > 3) {
             powerTeller = 0;
     }

@@ -4,8 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Benjamin Vansteelandt, Dries Dekoninck on 17/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class PanelHighScore extends JPanel{
     private JPanel singlePlayerHighscore, multiPlayerHighscore;
     private HighscorePanelCreator highscorePanelCreator;

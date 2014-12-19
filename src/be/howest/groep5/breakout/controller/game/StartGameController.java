@@ -12,8 +12,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 /**
- * Created by Kenny, Dries Dekoninck on 13/11/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 public class StartGameController implements ActionListener {
     private CenterPanel panelCenter;
     private JComboBox difficulty;

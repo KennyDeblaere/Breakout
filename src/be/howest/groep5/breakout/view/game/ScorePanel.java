@@ -10,8 +10,12 @@ import javax.swing.border.TitledBorder;
 import java.awt.*;
 
 /**
- * Created by Dries Dekoninck on 16/12/2014.
+ * Created by
+ *      Kenny Deblaere
+ *      Dries Dekoninck
+ *      Benjamin Vansteelandt
  */
+
 
 public class ScorePanel extends JPanel implements ScoreObserver {
     private Ball b;
@@ -90,18 +94,12 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         pause.setForeground(Color.white);
         timer.setForeground(Color.white);
         life.setForeground(Color.white);
-        //------------ singlePanel ----------------
-        //setSinglePanel();
         singlePanel = playerScorePanelCreator("Speler 1", false);
-        //------------ infoPanel ------------------
         setInfoPanel();
-        //------------ lifePanel ------------------
         setLifePanel();
-        //------------ ScorePanel -----------------
         scorePanel.add(titelLabel);
         scorePanel.add(lifePanel);
         scorePanel.add(singlePanel);
-        CenterPanel p = gamePanel.getCenterPanel();
 
         scorePanel.add(infoPanel);
         scorePanel.setOpaque(false);
