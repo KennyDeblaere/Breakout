@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3a05afe-1ad2-4b29-a7ac-f5f6ed531623" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/AboutPanel.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/AboutPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/ButtonPanel.java" afterPath="$PROJECT_DIR$/src/be/howest/groep5/breakout/view/welcome/ButtonPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="071016a6-7d87-4721-84a3-fcdf0a4e5db6" name="Failed commit: Default" comment="img" />
@@ -802,7 +800,7 @@
       <workItem from="1418941132939" duration="1966000" />
       <workItem from="1418943209828" duration="2761000" />
       <workItem from="1418945982325" duration="1061000" />
-      <workItem from="1418947124078" duration="97000" />
+      <workItem from="1418947124078" duration="259000" />
     </task>
     <task id="LOCAL-00079" summary="Powerups beperkt.">
       <created>1418154523343</created>
@@ -1004,11 +1002,15 @@
       <created>1418947137138</created>
       <updated>1418947137138</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Scorepanel fixed!">
+      <created>1418947225435</created>
+      <updated>1418947225435</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="287152000" />
+    <option name="totallyTimeSpent" value="287314000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
