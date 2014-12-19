@@ -36,7 +36,7 @@ public class CenterPanel extends JPanel {
         panelContent = new ContentPanel(this);
         panelButton = new ButtonPanel(panelContent);
         gamePanel = new GamePanel(this,isSinglePlayer,0, this);
-        scorePanel = new ScorePanel(gamePanel, isSinglePlayer);
+        scorePanel = new ScorePanel(gamePanel);
         multimedia = new Multimedia();
         background = multimedia.getSubbackground();
         highscorePanel = new AddHighscorePanel(0,this);
@@ -61,7 +61,7 @@ public class CenterPanel extends JPanel {
         (new Thread() {
             @Override
             public void run() {
-                scorePanel = new ScorePanel(p, isSinglePlayer);
+                scorePanel = new ScorePanel(p);
             }
         }).start();
         //scorePanel = new ScorePanel(this.gamePanel);

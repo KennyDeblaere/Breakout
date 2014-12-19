@@ -15,19 +15,17 @@ import java.awt.*;
 
 public class ScorePanel extends JPanel implements ScoreObserver {
     private Ball b;
-    private JPanel scorePanel, singlePanel, coopPanel, infoPanel, lifePanel;
+    private JPanel scorePanel, singlePanel, infoPanel, lifePanel;
     private JLabel titelLabel, scoresingle, scorecoop, pause, timer, life;
     private int seconds = 10;
-    private Boolean isSingleplayer = false;
     private Multimedia multimedia;
     private Image background;
     private GamePanel gamePanel;
 
-    public ScorePanel(GamePanel gamePanel, Boolean isSinglePlayer) {
+    public ScorePanel(GamePanel gamePanel) {
         super();
 
         this.gamePanel = gamePanel;
-        this.isSingleplayer = isSinglePlayer;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setPreferredSize(new Dimension(200, 710));
         setBackground(Color.white);
@@ -35,7 +33,7 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         createComponents();
         setComponents();
         addComponents();
-        changeTexts(gamePanel.getB().getP1Score(),gamePanel.getB().getP2Score(),gamePanel.getB().getNumberOfLifes());
+        changeTexts(gamePanel.getB().getP1Score(),gamePanel.getB().getNumberOfLifes());
         setBackground();
     }
 
@@ -45,7 +43,6 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         lifePanel = new JPanel();
         infoPanel = new JPanel(new GridLayout(2, 1, 0, 10));
         singlePanel = new JPanel();
-        coopPanel = new JPanel();
         titelLabel = new JLabel("Scorebord");
         pause = new JLabel("<html>Druk op \" P \"<br> of \"spatie\" \n om te pauzeren</html>");
         timer = new JLabel("<html>Power up/down voor :<br>" + seconds + " \n  seconden</html>");
@@ -96,8 +93,6 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         //------------ singlePanel ----------------
         //setSinglePanel();
         singlePanel = playerScorePanelCreator("Speler 1", false);
-        //------------ coopPanel ------------------
-        coopPanel = playerScorePanelCreator("Speler 2", true);
         //------------ infoPanel ------------------
         setInfoPanel();
         //------------ lifePanel ------------------
@@ -108,9 +103,6 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         scorePanel.add(singlePanel);
         System.out.println(gamePanel.getB().isSinglePlayer());
         CenterPanel p = gamePanel.getCenterPanel();
-        if (!p.getGameMode()) {
-            scorePanel.add(coopPanel);
-        }
 
         scorePanel.add(infoPanel);
         scorePanel.setOpaque(false);
@@ -120,9 +112,8 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         add(scorePanel);
     }
 
-    public void changeTexts(int singlePlayerScore, int coopScore, int numberOfLives){
+    public void changeTexts(int singlePlayerScore, int numberOfLives){
         scoresingle.setText("Score: " + singlePlayerScore);
-        scorecoop.setText("Score: " + coopScore);
         life.setText("" + numberOfLives);
         repaint();
     }
@@ -142,8 +133,8 @@ public class ScorePanel extends JPanel implements ScoreObserver {
 
     @Override
     public void update(int p1Score, int p2score, int numberOfLifesLeft) {
-        changeTexts(p1Score, p2score, numberOfLifesLeft);
-        if (numberOfLifesLeft == 0) {
+        changeTexts(p1Score, numberOfLifesLeft);
+            if (numberOfLifesLeft == 0) {
             gamePanel.getCenterPanel().remove(this);
         }
     }

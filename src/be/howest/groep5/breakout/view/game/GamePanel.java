@@ -25,6 +25,8 @@ public class GamePanel extends JPanel {
     private ScreenCreate screenCreate;
     private ScorePanel scorePanel;
     private CenterPanel parent;
+    private Multimedia multimedia;
+    private Image power;
 
     public GamePanel(CenterPanel c, boolean singleplayer, int difficulty, CenterPanel parent){
 
@@ -44,7 +46,8 @@ public class GamePanel extends JPanel {
 
         addKeyListener(new MovePanelController(b));
 
-
+        multimedia = new Multimedia();
+        power = multimedia.getPower();
 
         repaint();
         setFocusable(true);
@@ -109,7 +112,8 @@ public class GamePanel extends JPanel {
             g.fillOval(b.getBall().x, b.getBall().y, b.getBall().width, b.getBall().height);
             drawPaddle(g, b.getP1().getId(), b.getP1().getPaddle());
             if(b.getPowerCreator().isIntersection()) {
-                g.fillRect(b.getPowerCreator().getPower().x, b.getPowerCreator().getPower().y, b.getPowerCreator().getPower().width, b.getPowerCreator().getPower().height);
+                //g.fillRect(b.getPowerCreator().getPower().x, b.getPowerCreator().getPower().y, b.getPowerCreator().getPower().width, b.getPowerCreator().getPower().height);
+                g.drawImage(power,b.getPowerCreator().getPower().x, b.getPowerCreator().getPower().y, null);
             }
             if (!b.isSinglePlayer()) {
                 drawPaddle(g, b.getP2().getId(), b.getP2().getPaddle());
