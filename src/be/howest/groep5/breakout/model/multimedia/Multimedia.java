@@ -33,6 +33,7 @@ public class Multimedia{
     }
 
     private BufferedImage newPower() {
+        //
         if (powerTeller > 3) {
             powerTeller = 0;
     }
