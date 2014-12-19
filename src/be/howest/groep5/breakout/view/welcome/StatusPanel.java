@@ -51,7 +51,7 @@ public class StatusPanel extends JPanel implements ActionListener, ChangeListene
         soundOffButton.addActionListener(this);
     }
 
-    public void addComponents() {
+    private void addComponents() {
         add(soundOnButton);
         add(soundOffButton);
         add(volume);
@@ -65,7 +65,7 @@ public class StatusPanel extends JPanel implements ActionListener, ChangeListene
         }
     }
 
-    public static void setVolume(float value){
+    private static void setVolume(float value){
         value /= 100;
         try {
             Line line = AudioSystem.getLine(Port.Info.SPEAKER);

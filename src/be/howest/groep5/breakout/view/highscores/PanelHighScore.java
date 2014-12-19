@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Created by Benjamin Vansteelandt on 17/12/2014.
+ * Created by Benjamin Vansteelandt, Dries Dekoninck on 17/12/2014.
  */
 public class PanelHighScore extends JPanel{
     private JPanel singlePlayerHighscore, multiPlayerHighscore;
@@ -15,7 +15,7 @@ public class PanelHighScore extends JPanel{
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setOpaque(false);
         addComponents();
-        setPreferredSize(new Dimension(500, 575));;
+        setPreferredSize(new Dimension(500, 575));
     }
 
     private void addComponents() {

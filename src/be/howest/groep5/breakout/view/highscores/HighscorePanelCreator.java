@@ -2,17 +2,12 @@ package be.howest.groep5.breakout.view.highscores;
 
 import be.howest.groep5.breakout.data.Database;
 import be.howest.groep5.breakout.model.ScoreUser;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 
 /**
- * Created by Benjamin on 17/12/2014.
- */
-
-/**
- * Moet niet aangepast worden voor uitbreiding naar veranderende panels
+ * Created by Benjamin, Dries Dekoninck on 17/12/2014.
  */
 
 public class HighscorePanelCreator {

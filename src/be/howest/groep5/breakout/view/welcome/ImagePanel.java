@@ -11,7 +11,6 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class ImagePanel extends JPanel{
-
     private BufferedImage image;
 
     public ImagePanel(String foto) {

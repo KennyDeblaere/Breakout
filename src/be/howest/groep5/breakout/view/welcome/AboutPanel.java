@@ -1,9 +1,6 @@
 package be.howest.groep5.breakout.view.welcome;
 
-import be.howest.groep5.breakout.model.multimedia.Multimedia;
-
 import javax.swing.*;
-import javax.swing.text.StyledEditorKit;
 import java.awt.*;
 
 /**
