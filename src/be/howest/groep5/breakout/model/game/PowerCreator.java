@@ -86,6 +86,7 @@ public class PowerCreator implements Runnable {
             getBall().getBall().width = getBall().getStartWidth();
             getBall().getBall().height = getBall().getBall().width;
             getPaddle().getPaddle().width = getPaddle().getStartWidth();
+            getPaddle().setLengthGo(1000 - getPaddle().getStartWidth());
             getPaddle().setSpeed(getPaddle().getStartSpeed());
             if (isPowerup()) {
                 switch (getPowerid()) {
