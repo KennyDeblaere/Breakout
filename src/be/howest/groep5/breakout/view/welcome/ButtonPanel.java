@@ -29,7 +29,7 @@ public class ButtonPanel extends JPanel{
         co = new JButton("Co-op");
         high = new JButton("Topscores");
         howto = new JButton("Instructies");
-        about = new JButton("Over");
+        about = new JButton("Over ons");
     }
 
     private void setComponents() {
