@@ -51,11 +51,6 @@ public class RegisterController implements ActionListener {
         this.sex = sex;
     }
 
-
-    private void message(String message){
-
-    }
-
     public JTextField getEmail() {
         return email;
     }
