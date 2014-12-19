@@ -80,6 +80,5 @@ public class Register {
     public void register(){
 
         Database.DatabaseInstance.insertUser(new User(getUsername(), getPassword(), getFirstname(), getLastname(), getEmail(), 0, getDateOfBirth(), isMan()));
-        System.out.println(isMan());
     }
 }

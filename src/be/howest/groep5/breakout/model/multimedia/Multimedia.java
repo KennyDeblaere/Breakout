@@ -24,7 +24,7 @@ public class Multimedia{
             power2 = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/power2.png")));
             power3 = (ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/power1.png")));
         } catch (IOException e) {
-            System.out.println("Image laad niet in!");
+            System.err.println("Image laad niet in!");
         }
     }
 

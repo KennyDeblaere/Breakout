@@ -21,7 +21,7 @@ public class Sound implements Runnable{
                 player.play();
             }
         } catch (Exception e){
-            System.out.println("Probleem bij mediaspeler!");
+            System.err.println("Probleem bij mediaspeler!");
         }
     }
 }
