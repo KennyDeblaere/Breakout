@@ -101,6 +101,7 @@ public class CenterPanel extends JPanel {
     public void setGameMode(Boolean isSinglePlayer) {
         this.isSinglePlayer = isSinglePlayer;
     }
+    public Boolean getGameMode() { return isSinglePlayer; }
 
     @Override
     protected void paintComponent(Graphics g) {

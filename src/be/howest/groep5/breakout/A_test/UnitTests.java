@@ -8,20 +8,17 @@ import be.howest.groep5.breakout.model.game.Ball;
 import be.howest.groep5.breakout.model.game.BlockCreator;
 import be.howest.groep5.breakout.model.game.Paddle;
 import be.howest.groep5.breakout.model.game.PowerCreator;
-
-import javax.swing.*;
-
 import static org.junit.Assert.*;
 /**
  * Created by Dries Dekoninck on 13/11/2014.
  */
 
-public class UnitTests {
+public class UnitTests extends Exception{
 
     //-------------- DATABASE TESTS ----------------------
 
     @Test
-    public void testGetConnection() throws Exception {
+    public void testGetConnection() {
         Connection connection;
         boolean exception = false;
         try{
@@ -38,7 +35,7 @@ public class UnitTests {
 
     //-------------- GAME MODEL TESTS --------------------
     @Test
-    public void testBall() throws Exception {
+    public void testBall() {
         boolean exception = false;
         try {
             Ball b = new Ball(true, 3,100);
@@ -51,7 +48,7 @@ public class UnitTests {
     }
 
     @Test
-    public void testBlockCreator() throws Exception {
+    public void testBlockCreator() {
         boolean exception = false;
         try {
             BlockCreator block = new BlockCreator(5, 5, 3, Color.RED, true, false, 100, 20, 20);
@@ -64,7 +61,7 @@ public class UnitTests {
     }
 
     @Test
-    public void testPaddle() throws Exception {
+    public void testPaddle() {
         boolean exception = false;
         try {
             Paddle p = new Paddle(500, 10, 100,1);
@@ -77,7 +74,7 @@ public class UnitTests {
     }
 
     @Test
-    public void testPowerCreator() throws Exception {
+    public void testPowerCreator() {
         Ball b = new Ball(true, 0,100);
         Paddle p = new Paddle(500, 10, 100,1);
         boolean exception = false;
@@ -93,7 +90,7 @@ public class UnitTests {
 
     //-------------- MODEL TESTS -------------------------
     @Test
-    public void testBlock() throws Exception {
+    public void testBlock() {
         boolean exception = false;
         try {
 
@@ -103,5 +100,5 @@ public class UnitTests {
         if(exception) {
             fail("Block Class failed!");
         }
-    } // TODO tests van model
+    }
 }
