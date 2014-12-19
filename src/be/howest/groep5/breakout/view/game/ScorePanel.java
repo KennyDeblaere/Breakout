@@ -2,6 +2,7 @@ package be.howest.groep5.breakout.view.game;
 
 import be.howest.groep5.breakout.model.game.Ball;
 import be.howest.groep5.breakout.model.multimedia.Multimedia;
+import be.howest.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -105,7 +106,8 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         scorePanel.add(lifePanel);
         scorePanel.add(singlePanel);
         System.out.println(gamePanel.getB().isSinglePlayer());
-        if (gamePanel.getB().isSinglePlayer()) {
+        CenterPanel p = gamePanel.getCenterPanel();
+        if (!p.getGameMode()) {
             scorePanel.add(coopPanel);
         }
 
