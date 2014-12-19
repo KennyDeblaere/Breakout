@@ -16,7 +16,7 @@ public class ShooterCreator implements Runnable {
         playing = true;
         setyDirection(-1);
         if(!ball.isSinglePlayer()) {
-            setyDirection(-ball.getYDirection());
+            setyDirection(ball.getYDirection() * -1);
         }
         createShooter();
         ball.setShooterCreator(this);

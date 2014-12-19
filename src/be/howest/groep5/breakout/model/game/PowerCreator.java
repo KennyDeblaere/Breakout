@@ -81,6 +81,7 @@ public class PowerCreator implements Runnable {
 
         while (teller < 1) {
             shooterCreator = null;
+            ball.setShooterCreator(shooterCreator);
             getBall().setSpeed(getBall().getStartSpeed());
             getBall().getBall().width = getBall().getStartWidth();
             getBall().getBall().height = getBall().getBall().width;
@@ -174,7 +175,7 @@ public class PowerCreator implements Runnable {
     }
 
     private void makePaddleSmaller(Paddle paddle) {
-        paddle.setLengthGo(paddle.getLengthGo() - paddle.getPaddle().width);
+        paddle.setLengthGo(paddle.getLengthGo() + paddle.getPaddle().width);
         paddle.getPaddle().width /= 2;
     }
 
