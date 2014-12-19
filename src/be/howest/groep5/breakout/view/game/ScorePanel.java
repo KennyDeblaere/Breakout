@@ -101,7 +101,6 @@ public class ScorePanel extends JPanel implements ScoreObserver {
         scorePanel.add(titelLabel);
         scorePanel.add(lifePanel);
         scorePanel.add(singlePanel);
-        System.out.println(gamePanel.getB().isSinglePlayer());
         CenterPanel p = gamePanel.getCenterPanel();
 
         scorePanel.add(infoPanel);

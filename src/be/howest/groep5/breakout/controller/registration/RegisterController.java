@@ -51,12 +51,6 @@ public class RegisterController implements ActionListener {
         this.sex = sex;
     }
 
-    private void checkValues(String iets){
-        if (iets ==""){
-            System.out.println("testtesttest");
-            JOptionPane.showMessageDialog(null, "Username moet worden ingevuld", "Opgelet", JOptionPane.WARNING_MESSAGE);
-        }
-    }
 
     private void message(String message){
 

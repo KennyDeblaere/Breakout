@@ -37,7 +37,7 @@ public class StatusPanel extends JPanel implements ActionListener, ChangeListene
                 onImage = ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/Sound_on.png"));
                 offImage = ImageIO.read(new File("src/be/howest/groep5/breakout/multimedia/pictures/Sound_off.png"));
         } catch (IOException ex) {
-                System.out.println("Foto Sound kan niet worden ingeladen...");
+                System.err.println("Foto Sound kan niet worden ingeladen...");
         }
         soundOnButton = new JButton(new ImageIcon(onImage));
         soundOffButton = new JButton(new ImageIcon(offImage));

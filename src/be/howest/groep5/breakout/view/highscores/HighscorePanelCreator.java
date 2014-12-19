@@ -44,8 +44,6 @@ public class HighscorePanelCreator {
 
     private void fillHighScore(){
         scores = Database.DatabaseInstance.fillTopScores(singlePlayer);
-        System.out.println("got here");
-        System.out.println(scores);
 
        for(ScoreUser score : scores){
            usernameLabel = new JLabel(score.getUserName());
