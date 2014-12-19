@@ -16,7 +16,10 @@ public class ScoreUser {
     }
 
     public void setScore(int score) {
-        this.score = score;
+        if(score > 0)
+            this.score = score;
+        else
+            this.score = 0;
     }
     public void setUserName(String username) {
         this.username = username;

@@ -19,7 +19,10 @@ public class Gamemode {
         this.singleplayer = singleplayer;
     }
     public void setDifficulty(int difficulty) {
-        this.difficulty = difficulty;
+        if(difficulty >= 0 && difficulty <= 2)
+            this.difficulty = difficulty;
+        else
+            this.difficulty = 0;
     }
 
     public boolean isSingleplayer() {
