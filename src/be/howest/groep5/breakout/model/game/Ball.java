@@ -1,7 +1,9 @@
 package be.howest.groep5.breakout.model.game;
 
 import be.howest.groep5.breakout.data.Database;
+import be.howest.groep5.breakout.model.multimedia.Multimedia;
 import be.howest.groep5.breakout.model.observer.ScoreObserver;
+import com.sun.org.apache.xpath.internal.operations.Mult;
 
 import java.awt.*;
 import java.util.*;
@@ -22,11 +24,15 @@ public class Ball implements Runnable {
     private ShooterCreator shooterCreator;
     private boolean intersected, breakBlocks, shoot;
     private List<ScoreObserver> observers;
+    private Multimedia multimedia;
+    private Image power;
 
     public Ball(boolean singlePlayer, int difficulty, int panelWidth){
         p1 = new Paddle(475,700,panelWidth,1);
         p2 = new Paddle(475,10, panelWidth, 2);
         setLevel(0);
+        multimedia = new Multimedia();
+        power = getPower();
 
 
         setStartSpeed(Database.DatabaseInstance.fillLevels().get(getLevel()).getBallSpeed());
@@ -74,6 +80,7 @@ public class Ball implements Runnable {
     public void setyDirection(int yDirection) {
         this.yDirection = yDirection;
     }
+    public Image getPower() { return power; }
     public void setP1Score(int p1Score) {
         if(p1Score > 0)
             this.p1Score = p1Score;
@@ -228,6 +235,7 @@ public class Ball implements Runnable {
             t.start();
         }
 
+        power = multimedia.getPower();
 
     }
     
