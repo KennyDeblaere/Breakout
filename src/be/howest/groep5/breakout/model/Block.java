@@ -28,7 +28,10 @@ public class Block {
         this.color = color;
     }
     public void setHorizontalLength(int horizontalLength) {
-        this.horizontalLength = horizontalLength;
+        if(horizontalLength <= 1000 && horizontalLength > 0)
+            this.horizontalLength = horizontalLength;
+        else
+            this.horizontalLength = 100;
     }
     public void setNumberOfHitsBeforeVanish(int numberOfHitsBeforeVanish) {
         this.numberOfHitsBeforeVanish = numberOfHitsBeforeVanish;
@@ -37,10 +40,16 @@ public class Block {
         this.powerUp = powerUp;
     }
     public void setVerticalLength(int verticalLength) {
-        this.verticalLength = verticalLength;
+        if(verticalLength <= 500 && verticalLength > 0)
+            this.verticalLength = verticalLength;
+        else
+            this.verticalLength = 50;
     }
     public void setScore(int score) {
-        this.score = score;
+        if(score > 0 && score < 100)
+            this.score = score;
+        else
+            this.score = 10;
     }
     public void setPowerDown(boolean powerDown) {
         this.powerDown = powerDown;

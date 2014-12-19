@@ -74,12 +74,7 @@ public class Register {
         return man;
     }
 
-    private boolean checkPasswords(String password1, String password2){
-        return password1 == password2;
-    }
-    private boolean checkIfEmpty(String input){
-        return input == "";
-    }
+
 
 
     public void register(){
