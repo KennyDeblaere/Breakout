@@ -72,11 +72,6 @@ public class ContentPanel extends JPanel {
         re();
     }
 
-    public void addMainComponents() {
-        removePanels();
-        re();
-    }
-
     public void shutDown(){
         System.exit(0);
     }

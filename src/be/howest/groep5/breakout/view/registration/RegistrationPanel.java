@@ -24,6 +24,7 @@ public class RegistrationPanel extends JPanel {
     private JButton cancel, register;
 
     private void createComponents(){
+        setOpaque(false);
         username = new JTextField(10);
         firstname = new JTextField(10);
         lastname = new JTextField(10);
