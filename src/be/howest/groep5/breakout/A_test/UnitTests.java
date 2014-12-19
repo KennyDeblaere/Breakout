@@ -8,6 +8,9 @@ import be.howest.groep5.breakout.model.game.Ball;
 import be.howest.groep5.breakout.model.game.BlockCreator;
 import be.howest.groep5.breakout.model.game.Paddle;
 import be.howest.groep5.breakout.model.game.PowerCreator;
+
+import javax.swing.*;
+
 import static org.junit.Assert.*;
 /**
  * Created by Dries Dekoninck on 13/11/2014.
@@ -30,6 +33,7 @@ public class UnitTests {
         }
         if(exception) {
             fail("Database connection failed!");
+            exceptionMessage("Database connection");
         }
     }
 
@@ -101,4 +105,10 @@ public class UnitTests {
             fail("Block Class failed!");
         }
     } // TODO tests van model
+
+    private void exceptionMessage(String message){
+        JOptionPane.showMessageDialog(null, message + " failed!", "ATTENTION", JOptionPane.ERROR_MESSAGE);
+        System.exit(0);
+
+    }
 }
