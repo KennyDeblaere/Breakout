@@ -2,6 +2,7 @@ package be.howest.groep5.breakout.view.game;
 
 import be.howest.groep5.breakout.model.game.Ball;
 import be.howest.groep5.breakout.model.multimedia.Multimedia;
+import be.howest.groep5.breakout.model.observer.ScoreObserver;
 import be.howest.groep5.breakout.view.welcome.CenterPanel;
 
 import javax.swing.*;

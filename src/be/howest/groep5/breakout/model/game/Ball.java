@@ -1,7 +1,7 @@
 package be.howest.groep5.breakout.model.game;
 
 import be.howest.groep5.breakout.data.Database;
-import be.howest.groep5.breakout.view.game.ScoreObserver;
+import be.howest.groep5.breakout.model.observer.ScoreObserver;
 
 import java.awt.*;
 import java.util.*;
@@ -52,7 +52,7 @@ public class Ball implements Runnable {
         setLengthBound(1000 - ball.width);
         playing = false;
 
-        observers = new ArrayList<ScoreObserver>();
+        observers = new ArrayList<>();
 
         setP1Score(0);
         setP2Score(0);
@@ -75,10 +75,16 @@ public class Ball implements Runnable {
         this.yDirection = yDirection;
     }
     public void setP1Score(int p1Score) {
-        this.p1Score = p1Score;
+        if(p1Score > 0)
+            this.p1Score = p1Score;
+        else
+            this.p1Score = 0;
     }
     public void setP2Score(int p2Score) {
-        this.p2Score = p2Score;
+        if(p2Score > 0)
+            this.p2Score = p2Score;
+        else
+            this.p2Score = 0;
     }
     public void setTopBound(int topBound) {
         this.topBound = topBound;
@@ -209,7 +215,7 @@ public class Ball implements Runnable {
 
         if(blockCreator.hasAPowerUp()){
             int temp = r.nextInt(Database.DatabaseInstance.fillPowers(true).size());
-            powerCreator = new PowerCreator(temp, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
+            powerCreator = new PowerCreator(0, Database.DatabaseInstance.fillPowers(true).get(temp).isPowerup(), this, p1, blockCreator.getX(), blockCreator.getY());
             powerCreator.setIntersection(true);
             Thread t = new Thread(powerCreator);
             t.start();
@@ -249,24 +255,28 @@ public class Ball implements Runnable {
         if (blockCreator.getNumberOfHitsLeft() == 1)
             screenCreate.setNumberOfBrokenBlocks(screenCreate.getNumberOfBrokenBlocks() + 1);
         blockCreator.setNumberOfHitsLeft(blockCreator.getNumberOfHitsLeft() - 1);
-        p1Score += blockCreator.getScore();
+        setP1Score(getP1Score() + blockCreator.getScore());
         if (difficulty == 1)
-            p1Score += 5;
+            setP1Score(getP1Score() + 5);
         if (difficulty == 2)
-            p1Score += 10;
+            setP1Score(getP1Score() + 10);
         notifyObservers();
     }
 
     private void powerCollisionWithPaddle(){
-        if(p1.getPaddle().intersects(powerCreator.getPower()) || p2.getPaddle().intersects(powerCreator.getPower())) {
-            powerCreator.setIntersection(false);
-            powerCreator.returnPower();
-            powerCreator.setIntersection(false);
+        int tellerP1 = 0;
+        while (tellerP1 < 1) {
+            if (p1.getPaddle().intersects(powerCreator.getPower()) || p2.getPaddle().intersects(powerCreator.getPower())) {
+                powerCreator.setIntersection(false);
+                powerCreator.returnPower();
+                powerCreator.setIntersection(false);
+            }
+            if (p2.getPaddle().intersects(powerCreator.getPower())) {
+                powerCreator.setPaddle(p2);
+            }
+            tellerP1++;
         }
-        if(p2.getPaddle().intersects(powerCreator.getPower())) {
-            powerCreator.setPaddle(p2);
-
-        }
+        notifyObservers();
     }
     private void shooterCollision(BlockCreator blockCreator){
         if(canShoot() && getShooterCreator() != null && getShooterCreator().getShooter().intersects(blockCreator.getBlock()) && blockCreator.getNumberOfHitsLeft() != 0) {
@@ -373,7 +383,7 @@ public class Ball implements Runnable {
 
     public void notifyObservers() {
         for (ScoreObserver o : observers) {
-            o.update(p1Score, p2Score, numberOfLifes);
+            o.update(getP1Score(), getP2Score(), getNumberOfLifes());
         }
     }
 }

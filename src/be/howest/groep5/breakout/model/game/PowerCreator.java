@@ -106,10 +106,8 @@ public class PowerCreator implements Runnable {
                         addALife(getBall());
                         break;
                 }
-                if (getyDirection() == 1)
-                    getBall().setP2Score(getBall().getP2Score() + 100);
-                else
-                    getBall().setP1Score(getBall().getP1Score() + 100);
+                getBall().setP1Score(getBall().getP1Score() + 100);
+
             } else {
                 switch (getPowerid()) {
                     case 0:
@@ -141,7 +139,6 @@ public class PowerCreator implements Runnable {
     // ---------------------- POWER UP -----------------------------------
 
     private void shooter(Ball ball){
-        //System.out.println("shoooooooooooooooooooooooooooter");
         shooterCreator = new ShooterCreator(ball);
         Thread thread = new Thread(shooterCreator);
         thread.start();

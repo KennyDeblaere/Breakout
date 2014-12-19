@@ -1,4 +1,4 @@
-package be.howest.groep5.breakout.view.game;
+package be.howest.groep5.breakout.model.observer;
 
 /**
  * Created by Benjamin on 18/12/2014.
