@@ -10,13 +10,13 @@ import java.awt.*;
  */
 public class ButtonPanel extends JPanel{
     private JPanel ButtonPanel;
-    private JButton single, co, high, howto, about, sluiten;
+    private JButton single, co, high, howto, about;
     private ContentPanel panelContent;
 
     public ButtonPanel(ContentPanel panelContent) {
         super();
         this.panelContent = panelContent;
-        setPreferredSize(new Dimension(300, 450));
+        setPreferredSize(new Dimension(300, 400));
         createComponents();
         setComponents();
         addComponents();
@@ -29,8 +29,7 @@ public class ButtonPanel extends JPanel{
         co = new JButton("Co-op");
         high = new JButton("Topscores");
         howto = new JButton("Instructies");
-        about = new JButton("Over");
-        sluiten = new JButton("Afsluiten");
+        about = new JButton("Over ons");
     }
 
     private void setComponents() {
@@ -45,7 +44,6 @@ public class ButtonPanel extends JPanel{
         ButtonPanel.add(high);
         ButtonPanel.add(howto);
         ButtonPanel.add(about);
-        ButtonPanel.add(sluiten);
         setOpaque(false);
     }
 
@@ -59,6 +57,5 @@ public class ButtonPanel extends JPanel{
         high.addActionListener(new ButtonController(panelContent, "High"));
         howto.addActionListener(new ButtonController(panelContent, "Howto"));
         about.addActionListener(new ButtonController(panelContent, "About"));
-        sluiten.addActionListener(new ButtonController(panelContent, "Sluiten"));
     }
 }

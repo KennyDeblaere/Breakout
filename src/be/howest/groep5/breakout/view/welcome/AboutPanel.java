@@ -26,7 +26,7 @@ public class AboutPanel extends JPanel{
     private void createComponents() {
         setPreferredSize(new Dimension(650,750));
         about = new JPanel(new GridLayout(3,1));
-        titelLabel = new JLabel("About");
+        titelLabel = new JLabel("Over ons");
         createLabel = new JLabel();
         licensedtoLabel = new JLabel();
         versionLabel = new JLabel();
