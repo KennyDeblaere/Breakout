@@ -1,5 +1,9 @@
 package be.howest.groep5.breakout.A_test;
 
+import be.howest.groep5.breakout.controller.multimedia.SoundController;
+import be.howest.groep5.breakout.model.Block;
+import be.howest.groep5.breakout.model.multimedia.Multimedia;
+import be.howest.groep5.breakout.model.multimedia.Sound;
 import org.junit.Test;
 import java.awt.*;
 import java.sql.Connection;
@@ -8,6 +12,7 @@ import be.howest.groep5.breakout.model.game.Ball;
 import be.howest.groep5.breakout.model.game.BlockCreator;
 import be.howest.groep5.breakout.model.game.Paddle;
 import be.howest.groep5.breakout.model.game.PowerCreator;
+
 import static org.junit.Assert.*;
 /**
  * Created by Dries Dekoninck on 13/11/2014.
@@ -93,12 +98,60 @@ public class UnitTests extends Exception{
     public void testBlock() {
         boolean exception = false;
         try {
-
+            Block block = new Block(Color.RED,100,20,3,true,false,25);
         } catch (Exception e){
             exception = true;
         }
         if(exception) {
             fail("Block Class failed!");
+        }
+    }
+    //-------------- MULTIMEDIA TESTS -------------------------
+    @Test
+    public void testSoundController() {
+        boolean exception = false;
+        try {
+            SoundController soundController = new SoundController();
+        } catch (Exception e){
+            exception = true;
+        }
+        if(exception) {
+            fail("SoundController Class failed!");
+        }
+    }
+    @Test
+    public void testMultimedia() {
+        boolean exception = false;
+        try {
+            Multimedia multimedia = new Multimedia();
+        } catch (Exception e){
+            exception = true;
+        }
+        if(exception) {
+            fail("Multimedia Class failed!");
+        }
+    }
+    @Test
+    public void testMultimediaSetPlaying() {
+        boolean exception = false;
+        Multimedia multimedia = new Multimedia();
+        multimedia.setPlaying(true);
+        exception = multimedia.isPlaying();
+
+        if(!exception) {
+            fail("Multimedia setPlaying/isPlaying failed!");
+        }
+    }
+    @Test
+    public void testSound() {
+        boolean exception = false;
+        try {
+            Sound sound = new Sound();
+        } catch (Exception e){
+            exception = true;
+        }
+        if(exception) {
+            fail("Sound Class failed!");
         }
     }
 }

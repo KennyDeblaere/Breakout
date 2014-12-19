@@ -4,7 +4,6 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.Buffer;
 
 /**
  * Created by Dries Dekoninck on 15/12/2014.
@@ -32,12 +31,8 @@ public class Multimedia{
     public boolean isPlaying() {
         return playing;
     }
-    public BufferedImage getIconImage() {
-        return image;
-    }
-    public BufferedImage getMainBackground() {
-        return  mainBackground;
-    }
+    public BufferedImage getIconImage() { return image; }
+    public BufferedImage getMainBackground() { return  mainBackground; }
     public BufferedImage getSubbackground() { return subbackground; }
     public BufferedImage getScorebackground() { return scorebackground; }
     public BufferedImage getGamebackground() { return gamebackground; }
